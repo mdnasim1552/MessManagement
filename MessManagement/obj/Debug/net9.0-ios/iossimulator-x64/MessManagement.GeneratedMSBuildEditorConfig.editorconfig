@@ -1,0 +1,78 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.MvvmToolkitEnableINotifyPropertyChangingSupport = true
+build_property._MvvmToolkitIsUsingWindowsRuntimePack = false
+build_property.CsWinRTComponent = 
+build_property.CsWinRTAotOptimizerEnabled = 
+build_property.CsWinRTAotWarningLevel = 
+build_property.TargetFramework = net9.0-ios
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = MessManagement
+build_property.ProjectDir = H:\Mess management\MessManagement\MessManagement\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[H:/Mess management/MessManagement/MessManagement/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[H:/Mess management/MessManagement/MessManagement/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[H:/Mess management/MessManagement/MessManagement/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[H:/Mess management/MessManagement/MessManagement/MVVM/Views/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.MVVM.Views.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MVVM\Views\LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MVVM\Views\LoginPage.xaml
+
+[H:/Mess management/MessManagement/MessManagement/MVVM/Views/LogoutPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.MVVM.Views.LogoutPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MVVM\Views\LogoutPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MVVM\Views\LogoutPage.xaml
+
+[H:/Mess management/MessManagement/MessManagement/MVVM/Views/MessWizardPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.MVVM.Views.MessWizardPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MVVM\Views\MessWizardPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MVVM\Views\MessWizardPage.xaml
+
+[H:/Mess management/MessManagement/MessManagement/MVVM/Views/RegisterPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.MVVM.Views.RegisterPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MVVM\Views\RegisterPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MVVM\Views\RegisterPage.xaml
+
+[H:/Mess management/MessManagement/MessManagement/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[H:/Mess management/MessManagement/MessManagement/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml

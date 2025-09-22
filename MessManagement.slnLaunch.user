@@ -1,0 +1,17 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "MessManagement\\MessManagement.csproj",
+        "Action": "Start",
+        "DebugTarget": "Android Emulator"
+      },
+      {
+        "Path": "MessApi\\MessApi.csproj",
+        "Action": "Start",
+        "DebugTarget": "http"
+      }
+    ]
+  }
+]

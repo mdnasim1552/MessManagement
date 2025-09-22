@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MessManagement.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MessManagement"
+    xmlns:views="clr-namespace:MessManagement.MVVM.Views"
+    Shell.FlyoutBehavior="Flyout"
+    Title="MessManagement">
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate views:LoginPage}"
+        Route="LoginPage" />
+    <ShellContent
+        Title="Logout"
+        ContentTemplate="{DataTemplate views:LogoutPage}"
+        Route="Logout" />
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+    <ShellContent
+        Title="Create Mess"
+        ContentTemplate="{DataTemplate views:MessWizardPage}"
+        Route="MessWizardPage" />
+
+</Shell>

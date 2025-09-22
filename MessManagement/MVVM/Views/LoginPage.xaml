@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MessManagement.MVVM.Views.LoginPage"
+             Title="Login"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="True"
+             Shell.BackgroundColor="#4e54c8"
+             Shell.TitleColor="White"
+             Shell.ForegroundColor="White">
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#4e54c8" Offset="0.0" />
+            <GradientStop Color="#8f94fb" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <Grid>
+        <Border
+        StrokeShape="RoundRectangle 20"
+        Background="#FFFFFF"
+        Padding="30"
+        VerticalOptions="Center"
+        HorizontalOptions="Center"
+        WidthRequest="350"
+        MinimumHeightRequest="400"
+        Shadow="10,5,10,Black">
+            <VerticalStackLayout Spacing="20">
+
+                <Image Source="login_icon.png"
+                HeightRequest="70"
+                HorizontalOptions="Center"
+                Margin="0,0,0,10"/>
+
+                <Label Text="Welcome Back!"
+                FontSize="24"
+                FontAttributes="Bold"
+                TextColor="#4e54c8"
+                HorizontalOptions="Center"
+                Margin="0,0,0,10"/>
+
+                <Entry Placeholder="Email"
+                Text="{Binding Email}"
+                Keyboard="Email"
+                BackgroundColor="#f3f4f6"
+                Margin="0,0,0,5"
+                HeightRequest="45"/>
+
+                <Entry Placeholder="Password"
+                Text="{Binding Password}"
+                IsPassword="True"
+                BackgroundColor="#f3f4f6"
+                Margin="0,0,0,5"
+                HeightRequest="45"/>
+
+                <Button Text="Login"
+                 Command="{Binding LoginCommand}"
+                 BackgroundColor="#4e54c8"
+                 TextColor="White"
+                 CornerRadius="10"
+                 FontAttributes="Bold"
+                 HeightRequest="45"/>
+
+                <Button Text="Continue with Google"
+                 Command="{Binding GoogleLoginCommand}"
+                 BackgroundColor="#f3f4f6"
+                 TextColor="Black"
+                 CornerRadius="10"
+                 HeightRequest="45"
+                 Margin="0,5,0,0"
+                 ImageSource="google_icon.png"/>
+
+                <HorizontalStackLayout HorizontalOptions="Center" Spacing="5" Margin="0,10,0,0">
+                    <Label Text="Don't have an account?" TextColor="#888" />
+                    <Button Text="Register"
+                     Command="{Binding RegisterCommand}"
+                     BackgroundColor="Transparent"
+                     TextColor="#4e54c8"
+                     FontAttributes="Bold"
+                     Padding="0"/>
+                </HorizontalStackLayout>
+
+            </VerticalStackLayout>
+        </Border>
+    </Grid>
+</ContentPage>

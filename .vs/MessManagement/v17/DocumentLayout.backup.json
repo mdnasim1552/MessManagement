@@ -1,0 +1,173 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "H:\\Mess management\\MessManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\views\\messwizardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\views\\messwizardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\converters\\indextomemberheadingconverter .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\converters\\indextomemberheadingconverter .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\viewmodels\\messwizardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\viewmodels\\messwizardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\views\\messwizardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\views\\messwizardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\viewmodels\\registerviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\models\\messmembermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\models\\messmembermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\views\\registerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\views\\registerpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\views\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\views\\loginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MessWizardPage.xaml.cs",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MessWizardPage.xaml.cs",
+              "RelativeDocumentMoniker": "MessManagement\\MVVM\\Views\\MessWizardPage.xaml.cs",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MessWizardPage.xaml.cs",
+              "RelativeToolTip": "MessManagement\\MVVM\\Views\\MessWizardPage.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T19:12:50.32Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MessMemberModel.cs",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Models\\MessMemberModel.cs",
+              "RelativeDocumentMoniker": "MessManagement\\MVVM\\Models\\MessMemberModel.cs",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Models\\MessMemberModel.cs",
+              "RelativeToolTip": "MessManagement\\MVVM\\Models\\MessMemberModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T17:13:45.803Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RegisterViewModel.cs",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\RegisterViewModel.cs",
+              "RelativeDocumentMoniker": "MessManagement\\MVVM\\ViewModels\\RegisterViewModel.cs",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\RegisterViewModel.cs",
+              "RelativeToolTip": "MessManagement\\MVVM\\ViewModels\\RegisterViewModel.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T17:00:39.04Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "LoginPage.xaml",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\LoginPage.xaml",
+              "RelativeDocumentMoniker": "MessManagement\\MVVM\\Views\\LoginPage.xaml",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\LoginPage.xaml",
+              "RelativeToolTip": "MessManagement\\MVVM\\Views\\LoginPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-22T16:56:27.865Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RegisterPage.xaml",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\RegisterPage.xaml",
+              "RelativeDocumentMoniker": "MessManagement\\MVVM\\Views\\RegisterPage.xaml",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\RegisterPage.xaml",
+              "RelativeToolTip": "MessManagement\\MVVM\\Views\\RegisterPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-22T16:55:53.603Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MessWizardViewModel.cs",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\MessWizardViewModel.cs",
+              "RelativeDocumentMoniker": "MessManagement\\MVVM\\ViewModels\\MessWizardViewModel.cs",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\MessWizardViewModel.cs",
+              "RelativeToolTip": "MessManagement\\MVVM\\ViewModels\\MessWizardViewModel.cs",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAmwGIAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T15:55:15.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "MessManagement\\MVVM\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "MessManagement\\MVVM\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T16:11:53.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MessWizardPage.xaml",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MessWizardPage.xaml",
+              "RelativeDocumentMoniker": "MessManagement\\MVVM\\Views\\MessWizardPage.xaml",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MessWizardPage.xaml",
+              "RelativeToolTip": "MessManagement\\MVVM\\Views\\MessWizardPage.xaml",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAHkAAABgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-09-22T15:48:41.712Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IndexToMemberHeadingConverter .cs",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\Converters\\IndexToMemberHeadingConverter .cs",
+              "RelativeDocumentMoniker": "MessManagement\\Converters\\IndexToMemberHeadingConverter .cs",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\Converters\\IndexToMemberHeadingConverter .cs",
+              "RelativeToolTip": "MessManagement\\Converters\\IndexToMemberHeadingConverter .cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAAB4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-22T15:28:27.384Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

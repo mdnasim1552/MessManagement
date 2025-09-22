@@ -1,0 +1,188 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MessManagement</name>
+    </assembly>
+    <members>
+        <member name="T:MessManagement.MVVM.ViewModels.MessMemberModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessMemberModel.Heading">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessMemberModel.heading"/>
+        </member>
+        <member name="T:MessManagement.MVVM.ViewModels.LoginViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.LoginViewModel.Email">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.LoginViewModel.email"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.LoginViewModel.Password">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.LoginViewModel.password"/>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.LoginViewModel.registerCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.LoginViewModel.RegisterCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.LoginViewModel.RegisterCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.LoginViewModel.RegisterAsync"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.LoginViewModel.loginCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.LoginViewModel.LoginCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.LoginViewModel.LoginCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.LoginViewModel.LoginAsync"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.LoginViewModel.googleLoginCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.LoginViewModel.GoogleLoginCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.LoginViewModel.GoogleLoginCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.LoginViewModel.GoogleLoginAsync"/>.</summary>
+        </member>
+        <member name="T:MessManagement.MVVM.ViewModels.MessWizardViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.IsStep1Visible">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.isStep1Visible"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.IsStep2Visible">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.isStep2Visible"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.MessName">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.messName"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.Description">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.description"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.Month">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.month"/>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.nextButtonCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.NextButtonCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.NextButtonCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessWizardViewModel.NextButtonAsync"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.addMemberButtonCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.AddMemberButtonCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.AddMemberButtonCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessWizardViewModel.AddMemberButtonAsync"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.backButtonCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.BackButtonCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.BackButtonCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessWizardViewModel.BackButtonAsync"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.finishButtonCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.FinishButtonCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.FinishButtonCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessWizardViewModel.FinishButtonAsync"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.removeMemberCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.RemoveMemberCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.RemoveMemberCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessWizardViewModel.RemoveMemberAsync(MessManagement.MVVM.ViewModels.MessMemberModel)"/>.</summary>
+        </member>
+        <member name="T:MessManagement.MVVM.ViewModels.RegisterViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.RegisterViewModel.Fullname">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.RegisterViewModel.fullname"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.RegisterViewModel.Email">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.RegisterViewModel.email"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.RegisterViewModel.Password">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.RegisterViewModel.password"/>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.RegisterViewModel.registerCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.RegisterViewModel.RegisterCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.RegisterViewModel.RegisterCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.RegisterViewModel.RegisterAsync"/>.</summary>
+        </member>
+        <member name="T:MessManagement.Resource">
+            <summary>
+            Android Resource Designer class.
+            Exposes the Android Resource designer assembly into the project Namespace.
+            </summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Heading">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Heading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Email">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Email" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Password">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsStep1Visible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsStep1Visible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsStep2Visible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsStep2Visible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MessName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MessName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Description">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Description" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Month">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Month" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Fullname">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Fullname" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Heading">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Heading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Email">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Email" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Password">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsStep1Visible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsStep1Visible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsStep2Visible">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsStep2Visible" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MessName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MessName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Description">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Description" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Month">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Month" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Fullname">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Fullname" generated properties.</summary>
+        </member>
+    </members>
+</doc>

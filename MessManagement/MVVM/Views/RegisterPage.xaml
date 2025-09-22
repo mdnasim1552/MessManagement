@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MessManagement.MVVM.Views.RegisterPage"
+             x:DataType="vm:RegisterViewModel"
+             xmlns:vm="clr-namespace:MessManagement.MVVM.ViewModels"
+             Title="Register"
+             Shell.FlyoutBehavior="Disabled"
+             Shell.NavBarIsVisible="True"
+             Shell.BackgroundColor="#4e54c8"
+             Shell.TitleColor="White"
+             Shell.ForegroundColor="White"
+             >
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#4e54c8" Offset="0.0" />
+            <GradientStop Color="#8f94fb" Offset="1.0" />
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <Grid>
+        <Border
+            StrokeShape="RoundRectangle 20"
+            Background="#FFFFFF"
+            Padding="30"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            WidthRequest="350"
+            MinimumHeightRequest="400"
+            Shadow="10,5,10,Black">
+            <VerticalStackLayout Spacing="20">
+                <Label Text="Create Account"
+                        FontSize="24"
+                        FontAttributes="Bold"
+                        TextColor="#4e54c8"
+                        HorizontalOptions="Center"
+                        Margin="0,0,0,10"/>
+
+                <Entry Placeholder="Full Name"
+                    Text="{Binding Fullname}"
+                    Keyboard="Default"
+                    BackgroundColor="#f3f4f6"
+                    Margin="0,0,0,5"
+                    HeightRequest="45"/>
+
+                <Entry Placeholder="Email"
+                   Text="{Binding Email}"
+                   Keyboard="Email"
+                   BackgroundColor="#f3f4f6"
+                   Margin="0,0,0,5"
+                   HeightRequest="45" />
+                <Entry Placeholder="Password"
+                    Text="{Binding Password}"
+                    IsPassword="True"
+                    BackgroundColor="#f3f4f6"
+                    Margin="0,0,0,5"
+                    HeightRequest="45"/>
+                
+                <Button Text="Register"
+                     Command="{Binding RegisterCommand}"
+                     BackgroundColor="#4e54c8"
+                     TextColor="White"
+                     CornerRadius="10"
+                     FontAttributes="Bold"
+                     HeightRequest="45"/>
+                
+            </VerticalStackLayout>
+        </Border>
+    </Grid>
+</ContentPage>

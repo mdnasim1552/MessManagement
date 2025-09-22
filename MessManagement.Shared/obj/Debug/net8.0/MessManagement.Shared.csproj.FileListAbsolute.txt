@@ -1,0 +1,11 @@
+H:\Mess management\MessManagement\MessManagement.Shared\bin\Debug\net8.0\MessManagement.Shared.deps.json
+H:\Mess management\MessManagement\MessManagement.Shared\bin\Debug\net8.0\MessManagement.Shared.dll
+H:\Mess management\MessManagement\MessManagement.Shared\bin\Debug\net8.0\MessManagement.Shared.pdb
+H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net8.0\MessManagement.Shared.GeneratedMSBuildEditorConfig.editorconfig
+H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net8.0\MessManagement.Shared.AssemblyInfoInputs.cache
+H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net8.0\MessManagement.Shared.AssemblyInfo.cs
+H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net8.0\MessManagement.Shared.csproj.CoreCompileInputs.cache
+H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net8.0\MessManagement.Shared.dll
+H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net8.0\refint\MessManagement.Shared.dll
+H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net8.0\MessManagement.Shared.pdb
+H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net8.0\ref\MessManagement.Shared.dll
