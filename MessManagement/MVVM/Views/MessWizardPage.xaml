@@ -8,61 +8,28 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <Converters:IndexToMemberHeadingConverter x:Key="IndexToHeadingConverter" />
-            <Style TargetType="Label" x:Key="SectionLabel">
-                <Setter Property="FontSize" Value="20"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="TextColor" Value="#2D3748"/>
-                <Setter Property="Margin" Value="0,0,0,8"/>
-            </Style>
-            <Style TargetType="Entry" x:Key="StyledEntry">
-                <Setter Property="BackgroundColor" Value="#FFFFFF"/>
-                <Setter Property="TextColor" Value="#2D3748"/>
-                <Setter Property="Margin" Value="0,0,0,8"/>
-                <Setter Property="HeightRequest" Value="40"/>
-                <Setter Property="FontSize" Value="16"/>
-            </Style>
-            <Style TargetType="Editor" x:Key="StyledEditor">
-                <Setter Property="BackgroundColor" Value="#FFFFFF"/>
-                <Setter Property="TextColor" Value="#2D3748"/>
-                <Setter Property="Margin" Value="0,0,0,8"/>
-                <Setter Property="FontSize" Value="16"/>
-            </Style>
-            <Style TargetType="Button" x:Key="PrimaryButton">
-                <Setter Property="BackgroundColor" Value="#3182CE"/>
-                <Setter Property="TextColor" Value="White"/>
-                <Setter Property="CornerRadius" Value="8"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="HeightRequest" Value="44"/>
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="Margin" Value="0,8,0,0"/>
-            </Style>
-            <Style TargetType="Button" x:Key="SecondaryButton">
-                <Setter Property="BackgroundColor" Value="#E2E8F0"/>
-                <Setter Property="TextColor" Value="#2D3748"/>
-                <Setter Property="CornerRadius" Value="8"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="HeightRequest" Value="44"/>
-                <Setter Property="FontSize" Value="16"/>
-                <Setter Property="Margin" Value="0,8,0,0"/>
-            </Style>
+            
         </ResourceDictionary>
     </ContentPage.Resources>
     <Grid Padding="24" RowSpacing="24">
-        <Grid.RowDefinitions>
+        <!--<Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
+        </Grid.RowDefinitions>-->
         <!-- Step 1 -->
-        <ScrollView IsVisible="{Binding IsStep1Visible}">
-            <VerticalStackLayout Spacing="16">
-                <Label Text="Step 1 - Create Mess" Style="{StaticResource SectionLabel}" />
+        <Grid IsVisible="{Binding IsStep1Visible}" Grid.Row="0" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Text="Step 1 - Create Mess" Grid.Row="0" Style="{StaticResource SectionLabel}" />
 
-                <Border BackgroundColor="#FFFFFF"
-                    Stroke="#FFFFFF"
-                    StrokeShape="RoundRectangle 12"
-                    Padding="18"
-                    Margin="0">
-                    <VerticalStackLayout Spacing="12">
+            <Border class="MessWizardCardStyle" Grid.Row="1">
+                <Border Stroke="#CBD5E1" StrokeThickness="1" Padding="10" Margin="5" HeightRequest="300" VerticalOptions="Start"
+                     BackgroundColor="#F1F5F9"
+                     StrokeShape="RoundRectangle 8">
+                    <VerticalStackLayout Spacing="8" Padding="0,6">
                         <Label Text="Mess Name:" FontAttributes="Bold" TextColor="#4A5568"/>
                         <Entry Text="{Binding MessName}" Placeholder="Enter mess name" Style="{StaticResource StyledEntry}" />
 
@@ -72,16 +39,18 @@
                         <Label Text="Month:" FontAttributes="Bold" TextColor="#4A5568"/>
                         <DatePicker Date="{Binding Month}" TextColor="#2D3748" Margin="0,0,0,8"/>
 
-                        <Button Text="Next ➡" Command="{Binding NextButtonCommand}"
-                                Style="{StaticResource PrimaryButton}"
-                                HorizontalOptions="End"/>
+                        
                     </VerticalStackLayout>
                 </Border>
-            </VerticalStackLayout>
-        </ScrollView>
+                
+            </Border>
+            <Button Text="Next" Command="{Binding NextButtonCommand}" Grid.Row="2"
+                Style="{StaticResource PrimaryButton}"
+                HorizontalOptions="End"/>
+        </Grid>
 
         <!-- Step 2 -->
-        <Grid IsVisible="{Binding IsStep2Visible}" Grid.Row="1">
+        <Grid IsVisible="{Binding IsStep2Visible}" Grid.Row="0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
@@ -91,11 +60,7 @@
             <Label Grid.Row="0" Text="Step 2 - Add Members" Style="{StaticResource SectionLabel}" />
 
             <Border Grid.Row="1"
-                    BackgroundColor="#FFFFFF"
-                    Stroke="#FFFFFF"
-                    StrokeShape="RoundRectangle 12"
-                    Padding="10"
-                    Margin="0">
+                    class="MessWizardCardStyle">
                 <CollectionView x:Name="MemberCollection" ItemsSource="{Binding Members}" VerticalOptions="Fill">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
@@ -103,7 +68,7 @@
                                     BackgroundColor="#F1F5F9"
                                     StrokeShape="RoundRectangle 8">
                                 <VerticalStackLayout Spacing="8" Padding="0,6">
-                                    <Label Text="{Binding Heading}" FontAttributes="Bold" FontSize="16" TextColor="#2B6CB0"/>
+                                    <Label Text="{Binding Heading}" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource Primary01}"/>
                                     <Entry Placeholder="Name" Text="{Binding Name}" Style="{StaticResource StyledEntry}" />
                                     <Entry Placeholder="Email" Text="{Binding Email}" Style="{StaticResource StyledEntry}" />
                                     <Picker Title="Role" SelectedItem="{Binding Role}" Margin="0,0,0,8">
@@ -131,11 +96,11 @@
                 </CollectionView>
             </Border>
 
-            <Button Grid.Row="2" Text="+ Add Another Member" Command="{Binding AddMemberButtonCommand}" Style="{StaticResource PrimaryButton}" />
+            <Button Grid.Row="2" Text="+ Add Another Member" Command="{Binding AddMemberButtonCommand}" Style="{StaticResource PrimaryButton}" Margin="0,8,0,0" />
 
             <HorizontalStackLayout HorizontalOptions="End" Spacing="12" Grid.Row="3">
-                <Button Text="Back" Command="{Binding BackButtonCommand}" Style="{StaticResource SecondaryButton}"/>
-                <Button Text="Finish" Command="{Binding FinishButtonCommand}" Style="{StaticResource PrimaryButton}" />
+                <Button Text="Back" Command="{Binding BackButtonCommand}" Style="{StaticResource SecondaryButton}" Margin="0,8,0,0"/>
+                <Button Text="Finish" Command="{Binding FinishButtonCommand}" Style="{StaticResource PrimaryButton}" Margin="0,8,0,0" />
             </HorizontalStackLayout>
         </Grid>
     </Grid>

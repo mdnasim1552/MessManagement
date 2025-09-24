@@ -7,31 +7,18 @@
              Title="Register"
              Shell.FlyoutBehavior="Disabled"
              Shell.NavBarIsVisible="True"
-             Shell.BackgroundColor="#4e54c8"
-             Shell.TitleColor="White"
-             Shell.ForegroundColor="White"
-             >
-    <ContentPage.Background>
-        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-            <GradientStop Color="#4e54c8" Offset="0.0" />
-            <GradientStop Color="#8f94fb" Offset="1.0" />
-        </LinearGradientBrush>
-    </ContentPage.Background>
+             Shell.BackgroundColor="#F7F8FA"
+             Shell.TitleColor="Black"
+             Shell.ForegroundColor="Black"
+             BackgroundColor="#F7F8FA">
     <Grid>
         <Border
-            StrokeShape="RoundRectangle 20"
-            Background="#FFFFFF"
-            Padding="30"
-            VerticalOptions="Center"
-            HorizontalOptions="Center"
-            WidthRequest="350"
-            MinimumHeightRequest="400"
-            Shadow="10,5,10,Black">
+           class="PrimaryCardStyle">
             <VerticalStackLayout Spacing="20">
                 <Label Text="Create Account"
                         FontSize="24"
                         FontAttributes="Bold"
-                        TextColor="#4e54c8"
+                        TextColor="{StaticResource Primary01}"
                         HorizontalOptions="Center"
                         Margin="0,0,0,10"/>
 
@@ -57,11 +44,7 @@
                 
                 <Button Text="Register"
                      Command="{Binding RegisterCommand}"
-                     BackgroundColor="#4e54c8"
-                     TextColor="White"
-                     CornerRadius="10"
-                     FontAttributes="Bold"
-                     HeightRequest="45"/>
+                     Style="{StaticResource PrimaryButton}" />
                 
             </VerticalStackLayout>
         </Border>

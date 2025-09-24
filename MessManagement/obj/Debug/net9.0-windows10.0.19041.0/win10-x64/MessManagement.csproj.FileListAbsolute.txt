@@ -535,3 +535,4 @@ H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-windows10.0.19
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\qualifiers.txt.intermediate
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\MultipleQualifiersPerDimensionFound.txt
+H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\MessManagement.sourcelink.json
