@@ -969,3 +969,4 @@ H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-android\stamp\
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-android\stamp\_GenerateJavaStubs.stamp
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-android\stamp\_GeneratePackageManagerJava.stamp
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-android\stamp\_ResolveLibraryProjectImports.stamp
+H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-android\MessManagement.sourcelink.json
