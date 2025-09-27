@@ -9,6 +9,7 @@
     ".NETCoreApp,Version=v9.0/win10-x64": {
       "MessManagement/1.0": {
         "dependencies": {
+          "CommunityToolkit.Maui": "12.2.0",
           "CommunityToolkit.Mvvm": "8.4.0",
           "MessManagement.Shared": "1.0.0",
           "Microsoft.Extensions.Configuration.Json": "9.0.9",
@@ -36,6 +37,31 @@
           "WinRT.Runtime.dll": {
             "assemblyVersion": "2.2.0.0",
             "fileVersion": "2.2.0.48161"
+          }
+        }
+      },
+      "CommunityToolkit.Maui/12.2.0": {
+        "dependencies": {
+          "CommunityToolkit.Maui.Core": "12.2.0",
+          "Microsoft.Maui.Controls": "9.0.110"
+        },
+        "runtime": {
+          "lib/net9.0-windows10.0.19041/CommunityToolkit.Maui.dll": {
+            "assemblyVersion": "12.2.0.0",
+            "fileVersion": "12.2.0.0"
+          }
+        }
+      },
+      "CommunityToolkit.Maui.Core/12.2.0": {
+        "dependencies": {
+          "Microsoft.Maui.Core": "9.0.110",
+          "Microsoft.Maui.Essentials": "9.0.110",
+          "System.Speech": "9.0.5"
+        },
+        "runtime": {
+          "lib/net9.0-windows10.0.19041/CommunityToolkit.Maui.Core.dll": {
+            "assemblyVersion": "12.2.0.0",
+            "fileVersion": "12.2.0.0"
           }
         }
       },
@@ -680,6 +706,14 @@
           }
         }
       },
+      "System.Speech/9.0.5": {
+        "runtime": {
+          "runtimes/win/lib/net9.0/System.Speech.dll": {
+            "assemblyVersion": "9.0.0.5",
+            "fileVersion": "9.0.525.21509"
+          }
+        }
+      },
       "MessManagement.Shared/1.0.0": {
         "runtime": {
           "MessManagement.Shared.dll": {
@@ -740,6 +774,20 @@
       "type": "runtimepack",
       "serviceable": false,
       "sha512": ""
+    },
+    "CommunityToolkit.Maui/12.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-hvS8bGWK9bVuZ7TnfLfgD0mv4AOfDvlSqImPrN/HHWqx6eatj9yOXVrVClhcO1vR8eu0cl4og6MrhW7Rh+mBGw==",
+      "path": "communitytoolkit.maui/12.2.0",
+      "hashPath": "communitytoolkit.maui.12.2.0.nupkg.sha512"
+    },
+    "CommunityToolkit.Maui.Core/12.2.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-dZSchcT3VmjBC8K//QAMbYF22XxHmn/TdF0rDcBoZSJ66VkuDycXtj7pYmuONCNoSxpiFsXjNgUQkPjbRZAciw==",
+      "path": "communitytoolkit.maui.core/12.2.0",
+      "hashPath": "communitytoolkit.maui.core.12.2.0.nupkg.sha512"
     },
     "CommunityToolkit.Mvvm/8.4.0": {
       "type": "package",
@@ -1013,6 +1061,13 @@
       "sha512": "sha512-EYGgN/S+HK7S6F3GaaPLFAfK0UzMrkXFyWCvXpQWFYmZln3dqtbyIO7VuTM/iIIPMzkelg8ZLlBPvMhxj6nOAA==",
       "path": "system.identitymodel.tokens.jwt/8.14.0",
       "hashPath": "system.identitymodel.tokens.jwt.8.14.0.nupkg.sha512"
+    },
+    "System.Speech/9.0.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-nPZ2rcEVaZlxaLwBamFzz8f5MVM7Y08kzmDbcedXgeSWCGS9NN8mFjSsuTZm3W5pQLI4QhHmcu4h7A0Wf+cD/Q==",
+      "path": "system.speech/9.0.5",
+      "hashPath": "system.speech.9.0.5.nupkg.sha512"
     },
     "MessManagement.Shared/1.0.0": {
       "type": "project",

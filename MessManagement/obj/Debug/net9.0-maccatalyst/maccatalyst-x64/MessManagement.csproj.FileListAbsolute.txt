@@ -317,3 +317,6 @@ H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\ma
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\MessManagement.genruntimeconfig.cache
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\ref\MessManagement.dll
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\MessManagement.sourcelink.json
+H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\CommunityToolkit.Maui.dll
+H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\CommunityToolkit.Maui.Core.dll
+H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\f\MaterialIcons-Regular.ttf

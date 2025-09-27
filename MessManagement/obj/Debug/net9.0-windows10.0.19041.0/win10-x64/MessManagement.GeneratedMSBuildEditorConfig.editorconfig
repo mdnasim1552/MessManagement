@@ -51,11 +51,11 @@ build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.MVVM.Views.
 build_metadata.AdditionalFiles.TargetPath = MVVM\Views\LoginPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MVVM\Views\LoginPage.xaml
 
-[H:/Mess management/MessManagement/MessManagement/MVVM/Views/LogoutPage.xaml]
+[H:/Mess management/MessManagement/MessManagement/MVVM/Views/LRAppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.MVVM.Views.LogoutPage.xaml
-build_metadata.AdditionalFiles.TargetPath = MVVM\Views\LogoutPage.xaml
-build_metadata.AdditionalFiles.RelativePath = MVVM\Views\LogoutPage.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.MVVM.Views.LRAppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = MVVM\Views\LRAppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = MVVM\Views\LRAppShell.xaml
 
 [H:/Mess management/MessManagement/MessManagement/MVVM/Views/MessWizardPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

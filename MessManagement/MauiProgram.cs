@@ -1,4 +1,6 @@
-﻿using MessManagement.MVVM.ViewModels;
+﻿using CommunityToolkit.Maui;
+using MessManagement.Helpers;
+using MessManagement.MVVM.ViewModels;
 using MessManagement.MVVM.Views;
 using MessManagement.Services;
 using Microsoft.Extensions.Configuration;
@@ -18,10 +20,12 @@ namespace MessManagement
 
             builder
                 .UseMauiApp<App>()
+                .UseMauiCommunityToolkit()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
+                    fonts.AddFont("MaterialIcons-Regular.ttf", "MaterialIcons");
                 });
             // 🔹 Determine environment
             string environment = "Production";
@@ -76,6 +80,8 @@ namespace MessManagement
 
             builder.Services.AddSingleton<AuthService>();
             builder.Services.AddSingleton<MessService>();
+            builder.Services.AddSingleton<JwtHelper>();
+
             builder.Services.AddHttpClient<AuthService>(c => c.BaseAddress = new Uri(apiBaseUrl));
             builder.Services.AddHttpClient<MessService>(c => c.BaseAddress = new Uri(apiBaseUrl));
 

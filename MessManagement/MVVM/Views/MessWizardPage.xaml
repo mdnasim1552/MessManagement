@@ -3,15 +3,16 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MessManagement.MVVM.Views.MessWizardPage"
              xmlns:Converters="clr-namespace:MessManagement.Converters"
+             xmlns:icons="clr-namespace:MessManagement.MVVM.Models"
              Title="Mess Wizard"
-             BackgroundColor="#F7F8FA">
+             BackgroundColor="{AppThemeBinding Light='#F7F8FA',Dark={StaticResource Black}}">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Converters:IndexToMemberHeadingConverter x:Key="IndexToHeadingConverter" />
             
         </ResourceDictionary>
     </ContentPage.Resources>
-    <Grid Padding="24" RowSpacing="24">
+    <Grid Padding="20" RowSpacing="24">
         <!--<Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
@@ -27,17 +28,17 @@
 
             <Border class="MessWizardCardStyle" Grid.Row="1">
                 <Border Stroke="#CBD5E1" StrokeThickness="1" Padding="10" Margin="5" HeightRequest="300" VerticalOptions="Start"
-                     BackgroundColor="#F1F5F9"
+                     BackgroundColor="{AppThemeBinding Light='#F1F5F9',Dark={StaticResource Gray400}}"
                      StrokeShape="RoundRectangle 8">
                     <VerticalStackLayout Spacing="8" Padding="0,6">
-                        <Label Text="Mess Name:" FontAttributes="Bold" TextColor="#4A5568"/>
+                        <Label Text="Mess Name:" FontAttributes="Bold" TextColor="{AppThemeBinding Light='#4A5568',Dark={StaticResource White}}"/>
                         <Entry Text="{Binding MessName}" Placeholder="Enter mess name" Style="{StaticResource StyledEntry}" />
 
-                        <Label Text="Description:" FontAttributes="Bold" TextColor="#4A5568"/>
+                        <Label Text="Description:" FontAttributes="Bold" TextColor="{AppThemeBinding Light='#4A5568',Dark={StaticResource White}}"/>
                         <Editor Text="{Binding Description}" Placeholder="Enter description" AutoSize="TextChanges" Style="{StaticResource StyledEditor}"/>
 
-                        <Label Text="Month:" FontAttributes="Bold" TextColor="#4A5568"/>
-                        <DatePicker Date="{Binding Month}" TextColor="#2D3748" Margin="0,0,0,8"/>
+                        <Label Text="Month:" FontAttributes="Bold" TextColor="{AppThemeBinding Light='#4A5568',Dark={StaticResource White}}"/>
+                        <DatePicker Date="{Binding Month}" TextColor="{AppThemeBinding Light='#4A5568',Dark={StaticResource White}}" Margin="0,0,0,8"/>
 
                         
                     </VerticalStackLayout>
@@ -65,10 +66,10 @@
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Border Stroke="#CBD5E1" StrokeThickness="1" Padding="10" Margin="5"
-                                    BackgroundColor="#F1F5F9"
+                                    BackgroundColor="{AppThemeBinding Light='#F1F5F9',Dark={StaticResource Gray400}}"
                                     StrokeShape="RoundRectangle 8">
                                 <VerticalStackLayout Spacing="8" Padding="0,6">
-                                    <Label Text="{Binding Heading}" FontAttributes="Bold" FontSize="16" TextColor="{StaticResource Primary01}"/>
+                                    <Label Text="{Binding Heading}" FontAttributes="Bold" FontSize="16" TextColor="{AppThemeBinding Light={StaticResource Primary},Dark={StaticResource White} }"/>
                                     <Entry Placeholder="Name" Text="{Binding Name}" Style="{StaticResource StyledEntry}" />
                                     <Entry Placeholder="Email" Text="{Binding Email}" Style="{StaticResource StyledEntry}" />
                                     <Picker Title="Role" SelectedItem="{Binding Role}" Margin="0,0,0,8">
@@ -80,7 +81,7 @@
                                             </x:Array>
                                         </Picker.ItemsSource>
                                     </Picker>
-                                    <Button Text="🗑 Delete"
+                                    <Button Text="Delete"
                                             TextColor="Red"
                                             BackgroundColor="#FFF5F5"
                                             FontAttributes="Bold"
@@ -88,7 +89,15 @@
                                             CommandParameter="{Binding .}"
                                             CornerRadius="8"
                                             HeightRequest="36"
-                                            FontSize="14"/>
+                                            FontSize="14">
+                                        <Button.ImageSource>
+                                            <FontImageSource Glyph="{x:Static icons:IconFont.Delete}" 
+                                                FontFamily="MaterialIcons"
+                                                             Color="Red"
+                                                         Size="24"/>
+                                        </Button.ImageSource>
+
+                                    </Button>
                                 </VerticalStackLayout>
                             </Border>
                         </DataTemplate>

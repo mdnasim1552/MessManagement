@@ -38,6 +38,9 @@ namespace MessManagement.MVVM.ViewModels
             try
             {
                 // Navigate to RegisterPage using Shell routing
+                //var registerPage = App.Current.Handler.MauiContext.Services.GetService<RegisterPage>();
+                //await Application.Current.MainPage.Navigation.PushAsync(registerPage);
+
                 await Shell.Current.GoToAsync($"{nameof(RegisterPage)}");
             }
             catch (Exception ex)
@@ -75,10 +78,11 @@ namespace MessManagement.MVVM.ViewModels
 
                 // Optionally save user info locally (e.g., for dashboard)
                 Preferences.Set("user_name", userdto.FullName);
-                Preferences.Set("user_email", userdto.Email);
+                Preferences.Set("user_email", userdto.Email);        
+                Application.Current.MainPage = new AppShell();
 
                 // Navigate to Dashboard/Main page
-                await Shell.Current.GoToAsync($"//{nameof(MainPage)}"); // make sure MainPage route exists in AppShell
+                //await Shell.Current.GoToAsync($"//{nameof(MainPage)}"); // make sure MainPage route exists in AppShell
                 //await Application.Current.MainPage.DisplayAlert("Welcome", $"Hello {result.FullName}", "OK");
                 // Save Token in SecureStorage for later API calls
                 //await SecureStorage.SetAsync("auth_token", result.Token);

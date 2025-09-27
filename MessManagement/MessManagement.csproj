@@ -72,6 +72,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="12.2.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="9.0.9" />
 		<PackageReference Include="Microsoft.Extensions.Http" Version="9.0.9" />
@@ -88,7 +89,7 @@
 	  <MauiXaml Update="MVVM\Views\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="MVVM\Views\LogoutPage.xaml">
+	  <MauiXaml Update="MVVM\Views\LRAppShell.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="MVVM\Views\MessWizardPage.xaml">

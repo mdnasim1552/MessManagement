@@ -5,7 +5,7 @@
       {
         "Path": "MessManagement\\MessManagement.csproj",
         "Action": "Start",
-        "DebugTarget": "Android Emulator"
+        "DebugTarget": "Pixel 7 - API 35 (Android 15.0 - API 35)"
       },
       {
         "Path": "MessApi\\MessApi.csproj",

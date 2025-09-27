@@ -172,4 +172,5 @@ H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\refint\MessApi.dll
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\MessApi.pdb
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\MessApi.genruntimeconfig.cache
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\ref\MessApi.dll
+H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\MessApi.sourcelink.json
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

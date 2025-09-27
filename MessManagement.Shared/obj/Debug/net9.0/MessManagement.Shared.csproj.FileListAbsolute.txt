@@ -9,3 +9,4 @@ H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net9.0\MessMan
 H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net9.0\refint\MessManagement.Shared.dll
 H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net9.0\MessManagement.Shared.pdb
 H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net9.0\ref\MessManagement.Shared.dll
+H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net9.0\MessManagement.Shared.sourcelink.json

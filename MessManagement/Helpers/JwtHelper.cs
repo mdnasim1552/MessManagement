@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MessManagement.MVVM.Views;
+using MessManagement.Services;
+using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
@@ -7,9 +9,14 @@ using System.Threading.Tasks;
 
 namespace MessManagement.Helpers
 {
-    public static class JwtHelper
+    public class JwtHelper
     {
-        public static bool IsTokenExpired(string token)
+        private readonly AuthService _authService;
+        public JwtHelper(AuthService authService)
+        {
+            _authService = authService;
+        }
+        public async Task<bool> IsTokenExpired(string token)
         {
             if (string.IsNullOrWhiteSpace(token))
                 return true; // treat empty token as expired
@@ -35,6 +42,49 @@ namespace MessManagement.Helpers
             var expiryDate = DateTimeOffset.FromUnixTimeSeconds(long.Parse(exp.ToString()));
 
             return expiryDate <= DateTimeOffset.UtcNow;
+        }
+        public async Task<bool> CheckLoginStatusAsync()
+        {
+            try
+            {
+                var token = await SecureStorage.GetAsync("auth_token");
+
+                if (string.IsNullOrEmpty(token))
+                {
+                    return false;
+                }
+                else
+                {
+                    bool isExpired =await IsTokenExpired(token);
+                    if (isExpired)
+                    {
+                        var refreshToken = await SecureStorage.GetAsync("refresh_token");
+
+                        var result = await _authService.RefreshTokenAsync(refreshToken);
+                        if (result == null)
+                        {
+                            await SecureStorage.SetAsync("auth_token", "");
+                            await SecureStorage.SetAsync("refresh_token", "");
+                            return false;
+                        }
+                        else
+                        {
+                            await SecureStorage.SetAsync("auth_token", result.Data.Token);
+                            await SecureStorage.SetAsync("refresh_token", result.Data.RefreshToken);                           
+                            return true;
+                        }
+
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

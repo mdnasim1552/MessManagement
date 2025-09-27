@@ -19,8 +19,6 @@ public partial class CommonBill
     [Column(TypeName = "decimal(10, 2)")]
     public decimal Amount { get; set; }
 
-    public DateOnly BillDate { get; set; }
-
     [ForeignKey("MessId")]
     [InverseProperty("CommonBills")]
     public virtual Mess Mess { get; set; } = null!;
