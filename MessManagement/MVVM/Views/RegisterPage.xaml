@@ -5,12 +5,7 @@
              x:DataType="vm:RegisterViewModel"
              xmlns:vm="clr-namespace:MessManagement.MVVM.ViewModels"
              Title="Register"
-             Shell.FlyoutBehavior="Disabled"
-             Shell.NavBarIsVisible="True"
-             Shell.BackgroundColor="#F7F8FA"
-             Shell.TitleColor="Black"
-             Shell.ForegroundColor="Black"
-             BackgroundColor="#F7F8FA">
+             Background="{AppThemeBinding Light=#F7F8FA,Dark=black}">
     <Grid>
         <Border
            class="PrimaryCardStyle">
@@ -18,27 +13,27 @@
                 <Label Text="Create Account"
                         FontSize="24"
                         FontAttributes="Bold"
-                        TextColor="{StaticResource Primary01}"
+                        TextColor="{StaticResource Primary}"
                         HorizontalOptions="Center"
                         Margin="0,0,0,10"/>
 
                 <Entry Placeholder="Full Name"
                     Text="{Binding Fullname}"
                     Keyboard="Default"
-                    BackgroundColor="#f3f4f6"
+                    BackgroundColor="{AppThemeBinding Light=#f3f4f6,Dark=black}"
                     Margin="0,0,0,5"
                     HeightRequest="45"/>
 
                 <Entry Placeholder="Email"
                    Text="{Binding Email}"
                    Keyboard="Email"
-                   BackgroundColor="#f3f4f6"
+                   BackgroundColor="{AppThemeBinding Light=#f3f4f6,Dark=black}"
                    Margin="0,0,0,5"
                    HeightRequest="45" />
                 <Entry Placeholder="Password"
                     Text="{Binding Password}"
                     IsPassword="True"
-                    BackgroundColor="#f3f4f6"
+                    BackgroundColor="{AppThemeBinding Light=#f3f4f6,Dark=black}"
                     Margin="0,0,0,5"
                     HeightRequest="45"/>
                 
