@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace MessApi.Models;
 
-[Index("MessId", "UserId", "MealDate", Name = "UQ__Meals__8A69AE4C9E41CEAE", IsUnique = true)]
+[Index("MessId", "MessMemberId", "MealDate", Name = "UQ__Meals__8A69AE4C9E41CEAE", IsUnique = true)]
 public partial class Meal
 {
     [Key]
@@ -14,7 +14,7 @@ public partial class Meal
 
     public int MessId { get; set; }
 
-    public int UserId { get; set; }
+    public int MessMemberId { get; set; }
 
     public DateOnly MealDate { get; set; }
 
@@ -31,7 +31,7 @@ public partial class Meal
     [InverseProperty("Meals")]
     public virtual Mess Mess { get; set; } = null!;
 
-    [ForeignKey("UserId")]
+    [ForeignKey("MessMemberId")]
     [InverseProperty("Meals")]
-    public virtual User User { get; set; } = null!;
+    public virtual MessMember MessMember { get; set; } = null!;
 }

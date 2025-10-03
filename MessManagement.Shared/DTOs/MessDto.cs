@@ -9,5 +9,6 @@
         public int CreatedBy { get; set; }
         public DateTime? CreatedAt { get; set; }
         public List<MessMemberDto> MessMembers { get; set; } = new List<MessMemberDto>();
+        public List<CommonBillDto> CommonBills { get; set; } = new List<CommonBillDto>();
     }
 }

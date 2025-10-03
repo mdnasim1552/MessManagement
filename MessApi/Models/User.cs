@@ -36,9 +36,6 @@ public partial class User
     [InverseProperty("User")]
     public virtual ICollection<MarketCost> MarketCosts { get; set; } = new List<MarketCost>();
 
-    [InverseProperty("User")]
-    public virtual ICollection<Meal> Meals { get; set; } = new List<Meal>();
-
     [InverseProperty("CreatedByNavigation")]
     public virtual ICollection<Mess> Messes { get; set; } = new List<Mess>();
 

@@ -5,8 +5,8 @@ H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net9.0\MessMan
 H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net9.0\MessManagement.Shared.AssemblyInfoInputs.cache
 H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net9.0\MessManagement.Shared.AssemblyInfo.cs
 H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net9.0\MessManagement.Shared.csproj.CoreCompileInputs.cache
+H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net9.0\MessManagement.Shared.sourcelink.json
 H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net9.0\MessManagement.Shared.dll
 H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net9.0\refint\MessManagement.Shared.dll
 H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net9.0\MessManagement.Shared.pdb
 H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net9.0\ref\MessManagement.Shared.dll
-H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net9.0\MessManagement.Shared.sourcelink.json

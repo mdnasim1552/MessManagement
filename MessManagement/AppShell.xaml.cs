@@ -6,10 +6,12 @@ namespace MessManagement
 {
     public partial class AppShell : Shell
     {
+        private readonly UserSessionService _userSession;
         //private readonly JwtHelper _jwtHelper;
         public AppShell()
         {
             InitializeComponent();
+            _userSession = App.Current.Handler.MauiContext.Services.GetService<UserSessionService>();
             //_jwtHelper = jwtHelper;
             // Register your pages with Shell
             //Routing.RegisterRoute(nameof(RegisterPage), typeof(RegisterPage));
@@ -19,6 +21,7 @@ namespace MessManagement
         
         private void Button_Clicked(object sender, EventArgs e)
         {
+            _userSession.ClearUser();
             SecureStorage.Remove("auth_token");
             SecureStorage.Remove("refresh_token");
             //Shell.Current.GoToAsync($"//{nameof(LoginPage)}");

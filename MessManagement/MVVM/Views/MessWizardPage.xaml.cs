@@ -22,5 +22,19 @@ public partial class MessWizardPage : ContentPage
                 }
             });
         };
+        vm.CommonBillAdded += async commonBill =>
+        {
+            await CommonBillCollection.Dispatcher.DispatchAsync(() =>
+            {
+                if (vm.Members.Count > 0)
+                {
+                    CommonBillCollection.ScrollTo(
+                        item: commonBill,           // scroll by item
+                        position: ScrollToPosition.End,
+                        animate: true
+                    );
+                }
+            });
+        };
     }
 }

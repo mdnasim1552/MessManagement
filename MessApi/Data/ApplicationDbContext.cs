@@ -56,7 +56,7 @@ public partial class ApplicationDbContext : DbContext
 
             entity.HasOne(d => d.Mess).WithMany(p => p.Meals).HasConstraintName("FK__Meals__MessId__66603565");
 
-            entity.HasOne(d => d.User).WithMany(p => p.Meals)
+            entity.HasOne(d => d.MessMember).WithMany(p => p.Meals)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Meals__UserId__6754599E");
         });
@@ -100,6 +100,7 @@ public partial class ApplicationDbContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK__Users__3214EC07148AD525");
 
+            entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
         });
 

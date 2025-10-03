@@ -45,7 +45,7 @@
                 </Border>
                 
             </Border>
-            <Button Text="Next" Command="{Binding NextButtonCommand}" Grid.Row="2"
+            <Button Text="Next" Command="{Binding NextButtonCommand}" Grid.Row="2" Margin="0,8,0,0"
                 Style="{StaticResource PrimaryButton}"
                 HorizontalOptions="End"/>
         </Grid>
@@ -106,6 +106,65 @@
             </Border>
 
             <Button Grid.Row="2" Text="+ Add Another Member" Command="{Binding AddMemberButtonCommand}" Style="{StaticResource PrimaryButton}" Margin="0,8,0,0" />
+
+            <HorizontalStackLayout HorizontalOptions="End" Spacing="12" Grid.Row="3">
+                <Button Text="Back" Command="{Binding BackButtonCommand}" Style="{StaticResource SecondaryButton}" Margin="0,8,0,0"/>
+                <Button Text="Next" Command="{Binding NextButtonCommand}" Grid.Row="2" Margin="0,8,0,0"
+                    Style="{StaticResource PrimaryButton}"
+                    HorizontalOptions="End"/>
+                <!--<Button Text="Finish" Command="{Binding FinishButtonCommand}" Style="{StaticResource PrimaryButton}" Margin="0,8,0,0" />-->
+            </HorizontalStackLayout>
+        </Grid>
+
+
+
+        <Grid IsVisible="{Binding IsStep3Visible}" Grid.Row="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Text="Step 3 - Add Common bills" Style="{StaticResource SectionLabel}" />
+
+            <Border Grid.Row="1"
+            class="MessWizardCardStyle">
+                <CollectionView x:Name="CommonBillCollection" ItemsSource="{Binding CommonBills}" VerticalOptions="Fill">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Border Stroke="#CBD5E1" StrokeThickness="1" Padding="10" Margin="5"
+                            BackgroundColor="{AppThemeBinding Light='#F1F5F9',Dark={StaticResource Gray400}}"
+                            StrokeShape="RoundRectangle 8">
+                                <VerticalStackLayout Spacing="8" Padding="0,6">
+                                    <Label Text="{Binding Heading}" FontAttributes="Bold" FontSize="16" TextColor="{AppThemeBinding Light={StaticResource Primary},Dark={StaticResource White} }"/>
+                                    <Entry Placeholder="Bill type" Text="{Binding BillType}" Style="{StaticResource StyledEntry}" />
+                                    <Entry Placeholder="Bill amount" Text="{Binding Amount}" Style="{StaticResource StyledEntry}" />
+                                    
+                                    <Button Text="Delete"
+                                    TextColor="Red"
+                                    BackgroundColor="#FFF5F5"
+                                    FontAttributes="Bold"
+                                    Command="{Binding BindingContext.RemoveCommonBillCommand, Source={x:Reference CommonBillCollection}}"
+                                    CommandParameter="{Binding .}"
+                                    CornerRadius="8"
+                                    HeightRequest="36"
+                                    FontSize="14">
+                                        <Button.ImageSource>
+                                            <FontImageSource Glyph="{x:Static icons:IconFont.Delete}" 
+                                        FontFamily="MaterialIcons"
+                                                     Color="Red"
+                                                 Size="24"/>
+                                        </Button.ImageSource>
+
+                                    </Button>
+                                </VerticalStackLayout>
+                            </Border>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Border>
+
+            <Button Grid.Row="2" Text="+ Add Another Common Bill" Command="{Binding AddCommonBillButtonCommand}" Style="{StaticResource PrimaryButton}" Margin="0,8,0,0" />
 
             <HorizontalStackLayout HorizontalOptions="End" Spacing="12" Grid.Row="3">
                 <Button Text="Back" Command="{Binding BackButtonCommand}" Style="{StaticResource SecondaryButton}" Margin="0,8,0,0"/>

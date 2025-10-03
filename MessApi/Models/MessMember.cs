@@ -26,6 +26,9 @@ public partial class MessMember
     [Column(TypeName = "datetime")]
     public DateTime? JoinedAt { get; set; }
 
+    [InverseProperty("MessMember")]
+    public virtual ICollection<Meal> Meals { get; set; } = new List<Meal>();
+
     [ForeignKey("MessId")]
     [InverseProperty("MessMembers")]
     public virtual Mess Mess { get; set; } = null!;
