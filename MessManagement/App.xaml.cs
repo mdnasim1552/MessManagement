@@ -4,6 +4,7 @@ using MessManagement.Services;
 using MessManagement.Shared.DTOs;
 using Microsoft.Extensions.DependencyInjection;
 using System;
+using System.Text.Json;
 
 namespace MessManagement
 {
@@ -24,8 +25,7 @@ namespace MessManagement
                     VerticalOptions = LayoutOptions.Center,
                     HorizontalOptions = LayoutOptions.Center
                 }
-            };
-
+            };          
         }
         protected override async void OnStart()
         {
@@ -36,10 +36,12 @@ namespace MessManagement
         {
             if (await _jwtHelper.CheckLoginStatusAsync())
             {
+                _jwtHelper.SetCurrentUser();
                 MainPage = new AppShell();
             }
             else
             {
+                _jwtHelper.ClearCurrentUser();
                 //MainPage = new NavigationPage(_serviceProvider.GetService<LoginPage>());
                 MainPage = new LRAppShell();
             }

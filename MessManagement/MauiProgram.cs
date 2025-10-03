@@ -81,6 +81,7 @@ namespace MessManagement
             builder.Services.AddSingleton<AuthService>();
             builder.Services.AddSingleton<MessService>();
             builder.Services.AddSingleton<JwtHelper>();
+            builder.Services.AddSingleton<UserSessionService>();
 
             builder.Services.AddHttpClient<AuthService>(c => c.BaseAddress = new Uri(apiBaseUrl));
             builder.Services.AddHttpClient<MessService>(c => c.BaseAddress = new Uri(apiBaseUrl));

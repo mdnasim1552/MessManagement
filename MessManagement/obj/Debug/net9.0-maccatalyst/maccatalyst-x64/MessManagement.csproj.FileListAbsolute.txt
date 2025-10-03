@@ -1,6 +1,8 @@
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\MessManagement.runtimeconfig.json
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\MessManagement.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\MessManagement.pdb
+H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\CommunityToolkit.Maui.dll
+H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\CommunityToolkit.Maui.Core.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\CommunityToolkit.Mvvm.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\Microsoft.Extensions.Configuration.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\Microsoft.Extensions.Configuration.Abstractions.dll
@@ -292,6 +294,7 @@ H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\ma
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauiimage.outputs
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\f\MauiInfo.plist
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauifont.stamp
+H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\f\MaterialIcons-Regular.ttf
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\f\OpenSans-Regular.ttf
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\f\OpenSans-Semibold.ttf
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\actool\_PartialAppManifest.items
@@ -309,6 +312,7 @@ H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\ma
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\MessManagement.AssemblyInfoInputs.cache
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\MessManagement.AssemblyInfo.cs
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\MessManagement.csproj.CoreCompileInputs.cache
+H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\MessManagement.sourcelink.json
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\XamlC.stamp
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\MessMana.9D8961FF.Up2Date
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\MessManagement.dll
@@ -316,7 +320,3 @@ H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\ma
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\MessManagement.pdb
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\MessManagement.genruntimeconfig.cache
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\ref\MessManagement.dll
-H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\MessManagement.sourcelink.json
-H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\CommunityToolkit.Maui.dll
-H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\CommunityToolkit.Maui.Core.dll
-H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\f\MaterialIcons-Regular.ttf

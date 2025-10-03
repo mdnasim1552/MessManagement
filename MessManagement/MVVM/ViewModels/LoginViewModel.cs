@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -15,6 +16,7 @@ namespace MessManagement.MVVM.ViewModels
     public partial class LoginViewModel : ObservableObject
     {
         private readonly AuthService _authService;
+        private readonly UserSessionService _userSession;
 
         [ObservableProperty]
         private string email;
@@ -25,9 +27,10 @@ namespace MessManagement.MVVM.ViewModels
         //public ICommand GoogleLoginCommand { get; }
         //public ICommand RegisterCommand { get; }
 
-        public LoginViewModel(AuthService authService)
+        public LoginViewModel(AuthService authService, UserSessionService userSession)
         {
             _authService = authService;
+            _userSession = userSession;
             //LoginCommand = new Command(async () => await LoginAsync());
             //GoogleLoginCommand = new Command(async () => await GoogleLoginAsync());
             //RegisterCommand = new Command(async () => await RegisterAsync());
@@ -76,9 +79,11 @@ namespace MessManagement.MVVM.ViewModels
                 await SecureStorage.SetAsync("auth_token", result.Data.Token);
                 await SecureStorage.SetAsync("refresh_token", result.Data.RefreshToken);
 
-                // Optionally save user info locally (e.g., for dashboard)
-                Preferences.Set("user_name", userdto.FullName);
-                Preferences.Set("user_email", userdto.Email);        
+                Preferences.Set("current_user", JsonSerializer.Serialize(userdto));
+
+                // Save in-memory session
+                _userSession.SetUser(userdto);
+
                 Application.Current.MainPage = new AppShell();
 
                 // Navigate to Dashboard/Main page

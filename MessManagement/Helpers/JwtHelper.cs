@@ -1,10 +1,12 @@
 ﻿using MessManagement.MVVM.Views;
 using MessManagement.Services;
+using MessManagement.Shared.DTOs;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace MessManagement.Helpers
@@ -12,9 +14,11 @@ namespace MessManagement.Helpers
     public class JwtHelper
     {
         private readonly AuthService _authService;
-        public JwtHelper(AuthService authService)
+        private readonly UserSessionService _userSession;
+        public JwtHelper(AuthService authService, UserSessionService userSession)
         {
             _authService = authService;
+            _userSession = userSession;
         }
         public async Task<bool> IsTokenExpired(string token)
         {
@@ -63,8 +67,6 @@ namespace MessManagement.Helpers
                         var result = await _authService.RefreshTokenAsync(refreshToken);
                         if (result == null)
                         {
-                            await SecureStorage.SetAsync("auth_token", "");
-                            await SecureStorage.SetAsync("refresh_token", "");
                             return false;
                         }
                         else
@@ -85,6 +87,18 @@ namespace MessManagement.Helpers
             {
                 return false;
             }
+        }
+        public void SetCurrentUser() {
+            var json = Preferences.Get("current_user", null);
+            var user = JsonSerializer.Deserialize<UserDto>(json);
+            _userSession.SetUser(user);
+        }
+        public void ClearCurrentUser()
+        {
+            _userSession.ClearUser();
+            Preferences.Remove("current_user");
+            SecureStorage.Remove("auth_token");
+            SecureStorage.Remove("refresh_token");
         }
     }
 }
