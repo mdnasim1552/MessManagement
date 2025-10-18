@@ -17,8 +17,13 @@ namespace MessManagement
             //Routing.RegisterRoute(nameof(RegisterPage), typeof(RegisterPage));
             //Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
             //Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
+
+            // Register child page routes for navigation
+            //Routing.RegisterRoute(nameof(MessMembersPage), typeof(MessMembersPage));
+            //Routing.RegisterRoute(nameof(MealsPage), typeof(MealsPage));
+            //Routing.RegisterRoute(nameof(CommonBillPage), typeof(CommonBillPage));
         }
-        
+
         private void Button_Clicked(object sender, EventArgs e)
         {
             _userSession.ClearUser();
@@ -26,6 +31,8 @@ namespace MessManagement
             SecureStorage.Remove("refresh_token");
             //Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
             Application.Current.MainPage = new LRAppShell();
+            //Application.Current.MainPage = new NavigationPage(new LRAppShell());
+
             //Application.Current.MainPage = new NavigationPage(App.Current.Handler.MauiContext.Services.GetService<LoginPage>());
             //Application.Current.MainPage = App.Current.Handler.MauiContext.Services.GetService<LoginPage>();
 

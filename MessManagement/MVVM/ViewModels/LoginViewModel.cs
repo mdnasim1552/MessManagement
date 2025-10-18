@@ -85,6 +85,7 @@ namespace MessManagement.MVVM.ViewModels
                 _userSession.SetUser(userdto);
 
                 Application.Current.MainPage = new AppShell();
+                //Application.Current.MainPage = new NavigationPage(new AppShell());
 
                 // Navigate to Dashboard/Main page
                 //await Shell.Current.GoToAsync($"//{nameof(MainPage)}"); // make sure MainPage route exists in AppShell

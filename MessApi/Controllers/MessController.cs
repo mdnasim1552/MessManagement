@@ -39,6 +39,7 @@ namespace MessApi.Controllers
                 {
                     Name = m.Name,
                     Email = m.Email,
+                    Rent=m.Rent,
                     Role = m.Role ?? "Member",
                     JoinedAt = DateTime.UtcNow
                 }).ToList(),
@@ -83,6 +84,307 @@ namespace MessApi.Controllers
                 return BadRequest(ApiResponse<string>.FailureResponse("Mess creation failed."));
 
             return Ok(ApiResponse<string>.SuccessResponse("Mess created successfully."));
+        }
+
+        [Authorize]
+        [HttpGet("get-mess")]
+        public async Task<IActionResult> GetMess()
+        {
+            try
+            {
+                var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                var userEmailClaim = User.FindFirst(ClaimTypes.Email)?.Value;
+
+                if (string.IsNullOrEmpty(userIdClaim) || string.IsNullOrEmpty(userEmailClaim))
+                    return Unauthorized(ApiResponse<List<MessDto>>.FailureResponse("Invalid token."));
+
+                var userId = int.Parse(userIdClaim);
+                var userEmail = userEmailClaim;
+                var allUserMesses= await _unitOfWork.Mess.GetMessSummaryAsync(userId);
+                //// Get all messes created by user
+                //var createdMesses = await _unitOfWork.Mess.GetAllAsync();
+                //var userCreatedMesses = createdMesses
+                //    .Where(m => m.CreatedBy == userId)
+                //    .ToList();
+
+                //// Get all mess memberships by user's email
+                //var allMembers = await _unitOfWork.MessMember.GetAllAsync();
+                //var memberMessIds = allMembers
+                //    .Where(mm => mm.Email.Equals(userEmail, StringComparison.OrdinalIgnoreCase))
+                //    .Select(mm => mm.MessId)
+                //    .Distinct()
+                //    .ToList();
+
+                //// 4️⃣ Get messes where user is a member
+                //var memberMesses = createdMesses
+                //    .Where(m => memberMessIds.Contains(m.MessId))
+                //    .ToList();
+
+                //// 5️⃣ Combine both (remove duplicates)
+                //var allUserMesses = userCreatedMesses
+                //    .Union(memberMesses)
+                //    .Select(m => new MessDto
+                //    {
+                //        MessId = m.MessId,
+                //        MessName = m.MessName,
+                //        Description = m.Description,
+                //        Month = m.Month,
+                //        IsCreatedByCurrentUser = m.CreatedBy == userId
+                //    })
+                //    .ToList();
+
+                return Ok(ApiResponse<List<MessDto>>.SuccessResponse(allUserMesses));
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ApiResponse<List<MessDto>>.FailureResponse(ex.Message));
+            }           
+        }
+        [Authorize]
+        [HttpDelete("delete-mess/{messId}")]
+        public async Task<IActionResult> DeleteMess([FromRoute] int messId)
+        {
+            try
+            {
+                var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                var userId = int.Parse(userIdClaim);
+                var mess = await _unitOfWork.Mess.FirstOrDefaultAsync(m => m.MessId == messId && m.CreatedBy == userId);
+                if (mess == null)
+                    return NotFound(ApiResponse<bool>.FailureResponse("Mess not found or you don't have permission to delete it."));
+                _unitOfWork.Mess.Remove(mess);
+                var saveResult = await _unitOfWork.SaveAsync();
+                if (!saveResult)
+                    return BadRequest(ApiResponse<bool>.FailureResponse("Failed to delete mess."));
+                return Ok(ApiResponse<bool>.SuccessResponse(true, "Mess deleted successfully."));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ApiResponse<bool>.FailureResponse(ex.Message));
+            }
+        }
+
+        [Authorize]
+        [HttpGet("get-common-bills/{messId}")]
+        public async Task<IActionResult> GetCommonBills([FromRoute] int messId)
+        {
+            try
+            {
+                var commonBills = await _unitOfWork.CommonBill.FindAsync(m => m.MessId == messId);
+                var commonBillsDto = commonBills.Select(m => new CommonBillDto
+                {
+                    BillId = m.BillId,
+                    MessId = m.MessId,
+                    BillType = m.BillType,
+                    Amount = m.Amount
+                }).ToList();
+                return Ok(ApiResponse<List<CommonBillDto>>.SuccessResponse(commonBillsDto));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ApiResponse<List<CommonBillDto>>.FailureResponse(ex.Message));
+            }
+        }
+
+        [Authorize]
+        [HttpDelete("delete-common-bills/{billId}")]
+        public async Task<IActionResult> DeleteCommonBills([FromRoute] int billId)
+        {
+            try
+            {
+                var commonBills = await _unitOfWork.CommonBill.FirstOrDefaultAsync(m => m.BillId == billId);
+
+                if (commonBills == null)
+                    return NotFound(ApiResponse<bool>.FailureResponse("Common bill not found or you don't have permission to delete it."));
+                _unitOfWork.CommonBill.Remove(commonBills);
+                var saveResult = await _unitOfWork.SaveAsync();
+                if (!saveResult)
+                    return BadRequest(ApiResponse<bool>.FailureResponse("Failed to delete Common bill."));
+                return Ok(ApiResponse<bool>.SuccessResponse(true, "Common bill is deleted successfully."));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ApiResponse<List<bool>>.FailureResponse(ex.Message));
+            }
+        }
+        [Authorize]
+        [HttpPost("update-and-save-common-bill")]
+        public async Task<IActionResult> UpdateSaveCommonBill([FromBody] CommonBillDto billDto)
+        {
+            if (billDto == null)
+                return BadRequest(ApiResponse<bool>.FailureResponse("Invalid bill data."));
+
+            try
+            {
+                CommonBill bill;
+
+                if (billDto.BillId > 0)
+                {
+                    // Existing bill: fetch from DB
+                    bill = await _unitOfWork.CommonBill.FirstOrDefaultAsync(b => b.BillId == billDto.BillId);
+                    if (bill == null)
+                        return NotFound(ApiResponse<bool>.FailureResponse("Common bill not found."));
+
+                    // Update properties
+                    bill.MessId = billDto.MessId;
+                    bill.BillType = billDto.BillType;
+                    bill.Amount = billDto.Amount;
+
+                    // Explicitly mark as updated
+                    //_unitOfWork.CommonBill.Update(bill);
+                }
+                else
+                {
+                    // New bill: create
+                    bill = new CommonBill
+                    {
+                        MessId = billDto.MessId,
+                        BillType = billDto.BillType,
+                        Amount = billDto.Amount
+                    };
+                    await _unitOfWork.CommonBill.AddAsync(bill);
+                }
+
+                // Save all changes
+                var saveResult = await _unitOfWork.SaveAsync();
+                
+                if (!saveResult)
+                    return BadRequest(ApiResponse<CommonBillDto>.FailureResponse("Failed to save common bill."));
+                billDto.BillId = bill.BillId;
+                return Ok(ApiResponse<CommonBillDto>.SuccessResponse(billDto, "Common bill saved successfully."));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ApiResponse<CommonBillDto>.FailureResponse(ex.Message));
+            }
+        }
+        [Authorize]
+        [HttpGet("get-market-costs/{messId}")]
+        public async Task<IActionResult> GetMarketCosts([FromRoute] int messId)
+        {
+            try
+            {
+
+                var marketCosts = await _unitOfWork.MarketCost.FindAsync(m => m.MessId == messId);
+                var marketCostsDto = marketCosts.Select(m => new MarketCostDto
+                {
+                    CostId= m.CostId,
+                    MessId = m.MessId,
+                    MessMemberId = m.MessMemberId,
+                    ExpenseDate = m.ExpenseDate.ToDateTime(TimeOnly.MinValue),
+                    ProductName = m.ProductName,
+                    Quantity = m.Quantity,
+                    Unit = m.Unit,
+                    Cost=m.Cost
+                }).ToList();
+                return Ok(ApiResponse<List<MarketCostDto>>.SuccessResponse(marketCostsDto));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ApiResponse<List<MarketCostDto>>.FailureResponse(ex.Message));
+            }
+        }
+
+        [Authorize]
+        [HttpDelete("delete-market-costs/{costId}")]
+        public async Task<IActionResult> DeleteMarketCosts([FromRoute] int costId)
+        {
+            try
+            {
+                var marketcosts = await _unitOfWork.MarketCost.FirstOrDefaultAsync(m => m.CostId == costId);
+
+                if (marketcosts == null)
+                    return NotFound(ApiResponse<bool>.FailureResponse("Common bill not found or you don't have permission to delete it."));
+                _unitOfWork.MarketCost.Remove(marketcosts);
+                var saveResult = await _unitOfWork.SaveAsync();
+                if (!saveResult)
+                    return BadRequest(ApiResponse<bool>.FailureResponse("Failed to delete Common bill."));
+                return Ok(ApiResponse<bool>.SuccessResponse(true, "Common bill is deleted successfully."));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ApiResponse<List<bool>>.FailureResponse(ex.Message));
+            }
+        }
+        [Authorize]
+        [HttpGet("get-units")]
+        public async Task<IActionResult> GetUnits()
+        {
+            try
+            {
+
+                var units = await _unitOfWork.Unit.GetAllAsync();
+                var unitDto = units.Select(m => new UnitDto
+                {
+                    Id = m.Id,
+                    Name=m.Name,
+                    ShortName=m.ShortName
+                }).ToList();
+                return Ok(ApiResponse<List<UnitDto>>.SuccessResponse(unitDto));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ApiResponse<List<UnitDto>>.FailureResponse(ex.Message));
+            }
+        }
+
+        [Authorize]
+        [HttpPost("update-and-save-market-costs")]
+        public async Task<IActionResult> UpdateSaveMarketCosts([FromBody] MarketCostDto marketCostDto)
+        {
+            if (marketCostDto == null)
+                return BadRequest(ApiResponse<MarketCostDto>.FailureResponse("Invalid market cost data."));
+
+            try
+            {
+                MarketCost marketCost;
+                if (marketCostDto.CostId > 0)
+                {
+                    // Existing bill: fetch from DB
+                    marketCost = await _unitOfWork.MarketCost.FirstOrDefaultAsync(b => b.CostId == marketCostDto.CostId);
+                    if (marketCost == null)
+                        return NotFound(ApiResponse<MarketCostDto>.FailureResponse("market cost data not found."));
+
+                    // Update properties
+                    marketCost.MessId = marketCostDto.MessId;
+                    marketCost.MessMemberId = marketCostDto.MessMemberId;
+                    marketCost.ExpenseDate = DateOnly.FromDateTime(marketCostDto.ExpenseDate);
+                    marketCost.ProductName = marketCostDto.ProductName;
+                    marketCost.Quantity = marketCostDto.Quantity;
+                    marketCost.Unit = marketCostDto.Unit;
+                    marketCost.Cost = marketCostDto.Cost;
+
+                    // Explicitly mark as updated
+                    //_unitOfWork.MarketCost.Update(marketCost);
+                }
+                else
+                {
+                    // New bill: create
+                    marketCost = new MarketCost
+                    {
+                        MessId = marketCostDto.MessId,
+                        MessMemberId = marketCostDto.MessMemberId,
+                        ExpenseDate = DateOnly.FromDateTime(marketCostDto.ExpenseDate),
+                        ProductName = marketCostDto.ProductName,
+                        Quantity = marketCostDto.Quantity,
+                        Unit = marketCostDto.Unit,
+                        Cost = marketCostDto.Cost
+
+                    };
+                    await _unitOfWork.MarketCost.AddAsync(marketCost);
+                }
+
+                // Save all changes
+                var saveResult = await _unitOfWork.SaveAsync();
+
+                if (!saveResult)
+                    return BadRequest(ApiResponse<MarketCostDto>.FailureResponse("Failed to save market costs."));
+                marketCostDto.CostId = marketCost.CostId;
+                return Ok(ApiResponse<MarketCostDto>.SuccessResponse(marketCostDto, "Market cost is saved successfully."));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ApiResponse<MarketCostDto>.FailureResponse(ex.Message));
+            }
         }
     }
 }

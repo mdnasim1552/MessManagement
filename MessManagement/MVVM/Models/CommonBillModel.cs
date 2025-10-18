@@ -15,5 +15,8 @@ namespace MessManagement.MVVM.Models
         public decimal Amount { get; set; }
         [ObservableProperty]
         public string heading = string.Empty;
+        [ObservableProperty]
+        public int index;
+
     }
 }

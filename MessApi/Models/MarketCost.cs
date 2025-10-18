@@ -13,21 +13,26 @@ public partial class MarketCost
 
     public int MessId { get; set; }
 
-    public int UserId { get; set; }
-
-    [Column(TypeName = "decimal(10, 2)")]
-    public decimal Amount { get; set; }
+    public int MessMemberId { get; set; }
 
     public DateOnly ExpenseDate { get; set; }
 
     [StringLength(250)]
-    public string? Description { get; set; }
+    public string ProductName { get; set; } = null!;
 
-    [ForeignKey("MessId")]
-    [InverseProperty("MarketCosts")]
-    public virtual Mess Mess { get; set; } = null!;
+    [Column(TypeName = "decimal(10, 2)")]
+    public decimal Quantity { get; set; }
 
-    [ForeignKey("UserId")]
+    public int? Unit { get; set; }
+
+    [Column(TypeName = "decimal(10, 2)")]
+    public decimal Cost { get; set; }
+
+    [ForeignKey("MessMemberId")]
     [InverseProperty("MarketCosts")]
-    public virtual User User { get; set; } = null!;
+    public virtual MessMember MessMember { get; set; } = null!;
+
+    [ForeignKey("Unit")]
+    [InverseProperty("MarketCosts")]
+    public virtual Unit? UnitNavigation { get; set; }
 }

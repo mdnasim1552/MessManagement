@@ -8,6 +8,11 @@
         public DateTime Month { get; set; }
         public int CreatedBy { get; set; }
         public DateTime? CreatedAt { get; set; }
+        public bool IsCreatedByCurrentUser { get; set; }
+        public decimal TotalMarketCost { get; set; }
+        public decimal TotalMeals { get; set; }
+        public decimal MealRate { get; set; }
+        public decimal CommonBillPerMember { get; set; }
         public List<MessMemberDto> MessMembers { get; set; } = new List<MessMemberDto>();
         public List<CommonBillDto> CommonBills { get; set; } = new List<CommonBillDto>();
     }

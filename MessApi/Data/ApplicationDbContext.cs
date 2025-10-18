@@ -26,6 +26,8 @@ public partial class ApplicationDbContext : DbContext
 
     public virtual DbSet<Role> Roles { get; set; }
 
+    public virtual DbSet<Unit> Units { get; set; }
+
     public virtual DbSet<User> Users { get; set; }
 
     public virtual DbSet<UserRole> UserRoles { get; set; }
@@ -43,11 +45,13 @@ public partial class ApplicationDbContext : DbContext
         {
             entity.HasKey(e => e.CostId).HasName("PK__MarketCo__8285233EDABEC44E");
 
-            entity.HasOne(d => d.Mess).WithMany(p => p.MarketCosts).HasConstraintName("FK__MarketCos__MessI__6A30C649");
-
-            entity.HasOne(d => d.User).WithMany(p => p.MarketCosts)
+            entity.HasOne(d => d.MessMember).WithMany(p => p.MarketCosts)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__MarketCos__UserI__6B24EA82");
+
+            entity.HasOne(d => d.UnitNavigation).WithMany(p => p.MarketCosts)
+                .OnDelete(DeleteBehavior.Cascade)
+                .HasConstraintName("FK__MarketCos__MessI__6A30C649");
         });
 
         modelBuilder.Entity<Meal>(entity =>
@@ -94,6 +98,13 @@ public partial class ApplicationDbContext : DbContext
         modelBuilder.Entity<Role>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK__Roles__3214EC07FA976C93");
+        });
+
+        modelBuilder.Entity<Unit>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PK__Unit__3214EC07F0A552C5");
+
+            entity.Property(e => e.ShortName).IsFixedLength();
         });
 
         modelBuilder.Entity<User>(entity =>

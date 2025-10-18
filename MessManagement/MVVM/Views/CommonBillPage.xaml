@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MessManagement.MVVM.Views.CommonBillPage"
+             Title="Common Bill"
+             xmlns:Converters="clr-namespace:MessManagement.Converters"
+             xmlns:icons="clr-namespace:MessManagement.MVVM.Models"
+             HideSoftInputOnTapped="True"
+             BackgroundColor="{AppThemeBinding Light=#EDEEEE,Dark={StaticResource Black}}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converters:ZeroToEmptyConverter x:Key="ZeroToEmptyConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid BackgroundColor="{AppThemeBinding Light='#EDEEEE',Dark={StaticResource Gray400}}" Padding="10" x:Name="MainGrid">
+        <Border Stroke="#CBD5E1" StrokeThickness="1" Grid.Row="0" StrokeShape="RoundRectangle 8"
+            BackgroundColor="{AppThemeBinding Light='#EDEEEE',Dark={StaticResource Gray400}}">
+            <Grid RowDefinitions="Auto,*" BackgroundColor="{AppThemeBinding Light='#EDEEEE',Dark={StaticResource Gray400}}">
+                <Border Stroke="#CBD5E1" StrokeThickness="1" Grid.Row="0" Padding="12"
+                    BackgroundColor="{AppThemeBinding Light='#EDEEEE',Dark={StaticResource Gray400}}">
+                     <!-- Fixed header row -->
+                    <Grid ColumnDefinitions="*,3*,3*,3*" Grid.Row="0" Margin="5,0,10,0">
+                        <Label Text="SL" FontAttributes="Bold" HorizontalOptions="Start" />
+                        <Label Text="Bill Types" FontAttributes="Bold" Grid.Column="1" HorizontalOptions="Center" />
+                        <Label Text="Amount" FontAttributes="Bold" Grid.Column="2" HorizontalOptions="Center" />
+                        <Label Text="Action" FontAttributes="Bold" Grid.Column="3" HorizontalOptions="Center" />
+                    </Grid>
+                </Border>
+                <Grid Grid.Row="1">
+                    <Grid RowDefinitions="Auto,*" BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Gray400}}">
+                    <!-- Scrollable CollectionView for meals -->
+                    <CollectionView Grid.Row="0" x:Name="CommonbillCollectionView"
+                               ItemsSource="{Binding CommonBills}"
+                               VerticalOptions="Fill"
+                               ItemsLayout="VerticalList"
+                               Margin="0,6,0,0">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                    <Grid ColumnDefinitions="*,3*,3*,3*" Padding="20,0,10,6">
+                                        <Label Grid.Column="0"
+                                               VerticalOptions="Center"
+                                               HorizontalOptions="Start"
+                                               Text="{Binding Index}" />
+                                        <Entry Text="{Binding BillType, Mode=TwoWay}" Keyboard="Text" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="Bill types" />
+                                        <Entry Text="{Binding Amount, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
+
+                                        <StackLayout Grid.Column="3"
+                                             Orientation="Horizontal"
+                                             Spacing="4"
+                                             HorizontalOptions="Center"
+                                             VerticalOptions="Center">
+                                            <Button
+                                                FontAttributes="Bold"
+                                                Command="{Binding BindingContext.AddCommonbillCommand, Source={x:Reference CommonbillCollectionView}}"
+                                                CommandParameter="{Binding .}"
+                                                CornerRadius="6"
+                                                HeightRequest="26"
+                                                WidthRequest="30"
+                                                FontSize="12">
+                                                <Button.ImageSource>
+                                                <FontImageSource Glyph="{x:Static icons:IconFont.Add}" 
+                                                    FontFamily="MaterialIcons"
+                                                 Size="16"/>
+                                                </Button.ImageSource>
+
+                                            </Button>
+
+                                            <Button
+                                                FontAttributes="Bold"
+                                                Command="{Binding BindingContext.RemoveCommonbillCommand, Source={x:Reference CommonbillCollectionView}}"
+                                                CommandParameter="{Binding .}"
+                                                CornerRadius="6"
+                                                HeightRequest="26"
+                                                WidthRequest="30"
+                                                FontSize="12">
+                                                <Button.ImageSource>
+                                                    <FontImageSource Glyph="{x:Static icons:IconFont.Remove}" 
+                                                    FontFamily="MaterialIcons" Size="16"/>
+                                                </Button.ImageSource>
+                                            </Button>
+                                    </StackLayout>
+
+
+
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                    <!-- Floating Add Button -->
+                    <Button Grid.Row="1"
+                        FontSize="32"
+                        WidthRequest="60"
+                        HeightRequest="60"
+                        CornerRadius="30"
+                        FontAttributes="Bold"
+                        Command="{Binding AddCommonbillCommand}"
+                        IsVisible="{Binding IsListEmpty}"
+                        HorizontalOptions="End"
+                        VerticalOptions="End"
+                        Margin="16">
+                        <Button.ImageSource>
+                            <FontImageSource Glyph="{x:Static icons:IconFont.Add}" 
+                                FontFamily="MaterialIcons"
+                                Size="24"/>
+                        </Button.ImageSource>
+                    </Button>
+                </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+        <Grid BackgroundColor="#88000000" IsVisible="{Binding IsBusy}">
+            <ActivityIndicator IsRunning="{Binding IsBusy}" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center"
+                       Color="Black"
+                       WidthRequest="50"
+                       HeightRequest="50"/>
+        </Grid>
+    </Grid>
+</ContentPage>

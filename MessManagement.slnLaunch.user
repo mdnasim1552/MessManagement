@@ -3,14 +3,14 @@
     "Name": "New Profile",
     "Projects": [
       {
-        "Path": "MessManagement\\MessManagement.csproj",
-        "Action": "Start",
-        "DebugTarget": "Pixel 7 - API 35 (Android 15.0 - API 35)"
-      },
-      {
         "Path": "MessApi\\MessApi.csproj",
         "Action": "Start",
         "DebugTarget": "http"
+      },
+      {
+        "Path": "MessManagement\\MessManagement.csproj",
+        "Action": "Start",
+        "DebugTarget": "Pixel 7 - API 35 (Android 15.0 - API 35)"
       }
     ]
   }

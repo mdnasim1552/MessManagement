@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MessManagement.MVVM.Views.MealsPage"
+             xmlns:Converters="clr-namespace:MessManagement.Converters"
+             Title="Meals"
+             HideSoftInputOnTapped="True"
+             BackgroundColor="{AppThemeBinding Light=#EDEEEE,Dark={StaticResource Black}}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converters:IsTodayConverter x:Key="IsTodayConverter" />
+            <Converters:ZeroToEmptyConverter x:Key="ZeroToEmptyConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid Padding="10" RowSpacing="12" RowDefinitions="Auto,*">
+
+            <!-- 🧭 Members Horizontal List -->
+            <CollectionView ItemsSource="{Binding Members}" Grid.Row="0"
+                    SelectionMode="Single"
+                    SelectedItem="{Binding SelectedMember, Mode=TwoWay}"
+                    SelectionChanged="CollectionView_SelectionChanged"
+                    ItemsLayout="HorizontalList">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border
+                        StrokeThickness="2"
+                        BackgroundColor="{AppThemeBinding Light='#F1F5F9',Dark={StaticResource Gray400}}"
+                        StrokeShape="RoundRectangle 8"
+                        Padding="10,5"
+                        Margin="5,0">
+                            <Label Text="{Binding Name}" x:Name="MemberName"
+                               FontAttributes="Bold" 
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center" />
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup>
+                                    <VisualState Name="Selected">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Primary},Dark={StaticResource Secondary}}"/>
+                                            <Setter TargetName="MemberName" Property="Label.TextColor" Value="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="{StaticResource White}"/>
+                                            <Setter TargetName="MemberName" Property="Label.TextColor" Value="{StaticResource Black}"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Border Stroke="#CBD5E1" StrokeThickness="1" Grid.Row="1"
+            BackgroundColor="{AppThemeBinding Light='#F1F5F9',Dark={StaticResource Gray400}}"
+            StrokeShape="RoundRectangle 8">
+                <!-- 🍽️ Meals Table -->
+                <!-- Bottom area: header (fixed) + meals list (scrollable) -->
+                <Grid  RowDefinitions="Auto,*" BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Gray400}}">
+                    <Border Stroke="#CBD5E1" StrokeThickness="1" Grid.Row="0" Padding="12"
+                        BackgroundColor="{AppThemeBinding Light='#EDEEEE',Dark={StaticResource Gray400}}">
+                        <!-- Fixed header row -->
+                        <Grid ColumnDefinitions="2*,*,*,*" Margin="11,0,0,0">
+                            <Label Text="Date" FontAttributes="Bold" />
+                            <Label Text="Breakfast" FontAttributes="Bold" Grid.Column="1" HorizontalOptions="Center" />
+                            <Label Text="Lunch" FontAttributes="Bold" Grid.Column="2" HorizontalOptions="Center" />
+                            <Label Text="Dinner" FontAttributes="Bold" Grid.Column="3" HorizontalOptions="Center" />
+                        </Grid>
+                    </Border>
+                    <!-- Scrollable CollectionView for meals -->
+                    <CollectionView Grid.Row="1" x:Name="MealsCollectionView"
+                                ItemsSource="{Binding Meals}"
+                                VerticalOptions="Fill"
+                                ItemsLayout="VerticalList"
+                                Margin="0,6,0,0">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnDefinitions="2*,*,*,*" Padding="21,0,10,0">
+                                    <Grid.Triggers>
+                                        <DataTrigger TargetType="Grid"
+                                         Binding="{Binding MealDate, Converter={StaticResource IsTodayConverter}}"
+                                         Value="True">
+                                            <Setter Property="BackgroundColor" Value="#FFF6E5" />
+                                        </DataTrigger>
+                                    </Grid.Triggers>
+                                    <Label Text="{Binding MealDate, StringFormat='{0:dd-MMM-yyyy}'}" HorizontalOptions="Start" VerticalOptions="Center" />
+                                    <Entry Text="{Binding Breakfast, Mode=TwoWay,Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
+                                    <Entry Text="{Binding Lunch, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
+                                    <Entry Text="{Binding Dinner, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+
+                </Grid>
+            </Border>
+        </Grid>
+        <Grid BackgroundColor="#88000000" IsVisible="{Binding IsBusy}" RowSpacing="2" Grid.Row="1">
+            <ActivityIndicator IsRunning="{Binding IsBusy}" 
+                HorizontalOptions="Center" 
+                VerticalOptions="Center"
+                Color="Black"
+                WidthRequest="50"
+                HeightRequest="50"/>
+        </Grid>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MessManagement.MVVM.Views.MarketCostsPage"
+             xmlns:Converters="clr-namespace:MessManagement.Converters"
+             xmlns:icons="clr-namespace:MessManagement.MVVM.Models"
+             HideSoftInputOnTapped="True"
+             Title="Market Costs">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Converters:IsTodayConverter x:Key="IsTodayConverter" />
+            <Converters:ZeroToEmptyConverter x:Key="ZeroToEmptyConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <Grid>
+        <Grid Padding="10" RowSpacing="12" RowDefinitions="Auto,*">
+
+        <!-- 🧭 Members Horizontal List -->
+        <CollectionView ItemsSource="{Binding Members}" Grid.Row="0"
+            SelectionMode="Single"
+            SelectedItem="{Binding SelectedMember, Mode=TwoWay}"
+            SelectionChanged="CollectionView_SelectionChanged"
+            ItemsLayout="HorizontalList">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                    StrokeThickness="2"
+                    BackgroundColor="{AppThemeBinding Light='#F1F5F9',Dark={StaticResource Gray400}}"
+                    StrokeShape="RoundRectangle 8"
+                    Padding="10,5"
+                    Margin="5,0">
+                        <Label Text="{Binding Name}" x:Name="MemberName"
+                           FontAttributes="Bold" 
+                           HorizontalOptions="Center"
+                           VerticalOptions="Center" />
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup>
+                                <VisualState Name="Selected">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Primary},Dark={StaticResource Secondary}}"/>
+                                        <Setter TargetName="MemberName" Property="Label.TextColor" Value="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                                <VisualState Name="Normal">
+                                    <VisualState.Setters>
+                                        <Setter Property="BackgroundColor" Value="{StaticResource White}"/>
+                                        <Setter TargetName="MemberName" Property="Label.TextColor" Value="{StaticResource Black}"/>
+                                    </VisualState.Setters>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </Border>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        
+
+            <!-- Fixed header row -->
+            <!--<Grid Grid.Row="0" ColumnDefinitions="*,*,*,*,*,1.5*" Padding="0,6">
+                <Label Text="Date" FontAttributes="Bold" HorizontalOptions="Center" />
+                <Label Text="Product" FontAttributes="Bold" Grid.Column="1" HorizontalOptions="Center" />
+                <Label Text="Qty" FontAttributes="Bold" Grid.Column="2" HorizontalOptions="Center" />
+                <Label Text="Unit" FontAttributes="Bold" Grid.Column="3" HorizontalOptions="Center" />
+                <Label Text="Cost" FontAttributes="Bold" Grid.Column="4" HorizontalOptions="Center" />
+                <Label Text="Action" FontAttributes="Bold" Grid.Column="5" HorizontalOptions="Center" />
+            </Grid>-->
+
+            <!-- Scrollable CollectionView for meals -->
+            <CollectionView Grid.Row="1" x:Name="MarketCostsCollectionView"
+                       ItemsSource="{Binding MarketCosts}"
+                       VerticalOptions="Fill"
+                       ItemsLayout="VerticalList"
+                       Margin="0,6,0,0">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="*,*" RowSpacing="6" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto">
+                            <Label Text="Date" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
+                            <DatePicker Date="{Binding ExpenseDate, Mode=TwoWay}" Format="dd-MMM-yyyy" Grid.Row="0" Grid.Column="1" VerticalOptions="Center" DateSelected="DatePicker_DateSelected" />
+
+                            <Label Text="Product" VerticalOptions="Center" FontAttributes="Bold" Grid.Row="1" Grid.Column="0"  />
+                            <Entry Text="{Binding ProductName, Mode=TwoWay}" Keyboard="Text" VerticalOptions="Center" Grid.Row="1" Grid.Column="1" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="name" />
+
+                            <Label Text="Qty" FontAttributes="Bold" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" />
+                            <Entry Text="{Binding Quantity, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" VerticalOptions="Center" Grid.Row="2" Grid.Column="1"  Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
+
+                            <Label Text="Unit" FontAttributes="Bold"  Grid.Row="3" Grid.Column="0" VerticalOptions="Center" />
+                            <Picker Unfocused="Entry_Unfocused"  Grid.Row="3" Grid.Column="1"
+                            ItemsSource="{Binding BindingContext.Units, Source={x:Reference MarketCostsCollectionView}}"
+                            ItemDisplayBinding="{Binding ShortName}"
+                            SelectedItem="{Binding SelectedUnit, Mode=TwoWay}"
+                            Title="Unit"
+                            VerticalOptions="Center" />
+
+                            <Label Text="Cost" FontAttributes="Bold" Grid.Row="4" Grid.Column="0" VerticalOptions="Center" />
+                            <Entry Text="{Binding Cost, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Row="4" Grid.Column="1" VerticalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
+
+                            <StackLayout Grid.Row="5" Grid.Column="1" VerticalOptions="Center"
+                             Orientation="Horizontal"
+                             Spacing="4"
+                             HorizontalOptions="End">
+                                <Button
+                                FontAttributes="Bold"
+                                Command="{Binding BindingContext.AddMarketCostsCommand, Source={x:Reference MarketCostsCollectionView}}"
+                                CommandParameter="{Binding .}"
+                                CornerRadius="6"
+                                HeightRequest="26"
+                                WidthRequest="26"
+                                FontSize="12">
+                                    <Button.ImageSource>
+                                        <FontImageSource Glyph="{x:Static icons:IconFont.Add}" 
+                                    FontFamily="MaterialIcons"
+                                             Size="16"/>
+                                    </Button.ImageSource>
+
+                                </Button>
+
+                                <Button
+                                 FontAttributes="Bold"
+                                 Command="{Binding BindingContext.RemoveMarketCostsCommand, Source={x:Reference MarketCostsCollectionView}}"
+                                 CommandParameter="{Binding .}"
+                                 CornerRadius="6"
+                                 HeightRequest="26"
+                                 WidthRequest="26"
+                                 FontSize="12">
+                                    <Button.ImageSource>
+                                        <FontImageSource Glyph="{x:Static icons:IconFont.Remove}" 
+                                 FontFamily="MaterialIcons"
+                                          Size="16"/>
+                                    </Button.ImageSource>
+
+                                </Button>
+                            </StackLayout>
+
+
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <!-- Floating Add Button -->
+            <Button Grid.Row="1"
+            FontSize="32"
+            WidthRequest="60"
+            HeightRequest="60"
+            CornerRadius="30"
+            FontAttributes="Bold"
+            Command="{Binding AddMarketCostsCommand}"
+            IsVisible="{Binding IsListEmpty}"
+            HorizontalOptions="End"
+            VerticalOptions="End"
+            Margin="16">
+                <Button.ImageSource>
+                    <FontImageSource Glyph="{x:Static icons:IconFont.Add}" 
+                    FontFamily="MaterialIcons"
+                      Size="24"/>
+                </Button.ImageSource>
+            </Button>
+
+    </Grid>
+        <Grid BackgroundColor="#88000000" IsVisible="{Binding IsBusy}">
+            <ActivityIndicator IsRunning="{Binding IsBusy}" 
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center"
+                       Color="Black"
+                       WidthRequest="50"
+                       HeightRequest="50"/>
+        </Grid>
+    </Grid>
+</ContentPage>
