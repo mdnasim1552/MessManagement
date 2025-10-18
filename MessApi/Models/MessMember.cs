@@ -26,6 +26,12 @@ public partial class MessMember
     [Column(TypeName = "datetime")]
     public DateTime? JoinedAt { get; set; }
 
+    [Column(TypeName = "decimal(10, 2)")]
+    public decimal Rent { get; set; }
+
+    [InverseProperty("MessMember")]
+    public virtual ICollection<MarketCost> MarketCosts { get; set; } = new List<MarketCost>();
+
     [InverseProperty("MessMember")]
     public virtual ICollection<Meal> Meals { get; set; } = new List<Meal>();
 

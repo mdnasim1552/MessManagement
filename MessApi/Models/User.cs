@@ -33,9 +33,6 @@ public partial class User
     [Column(TypeName = "datetime")]
     public DateTime? UpdatedAt { get; set; }
 
-    [InverseProperty("User")]
-    public virtual ICollection<MarketCost> MarketCosts { get; set; } = new List<MarketCost>();
-
     [InverseProperty("CreatedByNavigation")]
     public virtual ICollection<Mess> Messes { get; set; } = new List<Mess>();
 

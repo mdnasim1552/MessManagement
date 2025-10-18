@@ -56,7 +56,6 @@
             <!-- User Name -->
         </Grid>
     </Shell.FlyoutHeader>
-    
     <FlyoutItem Title="Home">
         <FlyoutItem.Icon>
             <FontImageSource Glyph="{x:Static icons:IconFont.Home}"
@@ -68,6 +67,18 @@
             ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage" />
     </FlyoutItem>
+    <FlyoutItem Title="Mess List">
+        <FlyoutItem.Icon>
+            <FontImageSource Glyph="{x:Static icons:IconFont.List}"
+            FontFamily="MaterialIcons"
+                     Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
+                     Size="24"/>
+        </FlyoutItem.Icon>
+        <ShellContent
+        ContentTemplate="{DataTemplate views:MessListPage}"
+        Route="MessListPage" />
+    </FlyoutItem>
+
     <FlyoutItem Title="Create Mess">
         <FlyoutItem.Icon>
             <FontImageSource Glyph="{x:Static icons:IconFont.Create}"
@@ -79,7 +90,58 @@
             ContentTemplate="{DataTemplate views:MessWizardPage}"
             Route="MessWizardPage" />
     </FlyoutItem>
+    <!-- 🔹 Mess Details TabBar -->
+    <TabBar Title="Mess Details" Route="MessDetailsTabBar" 
+            Shell.TabBarForegroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
+            Shell.TabBarTitleColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
+            Shell.TabBarBackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Black}}">
+        <!--<ShellContent Title="Members" 
+                      Route="MessMembersPage"
+                      ContentTemplate="{DataTemplate views:MessMembersPage}" />-->
 
+        <ShellContent Title="Members"
+              Route="MessMembersPage"
+              ContentTemplate="{DataTemplate views:MessMembersPage}">
+            <ShellContent.Icon>
+                <FontImageSource Glyph="{x:Static icons:IconFont.People}"
+                         FontFamily="MaterialIcons"
+                         Size="24"
+                         Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+            </ShellContent.Icon>
+        </ShellContent>
+
+
+        <ShellContent Title="Meals" 
+                      Route="MealsPage"
+                      ContentTemplate="{DataTemplate views:MealsPage}">
+            <ShellContent.Icon>
+                <FontImageSource Glyph="{x:Static icons:IconFont.Food_bank}"
+                      FontFamily="MaterialIcons"
+                      Size="24"
+                      Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+            </ShellContent.Icon>
+        </ShellContent>
+        <ShellContent Title="Bills" 
+                      Route="CommonBillPage"
+                      ContentTemplate="{DataTemplate views:CommonBillPage}">
+            <ShellContent.Icon>
+                <FontImageSource Glyph="{x:Static icons:IconFont.Calculate}"
+                      FontFamily="MaterialIcons"
+                      Size="24"
+                      Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+            </ShellContent.Icon>
+        </ShellContent>
+        <ShellContent Title="Costs" 
+              Route="MarketCostsPage"
+              ContentTemplate="{DataTemplate views:MarketCostsPage}">
+            <ShellContent.Icon>
+                <FontImageSource Glyph="{x:Static icons:IconFont.Event_note}"
+              FontFamily="MaterialIcons"
+              Size="24"
+              Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+            </ShellContent.Icon>
+        </ShellContent>
+    </TabBar>
     <Shell.FlyoutFooter>
         <Grid Padding="10" >
             <Button Text="Logout" Style="{StaticResource PrimaryButton}"

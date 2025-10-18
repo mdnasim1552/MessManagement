@@ -12,6 +12,7 @@ namespace MessManagement.MVVM.ViewModels
         public DateTime? JoinedAt { get; set; }
         [ObservableProperty]
         public string heading = string.Empty;
+        public decimal? Rent { get; set; }
 
     }
 }

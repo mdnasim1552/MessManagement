@@ -72,19 +72,33 @@ namespace MessManagement
             builder.Services.AddTransient<LoginViewModel>();
             builder.Services.AddTransient<RegisterViewModel>();
             builder.Services.AddTransient<MessWizardViewModel>();
+            builder.Services.AddTransient<MessListViewModel>();
+            builder.Services.AddTransient<MessMembersViewModel>();
+            builder.Services.AddTransient<MealsViewModel>();
+            builder.Services.AddTransient<CommonBillViewModel>();
+            builder.Services.AddTransient<MarketCostsViewModel>();
+            builder.Services.AddTransient<MessMemberEditorViewModel>();
 
             // Views
             builder.Services.AddTransient<LoginPage>();
             builder.Services.AddTransient<RegisterPage>();
             builder.Services.AddTransient<MessWizardPage>();
+            builder.Services.AddTransient<CommonBillPage>();
+            builder.Services.AddTransient<MealsPage>();
+            builder.Services.AddTransient<MessMembersPage>();
+            builder.Services.AddTransient<MarketCostsPage>();
+
 
             builder.Services.AddSingleton<AuthService>();
             builder.Services.AddSingleton<MessService>();
             builder.Services.AddSingleton<JwtHelper>();
             builder.Services.AddSingleton<UserSessionService>();
+            builder.Services.AddSingleton<MessMemberService>();
+
 
             builder.Services.AddHttpClient<AuthService>(c => c.BaseAddress = new Uri(apiBaseUrl));
             builder.Services.AddHttpClient<MessService>(c => c.BaseAddress = new Uri(apiBaseUrl));
+            builder.Services.AddHttpClient<MessMemberService>(c => c.BaseAddress = new Uri(apiBaseUrl));
 
             return builder.Build();
         }

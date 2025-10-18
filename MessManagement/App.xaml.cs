@@ -38,12 +38,14 @@ namespace MessManagement
             {
                 _jwtHelper.SetCurrentUser();
                 MainPage = new AppShell();
+                //MainPage = new NavigationPage(new AppShell());
             }
             else
             {
                 _jwtHelper.ClearCurrentUser();
                 //MainPage = new NavigationPage(_serviceProvider.GetService<LoginPage>());
                 MainPage = new LRAppShell();
+                //MainPage = new NavigationPage(new LRAppShell());
             }
         }
     }

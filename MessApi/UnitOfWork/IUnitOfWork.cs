@@ -10,6 +10,10 @@ namespace MessApi.UnitOfWork
         IUserRolesRepository UserRoles { get; }
         IMessMemberRepository MessMember { get; }
         IMessRepository Mess {  get; }
+        IMealRepository Meal { get; }
+        ICommonBillRepository CommonBill { get; }
+        IMarketCostsRepository MarketCost { get; }
+        IUnitRepository Unit { get; }
         //ICartRepository Cart { get; }
         void Saved();
         Task<bool> SaveAsync();

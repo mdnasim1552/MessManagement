@@ -23,7 +23,6 @@ namespace MessApi.Data.Seeders
                 db.Roles.AddRange(roles);
                 await db.SaveChangesAsync();
             }
-
             // 2️⃣ Seed Users
             if (!await db.Users.AnyAsync())
             {
@@ -75,6 +74,19 @@ namespace MessApi.Data.Seeders
                 };
 
                 db.UserRoles.AddRange(userRoles);
+                await db.SaveChangesAsync();
+            }
+            if (!await db.Units.AnyAsync())
+            {
+                var units = new List<Unit> {
+                    new Unit { Name = "Kilogram (kg)",ShortName="kg" },
+                    new Unit { Name = "Gram (gm)",ShortName="gm"},
+                    new Unit { Name = "Litre (L)",ShortName="L" },
+                    new Unit { Name = "Milliliter (ml)",ShortName="ml" },
+                    new Unit { Name = "Unit (pcs)",ShortName="Pcs" },
+                    new Unit { Name = "Meter (m)",ShortName="m" },
+                };
+                db.Units.AddRange(units);
                 await db.SaveChangesAsync();
             }
         }

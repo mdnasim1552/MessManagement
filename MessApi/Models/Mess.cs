@@ -35,9 +35,6 @@ public partial class Mess
     public virtual User CreatedByNavigation { get; set; } = null!;
 
     [InverseProperty("Mess")]
-    public virtual ICollection<MarketCost> MarketCosts { get; set; } = new List<MarketCost>();
-
-    [InverseProperty("Mess")]
     public virtual ICollection<Meal> Meals { get; set; } = new List<Meal>();
 
     [InverseProperty("Mess")]

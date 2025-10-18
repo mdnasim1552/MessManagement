@@ -80,6 +80,218 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MessApi.Controllers.MessController",
+    "Method": "DeleteCommonBills",
+    "RelativePath": "api/Mess/delete-common-bills/{billId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "billId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MessApi.Controllers.MessController",
+    "Method": "DeleteMarketCosts",
+    "RelativePath": "api/Mess/delete-market-costs/{costId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "costId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MessApi.Controllers.MessController",
+    "Method": "DeleteMess",
+    "RelativePath": "api/Mess/delete-mess/{messId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "messId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MessApi.Controllers.MessController",
+    "Method": "GetCommonBills",
+    "RelativePath": "api/Mess/get-common-bills/{messId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "messId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MessApi.Controllers.MessController",
+    "Method": "GetMarketCosts",
+    "RelativePath": "api/Mess/get-market-costs/{messId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "messId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MessApi.Controllers.MessController",
+    "Method": "GetMess",
+    "RelativePath": "api/Mess/get-mess",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MessApi.Controllers.MessController",
+    "Method": "GetUnits",
+    "RelativePath": "api/Mess/get-units",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MessApi.Controllers.MessController",
+    "Method": "UpdateSaveCommonBill",
+    "RelativePath": "api/Mess/update-and-save-common-bill",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "billDto",
+        "Type": "MessManagement.Shared.DTOs.CommonBillDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MessApi.Controllers.MessController",
+    "Method": "UpdateSaveMarketCosts",
+    "RelativePath": "api/Mess/update-and-save-market-costs",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "marketCostDto",
+        "Type": "MessManagement.Shared.DTOs.MarketCostDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MessApi.Controllers.MessMemberController",
+    "Method": "GetMessMemberMeals",
+    "RelativePath": "api/MessMember/get-meals/{messId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "messId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MessApi.Controllers.MessMemberController",
+    "Method": "GetMessMemberSummary",
+    "RelativePath": "api/MessMember/get-mess-member-summary/{messId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "messId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MessApi.Controllers.MessMemberController",
+    "Method": "GetMessMember",
+    "RelativePath": "api/MessMember/get-mess-member/{messId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "messId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MessApi.Controllers.MessMemberController",
+    "Method": "UpdateMessMemberInfo",
+    "RelativePath": "api/MessMember/update_mess_member_info",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "messMemberDto",
+        "Type": "MessManagement.Shared.DTOs.MessMemberDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MessApi.Controllers.MessMemberController",
+    "Method": "UpdateMeals",
+    "RelativePath": "api/MessMember/update-meals",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "meal",
+        "Type": "MessManagement.Shared.DTOs.MealDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MessApi.Controllers.WeatherForecastController",
     "Method": "Get",
     "RelativePath": "WeatherForecast",

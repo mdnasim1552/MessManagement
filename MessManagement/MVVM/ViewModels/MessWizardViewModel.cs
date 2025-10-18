@@ -165,6 +165,7 @@ namespace MessManagement.MVVM.ViewModels
                     {
                         Name = m.Name,
                         Email = m.Email,
+                        Rent=m.Rent??0,
                         Role = m.Role
                     }).ToList(),
                     CommonBills = CommonBills.Select(cb => new CommonBillDto

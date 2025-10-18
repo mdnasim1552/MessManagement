@@ -2,6 +2,8 @@
 using MessApi.IRepositories;
 using MessApi.Models;
 using MessApi.UnitOfWork;
+using MessManagement.Shared.DTOs;
+using Microsoft.EntityFrameworkCore;
 
 namespace MessApi.Repositories
 {
@@ -12,5 +14,12 @@ namespace MessApi.Repositories
         {
             _db = db;
         }
+        public async Task<List<MessMemberSummaryDto>> GetMessMemberSummaryAsync(int messId)
+        {
+            return await _db.MessMemberSummaryResults
+                .FromSqlRaw("EXEC GetMessMemberSummary @MessId = {0}", messId)
+                .ToListAsync();
+        }
+
     }
 }

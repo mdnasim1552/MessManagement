@@ -71,7 +71,8 @@
                                 <VerticalStackLayout Spacing="8" Padding="0,6">
                                     <Label Text="{Binding Heading}" FontAttributes="Bold" FontSize="16" TextColor="{AppThemeBinding Light={StaticResource Primary},Dark={StaticResource White} }"/>
                                     <Entry Placeholder="Name" Text="{Binding Name}" Style="{StaticResource StyledEntry}" />
-                                    <Entry Placeholder="Email" Text="{Binding Email}" Style="{StaticResource StyledEntry}" />
+                                    <Entry Placeholder="Email" Text="{Binding Email}" Keyboard="Email" Style="{StaticResource StyledEntry}" />
+                                    <Entry Placeholder="Rent" Keyboard="{x:Static Keyboard.Numeric}" Text="{Binding Rent}" Style="{StaticResource StyledEntry}" />
                                     <Picker Title="Role" SelectedItem="{Binding Role}" Margin="0,0,0,8">
                                         <Picker.ItemsSource>
                                             <x:Array Type="{x:Type x:String}">

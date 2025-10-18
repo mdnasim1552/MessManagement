@@ -12,6 +12,10 @@ namespace MessApi.UnitOfWork
         public IUserRolesRepository UserRoles { get; private set; }
         public IMessRepository Mess { get; private set; }
         public IMessMemberRepository MessMember { get; private set; }
+        public IMealRepository Meal { get; private set; }
+        public ICommonBillRepository CommonBill { get; private set; }
+        public IMarketCostsRepository MarketCost { get; private set; }
+        public IUnitRepository Unit { get; private set; }
         //public ICartRepository Cart { get; private set; }
         public UnitOfWork(ApplicationDbContext context)
         {
@@ -22,6 +26,10 @@ namespace MessApi.UnitOfWork
             UserRoles = new UserRolesRepository(context);
             Mess = new MessRepository(context);
             MessMember = new MessMemberRepository(context);
+            Meal = new MealRepository(context);
+            CommonBill = new CommonBillRepository(context);
+            MarketCost = new MarketCostsRepository(context);
+            Unit = new UnitRepository(context);
             //Cart = new CartRepository(context);
         }
 
