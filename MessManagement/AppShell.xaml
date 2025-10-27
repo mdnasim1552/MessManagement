@@ -6,13 +6,14 @@
     xmlns:local="clr-namespace:MessManagement"
     xmlns:views="clr-namespace:MessManagement.MVVM.Views"
     xmlns:icons="clr-namespace:MessManagement.MVVM.Models"
+    xmlns:m="clr-namespace:UraniumUI.Icons.MaterialSymbols;assembly=UraniumUI.Icons.MaterialSymbols"
     Shell.FlyoutBehavior="Flyout"
-    Shell.TitleColor="{AppThemeBinding Light=black,Dark=white}"
-    Shell.ForegroundColor="{AppThemeBinding Light=black,Dark=white}"
+    Shell.TitleColor="{AppThemeBinding Light=Black,Dark=white}"
+    Shell.ForegroundColor="{AppThemeBinding Light=Black,Dark=white}"
     Title="MessManagement">
     <!-- 🔹 Custom Header -->
     <Shell.FlyoutHeader>
-        <Grid Style="{StaticResource FlyoutHeaderBackground}" Padding="20">
+        <Grid BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}" Padding="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -47,8 +48,8 @@
                          Margin="5,0,0,0"
                          Aspect="Center">
                     <ImageButton.Source>
-                        <FontImageSource Glyph="{x:Static icons:IconFont.Edit}" 
-                                     FontFamily="MaterialIcons"
+                        <FontImageSource Glyph="{x:Static m:MaterialSharp.Edit}" 
+                                     FontFamily="MaterialSharpFilled"
                                      Size="24"/>
                     </ImageButton.Source>
                 </ImageButton>
@@ -58,8 +59,8 @@
     </Shell.FlyoutHeader>
     <FlyoutItem Title="Home">
         <FlyoutItem.Icon>
-            <FontImageSource Glyph="{x:Static icons:IconFont.Home}"
-                FontFamily="MaterialIcons"
+            <FontImageSource Glyph="{x:Static m:MaterialSharp.Home}"
+                FontFamily="MaterialSharpFilled"
                          Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
                          Size="24"/>
         </FlyoutItem.Icon>
@@ -69,8 +70,8 @@
     </FlyoutItem>
     <FlyoutItem Title="Mess List">
         <FlyoutItem.Icon>
-            <FontImageSource Glyph="{x:Static icons:IconFont.List}"
-            FontFamily="MaterialIcons"
+            <FontImageSource Glyph="{x:Static m:MaterialSharp.List}"
+            FontFamily="MaterialSharpFilled"
                      Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
                      Size="24"/>
         </FlyoutItem.Icon>
@@ -81,8 +82,8 @@
 
     <FlyoutItem Title="Create Mess">
         <FlyoutItem.Icon>
-            <FontImageSource Glyph="{x:Static icons:IconFont.Create}"
-                FontFamily="MaterialIcons"
+            <FontImageSource Glyph="{x:Static m:MaterialSharp.Open_in_new}"
+                FontFamily="MaterialSharpFilled"
                      Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
                      Size="24"/>
         </FlyoutItem.Icon>
@@ -103,8 +104,8 @@
               Route="MessMembersPage"
               ContentTemplate="{DataTemplate views:MessMembersPage}">
             <ShellContent.Icon>
-                <FontImageSource Glyph="{x:Static icons:IconFont.People}"
-                         FontFamily="MaterialIcons"
+                <FontImageSource Glyph="{x:Static m:MaterialSharp.User_attributes}"
+                         FontFamily="MaterialSharpFilled"
                          Size="24"
                          Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
             </ShellContent.Icon>
@@ -115,8 +116,8 @@
                       Route="MealsPage"
                       ContentTemplate="{DataTemplate views:MealsPage}">
             <ShellContent.Icon>
-                <FontImageSource Glyph="{x:Static icons:IconFont.Food_bank}"
-                      FontFamily="MaterialIcons"
+                <FontImageSource Glyph="{x:Static m:MaterialSharp.Food_bank}"
+                      FontFamily="MaterialSharpFilled"
                       Size="24"
                       Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
             </ShellContent.Icon>
@@ -125,8 +126,8 @@
                       Route="CommonBillPage"
                       ContentTemplate="{DataTemplate views:CommonBillPage}">
             <ShellContent.Icon>
-                <FontImageSource Glyph="{x:Static icons:IconFont.Calculate}"
-                      FontFamily="MaterialIcons"
+                <FontImageSource Glyph="{x:Static m:MaterialSharp.Calculate}"
+                      FontFamily="MaterialSharpFilled"
                       Size="24"
                       Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
             </ShellContent.Icon>
@@ -135,8 +136,8 @@
               Route="MarketCostsPage"
               ContentTemplate="{DataTemplate views:MarketCostsPage}">
             <ShellContent.Icon>
-                <FontImageSource Glyph="{x:Static icons:IconFont.Event_note}"
-              FontFamily="MaterialIcons"
+                <FontImageSource Glyph="{x:Static m:MaterialSharp.Event_note}"
+              FontFamily="MaterialSharp"
               Size="24"
               Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
             </ShellContent.Icon>
@@ -144,11 +145,12 @@
     </TabBar>
     <Shell.FlyoutFooter>
         <Grid Padding="10" >
-            <Button Text="Logout" Style="{StaticResource PrimaryButton}"
+            <!--Icon="{FontImageSource FontFamily=MaterialSharpFilled, Glyph={x:Static m:MaterialSharp.Expand_circle_down}}"-->
+            <Button Text="Logout" Style="{StaticResource PrimaryButton}" StyleClass="FilledButton"
                 Clicked="Button_Clicked">
                 <Button.ImageSource>
-                    <FontImageSource Glyph="{x:Static icons:IconFont.Logout}" 
-                        FontFamily="MaterialIcons"
+                    <FontImageSource Glyph="{x:Static m:MaterialSharp.Logout}" 
+                        FontFamily="MaterialSharpFilled"
                                  Size="24"/>
                 </Button.ImageSource>
             </Button>

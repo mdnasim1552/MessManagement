@@ -2,25 +2,30 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MessManagement.MVVM.Views.MessListPage"
+             xmlns:m="clr-namespace:UraniumUI.Icons.MaterialSymbols;assembly=UraniumUI.Icons.MaterialSymbols"
              Title="All Mess"
+             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
              xmlns:icons="clr-namespace:MessManagement.MVVM.Models"
-             BackgroundColor="{AppThemeBinding Light='#F7F8FA',Dark={StaticResource Black}}">
+             BackgroundColor="{AppThemeBinding Light='#EDEEEE',Dark={StaticResource Black}}">
     <Grid>
-        <Grid Padding="20" RowSpacing="24">
+        <Grid Padding="10" RowSpacing="12">
             <Border
             class="MessWizardCardStyle">
-                <CollectionView x:Name="MessCollection" ItemsSource="{Binding Messes}" VerticalOptions="Fill">
-                    <CollectionView.ItemTemplate>
+                <ScrollView>
+                <Grid RowDefinitions="Auto,*">
+                    <CollectionView x:Name="MessCollection" ItemsSource="{Binding Messes}" Grid.Row="0">
+                        <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Border Stroke="#CBD5E1" StrokeThickness="1" Padding="10" Margin="5"
+                            <Border Stroke="#CBD5E1" StrokeThickness="1" Padding="10" Margin="0,5"
                             BackgroundColor="{AppThemeBinding Light='#F1F5F9',Dark={StaticResource Gray400}}"
                             StrokeShape="RoundRectangle 8">
-                                <VerticalStackLayout Spacing="8" Padding="0,6">
+                                <VerticalStackLayout>
 
                                     <Label Text="{Binding MessName}" HorizontalOptions="Center" FontAttributes="Bold" FontSize="20" TextColor="{AppThemeBinding Light={StaticResource Primary},Dark={StaticResource White} }"/>
-                                    <Label Text="{Binding Description}" HorizontalOptions="Center" FontAttributes="Bold" FontSize="14" TextColor="{AppThemeBinding Light={StaticResource Gray400},Dark={StaticResource White} }"/>
+                                            <Label Text="{Binding Description}" HorizontalOptions="Center" FontAttributes="Bold" FontSize="14" TextColor="{AppThemeBinding Light={StaticResource Gray400},Dark={StaticResource White} }"/>
+                                            <material:RadioButton LabelPosition="After" Margin="0,0,0,5" HorizontalOptions="Center" Text="Current Mess" IsChecked="{Binding CurrentMess, Mode=TwoWay}" />
                                     <BoxView HeightRequest="1"
-                                         BackgroundColor="{AppThemeBinding Light=#dddddd,Dark={StaticResource White} }"
+                                         BackgroundColor="{AppThemeBinding Light='#dddddd',Dark={StaticResource White} }"
                                          Margin="0,4"/>
                                     <Grid ColumnDefinitions="1.5*,*"
                                           RowDefinitions="Auto,Auto,Auto,Auto,Auto"
@@ -43,46 +48,62 @@
                                         <Label Text="Common bill per member:" 
                                            FontAttributes="Bold" 
                                            Grid.Row="3" Grid.Column="0"/>
-                                        <Label Text="{Binding CommonBillPerMember, StringFormat='{0:F2} Tk'}" 
+                                         <Label Text="{Binding CommonBillPerMember, StringFormat='{0:F2} Tk'}" 
                                            Grid.Row="3" Grid.Column="1"/>
-                                    </Grid>
-                                    <Button Text="View and modify"
-                                    FontAttributes="Bold"
-                                    Command="{Binding BindingContext.ViewMessCommand, Source={x:Reference MessCollection}}"
-                                    CommandParameter="{Binding .}"
-                                    CornerRadius="8"
-                                    HeightRequest="36"
-                                    FontSize="14">
-                                        <Button.ImageSource>
-                                            <FontImageSource Glyph="{x:Static icons:IconFont.Details}" 
-                                        FontFamily="MaterialIcons"
-                                                 Size="24"/>
-                                        </Button.ImageSource>
+                                            </Grid>
+                                    <HorizontalStackLayout HorizontalOptions="Center" Spacing="8">
+                                                <Button Text="Modify"
+                                                StyleClass="FilledTonalButton"
+                                                Style="{StaticResource SecondaryButton}"
+                                                Command="{Binding BindingContext.ViewMessCommand, Source={x:Reference MessCollection}}"
+                                                CommandParameter="{Binding .}"
+                                                WidthRequest="130">
+                                                    <Button.ImageSource>
+                                                        <FontImageSource Glyph="{x:Static m:MaterialSharp.Edit}" 
+                                                                             Color="{AppThemeBinding Light={StaticResource SecondaryButtonText}, Dark={StaticResource SecondaryButtonTextDark}}"
+                                                                             FontFamily="MaterialSharpFilled" Size="24"/>
+                                                    </Button.ImageSource>
 
-                                    </Button>
+                                                 </Button>
 
                                     <Button Text="Delete"
                                     TextColor="Red"
                                     BackgroundColor="#FFF5F5"
-                                    FontAttributes="Bold"
                                     Command="{Binding BindingContext.RemoveMessCommand, Source={x:Reference MessCollection}}"
                                     CommandParameter="{Binding .}"
-                                    CornerRadius="8"
-                                    HeightRequest="36"
-                                    FontSize="14"
+                                    WidthRequest="130"
+                                    StyleClass="FilledTonalButton"
                                     IsVisible="{Binding IsCreatedByCurrentUser}">
                                         <Button.ImageSource>
-                                            <FontImageSource Glyph="{x:Static icons:IconFont.Delete}" 
-                                            FontFamily="MaterialIcons"
+                                                        <FontImageSource Glyph="{x:Static m:MaterialSharp.Delete}" 
+                                            FontFamily="MaterialSharpFilled"
                                                          Color="Red"
                                                      Size="24"/>
                                         </Button.ImageSource>
                                     </Button>
+                                    </HorizontalStackLayout>
                                 </VerticalStackLayout>
                             </Border>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
-                </CollectionView>
+                    </CollectionView>
+                    <Button Grid.Row="1"
+                        StyleClass="FilledTonalButton"
+                        WidthRequest="60"
+                        HeightRequest="60"
+                        Command="{Binding AddNewMessCommand}"
+                        IsVisible="{Binding IsListEmpty}"
+                        HorizontalOptions="End"
+                        VerticalOptions="End"
+                        Margin="16">
+                        <Button.ImageSource>
+                            <FontImageSource Glyph="{x:Static icons:IconFont.Add}" 
+                                             FontFamily="MaterialIcons"
+                                             Size="24"/>
+                        </Button.ImageSource>
+                    </Button>
+                    </Grid>
+                </ScrollView>
             </Border>
             
         </Grid>

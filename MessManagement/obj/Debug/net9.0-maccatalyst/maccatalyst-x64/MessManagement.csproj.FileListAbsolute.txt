@@ -4,6 +4,7 @@ H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\ma
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\CommunityToolkit.Maui.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\CommunityToolkit.Maui.Core.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\CommunityToolkit.Mvvm.dll
+H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\InputKit.Maui.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\Microsoft.Extensions.Configuration.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\Microsoft.Extensions.Configuration.Abstractions.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\Microsoft.Extensions.Configuration.Binder.dll
@@ -27,12 +28,17 @@ H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\ma
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\Microsoft.IdentityModel.JsonWebTokens.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\Microsoft.IdentityModel.Logging.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\Microsoft.IdentityModel.Tokens.dll
+H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Controls.Compatibility.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Controls.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Controls.Xaml.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Essentials.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\Microsoft.Maui.Graphics.dll
+H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\Plainer.Maui.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\System.IdentityModel.Tokens.Jwt.dll
+H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\UraniumUI.dll
+H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\UraniumUI.Icons.MaterialSymbols.dll
+H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\UraniumUI.Material.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\ar\Microsoft.Maui.Controls.resources.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\ca\Microsoft.Maui.Controls.resources.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-maccatalyst\maccatalyst-x64\cs\Microsoft.Maui.Controls.resources.dll
@@ -275,6 +281,7 @@ H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\ma
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauifont.inputs
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauisplash.inputs
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\mauisplash.stamp
+H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Resources\google.png
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appiconItunesArtwork.png
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon83.5x83.5@2x.png
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-maccatalyst\maccatalyst-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon76x76@2x.png

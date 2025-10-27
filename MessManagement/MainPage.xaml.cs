@@ -1,12 +1,15 @@
-﻿namespace MessManagement
+﻿using System.Collections.ObjectModel;
+using UraniumUI.Pages;
+
+namespace MessManagement
 {
-    public partial class MainPage : ContentPage
+    public partial class MainPage : UraniumContentPage
     {
         int count = 0;
-
         public MainPage()
         {
             InitializeComponent();
+
         }
 
         private void OnCounterClicked(object? sender, EventArgs e)

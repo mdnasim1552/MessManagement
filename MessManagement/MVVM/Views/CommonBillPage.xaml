@@ -4,9 +4,9 @@
              x:Class="MessManagement.MVVM.Views.CommonBillPage"
              Title="Common Bill"
              xmlns:Converters="clr-namespace:MessManagement.Converters"
-             xmlns:icons="clr-namespace:MessManagement.MVVM.Models"
+             xmlns:m="clr-namespace:UraniumUI.Icons.MaterialSymbols;assembly=UraniumUI.Icons.MaterialSymbols"
              HideSoftInputOnTapped="True"
-             BackgroundColor="{AppThemeBinding Light=#EDEEEE,Dark={StaticResource Black}}">
+             BackgroundColor="{AppThemeBinding Light='#EDEEEE',Dark={StaticResource Black}}">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Converters:ZeroToEmptyConverter x:Key="ZeroToEmptyConverter" />
@@ -17,7 +17,7 @@
             BackgroundColor="{AppThemeBinding Light='#EDEEEE',Dark={StaticResource Gray400}}">
             <Grid RowDefinitions="Auto,*" BackgroundColor="{AppThemeBinding Light='#EDEEEE',Dark={StaticResource Gray400}}">
                 <Border Stroke="#CBD5E1" StrokeThickness="1" Grid.Row="0" Padding="12"
-                    BackgroundColor="{AppThemeBinding Light='#EDEEEE',Dark={StaticResource Gray400}}">
+                    BackgroundColor="{AppThemeBinding Light='#F1F5F9',Dark={StaticResource Gray400}}">
                      <!-- Fixed header row -->
                     <Grid ColumnDefinitions="*,3*,3*,3*" Grid.Row="0" Margin="5,0,10,0">
                         <Label Text="SL" FontAttributes="Bold" HorizontalOptions="Start" />
@@ -41,8 +41,8 @@
                                                VerticalOptions="Center"
                                                HorizontalOptions="Start"
                                                Text="{Binding Index}" />
-                                        <Entry Text="{Binding BillType, Mode=TwoWay}" Keyboard="Text" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="Bill types" />
-                                        <Entry Text="{Binding Amount, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
+                                        <Entry HorizontalTextAlignment="Center" Text="{Binding BillType, Mode=TwoWay}" Keyboard="Text" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="Bill types" />
+                                        <Entry HorizontalTextAlignment="Center" Text="{Binding Amount, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
 
                                         <StackLayout Grid.Column="3"
                                              Orientation="Horizontal"
@@ -58,8 +58,8 @@
                                                 WidthRequest="30"
                                                 FontSize="12">
                                                 <Button.ImageSource>
-                                                <FontImageSource Glyph="{x:Static icons:IconFont.Add}" 
-                                                    FontFamily="MaterialIcons"
+                                                    <FontImageSource Glyph="{x:Static m:MaterialSharp.Add}" 
+                                                    FontFamily="MaterialSharpFilled"
                                                  Size="16"/>
                                                 </Button.ImageSource>
 
@@ -74,8 +74,8 @@
                                                 WidthRequest="30"
                                                 FontSize="12">
                                                 <Button.ImageSource>
-                                                    <FontImageSource Glyph="{x:Static icons:IconFont.Remove}" 
-                                                    FontFamily="MaterialIcons" Size="16"/>
+                                                    <FontImageSource Glyph="{x:Static m:MaterialSharp.Remove}" 
+                                                    FontFamily="MaterialSharpFilled" Size="16"/>
                                                 </Button.ImageSource>
                                             </Button>
                                     </StackLayout>
@@ -99,8 +99,8 @@
                         VerticalOptions="End"
                         Margin="16">
                         <Button.ImageSource>
-                            <FontImageSource Glyph="{x:Static icons:IconFont.Add}" 
-                                FontFamily="MaterialIcons"
+                                <FontImageSource Glyph="{x:Static m:MaterialSharp.Add}" 
+                                FontFamily="MaterialSharpFilled"
                                 Size="24"/>
                         </Button.ImageSource>
                     </Button>

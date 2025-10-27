@@ -8,6 +8,7 @@
         public DateTime Month { get; set; }
         public int CreatedBy { get; set; }
         public DateTime? CreatedAt { get; set; }
+        public bool CurrentMess { get; set; }
         public bool IsCreatedByCurrentUser { get; set; }
         public decimal TotalMarketCost { get; set; }
         public decimal TotalMeals { get; set; }

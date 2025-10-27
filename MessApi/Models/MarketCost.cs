@@ -28,6 +28,10 @@ public partial class MarketCost
     [Column(TypeName = "decimal(10, 2)")]
     public decimal Cost { get; set; }
 
+    [ForeignKey("MessId")]
+    [InverseProperty("MarketCosts")]
+    public virtual Mess Mess { get; set; } = null!;
+
     [ForeignKey("MessMemberId")]
     [InverseProperty("MarketCosts")]
     public virtual MessMember MessMember { get; set; } = null!;

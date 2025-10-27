@@ -1,8 +1,9 @@
 using MessManagement.MVVM.ViewModels;
+using UraniumUI.Pages;
 
 namespace MessManagement.MVVM.Views;
 
-public partial class LoginPage : ContentPage
+public partial class LoginPage : UraniumContentPage
 {
     public LoginPage(LoginViewModel vm)
     {

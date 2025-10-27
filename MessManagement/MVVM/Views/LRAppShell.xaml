@@ -5,11 +5,10 @@
              xmlns:views="clr-namespace:MessManagement.MVVM.Views"
              Title="LRAppShell"
              Shell.FlyoutBehavior="Disabled"
-             Shell.BackgroundColor="{AppThemeBinding Light=#F7F8FA,Dark=black}"
+             Shell.BackgroundColor="{AppThemeBinding Light='#F7F8FA',Dark=black}"
              Shell.TitleColor="{AppThemeBinding Light=Black,Dark=White}"
              Shell.ForegroundColor="{AppThemeBinding Light=Black,Dark=White}">
 
-    <ShellContent Title="Login"
-                  Route="LoginPage"
+    <ShellContent Route="LoginPage"
                   ContentTemplate="{DataTemplate views:LoginPage}" />
 </Shell>

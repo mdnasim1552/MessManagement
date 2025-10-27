@@ -12,7 +12,7 @@ namespace MessManagement.MVVM.Models
         public int BillId { get; set; }
         public int MessId { get; set; }
         public string BillType { get; set; }
-        public decimal Amount { get; set; }
+        public decimal? Amount { get; set; }
         [ObservableProperty]
         public string heading = string.Empty;
         [ObservableProperty]

@@ -1,8 +1,10 @@
+using InputKit.Shared.Controls;
 using MessManagement.MVVM.ViewModels;
+using UraniumUI.Pages;
 
 namespace MessManagement.MVVM.Views;
 
-public partial class MessWizardPage : ContentPage
+public partial class MessWizardPage : UraniumContentPage
 {
 	public MessWizardPage(MessWizardViewModel vm)
 	{
@@ -36,5 +38,10 @@ public partial class MessWizardPage : ContentPage
                 }
             });
         };
+    }
+
+    private void MessFormSubmit_Clicked(object sender, EventArgs e)
+    {
+        CreateMessForm.Submit();
     }
 }

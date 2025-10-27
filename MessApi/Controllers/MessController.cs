@@ -18,6 +18,33 @@ namespace MessApi.Controllers
             _unitOfWork = unitOfWork;
         }
         [Authorize]
+        [HttpPost("update-current-mess")]
+        public async Task<IActionResult> UpdateCurrentMess([FromBody] MessDto messDto)
+        {
+            if (messDto == null)
+                return BadRequest(ApiResponse<bool>.FailureResponse("Current mess is not set."));
+
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var userEmailClaim = User.FindFirst(ClaimTypes.Email)?.Value;
+
+            if (string.IsNullOrEmpty(userIdClaim) || string.IsNullOrEmpty(userEmailClaim))
+                return Unauthorized(ApiResponse<bool>.FailureResponse("Invalid token."));
+
+            var userId = int.Parse(userIdClaim);
+            var userEmail = userEmailClaim;
+
+            var user = await _unitOfWork.User.SingleOrDefaultAsync(u=>u.Id==userId);
+            if (user == null)
+                return NotFound(ApiResponse<bool>.FailureResponse("User not found."));
+
+            user.CurrentMessId = messDto.MessId;
+            //createdMesses.CurrentMess = true;
+
+            await _unitOfWork.SaveAsync();
+
+            return Ok(ApiResponse<bool>.SuccessResponse(true, "Current mess is set successfully!"));
+        }
+        [Authorize]
         [HttpPost("create-mess")]
         public async Task<IActionResult> CreateMess([FromBody] MessDto messDto)
         {
@@ -33,7 +60,7 @@ namespace MessApi.Controllers
                 Description = messDto.Description,
                 Month = messDto.Month,
                 CreatedBy = userId,
-                CreatedAt = DateTime.UtcNow,
+                CreatedAt = DateTime.Now,
 
                 MessMembers = messDto.MessMembers.Select(m => new MessMember
                 {
@@ -41,9 +68,9 @@ namespace MessApi.Controllers
                     Email = m.Email,
                     Rent=m.Rent,
                     Role = m.Role ?? "Member",
-                    JoinedAt = DateTime.UtcNow
+                    JoinedAt = DateTime.Now
                 }).ToList(),
-                CommonBills=messDto.CommonBills.Select(c=>new CommonBill
+                CommonBills= (messDto.CommonBills ?? new List<CommonBillDto>()).Select(c=>new CommonBill
                 {
                     BillType=c.BillType,
                     Amount=c.Amount
@@ -52,7 +79,7 @@ namespace MessApi.Controllers
             var meals = new List<Meal>();
             var firstDay = new DateOnly(messDto.Month.Year, messDto.Month.Month, 1);
             var lastDay = firstDay.AddMonths(1).AddDays(-1);
-
+            var users = await _unitOfWork.User.GetAllAsync();
             foreach (var member in mess.MessMembers)
             {
                 for (var date = firstDay; date <= lastDay; date = date.AddDays(1))
@@ -68,10 +95,8 @@ namespace MessApi.Controllers
                     });
                 }
             }
-
             // attach Meals
             mess.Meals = meals;
-
             await _unitOfWork.Mess.AddAsync(mess);
             var saveResult = await _unitOfWork.SaveAsync();
             //if (!saveResult)
@@ -82,6 +107,16 @@ namespace MessApi.Controllers
 
             if (!saveResult)
                 return BadRequest(ApiResponse<string>.FailureResponse("Mess creation failed."));
+            // Now mess.MessId is available
+            foreach (var u in users)
+            {
+                if (mess.MessMembers.Any(m => m.Email == u.Email))
+                {
+                    u.CurrentMessId = mess.MessId;
+                }
+            }
+
+            await _unitOfWork.SaveAsync(); // Save the CurrentMessId updates
 
             return Ok(ApiResponse<string>.SuccessResponse("Mess created successfully."));
         }

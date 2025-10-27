@@ -138,7 +138,7 @@ namespace MessManagement.MVVM.ViewModels
                 BillId = bill.BillId,
                 MessId = bill.MessId,
                 BillType = bill.BillType,
-                Amount = bill.Amount
+                Amount = bill.Amount ?? 0
             };
 
             var result = await _messService.UpdateAndSaveCommonBillAsync(dto);

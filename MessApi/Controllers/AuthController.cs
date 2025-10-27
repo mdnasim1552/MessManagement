@@ -40,12 +40,21 @@ namespace EcommerceWebAPI.Controllers
                     return BadRequest(ApiResponse<string>.FailureResponse("Email is already registered."));
 
                 }
+                var allMembers = await _unitOfWork.MessMember.FindAsync(u => u.Email == registerUser.Email);
+                var memberMessIds = allMembers.Select(m => m.MessId).Distinct().ToList();
+                var createdMesses = await _unitOfWork.Mess.GetAllAsync();
+                var memberMesses = createdMesses
+                    .Where(m => memberMessIds.Contains(m.MessId))
+                    .OrderByDescending(m => m.CreatedAt)
+                    .FirstOrDefault();
+
                 var user = new User
                 {
                     Email = registerUser.Email,
                     FullName = registerUser.FullName,
-                    PasswordHash= BCrypt.Net.BCrypt.HashPassword(registerUser.Password),
-                    CreatedAt = DateTime.UtcNow
+                    PasswordHash = BCrypt.Net.BCrypt.HashPassword(registerUser.Password),
+                    CreatedAt = DateTime.UtcNow,
+                    CurrentMessId = memberMesses?.MessId
                 };
                 _unitOfWork.User.Add(user);
                 var saveResult=await _unitOfWork.SaveAsync();
@@ -53,7 +62,13 @@ namespace EcommerceWebAPI.Controllers
                 {
                     return BadRequest(ApiResponse<string>.FailureResponse("User registration failed."));
                 }
-
+                
+                //var allMembers = await _unitOfWork.MessMember.GetAllAsync();
+                //var memberMessIds = allMembers
+                //    .Where(mm => mm.Email.Equals(userEmail, StringComparison.OrdinalIgnoreCase))
+                //    .Select(mm => mm.MessId)
+                //    .Distinct()
+                //    .ToList();
                 //var token = _jwtService.GenerateToken(user);
                 //var refreshToken = _jwtService.GenerateRefreshToken();
                 //var refreshTokenEntity = new RefreshToken

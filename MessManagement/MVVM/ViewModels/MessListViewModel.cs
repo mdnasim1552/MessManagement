@@ -1,5 +1,8 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
+using MessManagement.MVVM.Models;
 using MessManagement.MVVM.Views;
 using MessManagement.Services;
 using MessManagement.Shared.DTOs;
@@ -15,14 +18,24 @@ namespace MessManagement.MVVM.ViewModels
     public partial class MessListViewModel: ObservableObject
     {
         private readonly MessService _messService;
-        public ObservableCollection<MessDto> Messes { get; set; }= new ObservableCollection<MessDto>();
+        public ObservableCollection<MessModel> Messes { get; set; }= new ObservableCollection<MessModel>();
+        [ObservableProperty]
+        private bool isListEmpty;
         [ObservableProperty]
         private bool isBusy;
         public MessListViewModel(MessService messService)
         {
             _messService= messService;
         }
-
+        private void CheckIfEmpty()
+        {
+            IsListEmpty = Messes.Count == 0;
+        }
+        [RelayCommand]
+        private async Task AddNewMessAsync()
+        {
+            await Shell.Current.GoToAsync($"//{nameof(MessWizardPage)}");
+        }
         public async Task LoadMessesAsync()
         {
             try
@@ -34,22 +47,84 @@ namespace MessManagement.MVVM.ViewModels
                     Messes.Clear();
                     foreach (var mess in response.Data)
                     {
-                        Messes.Add(mess);
+                        var messModel =new MessModel(Messes)
+                        {
+                            MessId= mess.MessId,
+                            MessName= mess.MessName,
+                            Description= mess.Description,
+                            Month= mess.Month,
+                            CreatedBy= mess.CreatedBy,
+                            CreatedAt= mess.CreatedAt,
+                            CurrentMess= mess.CurrentMess,
+                            IsCreatedByCurrentUser= mess.IsCreatedByCurrentUser,
+                            TotalMarketCost= mess.TotalMarketCost,
+                            TotalMeals= mess.TotalMeals,
+                            MealRate= mess.MealRate,
+                            CommonBillPerMember= mess.CommonBillPerMember                                
+                        };
+                        messModel.CurrentMessChanged += OnCurrentMessChangedAsync;
+
+                        Messes.Add(messModel);
+
+
                     }
                 }
                 else
                 {
                     await Application.Current.MainPage.DisplayAlert("Mess load failed", response.Message, "OK");
                 }
+                CheckIfEmpty();
             }
             finally
             {
                 IsBusy = false;
             }           
         }
-
+        private async Task OnCurrentMessChangedAsync(MessModel mess)
+        {
+            try
+            {
+                // Optionally show loading indicator
+                //IsBusy = true;
+                var messDto = new MessDto()
+                {
+                    MessId = mess.MessId,
+                    MessName = mess.MessName,
+                    Description = mess.Description,
+                    Month = mess.Month,
+                    CreatedBy = mess.CreatedBy,
+                    CreatedAt = mess.CreatedAt,
+                    CurrentMess = mess.CurrentMess,
+                    IsCreatedByCurrentUser = mess.IsCreatedByCurrentUser,
+                    TotalMarketCost = mess.TotalMarketCost,
+                    TotalMeals = mess.TotalMeals,
+                    MealRate = mess.MealRate,
+                    CommonBillPerMember = mess.CommonBillPerMember
+                };
+                var result = await _messService.UpdateCurrentMessAsync(messDto);
+                if (result.Success)
+                {
+                    //foreach (var m in Messes)
+                    //{
+                    //    m.CurrentMess = m.MessId == mess.MessId;
+                    //}
+                    var toast = Toast.Make("Current mess is set successfully.", ToastDuration.Short, 12);
+                    await toast.Show();
+                }
+                else
+                {
+                    mess.CurrentMess = false;
+                    var toast = Toast.Make(result.Message ?? "Failed to set current mess.", ToastDuration.Short, 12);
+                    await toast.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
+            }
+        }
         [RelayCommand]
-        private async Task ViewMessAsync(MessDto selectedMess)
+        private async Task ViewMessAsync(MessModel selectedMess)
         {
             if (selectedMess == null) return;
             await Shell.Current.GoToAsync($"///MessDetailsTabBar");
@@ -58,7 +133,7 @@ namespace MessManagement.MVVM.ViewModels
         }
 
         [RelayCommand]
-        private async Task RemoveMessAsync(MessDto selectedMess)
+        private async Task RemoveMessAsync(MessModel selectedMess)
         {
             if (selectedMess == null)
                 return;
@@ -94,6 +169,7 @@ namespace MessManagement.MVVM.ViewModels
                         result.Message ?? "Failed to delete mess.",
                         "OK");
                 }
+                CheckIfEmpty();
             }
             catch (Exception ex)
             {
