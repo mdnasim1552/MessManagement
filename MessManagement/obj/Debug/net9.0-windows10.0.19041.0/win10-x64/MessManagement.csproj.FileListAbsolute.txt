@@ -59,6 +59,7 @@ H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dotnet_bot.scale-150.png
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dotnet_bot.scale-200.png
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dotnet_bot.scale-400.png
+H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\google.scale-100.png
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\CoreMessagingXP.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dcompi.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\dwmcorei.dll
@@ -333,6 +334,7 @@ H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Maui.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Maui.Core.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\CommunityToolkit.Mvvm.dll
+H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\InputKit.Maui.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.Configuration.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.Configuration.Abstractions.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Extensions.Configuration.Binder.dll
@@ -358,6 +360,7 @@ H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.IdentityModel.Logging.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.IdentityModel.Tokens.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.IO.RecyclableMemoryStream.dll
+H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Maui.Controls.Compatibility.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Maui.Controls.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Maui.Controls.Xaml.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Maui.dll
@@ -389,8 +392,12 @@ H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.System.Projection.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.Windows.Widgets.Projection.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Microsoft.WindowsAppRuntime.Bootstrap.Net.dll
+H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\Plainer.Maui.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\System.IdentityModel.Tokens.Jwt.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\System.Speech.dll
+H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\UraniumUI.dll
+H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\UraniumUI.Icons.MaterialSymbols.dll
+H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\UraniumUI.Material.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\ar\Microsoft.Maui.Controls.resources.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\ca\Microsoft.Maui.Controls.resources.dll
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net9.0-windows10.0.19041.0\win10-x64\cs\Microsoft.Maui.Controls.resources.dll
@@ -513,6 +520,7 @@ H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-windows10.0.19
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-150.png
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-200.png
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png
+H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\resizetizer\r\google.scale-100.png
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\mauiimage.stamp
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\mauiimage.outputs
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-windows10.0.19041.0\win10-x64\MessManagement.AssemblyInfoInputs.cache

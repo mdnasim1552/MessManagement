@@ -212,6 +212,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "MessApi.Controllers.MessController",
+    "Method": "UpdateCurrentMess",
+    "RelativePath": "api/Mess/update-current-mess",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "messDto",
+        "Type": "MessManagement.Shared.DTOs.MessDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MessApi.Controllers.MessMemberController",
     "Method": "GetMessMemberMeals",
     "RelativePath": "api/MessMember/get-meals/{messId}",

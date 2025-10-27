@@ -116,5 +116,17 @@ namespace MessManagement.Services
             }
             return await response.Content.ReadFromJsonAsync<ApiResponse<MarketCostDto>>();
         }
+        public async Task<ApiResponse<bool>> UpdateCurrentMessAsync(MessDto messDto)
+        {
+            var token = await SecureStorage.GetAsync("auth_token");
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            var response = await _httpClient.PostAsJsonAsync($"api/mess/update-current-mess", messDto);
+            if (!response.IsSuccessStatusCode)
+            {
+                var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
+                return errorResponse ?? ApiResponse<bool>.FailureResponse("Unknown error");
+            }
+            return await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
+        }
     }
 }

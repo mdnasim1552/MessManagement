@@ -25,6 +25,7 @@
           "net9.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -94,6 +95,7 @@
           "net9.0-windows10.0.19041.0"
         ],
         "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
@@ -171,6 +173,10 @@
               "target": "Package",
               "version": "[9.0.120, )"
             },
+            "Microsoft.Maui.Controls.Compatibility": {
+              "target": "Package",
+              "version": "[9.0.120, )"
+            },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
@@ -180,6 +186,14 @@
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[8.14.0, )"
+            },
+            "UraniumUI.Icons.MaterialSymbols": {
+              "target": "Package",
+              "version": "[2.13.0, )"
+            },
+            "UraniumUI.Material": {
+              "target": "Package",
+              "version": "[2.13.0, )"
             }
           },
           "imports": [
@@ -230,6 +244,10 @@
               "target": "Package",
               "version": "[9.0.120, )"
             },
+            "Microsoft.Maui.Controls.Compatibility": {
+              "target": "Package",
+              "version": "[9.0.120, )"
+            },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
@@ -239,6 +257,14 @@
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[8.14.0, )"
+            },
+            "UraniumUI.Icons.MaterialSymbols": {
+              "target": "Package",
+              "version": "[2.13.0, )"
+            },
+            "UraniumUI.Material": {
+              "target": "Package",
+              "version": "[2.13.0, )"
             }
           },
           "imports": [
@@ -289,6 +315,10 @@
               "target": "Package",
               "version": "[9.0.120, )"
             },
+            "Microsoft.Maui.Controls.Compatibility": {
+              "target": "Package",
+              "version": "[9.0.120, )"
+            },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
@@ -298,6 +328,14 @@
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[8.14.0, )"
+            },
+            "UraniumUI.Icons.MaterialSymbols": {
+              "target": "Package",
+              "version": "[2.13.0, )"
+            },
+            "UraniumUI.Material": {
+              "target": "Package",
+              "version": "[2.13.0, )"
             }
           },
           "imports": [
@@ -349,9 +387,21 @@
               "target": "Package",
               "version": "[9.0.120, )"
             },
+            "Microsoft.Maui.Controls.Compatibility": {
+              "target": "Package",
+              "version": "[9.0.120, )"
+            },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[8.14.0, )"
+            },
+            "UraniumUI.Icons.MaterialSymbols": {
+              "target": "Package",
+              "version": "[2.13.0, )"
+            },
+            "UraniumUI.Material": {
+              "target": "Package",
+              "version": "[2.13.0, )"
             }
           },
           "imports": [

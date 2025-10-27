@@ -63,12 +63,14 @@ H:\Mess management\MessManagement\MessApi\bin\Debug\net9.0\System.Composition.Ru
 H:\Mess management\MessManagement\MessApi\bin\Debug\net9.0\System.Composition.TypedParts.dll
 H:\Mess management\MessManagement\MessApi\bin\Debug\net9.0\System.Configuration.ConfigurationManager.dll
 H:\Mess management\MessManagement\MessApi\bin\Debug\net9.0\System.Drawing.Common.dll
+H:\Mess management\MessManagement\MessApi\bin\Debug\net9.0\System.Formats.Asn1.dll
 H:\Mess management\MessManagement\MessApi\bin\Debug\net9.0\System.IdentityModel.Tokens.Jwt.dll
 H:\Mess management\MessManagement\MessApi\bin\Debug\net9.0\System.Management.dll
 H:\Mess management\MessManagement\MessApi\bin\Debug\net9.0\System.Memory.Data.dll
 H:\Mess management\MessManagement\MessApi\bin\Debug\net9.0\System.Runtime.Caching.dll
 H:\Mess management\MessManagement\MessApi\bin\Debug\net9.0\System.Security.Cryptography.ProtectedData.dll
 H:\Mess management\MessManagement\MessApi\bin\Debug\net9.0\System.Security.Permissions.dll
+H:\Mess management\MessManagement\MessApi\bin\Debug\net9.0\System.Text.Json.dll
 H:\Mess management\MessManagement\MessApi\bin\Debug\net9.0\System.Windows.Extensions.dll
 H:\Mess management\MessManagement\MessApi\bin\Debug\net9.0\cs\Microsoft.CodeAnalysis.resources.dll
 H:\Mess management\MessManagement\MessApi\bin\Debug\net9.0\de\Microsoft.CodeAnalysis.resources.dll
@@ -167,10 +169,10 @@ H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\staticwebassets.build
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\staticwebassets.build.json.cache
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\staticwebassets.development.json
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\MessApi.csproj.Up2Date
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\MessApi.dll
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\refint\MessApi.dll
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\MessApi.pdb
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\MessApi.genruntimeconfig.cache
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\ref\MessApi.dll
+H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

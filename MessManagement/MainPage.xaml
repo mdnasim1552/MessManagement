@@ -1,12 +1,55 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<uranium:UraniumContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:uranium="http://schemas.enisn-projects.io/dotnet/maui/uraniumui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+             xmlns:m="clr-namespace:UraniumUI.Icons.MaterialSymbols;assembly=UraniumUI.Icons.MaterialSymbols"
+             xmlns:validation="clr-namespace:InputKit.Shared.Validations;assembly=InputKit.Maui"
+             xmlns:input="clr-namespace:InputKit.Shared.Controls;assembly=InputKit.Maui"
+             HideSoftInputOnTapped="True"
              x:Class="MessManagement.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
-            Padding="30,0"
-            Spacing="25">
+        <VerticalStackLayout Padding="30,0" Spacing="25">
+            <input:FormView SubmitCommand="{Binding SubmitCommand}" Spacing="20">
+
+                <material:TextField Title="Email" >
+                    <validation:RequiredValidation />
+                    <validation:RegexValidation Message="Please type a valid e-mail address." Pattern="{x:Static input:AdvancedEntry.REGEX_EMAIL}"/>
+                </material:TextField>
+
+                <material:CheckBox Text="I Accept Terms &amp; Conditions"
+                        >
+                    <validation:RequiredValidation />
+                </material:CheckBox>
+
+                <Button Text="Submit"
+            input:FormView.IsSubmitButton="True"
+            StyleClass="FilledButton"/>
+            </input:FormView>
+
+
+
+            <uranium:StatefulContentView LongPressCommand="{Binding DoSomethingCommand}">
+                <Border Padding="20" BackgroundColor="{StaticResource Primary}" Stroke="{StaticResource Tertiary}" StrokeShape="{RoundRectangle CornerRadius=5}">
+                    <Label Text="This is a stateful view" TextColor="{StaticResource OnPrimary}" />
+                </Border>
+            </uranium:StatefulContentView>
+            <material:TextField 
+                Title="E-mail"
+                AllowClear="True"/>
+            <material:TextField 
+                Title="E-mail"
+                AllowClear="True"/>
+            <material:TextField
+                Title="E-mail"
+                Icon="{FontImageSource FontFamily=MaterialSharpFilled, Glyph={x:Static m:MaterialSharp.Mail}}"/>
+
+
+            <Label x:Name="lblMessage" 
+               Text="Hello Material World!" 
+               FontSize="20"
+               HorizontalOptions="Center" />
             <Image
                 Source="dotnet_bot.png"
                 HeightRequest="185"
@@ -33,4 +76,4 @@
         </VerticalStackLayout>
     </ScrollView>
 
-</ContentPage>
+</uranium:UraniumContentPage>

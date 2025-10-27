@@ -2,117 +2,122 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MessManagement.MVVM.Views.MessMembersPage"
-             xmlns:icons="clr-namespace:MessManagement.MVVM.Models"
+             xmlns:m="clr-namespace:UraniumUI.Icons.MaterialSymbols;assembly=UraniumUI.Icons.MaterialSymbols"
              Title="Mess Members"
-             BackgroundColor="{AppThemeBinding Light=#EDEEEE,Dark={StaticResource Black}}"
-             >
+             BackgroundColor="{AppThemeBinding Light='#EDEEEE',Dark={StaticResource Black}}">
     <Grid>
-    <ScrollView>
-        <VerticalStackLayout Padding="10" Spacing="12">
-            <CollectionView x:Name="MemberCollection"
-                            ItemsSource="{Binding MemberSummary}"
-                            SelectionMode="None">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Border
-                            Stroke="Gray"
-                            StrokeThickness="1"
-                            BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Gray400}}"
-                            StrokeShape="RoundRectangle 10"
-                            Padding="10"
-                            Margin="0,5">
+        <Grid Padding="10">
+            <ScrollView>
+                <Border class="MessWizardCardStyle">
+                    <VerticalStackLayout>
 
-                            <VerticalStackLayout Spacing="8">
-                                <HorizontalStackLayout VerticalOptions="Center"
-                                    HorizontalOptions="Center">
-                                    <Label Text="{Binding Name}" HorizontalOptions="Center" 
-                                           VerticalOptions="Center"
-                                           FontSize="20"
-                                           FontAttributes="Bold" />
-                                    <ImageButton HorizontalOptions="Center"  VerticalOptions="Center"
-                                           WidthRequest="20"
-                                           HeightRequest="20"                                           
-                                           Aspect="Center"
-                                           Command="{Binding BindingContext.ShowMemberEditorCommand, Source={x:Reference MemberCollection}}"
-                                           CommandParameter="{Binding .}" >
-                                        <ImageButton.Source>
-                                            <FontImageSource Glyph="{x:Static icons:IconFont.Edit}" 
-                                                FontFamily="MaterialIcons"
-                                                Color="Black"
-                                                Size="24"/>
-                                        </ImageButton.Source>
-                                    </ImageButton>
-                                </HorizontalStackLayout>
-                                <!-- Member Name -->
-                                
+                        <CollectionView x:Name="MemberCollection"
+                                ItemsSource="{Binding MemberSummary}"
+                                SelectionMode="None">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Border
+                                Stroke="Gray"
+                                StrokeThickness="1"
+                                BackgroundColor="{AppThemeBinding Light='#F1F5F9',Dark={StaticResource Gray400}}"
+                                StrokeShape="RoundRectangle 8"
+                                Padding="10"
+                                Margin="0,5">
 
-                                <BoxView HeightRequest="1"
-                                         BackgroundColor="#dddddd"
-                                         Margin="0,4"/>
+                                        <VerticalStackLayout Spacing="8">
+                                            <HorizontalStackLayout VerticalOptions="Center"
+                                        HorizontalOptions="Center">
+                                                <Label Text="{Binding Name}" HorizontalOptions="Center" 
+                                               VerticalOptions="Center"
+                                               FontSize="20"
+                                               FontAttributes="Bold" />
+                                                <ImageButton HorizontalOptions="Center"  VerticalOptions="Center"
+                                               WidthRequest="20"
+                                               HeightRequest="20"                                           
+                                               Aspect="Center"
+                                               Command="{Binding BindingContext.ShowMemberEditorCommand, Source={x:Reference MemberCollection}}"
+                                               CommandParameter="{Binding .}" >
+                                                    <ImageButton.Source>
+                                                        <FontImageSource Glyph="{x:Static m:MaterialSharp.Edit}" 
+                                                    FontFamily="MaterialSharpFilled"
+                                                    Color="Black"
+                                                    Size="24"/>
+                                                    </ImageButton.Source>
+                                                </ImageButton>
+                                            </HorizontalStackLayout>
+                                            <!-- Member Name -->
 
-                                <!-- Member Info -->
-                                <Grid ColumnDefinitions="*,*"
-                                      RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
-                                      RowSpacing="6">
-                                    <Label Text="Total meal:" 
-                                           FontAttributes="Bold" 
-                                           Grid.Row="0" Grid.Column="0"/>
-                                    <Label Text="{Binding TotalMeal, StringFormat='{0:F2}'}" 
-                                           Grid.Row="0" Grid.Column="1"/>
-                                    
-                                    <Label Text="Total meal cost:" 
-                                           FontAttributes="Bold" 
-                                           Grid.Row="1" Grid.Column="0"/>
-                                    <Label Text="{Binding TotalMealCost, StringFormat='{0:F2} Tk'}" 
-                                           Grid.Row="1" Grid.Column="1"/>
 
-                                    <Label Text="Market cost:" 
-                                           FontAttributes="Bold" 
-                                           Grid.Row="2" Grid.Column="0"/>
-                                    <Label Text="{Binding MarketCost, StringFormat='{0:F2} Tk'}" 
-                                           Grid.Row="2" Grid.Column="1"/>
+                                            <BoxView HeightRequest="1"
+                                             BackgroundColor="#dddddd"
+                                             Margin="0,4"/>
 
-                                    <Label Text="Get/Pay:" 
-                                           FontAttributes="Bold" 
-                                           Grid.Row="3" Grid.Column="0"/>
-                                    <Label Text="{Binding GetOrPayFromMeal, StringFormat='{0:F2} Tk'}" 
-                                           Grid.Row="3" Grid.Column="1"/>
-                                    
-                                    <Label Text="Rent:" 
-                                            FontAttributes="Bold" 
-                                            Grid.Row="4" Grid.Column="0"/>
-                                    <Label Text="{Binding Rent, StringFormat='{0:F2} Tk'}" 
-                                            Grid.Row="4" Grid.Column="1"/>
-                                    
-                                    <Border Grid.Row="5" Grid.ColumnSpan="2"
-                                            BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource WhiteDark}}"
-                                            Padding="5">
-                                        <Grid ColumnDefinitions="*,*">
-                                            <Label Text="Total have to pay:" 
-                                                   FontAttributes="Bold"
-                                                   Grid.Column="0"/>
-                                            <Label Text="{Binding TotalHaveToPay, StringFormat='{0:F2} Tk'}" 
-                                                   FontAttributes="Bold"
-                                                   Grid.Column="1"/>
-                                        </Grid>
+                                            <!-- Member Info -->
+                                            <Grid ColumnDefinitions="*,*"
+                                          RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+                                          RowSpacing="6">
+                                                <Label Text="Total meal:" 
+                                               FontAttributes="Bold" 
+                                               Grid.Row="0" Grid.Column="0"/>
+                                                <Label Text="{Binding TotalMeal, StringFormat='{0:F2}'}" 
+                                               Grid.Row="0" Grid.Column="1"/>
+
+                                                <Label Text="Total meal cost:" 
+                                               FontAttributes="Bold" 
+                                               Grid.Row="1" Grid.Column="0"/>
+                                                <Label Text="{Binding TotalMealCost, StringFormat='{0:F2} Tk'}" 
+                                               Grid.Row="1" Grid.Column="1"/>
+
+                                                <Label Text="Market cost:" 
+                                               FontAttributes="Bold" 
+                                               Grid.Row="2" Grid.Column="0"/>
+                                                <Label Text="{Binding MarketCost, StringFormat='{0:F2} Tk'}" 
+                                               Grid.Row="2" Grid.Column="1"/>
+
+                                                <Label Text="Get/Pay:" 
+                                               FontAttributes="Bold" 
+                                               Grid.Row="3" Grid.Column="0"/>
+                                                <Label Text="{Binding GetOrPayFromMeal, StringFormat='{0:F2} Tk'}" 
+                                               Grid.Row="3" Grid.Column="1"/>
+
+                                                <Label Text="Rent:" 
+                                                FontAttributes="Bold" 
+                                                Grid.Row="4" Grid.Column="0"/>
+                                                <Label Text="{Binding Rent, StringFormat='{0:F2} Tk'}" 
+                                                Grid.Row="4" Grid.Column="1"/>
+
+                                                <Border Grid.Row="5" Grid.ColumnSpan="2"
+                                                BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource WhiteDark}}"
+                                                Padding="5">
+                                                    <Grid ColumnDefinitions="*,*">
+                                                        <Label Text="Total have to pay:" 
+                                                       FontAttributes="Bold"
+                                                       Grid.Column="0"/>
+                                                        <Label Text="{Binding TotalHaveToPay, StringFormat='{0:F2} Tk'}" 
+                                                       FontAttributes="Bold"
+                                                       Grid.Column="1"/>
+                                                    </Grid>
+                                                </Border>
+
+                                            </Grid>
+
+                                        </VerticalStackLayout>
                                     </Border>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
 
-                                </Grid>
-
-                            </VerticalStackLayout>
-                        </Border>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </VerticalStackLayout>
-    </ScrollView>
+                    </VerticalStackLayout>
+                </Border>
+            </ScrollView>
+        </Grid>
         <Grid BackgroundColor="#88000000" IsVisible="{Binding IsBusy}">
             <ActivityIndicator IsRunning="{Binding IsBusy}" 
-                               HorizontalOptions="Center" 
-                               VerticalOptions="Center"
-                               Color="Black"
-                               WidthRequest="50"
-                               HeightRequest="50"/>
+                       HorizontalOptions="Center" 
+                       VerticalOptions="Center"
+                       Color="Black"
+                       WidthRequest="50"
+                       HeightRequest="50"/>
         </Grid>
     </Grid>
 </ContentPage>

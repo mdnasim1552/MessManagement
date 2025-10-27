@@ -45,13 +45,13 @@ public partial class ApplicationDbContext : DbContext
         {
             entity.HasKey(e => e.CostId).HasName("PK__MarketCo__8285233EDABEC44E");
 
+            entity.HasOne(d => d.Mess).WithMany(p => p.MarketCosts).HasConstraintName("FK_MarketCosts_Mess");
+
             entity.HasOne(d => d.MessMember).WithMany(p => p.MarketCosts)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__MarketCos__UserI__6B24EA82");
+                .HasConstraintName("FK__MarketCos__MessMemberId__6B24EA82");
 
-            entity.HasOne(d => d.UnitNavigation).WithMany(p => p.MarketCosts)
-                .OnDelete(DeleteBehavior.Cascade)
-                .HasConstraintName("FK__MarketCos__MessI__6A30C649");
+            entity.HasOne(d => d.UnitNavigation).WithMany(p => p.MarketCosts).HasConstraintName("FK__MarketCos__UnitId__6A30C649");
         });
 
         modelBuilder.Entity<Meal>(entity =>
@@ -111,8 +111,11 @@ public partial class ApplicationDbContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PK__Users__3214EC07148AD525");
 
-            entity.Property(e => e.Id).ValueGeneratedNever();
             entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
+
+            entity.HasOne(d => d.CurrentMess).WithMany(p => p.Users)
+                .OnDelete(DeleteBehavior.SetNull)
+                .HasConstraintName("FK_Users_Mess");
         });
 
         modelBuilder.Entity<UserRole>(entity =>

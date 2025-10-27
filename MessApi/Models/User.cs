@@ -33,6 +33,12 @@ public partial class User
     [Column(TypeName = "datetime")]
     public DateTime? UpdatedAt { get; set; }
 
+    public int? CurrentMessId { get; set; }
+
+    [ForeignKey("CurrentMessId")]
+    [InverseProperty("Users")]
+    public virtual Mess? CurrentMess { get; set; }
+
     [InverseProperty("CreatedByNavigation")]
     public virtual ICollection<Mess> Messes { get; set; } = new List<Mess>();
 

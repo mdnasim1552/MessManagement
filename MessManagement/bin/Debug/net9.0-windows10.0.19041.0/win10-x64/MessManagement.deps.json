@@ -16,7 +16,10 @@
           "Microsoft.Extensions.Http": "9.0.10",
           "Microsoft.Extensions.Logging.Debug": "9.0.10",
           "Microsoft.Maui.Controls": "9.0.120",
+          "Microsoft.Maui.Controls.Compatibility": "9.0.120",
           "System.IdentityModel.Tokens.Jwt": "8.14.0",
+          "UraniumUI.Icons.MaterialSymbols": "2.13.0",
+          "UraniumUI.Material": "2.13.0",
           "Microsoft.Maui.Controls.HotReload.Forms": "17.0.0.0",
           "Microsoft.VisualStudio.DesignTools.MobileTapContracts": "17.0.0.0",
           "Microsoft.VisualStudio.DesignTools.TapContract": "17.0.0.0",
@@ -70,6 +73,14 @@
           "lib/net8.0-windows10.0.17763/CommunityToolkit.Mvvm.dll": {
             "assemblyVersion": "8.4.0.0",
             "fileVersion": "8.4.0.1"
+          }
+        }
+      },
+      "InputKit.Maui/4.5.1": {
+        "runtime": {
+          "lib/net9.0-windows10.0.19041/InputKit.Maui.dll": {
+            "assemblyVersion": "4.5.1.0",
+            "fileVersion": "4.5.1.0"
           }
         }
       },
@@ -378,6 +389,20 @@
         "dependencies": {
           "Microsoft.Maui.Controls.Core": "9.0.120",
           "Microsoft.Maui.Controls.Xaml": "9.0.120"
+        }
+      },
+      "Microsoft.Maui.Controls.Compatibility/9.0.120": {
+        "dependencies": {
+          "Microsoft.Extensions.Configuration": "9.0.10",
+          "Microsoft.Extensions.Logging.Abstractions": "9.0.10",
+          "Microsoft.Maui.Controls.Core": "9.0.120",
+          "Microsoft.Maui.Controls.Xaml": "9.0.120"
+        },
+        "runtime": {
+          "lib/net9.0-windows10.0.19041/Microsoft.Maui.Controls.Compatibility.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "9.1.2025.51506"
+          }
         }
       },
       "Microsoft.Maui.Controls.Core/9.0.120": {
@@ -695,6 +720,14 @@
           }
         }
       },
+      "Plainer.Maui/1.7.1": {
+        "runtime": {
+          "lib/net8.0-windows10.0.19041/Plainer.Maui.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "System.IdentityModel.Tokens.Jwt/8.14.0": {
         "dependencies": {
           "Microsoft.IdentityModel.JsonWebTokens": "8.14.0",
@@ -712,6 +745,38 @@
           "runtimes/win/lib/net9.0/System.Speech.dll": {
             "assemblyVersion": "9.0.0.5",
             "fileVersion": "9.0.525.21509"
+          }
+        }
+      },
+      "UraniumUI/2.13.0": {
+        "dependencies": {
+          "InputKit.Maui": "4.5.1",
+          "Microsoft.Maui.Controls": "9.0.120",
+          "Plainer.Maui": "1.7.1"
+        },
+        "runtime": {
+          "lib/net9.0-windows10.0.19041/UraniumUI.dll": {
+            "assemblyVersion": "2.13.0.0",
+            "fileVersion": "2.13.0.0"
+          }
+        }
+      },
+      "UraniumUI.Icons.MaterialSymbols/2.13.0": {
+        "runtime": {
+          "lib/net9.0-windows10.0.19041/UraniumUI.Icons.MaterialSymbols.dll": {
+            "assemblyVersion": "2.13.0.0",
+            "fileVersion": "2.13.0.0"
+          }
+        }
+      },
+      "UraniumUI.Material/2.13.0": {
+        "dependencies": {
+          "UraniumUI": "2.13.0"
+        },
+        "runtime": {
+          "lib/net9.0-windows10.0.19041/UraniumUI.Material.dll": {
+            "assemblyVersion": "2.13.0.0",
+            "fileVersion": "2.13.0.0"
           }
         }
       },
@@ -796,6 +861,13 @@
       "sha512": "sha512-tqVU8yc/ADO9oiTRyTnwhFN68hCwvkliMierptWOudIAvWY1mWCh5VFh+guwHJmpMwfg0J0rY+yyd5Oy7ty9Uw==",
       "path": "communitytoolkit.mvvm/8.4.0",
       "hashPath": "communitytoolkit.mvvm.8.4.0.nupkg.sha512"
+    },
+    "InputKit.Maui/4.5.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Fq5QABHxJuZW0o1iykj8AXgCzZq2Ou6VG7bgZt+RgxAiSdnBaARf9D0EUHXtAyjfUFWYHRugyl0VmSAVhRk2MQ==",
+      "path": "inputkit.maui/4.5.1",
+      "hashPath": "inputkit.maui.4.5.1.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration/9.0.10": {
       "type": "package",
@@ -986,6 +1058,13 @@
       "path": "microsoft.maui.controls.build.tasks/9.0.120",
       "hashPath": "microsoft.maui.controls.build.tasks.9.0.120.nupkg.sha512"
     },
+    "Microsoft.Maui.Controls.Compatibility/9.0.120": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-n4Tks+G0fU2/A4/1n+qPquJrIQLFipbyU6nMcFfy96okAxWqlldaWnL5D35i0GmvNj9mWAnO/OaNoNkaz3koPQ==",
+      "path": "microsoft.maui.controls.compatibility/9.0.120",
+      "hashPath": "microsoft.maui.controls.compatibility.9.0.120.nupkg.sha512"
+    },
     "Microsoft.Maui.Controls.Core/9.0.120": {
       "type": "package",
       "serviceable": true,
@@ -1056,6 +1135,13 @@
       "path": "microsoft.windowsappsdk/1.7.250909003",
       "hashPath": "microsoft.windowsappsdk.1.7.250909003.nupkg.sha512"
     },
+    "Plainer.Maui/1.7.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rou+ErJ0l2GkJyMYRKtPiPxEtOGngj7Lv7H5NVACG9baPy3D3tGLO5ma16Usem5/vddu8Ov6bZaXntPMQANXQw==",
+      "path": "plainer.maui/1.7.1",
+      "hashPath": "plainer.maui.1.7.1.nupkg.sha512"
+    },
     "System.IdentityModel.Tokens.Jwt/8.14.0": {
       "type": "package",
       "serviceable": true,
@@ -1069,6 +1155,27 @@
       "sha512": "sha512-nPZ2rcEVaZlxaLwBamFzz8f5MVM7Y08kzmDbcedXgeSWCGS9NN8mFjSsuTZm3W5pQLI4QhHmcu4h7A0Wf+cD/Q==",
       "path": "system.speech/9.0.5",
       "hashPath": "system.speech.9.0.5.nupkg.sha512"
+    },
+    "UraniumUI/2.13.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ZD5LogfZJ346Ey5PUG8ieyhtAPQCiL9qjts53gHUia5NZ1/p0MdnW988HrmU1eXYIQdZudM9Z8+NqabGp+m5bw==",
+      "path": "uraniumui/2.13.0",
+      "hashPath": "uraniumui.2.13.0.nupkg.sha512"
+    },
+    "UraniumUI.Icons.MaterialSymbols/2.13.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Gw4c/A7ui++lXpcrnjiTeSNGN+hmFK2G6NSQ7oolHWVgh1nfZwNS3epbcc7Fd2Vu2uBUcONS/U/jg8QIYVHOvw==",
+      "path": "uraniumui.icons.materialsymbols/2.13.0",
+      "hashPath": "uraniumui.icons.materialsymbols.2.13.0.nupkg.sha512"
+    },
+    "UraniumUI.Material/2.13.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-e4EqMJPYP2iGa9l0zq+Tw+C8lDHP9QX+q4WL8x2Un0/gK7n1DFbpAYLjfSk4cdtw2rDwSktheBIzlbB/MN4FrQ==",
+      "path": "uraniumui.material/2.13.0",
+      "hashPath": "uraniumui.material.2.13.0.nupkg.sha512"
     },
     "MessManagement.Shared/1.0.0": {
       "type": "project",

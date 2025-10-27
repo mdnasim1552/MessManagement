@@ -40,22 +40,23 @@ namespace MessManagement.MVVM.ViewModels
 
         [ObservableProperty] private string messName;
         [ObservableProperty] private string description;
-        [ObservableProperty] private DateTime month = DateTime.Now;
+        [ObservableProperty] private DateTime? month;
         public event Action<MessMemberModel>? MemberAdded;
         public event Action<CommonBillModel>? CommonBillAdded;
         public MessWizardViewModel(MessService messService, UserSessionService userSession)
         {
             _messService = messService;
             _userSession = userSession;
+            Month = DateTime.Now;
         }       
         [RelayCommand]
         private async Task NextButtonAsync()
         {
             if (CurrentStep == 1)
             {
-                if (string.IsNullOrWhiteSpace(MessName) || string.IsNullOrWhiteSpace(Description))
+                if (string.IsNullOrWhiteSpace(MessName) || string.IsNullOrWhiteSpace(Description) || Month==null)
                 {
-                    await Application.Current.MainPage.DisplayAlert("Validation Error", "Mess name and escription are required.", "OK");
+                    await Application.Current.MainPage.DisplayAlert("Validation Error", "Mess name, Description and Date are required.", "OK");
                     return;
                 }
                 //IsStep1Visible = false;
@@ -160,7 +161,7 @@ namespace MessManagement.MVVM.ViewModels
                 {
                     MessName = MessName,
                     Description = Description,
-                    Month = Month,
+                    Month = Month??DateTime.Now,
                     MessMembers = Members.Select(m => new MessMemberDto
                     {
                         Name = m.Name,
@@ -171,7 +172,7 @@ namespace MessManagement.MVVM.ViewModels
                     CommonBills = CommonBills.Select(cb => new CommonBillDto
                     {
                         BillType = cb.BillType,
-                        Amount = cb.Amount,
+                        Amount = cb.Amount??0,
                     }).ToList(),
                 };
                 var result = await _messService.CreateMessAsync(messDto);

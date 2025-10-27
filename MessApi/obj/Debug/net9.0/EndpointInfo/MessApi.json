@@ -129,6 +129,37 @@
         }
       }
     },
+    "/api/Mess/update-current-mess": {
+      "post": {
+        "tags": [
+          "Mess"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Mess/create-mess": {
       "post": {
         "tags": [
@@ -673,6 +704,9 @@
             "type": "string",
             "format": "date-time",
             "nullable": true
+          },
+          "currentMess": {
+            "type": "boolean"
           },
           "isCreatedByCurrentUser": {
             "type": "boolean"

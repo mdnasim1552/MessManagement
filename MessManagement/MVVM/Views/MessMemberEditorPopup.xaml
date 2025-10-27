@@ -3,9 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MessManagement.MVVM.Views.MessMemberEditorPopup"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
-             CanBeDismissedByTappingOutsideOfPopup="True"
+             CanBeDismissedByTappingOutsideOfPopup="False"
+             xmlns:uranium="http://schemas.enisn-projects.io/dotnet/maui/uraniumui"
+             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+             xmlns:m="clr-namespace:UraniumUI.Icons.MaterialSymbols;assembly=UraniumUI.Icons.MaterialSymbols"
+             xmlns:validation="clr-namespace:InputKit.Shared.Validations;assembly=InputKit.Maui"
+             xmlns:input="clr-namespace:InputKit.Shared.Controls;assembly=InputKit.Maui"
              BackgroundColor="{AppThemeBinding Light='#F7F8FA',Dark={StaticResource Black}}">
-    <VerticalStackLayout Spacing="15" MinimumHeightRequest="300" MinimumWidthRequest="250">
+    <input:FormView SubmitCommand="{Binding SaveMemberCommand}">
+        <VerticalStackLayout Spacing="15" MinimumHeightRequest="300" MinimumWidthRequest="250">
         <!-- Header -->
         <Label Text="Edit Member Details"
                    FontAttributes="Bold"
@@ -13,28 +19,47 @@
                    HorizontalOptions="Center" />
 
         <BoxView HeightRequest="1"
-                     BackgroundColor="{AppThemeBinding Light=#E0E0E0, Dark=#555555}" />
+                     BackgroundColor="{AppThemeBinding Light='#E0E0E0', Dark='#555555'}" />
 
         <!-- Name -->
-        <VerticalStackLayout Spacing="5">
+        <!--<VerticalStackLayout Spacing="5">
             <Label Text="Name" FontAttributes="Bold" />
             <Entry Text="{Binding Member.Name}" Placeholder="Enter name" />
-        </VerticalStackLayout>
-
+        </VerticalStackLayout>-->
+        <material:TextField Text="{Binding Member.Name, Mode=TwoWay}" Title="Name"
+                            AllowClear="True"
+                            Icon="{FontImageSource FontFamily=MaterialSharpFilled, 
+                            Glyph={x:Static m:MaterialSharp.Person}}">
+            <validation:RequiredValidation />
+        </material:TextField>
         <!-- Email -->
-        <VerticalStackLayout Spacing="5">
+        <!--<VerticalStackLayout Spacing="5">
             <Label Text="Email" FontAttributes="Bold" />
             <Entry Text="{Binding Member.Email}" Placeholder="Enter email" Keyboard="Email" />
-        </VerticalStackLayout>
-
+        </VerticalStackLayout>-->
+        <material:TextField Title="Email"
+                    Text="{Binding Member.Email, Mode=TwoWay}"
+                    Icon="{FontImageSource FontFamily=MaterialSharpFilled, Glyph={x:Static m:MaterialSharp.Mail}}"
+                    AllowClear="True">
+            <validation:RequiredValidation />
+            <validation:RegexValidation Message="Please type a valid e-mail address." Pattern="{x:Static input:AdvancedEntry.REGEX_EMAIL}"/>
+        </material:TextField>
         <!-- Rent -->
-        <VerticalStackLayout Spacing="5">
+        <!--<VerticalStackLayout Spacing="5">
             <Label Text="Rent" FontAttributes="Bold" />
             <Entry Text="{Binding Member.Rent}" Placeholder="Enter rent" Keyboard="Numeric" />
-        </VerticalStackLayout>
-
+        </VerticalStackLayout>-->
+        <material:TextField Text="{Binding Member.Rent, Mode=TwoWay}"
+                    Title="Rent" 
+                    Keyboard="Numeric" 
+                    Icon="{FontImageSource FontFamily=MaterialSharpFilled, Glyph={x:Static m:MaterialSharp.Money}}"
+                    AllowClear="True">
+            <material:TextField.Validations>
+                    <validation:MinValueValidation MinValue="1"/>
+                </material:TextField.Validations>
+        </material:TextField>
         <!-- Role -->
-        <VerticalStackLayout Spacing="5">
+        <!--<VerticalStackLayout Spacing="5">
             <Label Text="Role" FontAttributes="Bold" />
             <Picker Title="Role" SelectedItem="{Binding Member.Role}">
                 <Picker.ItemsSource>
@@ -45,23 +70,46 @@
                     </x:Array>
                 </Picker.ItemsSource>
             </Picker>
-        </VerticalStackLayout>
-            
+        </VerticalStackLayout>-->
+        <material:PickerField SelectedItem="{Binding Member.Role, Mode=TwoWay}"
+                      AllowClear="True"
+                      Title="Role"
+                      Icon="{FontImageSource FontFamily=MaterialSharpFilled, Glyph={x:Static m:MaterialSharp.Expand_circle_down}}">
+            <material:PickerField.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Manager</x:String>
+                    <x:String>Editor</x:String>
+                    <x:String>Member</x:String>
+                </x:Array>
+            </material:PickerField.ItemsSource>
+            <material:PickerField.Validations>
+                <!--<validation:RequiredValidation />-->
+            </material:PickerField.Validations>
+        </material:PickerField>
+
         <!-- Buttons -->
         <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
-            <Button Text="Cancel"
-                        Command="{Binding CancelMemberCommand}"
-                        BackgroundColor="{AppThemeBinding Light={StaticResource SecondaryButtonBg}, Dark={StaticResource SecondaryButtonBgDark}}"
-                        TextColor="{AppThemeBinding Light={StaticResource SecondaryButtonText}, Dark={StaticResource SecondaryButtonTextDark}}"
-                        CornerRadius="10"
-                        WidthRequest="120" />
+                <Button Text="Close"
+                    StyleClass="FilledTonalButton"
+                    Command="{Binding CancelMemberCommand}"
+                    Style="{StaticResource SecondaryButton}"
+                    WidthRequest="120">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="{x:Static m:MaterialSharp.Close}" FontFamily="MaterialSharpFilled" Size="24"/>
+                    </Button.ImageSource>
+                </Button>
 
-            <Button Text="Save"
-                        Command="{Binding SaveMemberCommand}"
-                        TextColor="{StaticResource PrimaryButtonText}"
-                        CornerRadius="10"
-                        WidthRequest="120" />
+                <Button Text="Save"
+                    StyleClass="FilledButton"
+                    input:FormView.IsSubmitButton="True"
+                    TextColor="{StaticResource White}"
+                    WidthRequest="120" >
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="{x:Static m:MaterialSharp.Save}" FontFamily="MaterialSharpFilled" Size="24"/>
+                    </Button.ImageSource>
+                </Button>
         </HorizontalStackLayout>
 
-    </VerticalStackLayout>
+        </VerticalStackLayout>
+    </input:FormView>
 </toolkit:Popup>

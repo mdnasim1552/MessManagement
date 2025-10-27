@@ -1,8 +1,9 @@
 using MessManagement.MVVM.ViewModels;
+using UraniumUI.Pages;
 
 namespace MessManagement.MVVM.Views;
 
-public partial class RegisterPage : ContentPage
+public partial class RegisterPage : UraniumContentPage 
 {
 	public RegisterPage(RegisterViewModel vm)
 	{

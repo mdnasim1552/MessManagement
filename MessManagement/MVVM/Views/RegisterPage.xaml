@@ -1,15 +1,30 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<uranium:UraniumContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MessManagement.MVVM.Views.RegisterPage"
              x:DataType="vm:RegisterViewModel"
              xmlns:vm="clr-namespace:MessManagement.MVVM.ViewModels"
-             Title="Register"
-             Background="{AppThemeBinding Light=#F7F8FA,Dark=black}">
+             xmlns:uranium="http://schemas.enisn-projects.io/dotnet/maui/uraniumui"
+             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+             xmlns:m="clr-namespace:UraniumUI.Icons.MaterialSymbols;assembly=UraniumUI.Icons.MaterialSymbols"
+             xmlns:validation="clr-namespace:InputKit.Shared.Validations;assembly=InputKit.Maui"
+             xmlns:input="clr-namespace:InputKit.Shared.Controls;assembly=InputKit.Maui"
+             HideSoftInputOnTapped="True"
+             BackgroundColor="{AppThemeBinding Light='#F7F8FA',Dark=black}">
     <Grid>
-        <Border
+        <Border Margin="0,0,0,56"
            class="PrimaryCardStyle">
-            <VerticalStackLayout Spacing="20">
+            <input:FormView SubmitCommand="{Binding RegisterCommand}">
+                <VerticalStackLayout Spacing="20" VerticalOptions="Center">
+                <Image>
+                    <Image.Source>
+                        <FontImageSource
+                Glyph="{x:Static m:MaterialSharp.App_registration}"
+                FontFamily="MaterialSharpFilled"
+                Size="70"
+                Color="{AppThemeBinding Light={StaticResource Primary},Dark=white}" />
+                    </Image.Source>
+                </Image>
                 <Label Text="Create Account"
                         FontSize="24"
                         FontAttributes="Bold"
@@ -17,31 +32,69 @@
                         HorizontalOptions="Center"
                         Margin="0,0,0,10"/>
 
-                <Entry Placeholder="Full Name"
+                <!--<Entry Placeholder="Full Name"
                     Text="{Binding Fullname}"
                     Keyboard="Default"
-                    BackgroundColor="{AppThemeBinding Light=#f3f4f6,Dark=black}"
+                    BackgroundColor="{AppThemeBinding Light='#f3f4f6',Dark=black}"
                     Margin="0,0,0,5"
-                    HeightRequest="45"/>
+                    HeightRequest="45"/>-->
+                <material:TextField Text="{Binding Fullname, Mode=TwoWay}" Title="Full Name"
+                                    Margin="0,0,0,5"
+                                    AllowClear="True"
+                                    InputBackgroundColor="{AppThemeBinding Light='#f3f4f6',Dark=black}"
+                                    Icon="{FontImageSource FontFamily=MaterialSharpFilled, 
+                                    Glyph={x:Static m:MaterialSharp.Person}}">
+                    <validation:RequiredValidation />
+                </material:TextField>
 
-                <Entry Placeholder="Email"
+                <!--<Entry Placeholder="Email"
                    Text="{Binding Email}"
                    Keyboard="Email"
-                   BackgroundColor="{AppThemeBinding Light=#f3f4f6,Dark=black}"
+                   BackgroundColor="{AppThemeBinding Light='#f3f4f6',Dark=black}"
                    Margin="0,0,0,5"
-                   HeightRequest="45" />
-                <Entry Placeholder="Password"
+                   HeightRequest="45" />-->
+                <material:TextField Title="Email" Margin="0,0,0,5"
+                                    InputBackgroundColor="{AppThemeBinding Light='#f3f4f6',Dark=black}" 
+                                    Text="{Binding Email, Mode=TwoWay}"
+                                    Icon="{FontImageSource FontFamily=MaterialSharpFilled, Glyph={x:Static m:MaterialSharp.Mail}}"
+                                    AllowClear="True">
+                    <validation:RequiredValidation />
+                    <validation:RegexValidation Message="Please type a valid e-mail address." Pattern="{x:Static input:AdvancedEntry.REGEX_EMAIL}"/>
+                </material:TextField>
+                <!--<Entry Placeholder="Password"
                     Text="{Binding Password}"
                     IsPassword="True"
-                    BackgroundColor="{AppThemeBinding Light=#f3f4f6,Dark=black}"
+                    BackgroundColor="{AppThemeBinding Light='#f3f4f6',Dark=black}"
                     Margin="0,0,0,5"
-                    HeightRequest="45"/>
-                
+                    HeightRequest="45"/>-->
+                <material:TextField Title="Password"
+                    Text="{Binding Password, Mode=TwoWay}"
+                    IsPassword="True"
+                    Icon="{FontImageSource FontFamily=MaterialSharpFilled, Glyph={x:Static m:MaterialSharp.Password}}"
+                    InputBackgroundColor="{AppThemeBinding Light='#f3f4f6',Dark=black}"
+                    Margin="0,0,0,5">
+                    <material:TextField.Attachments>
+                        <material:TextFieldPasswordShowHideAttachment />
+                    </material:TextField.Attachments>
+                    <material:TextField.Validations>
+                        <validation:RequiredValidation />
+                        <validation:MinLengthValidation MinLength="6" />
+                    </material:TextField.Validations>
+                </material:TextField>
+
                 <Button Text="Register"
-                     Command="{Binding RegisterCommand}"
-                     Style="{StaticResource PrimaryButton}" />
-                
-            </VerticalStackLayout>
+                        StyleClass="FilledButton"
+                        input:FormView.IsSubmitButton="True"
+                        Style="{StaticResource PrimaryButton}">
+                    <Button.ImageSource>
+                        <FontImageSource Glyph="{x:Static m:MaterialSharp.App_registration}" 
+                            FontFamily="MaterialSharpFilled"
+                            Size="24"/>
+                    </Button.ImageSource>
+                </Button>
+
+                </VerticalStackLayout>
+            </input:FormView>
         </Border>
     </Grid>
-</ContentPage>
+</uranium:UraniumContentPage>

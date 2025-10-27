@@ -5,6 +5,7 @@ using MessManagement.MVVM.Views;
 using MessManagement.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using UraniumUI;
 
 
 namespace MessManagement
@@ -21,11 +22,14 @@ namespace MessManagement
             builder
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
+                .UseUraniumUI()
+                .UseUraniumUIMaterial()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                     fonts.AddFont("MaterialIcons-Regular.ttf", "MaterialIcons");
+                    fonts.AddMaterialSymbolsFonts();
                 });
             // 🔹 Determine environment
             string environment = "Production";

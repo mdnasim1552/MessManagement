@@ -1,55 +1,84 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<uranium:UraniumContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MessManagement.MVVM.Views.MessWizardPage"
              xmlns:Converters="clr-namespace:MessManagement.Converters"
-             xmlns:icons="clr-namespace:MessManagement.MVVM.Models"
+             xmlns:uranium="http://schemas.enisn-projects.io/dotnet/maui/uraniumui"
+             xmlns:material="http://schemas.enisn-projects.io/dotnet/maui/uraniumui/material"
+             xmlns:m="clr-namespace:UraniumUI.Icons.MaterialSymbols;assembly=UraniumUI.Icons.MaterialSymbols"
+             xmlns:validation="clr-namespace:InputKit.Shared.Validations;assembly=InputKit.Maui"
+             xmlns:input="clr-namespace:InputKit.Shared.Controls;assembly=InputKit.Maui"
+             HideSoftInputOnTapped="True"
              Title="Mess Wizard"
-             BackgroundColor="{AppThemeBinding Light='#F7F8FA',Dark={StaticResource Black}}">
-    <ContentPage.Resources>
+             BackgroundColor="{AppThemeBinding Light='#EDEEEE',Dark={StaticResource Black}}">
+    <uranium:UraniumContentPage.Resources>
         <ResourceDictionary>
             <Converters:IndexToMemberHeadingConverter x:Key="IndexToHeadingConverter" />
             
         </ResourceDictionary>
-    </ContentPage.Resources>
-    <Grid Padding="20" RowSpacing="24">
+    </uranium:UraniumContentPage.Resources>
+    <Grid Padding="10" RowSpacing="12">
         <!--<Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>-->
         <!-- Step 1 -->
-        <Grid IsVisible="{Binding IsStep1Visible}" Grid.Row="0" >
+
+        <Grid IsVisible="{Binding IsStep1Visible}" >
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <Label Text="Step 1 - Create Mess" Grid.Row="0" Style="{StaticResource SectionLabel}" />
-
+            
             <Border class="MessWizardCardStyle" Grid.Row="1">
-                <Border Stroke="#CBD5E1" StrokeThickness="1" Padding="10" Margin="5" HeightRequest="300" VerticalOptions="Start"
-                     BackgroundColor="{AppThemeBinding Light='#F1F5F9',Dark={StaticResource Gray400}}"
-                     StrokeShape="RoundRectangle 8">
-                    <VerticalStackLayout Spacing="8" Padding="0,6">
-                        <Label Text="Mess Name:" FontAttributes="Bold" TextColor="{AppThemeBinding Light='#4A5568',Dark={StaticResource White}}"/>
-                        <Entry Text="{Binding MessName}" Placeholder="Enter mess name" Style="{StaticResource StyledEntry}" />
+                <Border Stroke="#CBD5E1" StrokeThickness="1" Padding="10"  VerticalOptions="Start"
+                         BackgroundColor="{AppThemeBinding Light='#F1F5F9',Dark={StaticResource Gray400}}"
+                         StrokeShape="RoundRectangle 8">
+                    <input:FormView x:Name="CreateMessForm" SubmitCommand="{Binding NextButtonCommand}">
+                        <VerticalStackLayout Spacing="8">
 
-                        <Label Text="Description:" FontAttributes="Bold" TextColor="{AppThemeBinding Light='#4A5568',Dark={StaticResource White}}"/>
-                        <Editor Text="{Binding Description}" Placeholder="Enter description" AutoSize="TextChanges" Style="{StaticResource StyledEditor}"/>
+                            <!--<Label Text="Mess Name:" FontAttributes="Bold" TextColor="{AppThemeBinding Light='#4A5568',Dark={StaticResource White}}"/>-->
+                            <!--<Entry Text="{Binding MessName}" Placeholder="Enter mess name" Style="{StaticResource StyledEntry}" />-->
+                            <material:TextField Text="{Binding MessName, Mode=TwoWay}" Title="Mess name"
+                                                    AllowClear="True"
+                                                    InputBackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource WhiteDark}}" 
+                                                    Icon="{FontImageSource FontFamily=MaterialSharpFilled, 
+                                                    Glyph={x:Static m:MaterialSharp.Edit}}">
+                                <validation:RequiredValidation />
+                                <validation:MinLengthValidation MinLength="4" />
+                            </material:TextField>
+                            <!--<Label Text="Description:" FontAttributes="Bold" TextColor="{AppThemeBinding Light='#4A5568',Dark={StaticResource White}}"/>
+                                <Editor Text="{Binding Description}" Placeholder="Enter description" AutoSize="TextChanges" Style="{StaticResource StyledEditor}"/>-->
+                            <material:EditorField Text="{Binding Description, Mode=TwoWay}"
+                                                      Title="Description"
+                                                      Icon="{FontImageSource FontFamily=MaterialSharpFilled, Glyph={x:Static m:MaterialSharp.Description}}"
+                                                      InputBackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource WhiteDark}}">
+                                <material:EditorField.Validations>
+                                    <validation:RequiredValidation />
+                                </material:EditorField.Validations>
+                            </material:EditorField>
 
-                        <Label Text="Month:" FontAttributes="Bold" TextColor="{AppThemeBinding Light='#4A5568',Dark={StaticResource White}}"/>
-                        <DatePicker Date="{Binding Month}" TextColor="{AppThemeBinding Light='#4A5568',Dark={StaticResource White}}" Margin="0,0,0,8"/>
+                            <!--<Label Text="Month:" FontAttributes="Bold" TextColor="{AppThemeBinding Light='#4A5568',Dark={StaticResource White}}"/>
+                                <DatePicker Date="{Binding Month}" TextColor="{AppThemeBinding Light='#4A5568',Dark={StaticResource White}}" Margin="0,0,0,8"/>-->
 
-                        
-                    </VerticalStackLayout>
+                            <material:DatePickerField AllowClear="True" Format="MMMM yyyy"
+                                                          Date="{Binding Month, Mode=TwoWay}"                          
+                                                          Title="Pick a Date" 
+                                                          Icon="{FontImageSource FontFamily=MaterialSharpFilled, Glyph={x:Static m:MaterialSharp.Calendar_month}}"                           
+                                                          InputBackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource WhiteDark}}">
+
+                                <validation:RequiredValidation />
+                            </material:DatePickerField>
+
+                        </VerticalStackLayout>
+                    </input:FormView>
                 </Border>
-                
             </Border>
-            <Button Text="Next" Command="{Binding NextButtonCommand}" Grid.Row="2" Margin="0,8,0,0"
-                Style="{StaticResource PrimaryButton}"
+            <Button Text="Next" Grid.Row="2" Margin="0,8,0,0" Style="{StaticResource PrimaryButton}" Clicked="MessFormSubmit_Clicked" StyleClass="FilledButton"
                 HorizontalOptions="End"/>
         </Grid>
-
         <!-- Step 2 -->
         <Grid IsVisible="{Binding IsStep2Visible}" Grid.Row="0">
             <Grid.RowDefinitions>
@@ -62,18 +91,45 @@
 
             <Border Grid.Row="1"
                     class="MessWizardCardStyle">
-                <CollectionView x:Name="MemberCollection" ItemsSource="{Binding Members}" VerticalOptions="Fill">
+                <CollectionView x:Name="MemberCollection" ItemsSource="{Binding Members}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Border Stroke="#CBD5E1" StrokeThickness="1" Padding="10" Margin="5"
+                            <Border Stroke="#CBD5E1" StrokeThickness="1" Padding="10" Margin="0,5"
                                     BackgroundColor="{AppThemeBinding Light='#F1F5F9',Dark={StaticResource Gray400}}"
                                     StrokeShape="RoundRectangle 8">
-                                <VerticalStackLayout Spacing="8" Padding="0,6">
+                                <VerticalStackLayout Spacing="8">
                                     <Label Text="{Binding Heading}" FontAttributes="Bold" FontSize="16" TextColor="{AppThemeBinding Light={StaticResource Primary},Dark={StaticResource White} }"/>
-                                    <Entry Placeholder="Name" Text="{Binding Name}" Style="{StaticResource StyledEntry}" />
-                                    <Entry Placeholder="Email" Text="{Binding Email}" Keyboard="Email" Style="{StaticResource StyledEntry}" />
-                                    <Entry Placeholder="Rent" Keyboard="{x:Static Keyboard.Numeric}" Text="{Binding Rent}" Style="{StaticResource StyledEntry}" />
-                                    <Picker Title="Role" SelectedItem="{Binding Role}" Margin="0,0,0,8">
+                                    <!--<Entry Placeholder="Name" Text="{Binding Name}" Style="{StaticResource StyledEntry}" />-->
+                                    
+                                    <material:TextField Text="{Binding Name, Mode=TwoWay}" Title="Name"
+                                    AllowClear="True"
+                                    InputBackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource WhiteDark}}" 
+                                    Icon="{FontImageSource FontFamily=MaterialSharpFilled, 
+                                    Glyph={x:Static m:MaterialSharp.Person}}">
+                                        <validation:RequiredValidation />
+                                    </material:TextField>
+
+                                    <!--<Entry Placeholder="Email" Text="{Binding Email}" Keyboard="Email" Style="{StaticResource StyledEntry}" />-->
+                                    <material:TextField Title="Email" 
+                                                        InputBackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource WhiteDark}}" 
+                                                        Text="{Binding Email, Mode=TwoWay}"
+                                                        Icon="{FontImageSource FontFamily=MaterialSharpFilled, Glyph={x:Static m:MaterialSharp.Mail}}"
+                                                        AllowClear="True">
+                                        <validation:RequiredValidation />
+                                        <validation:RegexValidation Message="Please type a valid e-mail address." Pattern="{x:Static input:AdvancedEntry.REGEX_EMAIL}"/>
+                                    </material:TextField>
+
+                                    <!--<Entry Placeholder="Rent" Keyboard="{x:Static Keyboard.Numeric}" Text="{Binding Rent}" Style="{StaticResource StyledEntry}" />-->
+                                    <material:TextField Text="{Binding Rent, Mode=TwoWay}" 
+                                                        InputBackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource WhiteDark}}" 
+                                                        Title="Rent" 
+                                                        Keyboard="Numeric" 
+                                                        Icon="{FontImageSource FontFamily=MaterialSharpFilled, Glyph={x:Static m:MaterialSharp.Money}}"
+                                                        AllowClear="True">
+                                        <material:TextField.Validations>
+                                        </material:TextField.Validations>
+                                    </material:TextField>
+                                    <!--<Picker Title="Role" SelectedItem="{Binding Role}" Margin="0,0,0,8">
                                         <Picker.ItemsSource>
                                             <x:Array Type="{x:Type x:String}">
                                                 <x:String>Manager</x:String>
@@ -81,23 +137,33 @@
                                                 <x:String>Member</x:String>
                                             </x:Array>
                                         </Picker.ItemsSource>
-                                    </Picker>
+                                    </Picker>-->
+                                    <material:PickerField SelectedItem="{Binding Role, Mode=TwoWay}"
+                                                          AllowClear="True"
+                                                          InputBackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource WhiteDark}}"
+                                                          Title="Role"
+                                                          Icon="{FontImageSource FontFamily=MaterialSharpFilled, Glyph={x:Static m:MaterialSharp.Expand_circle_down}}">
+                                        <material:PickerField.ItemsSource>
+                                            <x:Array Type="{x:Type x:String}">
+                                                <x:String>Manager</x:String>
+                                                <x:String>Editor</x:String>
+                                                <x:String>Member</x:String>
+                                            </x:Array>
+                                        </material:PickerField.ItemsSource>
+                                        <material:PickerField.Validations>
+                                            <!--<validation:RequiredValidation />-->
+                                        </material:PickerField.Validations>
+                                    </material:PickerField>
                                     <Button Text="Delete"
                                             TextColor="Red"
                                             BackgroundColor="#FFF5F5"
                                             FontAttributes="Bold"
                                             Command="{Binding BindingContext.RemoveMemberCommand, Source={x:Reference MemberCollection}}"
                                             CommandParameter="{Binding .}"
-                                            CornerRadius="8"
-                                            HeightRequest="36"
-                                            FontSize="14">
+                                            StyleClass="FilledTonalButton">
                                         <Button.ImageSource>
-                                            <FontImageSource Glyph="{x:Static icons:IconFont.Delete}" 
-                                                FontFamily="MaterialIcons"
-                                                             Color="Red"
-                                                         Size="24"/>
+                                            <FontImageSource Glyph="{x:Static m:MaterialSharp.Delete}" FontFamily="MaterialSharpFilled" Color="Red" Size="24"/>
                                         </Button.ImageSource>
-
                                     </Button>
                                 </VerticalStackLayout>
                             </Border>
@@ -106,12 +172,12 @@
                 </CollectionView>
             </Border>
 
-            <Button Grid.Row="2" Text="+ Add Another Member" Command="{Binding AddMemberButtonCommand}" Style="{StaticResource PrimaryButton}" Margin="0,8,0,0" />
+            <Button Grid.Row="2" Text="+ Add Another Member" Style="{StaticResource PrimaryButton}" Command="{Binding AddMemberButtonCommand}" StyleClass="FilledButton" Margin="0,8,0,0" />
 
             <HorizontalStackLayout HorizontalOptions="End" Spacing="12" Grid.Row="3">
-                <Button Text="Back" Command="{Binding BackButtonCommand}" Style="{StaticResource SecondaryButton}" Margin="0,8,0,0"/>
-                <Button Text="Next" Command="{Binding NextButtonCommand}" Grid.Row="2" Margin="0,8,0,0"
-                    Style="{StaticResource PrimaryButton}"
+                <Button StyleClass="FilledTonalButton" Text="Back" Command="{Binding BackButtonCommand}" Style="{StaticResource SecondaryButton}" Margin="0,8,0,0"/>
+                <Button Text="Next" Style="{StaticResource PrimaryButton}" Command="{Binding NextButtonCommand}" Grid.Row="2" Margin="0,8,0,0"
+                    StyleClass="FilledButton"
                     HorizontalOptions="End"/>
                 <!--<Button Text="Finish" Command="{Binding FinishButtonCommand}" Style="{StaticResource PrimaryButton}" Margin="0,8,0,0" />-->
             </HorizontalStackLayout>
@@ -130,29 +196,44 @@
 
             <Border Grid.Row="1"
             class="MessWizardCardStyle">
-                <CollectionView x:Name="CommonBillCollection" ItemsSource="{Binding CommonBills}" VerticalOptions="Fill">
+                <CollectionView x:Name="CommonBillCollection" ItemsSource="{Binding CommonBills}">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <Border Stroke="#CBD5E1" StrokeThickness="1" Padding="10" Margin="5"
+                            <Border Stroke="#CBD5E1" StrokeThickness="1" Padding="10" Margin="0,5"
                             BackgroundColor="{AppThemeBinding Light='#F1F5F9',Dark={StaticResource Gray400}}"
                             StrokeShape="RoundRectangle 8">
-                                <VerticalStackLayout Spacing="8" Padding="0,6">
+                                <VerticalStackLayout Spacing="8">
                                     <Label Text="{Binding Heading}" FontAttributes="Bold" FontSize="16" TextColor="{AppThemeBinding Light={StaticResource Primary},Dark={StaticResource White} }"/>
-                                    <Entry Placeholder="Bill type" Text="{Binding BillType}" Style="{StaticResource StyledEntry}" />
-                                    <Entry Placeholder="Bill amount" Text="{Binding Amount}" Style="{StaticResource StyledEntry}" />
-                                    
+                                    <!--<Entry Placeholder="Bill type" Text="{Binding BillType}" Style="{StaticResource StyledEntry}" />-->
+                                    <material:TextField Text="{Binding BillType, Mode=TwoWay}" 
+                                                        Title="Bill type"
+                                                        AllowClear="True"
+                                                        InputBackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource WhiteDark}}" 
+                                                        Icon="{FontImageSource FontFamily=MaterialSharpFilled, 
+                                                        Glyph={x:Static m:MaterialSharp.Description}}">
+                                        <validation:RequiredValidation />
+                                    </material:TextField>
+                                    <!--<Entry Placeholder="Bill amount" Text="{Binding Amount}" Style="{StaticResource StyledEntry}" />-->
+                                    <material:TextField Text="{Binding Amount, Mode=TwoWay}" 
+                                                        InputBackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource WhiteDark}}" 
+                                                        Title="Bill amount" 
+                                                        Keyboard="Numeric" 
+                                                        Icon="{FontImageSource FontFamily=MaterialSharpFilled, Glyph={x:Static m:MaterialSharp.Money}}"
+                                                        AllowClear="True">
+                                        <material:TextField.Validations>
+                                            <validation:MinValueValidation MinValue="1" />
+                                        </material:TextField.Validations>
+                                    </material:TextField>
                                     <Button Text="Delete"
                                     TextColor="Red"
                                     BackgroundColor="#FFF5F5"
                                     FontAttributes="Bold"
                                     Command="{Binding BindingContext.RemoveCommonBillCommand, Source={x:Reference CommonBillCollection}}"
                                     CommandParameter="{Binding .}"
-                                    CornerRadius="8"
-                                    HeightRequest="36"
-                                    FontSize="14">
+                                    StyleClass="FilledTonalButton">
                                         <Button.ImageSource>
-                                            <FontImageSource Glyph="{x:Static icons:IconFont.Delete}" 
-                                        FontFamily="MaterialIcons"
+                                            <FontImageSource Glyph="{x:Static m:MaterialSharp.Delete}" 
+                                        FontFamily="MaterialSharpFilled"
                                                      Color="Red"
                                                  Size="24"/>
                                         </Button.ImageSource>
@@ -165,12 +246,12 @@
                 </CollectionView>
             </Border>
 
-            <Button Grid.Row="2" Text="+ Add Another Common Bill" Command="{Binding AddCommonBillButtonCommand}" Style="{StaticResource PrimaryButton}" Margin="0,8,0,0" />
+            <Button Grid.Row="2" Style="{StaticResource PrimaryButton}" Text="+ Add Another Common Bill" Command="{Binding AddCommonBillButtonCommand}" StyleClass="FilledButton" Margin="0,8,0,0" />
 
             <HorizontalStackLayout HorizontalOptions="End" Spacing="12" Grid.Row="3">
-                <Button Text="Back" Command="{Binding BackButtonCommand}" Style="{StaticResource SecondaryButton}" Margin="0,8,0,0"/>
-                <Button Text="Finish" Command="{Binding FinishButtonCommand}" Style="{StaticResource PrimaryButton}" Margin="0,8,0,0" />
+                <Button StyleClass="FilledTonalButton" Text="Back" Command="{Binding BackButtonCommand}" Style="{StaticResource SecondaryButton}" Margin="0,8,0,0"/>
+                <Button Text="Finish" Style="{StaticResource PrimaryButton}" Command="{Binding FinishButtonCommand}" StyleClass="FilledButton" Margin="0,8,0,0" />
             </HorizontalStackLayout>
         </Grid>
     </Grid>
-</ContentPage>
+</uranium:UraniumContentPage>
