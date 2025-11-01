@@ -88,14 +88,16 @@
                     </CollectionView.ItemTemplate>
                     </CollectionView>
                     <Button Grid.Row="1"
-                        StyleClass="FilledTonalButton"
-                        WidthRequest="60"
-                        HeightRequest="60"
-                        Command="{Binding AddNewMessCommand}"
-                        IsVisible="{Binding IsListEmpty}"
-                        HorizontalOptions="End"
-                        VerticalOptions="End"
-                        Margin="16">
+                            FontSize="32"
+                            WidthRequest="60"
+                            HeightRequest="60"
+                            CornerRadius="30"
+                            FontAttributes="Bold"
+                            Command="{Binding AddNewMessCommand}"
+                            IsVisible="{Binding IsListEmpty}"
+                            HorizontalOptions="End"
+                            VerticalOptions="End"
+                            Margin="16">
                         <Button.ImageSource>
                             <FontImageSource Glyph="{x:Static icons:IconFont.Add}" 
                                              FontFamily="MaterialIcons"

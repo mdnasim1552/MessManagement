@@ -82,6 +82,7 @@ namespace MessManagement
             builder.Services.AddTransient<CommonBillViewModel>();
             builder.Services.AddTransient<MarketCostsViewModel>();
             builder.Services.AddTransient<MessMemberEditorViewModel>();
+            builder.Services.AddTransient<AppShellViewModel>();
 
             // Views
             builder.Services.AddTransient<LoginPage>();
@@ -98,6 +99,7 @@ namespace MessManagement
             builder.Services.AddSingleton<JwtHelper>();
             builder.Services.AddSingleton<UserSessionService>();
             builder.Services.AddSingleton<MessMemberService>();
+            
 
 
             builder.Services.AddHttpClient<AuthService>(c => c.BaseAddress = new Uri(apiBaseUrl));

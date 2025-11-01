@@ -21,7 +21,8 @@ namespace MessManagement.MVVM.ViewModels
         private string email;
         [ObservableProperty]
         private string password;
-
+        [ObservableProperty]
+        private bool isBusy;
         public RegisterViewModel(AuthService authService)
         {
             _authService = authService;
@@ -29,27 +30,39 @@ namespace MessManagement.MVVM.ViewModels
         [RelayCommand]
         private async Task RegisterAsync()
         {
-            if (string.IsNullOrWhiteSpace(Fullname) || string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Password))
+            try
             {
-                await Application.Current.MainPage.DisplayAlert("Validation Error", "Full Name, Email and Password are required.", "OK");
-                return;
+                IsBusy = true;
+                if (string.IsNullOrWhiteSpace(Fullname) || string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Password))
+                {
+                    await Application.Current.MainPage.DisplayAlert("Validation Error", "Full Name, Email and Password are required.", "OK");
+                    return;
+                }
+                var request = new RegisterUserDto
+                {
+                    FullName = Fullname,
+                    Email = Email,
+                    Password = Password
+                };
+                var result = await _authService.RegisterAsync(request);
+                if (result != null && result.Success)
+                {
+                    await Application.Current.MainPage.DisplayAlert("Success", result.Data, "OK");
+                    await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
+                }
+                else
+                {
+                    await Application.Current.MainPage.DisplayAlert("Register Failed", result.Message, "OK");
+                }
             }
-            var request = new RegisterUserDto
+            catch (Exception ex)
             {
-                FullName= Fullname,
-                Email = Email,
-                Password = Password
-            };
-            var result = await _authService.RegisterAsync(request);
-            if (result != null && result.Success)
-            {
-                await Application.Current.MainPage.DisplayAlert("Success", result.Data, "OK");
-                await Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
+                await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
             }
-            else
+            finally
             {
-                await Application.Current.MainPage.DisplayAlert("Register Failed", result.Message, "OK");
-            }
+                IsBusy = false;
+            }           
         }
     }
 }

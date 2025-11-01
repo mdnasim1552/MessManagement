@@ -22,6 +22,8 @@ namespace MessManagement.MVVM.ViewModels
         private string email;
         [ObservableProperty]
         private string password;
+        [ObservableProperty]
+        private bool isBusy;
 
         //public ICommand LoginCommand { get; }
         //public ICommand GoogleLoginCommand { get; }
@@ -56,6 +58,7 @@ namespace MessManagement.MVVM.ViewModels
         {
             try
             {
+                IsBusy = true;
                 if (string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Password))
                 {
                     await Application.Current.MainPage.DisplayAlert("Validation Error", "Email and Password are required.", "OK");
@@ -96,6 +99,10 @@ namespace MessManagement.MVVM.ViewModels
             catch (Exception ex)
             {
                 await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
+            }
+            finally
+            {
+                IsBusy = false;
             }
         }
         [RelayCommand]

@@ -96,5 +96,13 @@
                 </VerticalStackLayout>
             </input:FormView>
         </Border>
+        <Grid BackgroundColor="#88000000" IsVisible="{Binding IsBusy}">
+            <ActivityIndicator IsRunning="{Binding IsBusy}" 
+               HorizontalOptions="Center" 
+               VerticalOptions="Center"
+               Color="Black"
+               WidthRequest="50"
+               HeightRequest="50"/>
+        </Grid>
     </Grid>
 </uranium:UraniumContentPage>

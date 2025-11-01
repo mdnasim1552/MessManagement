@@ -135,9 +135,10 @@ namespace EcommerceWebAPI.Controllers
                         FullName = user.FullName,
                         Email = user.Email,
                         GoogleId = user.GoogleId,
-                        ProfilePictureUrl = user.ProfilePictureUrl,
+                        ProfilePicture = user.ProfilePicture,
                         CreatedAt = user.CreatedAt,
-                        UpdatedAt = user.UpdatedAt
+                        UpdatedAt = user.UpdatedAt,
+                        CurrentMessId = user.CurrentMessId,
                     };
                     var authResponse = new AuthResponseDto
                     {
@@ -201,7 +202,7 @@ namespace EcommerceWebAPI.Controllers
                     FullName = user.FullName,
                     Email = user.Email,
                     GoogleId = user.GoogleId,
-                    ProfilePictureUrl = user.ProfilePictureUrl,
+                    ProfilePicture = user.ProfilePicture,
                     CreatedAt = user.CreatedAt,
                     UpdatedAt = user.UpdatedAt
                 }
@@ -234,7 +235,7 @@ namespace EcommerceWebAPI.Controllers
                         Email = payload.Email,
                         FullName = payload.Name,
                         GoogleId = payload.Subject,
-                        ProfilePictureUrl = payload.Picture,
+                        //ProfilePicture = payload.Picture,
                         CreatedAt = DateTime.UtcNow
                     };
                     _unitOfWork.User.Add(user);
@@ -256,6 +257,43 @@ namespace EcommerceWebAPI.Controllers
                 return BadRequest(new { message = "Error verifying token: ", error = ex.Message, result = false });
             }
         }
+        [HttpPost("upload-profile-picture")]
+        public async Task<IActionResult> UploadProfilePicture([FromForm] UploadProfilePictureRequest request)
+        {
+            try
+            {
+                if (request.ProfileImage == null || request.ProfileImage.Length == 0)
+                    return BadRequest("No file uploaded.");
+
+                using var memoryStream = new MemoryStream();
+                await request.ProfileImage.CopyToAsync(memoryStream);
+                var imageBytes = memoryStream.ToArray();
+
+                // Example: save to database (assuming you have a User table)
+                var user = await _unitOfWork.User.GetAsync(request.UserId);
+                if (user == null)
+                    return NotFound("User not found.");
+
+                user.ProfilePicture = imageBytes; // ProfilePicture column type: varbinary(max)
+                await _unitOfWork.SaveAsync();
+
+                return Ok(ApiResponse<string>.SuccessResponse("Profile picture uploaded successfully."));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ApiResponse<string>.FailureResponse("Error uploading profile picture", ex.Message));
+            }
+            
+        }
+        public class UploadProfilePictureRequest
+        {
+            [FromForm(Name = "profileImage")]
+            public IFormFile? ProfileImage { get; set; }
+
+            [FromForm(Name = "userId")]
+            public int UserId { get; set; }
+        }
+
 
     }
 }

@@ -64,6 +64,27 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "EcommerceWebAPI.Controllers.AuthController",
+    "Method": "UploadProfilePicture",
+    "RelativePath": "api/Auth/upload-profile-picture",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "profileImage",
+        "Type": "Microsoft.AspNetCore.Http.IFormFile",
+        "IsRequired": false
+      },
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "MessApi.Controllers.MessController",
     "Method": "CreateMess",
     "RelativePath": "api/Mess/create-mess",

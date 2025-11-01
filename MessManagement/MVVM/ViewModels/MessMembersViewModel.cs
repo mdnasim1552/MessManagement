@@ -17,14 +17,16 @@ namespace MessManagement.MVVM.ViewModels
 {
     public partial class MessMembersViewModel: ObservableObject
     {
+        private readonly UserSessionService _userSession;
         private readonly MessMemberService _messMemberService;
         [ObservableProperty]
         private bool isBusy;
 
         public ObservableCollection<MessMemberSummaryDto> MemberSummary { get; set; }= new ObservableCollection<MessMemberSummaryDto>();
-        public MessMembersViewModel(MessMemberService messMemberService)
+        public MessMembersViewModel(MessMemberService messMemberService, UserSessionService userSession)
         {
             _messMemberService = messMemberService;
+            _userSession = userSession;
         }
         [RelayCommand]
         private async Task LoadMessMemberSummaryAsync(int messId)
@@ -64,7 +66,7 @@ namespace MessManagement.MVVM.ViewModels
                 // Set refresh callback
                 vm.OnMemberSaved = async () =>
                 {
-                    int messId = Preferences.Get("CurrentMessId", 0);
+                    int messId = _userSession.CurrentUser.CurrentMessId ?? 0;
                     if (messId > 0)
                         await LoadMessMemberSummaryCommand.ExecuteAsync(messId);
                 };

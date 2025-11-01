@@ -1,41 +1,71 @@
-﻿using MessManagement.Helpers;
+﻿using CommunityToolkit.Mvvm.Messaging;
+using MessManagement.Helpers;
+using MessManagement.MVVM.ViewModels;
 using MessManagement.MVVM.Views;
 using MessManagement.Services;
+using System.Net.Http.Headers;
 
 namespace MessManagement
 {
     public partial class AppShell : Shell
     {
         private readonly UserSessionService _userSession;
-        //private readonly JwtHelper _jwtHelper;
+        private readonly JwtHelper _jwtHelper;
+        private readonly AppShellViewModel _appShellViewModel;
         public AppShell()
         {
             InitializeComponent();
             _userSession = App.Current.Handler.MauiContext.Services.GetService<UserSessionService>();
-            //_jwtHelper = jwtHelper;
-            // Register your pages with Shell
-            //Routing.RegisterRoute(nameof(RegisterPage), typeof(RegisterPage));
-            //Routing.RegisterRoute(nameof(LoginPage), typeof(LoginPage));
-            //Routing.RegisterRoute(nameof(MainPage), typeof(MainPage));
+            _jwtHelper = App.Current.Handler.MauiContext.Services.GetService<JwtHelper>();
+            _appShellViewModel = App.Current.Handler.MauiContext.Services.GetService<AppShellViewModel>();
+            BindingContext = _appShellViewModel;
 
-            // Register child page routes for navigation
-            //Routing.RegisterRoute(nameof(MessMembersPage), typeof(MessMembersPage));
-            //Routing.RegisterRoute(nameof(MealsPage), typeof(MealsPage));
-            //Routing.RegisterRoute(nameof(CommonBillPage), typeof(CommonBillPage));
+            MainThread.BeginInvokeOnMainThread(async () => await SetDefaultPage());
+            this.Navigating += AppShell_Navigating;
+            //Routing.RegisterRoute(nameof(RegisterPage), typeof(RegisterPage));
+
+        }
+        private async Task SetDefaultPage()
+        {
+            if (_userSession.CurrentUser.CurrentMessId == null)
+            {
+                await GoToAsync($"//{nameof(MessWizardPage)}");
+            }
+            else
+            {
+                //await GoToAsync("//MessDetailsTabBar/MessMembersPage");
+                await GoToAsync($"//MessDetailsTabBar/MessMembersPage?messId={_userSession.CurrentUser.CurrentMessId}");
+
+            }
+        }
+        private async void AppShell_Navigating(object sender, ShellNavigatingEventArgs e)
+        {
+            if (e.Target.Location.OriginalString.Contains("MessDetailsTabBar") || e.Target.Location.OriginalString.Contains("MessDetailsTabBarList"))
+            {
+                if (e.Target.Location.OriginalString.Contains("MessMembersPage"))
+                {
+                    Preferences.Set("MessDetailsTabBarUrl", e.Target.Location.OriginalString);
+                }   
+            }
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void LogoutButton_Clicked(object sender, EventArgs e)
         {
-            _userSession.ClearUser();
-            SecureStorage.Remove("auth_token");
-            SecureStorage.Remove("refresh_token");
-            //Shell.Current.GoToAsync($"//{nameof(LoginPage)}");
+            Application.Current.MainPage = new ContentPage
+            {
+                Content = new ActivityIndicator
+                {
+                    IsRunning = true,
+                    VerticalOptions = LayoutOptions.Center,
+                    HorizontalOptions = LayoutOptions.Center,
+                    Color = Colors.Black,
+                    WidthRequest = 50,
+                    HeightRequest = 50
+                }
+            };
+            await Task.Delay(2000);
+            _jwtHelper.ClearCurrentUser();
             Application.Current.MainPage = new LRAppShell();
-            //Application.Current.MainPage = new NavigationPage(new LRAppShell());
-
-            //Application.Current.MainPage = new NavigationPage(App.Current.Handler.MauiContext.Services.GetService<LoginPage>());
-            //Application.Current.MainPage = App.Current.Handler.MauiContext.Services.GetService<LoginPage>();
-
         }
     }
 }

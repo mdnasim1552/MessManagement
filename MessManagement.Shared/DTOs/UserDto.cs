@@ -15,10 +15,9 @@ namespace MessManagement.Shared.DTOs
 
         [StringLength(255)]
         public string? GoogleId { get; set; }
-
-        [StringLength(500)]
-        public string? ProfilePictureUrl { get; set; }
+        public byte[]? ProfilePicture { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
+        public int? CurrentMessId { get; set; }
     }
 }
