@@ -96,6 +96,8 @@ namespace MessManagement.Helpers
         public void ClearCurrentUser()
         {
             _userSession.ClearUser();
+            Preferences.Remove("MessDetailsTabBarUrl");
+            Preferences.Remove("CurrentMessId");
             Preferences.Remove("current_user");
             SecureStorage.Remove("auth_token");
             SecureStorage.Remove("refresh_token");

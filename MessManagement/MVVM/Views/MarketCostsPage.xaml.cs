@@ -5,30 +5,48 @@ namespace MessManagement.MVVM.Views;
 
 public partial class MarketCostsPage : ContentPage
 {
-    private bool _initialized;
+    private int _initialized=0;
     public MarketCostsPage(MarketCostsViewModel vm)
 	{
 		InitializeComponent();
 		BindingContext = vm;
     }
-    protected override async void OnAppearing()
+    public async Task LoadMarketCosts(int messId)
     {
-        base.OnAppearing();
-        if (_initialized)
+        if (_initialized == messId)
         {
             return;
         }
         if (BindingContext is MarketCostsViewModel vm)
         {
             await vm.LoadUnitsCommand.ExecuteAsync(null);
-            // Get the current MessId from Preferences
-            int messId = Preferences.Get("CurrentMessId", 0);
+            // Get the current MessId from Preferences           
             if (messId > 0)
             {
                 await vm.LoadMarketCostsCommand.ExecuteAsync(messId);
-                _initialized = true;
+                _initialized = messId;
             }
         }
+    }
+    protected override async void OnAppearing()
+    {
+        base.OnAppearing();
+        int messId = Preferences.Get("CurrentMessId", 0);
+        await LoadMarketCosts(messId);
+        //if (_initialized == messId)
+        //{
+        //    return;
+        //}
+        //if (BindingContext is MarketCostsViewModel vm)
+        //{
+        //    await vm.LoadUnitsCommand.ExecuteAsync(null);
+        //    // Get the current MessId from Preferences           
+        //    if (messId > 0)
+        //    {
+        //        await vm.LoadMarketCostsCommand.ExecuteAsync(messId);
+        //        _initialized = messId;
+        //    }
+        //}
     }
 
     private void CollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)

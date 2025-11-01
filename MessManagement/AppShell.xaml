@@ -13,48 +13,70 @@
     Title="MessManagement">
     <!-- 🔹 Custom Header -->
     <Shell.FlyoutHeader>
-        <Grid BackgroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}" Padding="20">
+        <Grid HeightRequest="200">
+            <BoxView Color="Black" Opacity="0.3"/>
+            <Image Source="{Binding ProfileImage, Mode=TwoWay}" Aspect="AspectFill" Opacity="0.5" />
+            <Grid VerticalOptions="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
-
             <Border Grid.Row="0"
-            HeightRequest="80"
-            WidthRequest="80"
-            Stroke="White"
-            StrokeThickness="2"
-            BackgroundColor="Transparent"
-            HorizontalOptions="Center"
-            VerticalOptions="Center"
-            Padding="0"
-            StrokeShape="Ellipse">
-                <Image Source="dotnet_bot.png" Aspect="AspectFill"/>
+                    HeightRequest="80"
+                    WidthRequest="80"
+                    Stroke="White"
+                    StrokeThickness="2"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center"
+                    Padding="0"
+                    StrokeShape="Ellipse">
+                <Grid>
+                    <Image x:Name="ProfileImage" Source="{Binding ProfileImage,Mode=TwoWay}" Aspect="AspectFill"/>
+                    <ActivityIndicator IsRunning="{Binding IsBusy}" 
+                                       HorizontalOptions="Center" 
+                                       VerticalOptions="Center"
+                                       Color="Black"
+                                       WidthRequest="50"
+                                       HeightRequest="50"/>
+                </Grid>
+                
             </Border>
+            <Grid HorizontalOptions="Center"
+                  VerticalOptions="Center"
+                  TranslationX="30"
+                  TranslationY="30"
+                  Scale=".7">
+                <ImageButton Command="{Binding UploadProfilePictureCommand}"
+                                     BackgroundColor="White"
+                                     CornerRadius="22"
+                                     BorderColor="LightGray"
+                                     BorderWidth="1"
+                                     Aspect="Center">
+                    <ImageButton.Source>
+                        <FontImageSource Glyph="{x:Static m:MaterialSharp.Edit}"
+                                 Color="Black"
+                                 FontFamily="MaterialSharpFilled"
+                                 Size="24"/>
+                    </ImageButton.Source>
+                </ImageButton>
+            </Grid>
+            
             <HorizontalStackLayout Grid.Row="1"
                                HorizontalOptions="Center"
                                Margin="0,10,0,0">
-                <Label Grid.Row="1"
-                Text="Md. Nasim"
+                <Label Grid.Row="1" Text="{Binding FullName, Mode=TwoWay}"
+                x:Name="FullName"
                 TextColor="White"
                 FontSize="18"
                 HorizontalOptions="Center"
                 VerticalOptions="Center"
                 Margin="0,10,0,0"
                 FontAttributes="Bold"/>
-                <ImageButton WidthRequest="24" 
-                         HeightRequest="24"
-                         VerticalOptions="Center"
-                         Margin="5,0,0,0"
-                         Aspect="Center">
-                    <ImageButton.Source>
-                        <FontImageSource Glyph="{x:Static m:MaterialSharp.Edit}" 
-                                     FontFamily="MaterialSharpFilled"
-                                     Size="24"/>
-                    </ImageButton.Source>
-                </ImageButton>
+               
             </HorizontalStackLayout>
             <!-- User Name -->
+            </Grid>
         </Grid>
     </Shell.FlyoutHeader>
     <FlyoutItem Title="Home">
@@ -91,14 +113,129 @@
             ContentTemplate="{DataTemplate views:MessWizardPage}"
             Route="MessWizardPage" />
     </FlyoutItem>
-    <!-- 🔹 Mess Details TabBar -->
-    <TabBar Title="Mess Details" Route="MessDetailsTabBar" 
+    <FlyoutItem Title="Current Mess Details"
+                Route="MessDetailsTabBar"
+                FlyoutDisplayOptions="AsSingleItem"
+                Shell.TabBarForegroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
+                Shell.TabBarTitleColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
+                Shell.TabBarBackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Black}}">
+        <FlyoutItem.Icon>
+            <FontImageSource Glyph="{x:Static m:MaterialSharp.Details}"
+                             FontFamily="MaterialSharpFilled"
+                             Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
+                             Size="24"/>
+        </FlyoutItem.Icon>
+        <!-- Members Tab -->
+        <Tab Title="Members" Route="MessMembersPage">
+            <Tab.Icon>
+                <FontImageSource Glyph="{x:Static m:MaterialSharp.User_attributes}"
+                                 FontFamily="MaterialSharpFilled"
+                                 Size="24"
+                                 Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate views:MessMembersPage}"/>
+        </Tab>
+
+        <!-- Meals Tab -->
+        <Tab Title="Meals" Route="MealsPage">
+            <Tab.Icon>
+                <FontImageSource Glyph="{x:Static m:MaterialSharp.Food_bank}"
+                                 FontFamily="MaterialSharpFilled"
+                                 Size="24"
+                                 Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate views:MealsPage}"/>
+        </Tab>
+
+        <!-- Bills Tab -->
+        <Tab Title="Bills" Route="CommonBillPage">
+            <Tab.Icon>
+                <FontImageSource Glyph="{x:Static m:MaterialSharp.Calculate}"
+                                 FontFamily="MaterialSharpFilled"
+                                 Size="24"
+                                 Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate views:CommonBillPage}"/>
+        </Tab>
+
+        <!-- Costs Tab -->
+        <Tab Title="Costs" Route="MarketCostsPage">
+            <Tab.Icon>
+                <FontImageSource Glyph="{x:Static m:MaterialSharp.Event_note}"
+                                 FontFamily="MaterialSharp"
+                                 Size="24"
+                                 Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate views:MarketCostsPage}"/>
+        </Tab>
+
+    </FlyoutItem>
+    <FlyoutItem Title="Mess Details" Shell.FlyoutItemIsVisible="False"
+            Route="MessDetailsTabBarList"
+            FlyoutDisplayOptions="AsSingleItem"
             Shell.TabBarForegroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
             Shell.TabBarTitleColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
             Shell.TabBarBackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Black}}">
-        <!--<ShellContent Title="Members" 
+        <FlyoutItem.Icon>
+            <FontImageSource Glyph="{x:Static m:MaterialSharp.Details}"
+                         FontFamily="MaterialSharpFilled"
+                         Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
+                         Size="24"/>
+        </FlyoutItem.Icon>
+        <!-- Members Tab -->
+        <Tab Title="Members" Route="MessMembersPage">
+            <Tab.Icon>
+                <FontImageSource Glyph="{x:Static m:MaterialSharp.User_attributes}"
+                             FontFamily="MaterialSharpFilled"
+                             Size="24"
+                             Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate views:MessMembersPage}"/>
+        </Tab>
+
+        <!-- Meals Tab -->
+        <Tab Title="Meals" Route="MealsPage">
+            <Tab.Icon>
+                <FontImageSource Glyph="{x:Static m:MaterialSharp.Food_bank}"
+                             FontFamily="MaterialSharpFilled"
+                             Size="24"
+                             Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate views:MealsPage}"/>
+        </Tab>
+
+        <!-- Bills Tab -->
+        <Tab Title="Bills" Route="CommonBillPage">
+            <Tab.Icon>
+                <FontImageSource Glyph="{x:Static m:MaterialSharp.Calculate}"
+                             FontFamily="MaterialSharpFilled"
+                             Size="24"
+                             Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate views:CommonBillPage}"/>
+        </Tab>
+
+        <!-- Costs Tab -->
+        <Tab Title="Costs" Route="MarketCostsPage">
+            <Tab.Icon>
+                <FontImageSource Glyph="{x:Static m:MaterialSharp.Event_note}"
+                             FontFamily="MaterialSharp"
+                             Size="24"
+                             Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
+            </Tab.Icon>
+            <ShellContent ContentTemplate="{DataTemplate views:MarketCostsPage}"/>
+        </Tab>
+
+    </FlyoutItem>
+
+    <!-- 🔹 Mess Details TabBar -->
+    <!--<TabBar Title="Mess Details" Route="MessDetailsTabBar" 
+            Shell.TabBarForegroundColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
+            Shell.TabBarTitleColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}"
+            Shell.TabBarBackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource Black}}">
+        --><!--<ShellContent Title="Members" 
                       Route="MessMembersPage"
-                      ContentTemplate="{DataTemplate views:MessMembersPage}" />-->
+                      ContentTemplate="{DataTemplate views:MessMembersPage}" />--><!--
 
         <ShellContent Title="Members"
               Route="MessMembersPage"
@@ -142,12 +279,12 @@
               Color="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource White}}" />
             </ShellContent.Icon>
         </ShellContent>
-    </TabBar>
+    </TabBar>-->
     <Shell.FlyoutFooter>
         <Grid Padding="10" >
             <!--Icon="{FontImageSource FontFamily=MaterialSharpFilled, Glyph={x:Static m:MaterialSharp.Expand_circle_down}}"-->
             <Button Text="Logout" Style="{StaticResource PrimaryButton}" StyleClass="FilledButton"
-                Clicked="Button_Clicked">
+                Clicked="LogoutButton_Clicked">
                 <Button.ImageSource>
                     <FontImageSource Glyph="{x:Static m:MaterialSharp.Logout}" 
                         FontFamily="MaterialSharpFilled"

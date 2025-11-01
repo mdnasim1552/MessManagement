@@ -23,7 +23,10 @@ namespace MessManagement
                 {
                     IsRunning = true,
                     VerticalOptions = LayoutOptions.Center,
-                    HorizontalOptions = LayoutOptions.Center
+                    HorizontalOptions = LayoutOptions.Center,
+                    Color= Colors.Black,
+                    WidthRequest=50,
+                    HeightRequest=50
                 }
             };          
         }

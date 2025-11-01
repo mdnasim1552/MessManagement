@@ -1,10 +1,11 @@
-﻿using System;
+﻿using MessManagement.Shared.DTOs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
-using MessManagement.Shared.DTOs;
 namespace MessManagement.Services
 {
     public class AuthService
@@ -49,6 +50,18 @@ namespace MessManagement.Services
             {
                 return null;
             }
+        }
+        public async Task<ApiResponse<string>> UploadProfilePictureAsync(MultipartFormDataContent content)
+        {
+            var token = await SecureStorage.GetAsync("auth_token");
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            var response = await _httpClient.PostAsync($"api/auth/upload-profile-picture", content);
+            if (!response.IsSuccessStatusCode)
+            {
+                var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<string>>();
+                return errorResponse ?? ApiResponse<string>.FailureResponse("Unknown error");
+            }
+            return await response.Content.ReadFromJsonAsync<ApiResponse<string>>();
         }
     }
 

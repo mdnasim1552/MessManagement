@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MessApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dd10939fec002b0e9c90fcf1cf6fc8ce68af72c1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea98035b86046172dba61f90f193339f340f437c")]
 [assembly: System.Reflection.AssemblyProductAttribute("MessApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MessApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

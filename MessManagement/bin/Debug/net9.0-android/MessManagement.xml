@@ -30,6 +30,25 @@
         <member name="P:MessManagement.MVVM.ViewModels.MessMemberModel.Heading">
             <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessMemberModel.heading"/>
         </member>
+        <member name="T:MessManagement.MVVM.ViewModels.AppShellViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.AppShellViewModel.ProfileImage">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.AppShellViewModel.profileImage"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.AppShellViewModel.FullName">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.AppShellViewModel.fullName"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.AppShellViewModel.IsBusy">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.AppShellViewModel.isBusy"/>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.AppShellViewModel.uploadProfilePictureCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.AppShellViewModel.UploadProfilePictureCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.AppShellViewModel.UploadProfilePictureCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.AppShellViewModel.UploadProfilePictureAsync"/>.</summary>
+        </member>
         <member name="T:MessManagement.MVVM.ViewModels.CommonBillViewModel">
             <inheritdoc/>
             <inheritdoc/>
@@ -71,6 +90,9 @@
         </member>
         <member name="P:MessManagement.MVVM.ViewModels.LoginViewModel.Password">
             <inheritdoc cref="F:MessManagement.MVVM.ViewModels.LoginViewModel.password"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.LoginViewModel.IsBusy">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.LoginViewModel.isBusy"/>
         </member>
         <member name="F:MessManagement.MVVM.ViewModels.LoginViewModel.registerCommand">
             <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.LoginViewModel.RegisterCommand"/>.</summary>
@@ -312,6 +334,9 @@
         <member name="P:MessManagement.MVVM.ViewModels.RegisterViewModel.Password">
             <inheritdoc cref="F:MessManagement.MVVM.ViewModels.RegisterViewModel.password"/>
         </member>
+        <member name="P:MessManagement.MVVM.ViewModels.RegisterViewModel.IsBusy">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.RegisterViewModel.isBusy"/>
+        </member>
         <member name="F:MessManagement.MVVM.ViewModels.RegisterViewModel.registerCommand">
             <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.RegisterViewModel.RegisterCommand"/>.</summary>
         </member>
@@ -459,11 +484,17 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CurrentMess">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CurrentMess" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsListEmpty">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsListEmpty" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ProfileImage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ProfileImage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FullName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FullName" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsListEmpty">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsListEmpty" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Email">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Email" generated properties.</summary>
@@ -507,11 +538,17 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CurrentMess">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CurrentMess" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsListEmpty">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsListEmpty" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ProfileImage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ProfileImage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FullName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FullName" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsListEmpty">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsListEmpty" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Email">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Email" generated properties.</summary>

@@ -24,8 +24,7 @@ public partial class User
     [StringLength(255)]
     public string? GoogleId { get; set; }
 
-    [StringLength(500)]
-    public string? ProfilePictureUrl { get; set; }
+    public byte[]? ProfilePicture { get; set; }
 
     [Column(TypeName = "datetime")]
     public DateTime? CreatedAt { get; set; }

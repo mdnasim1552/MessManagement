@@ -18,14 +18,16 @@ namespace MessManagement.MVVM.ViewModels
     public partial class MessListViewModel: ObservableObject
     {
         private readonly MessService _messService;
+        private readonly UserSessionService _userSession;
         public ObservableCollection<MessModel> Messes { get; set; }= new ObservableCollection<MessModel>();
         [ObservableProperty]
         private bool isListEmpty;
         [ObservableProperty]
         private bool isBusy;
-        public MessListViewModel(MessService messService)
+        public MessListViewModel(MessService messService, UserSessionService userSession)
         {
-            _messService= messService;
+            _messService = messService;
+            _userSession = userSession;
         }
         private void CheckIfEmpty()
         {
@@ -108,6 +110,7 @@ namespace MessManagement.MVVM.ViewModels
                     //{
                     //    m.CurrentMess = m.MessId == mess.MessId;
                     //}
+                    _userSession.CurrentUser.CurrentMessId = mess.MessId;
                     var toast = Toast.Make("Current mess is set successfully.", ToastDuration.Short, 12);
                     await toast.Show();
                 }
@@ -126,10 +129,10 @@ namespace MessManagement.MVVM.ViewModels
         [RelayCommand]
         private async Task ViewMessAsync(MessModel selectedMess)
         {
-            if (selectedMess == null) return;
-            await Shell.Current.GoToAsync($"///MessDetailsTabBar");
+            if (selectedMess == null) return;          
             //await Shell.Current.GoToAsync($"///MessDetailsTabBar/MessMembersPage");
-            Preferences.Set("CurrentMessId", selectedMess.MessId);
+            //await Shell.Current.GoToAsync($"//MessDetailsTabBar");
+            await Shell.Current.GoToAsync($"//MessDetailsTabBarList/MessMembersPage?messId={selectedMess.MessId}");
         }
 
         [RelayCommand]
@@ -156,7 +159,7 @@ namespace MessManagement.MVVM.ViewModels
                 {
                     // Remove from local list to update UI
                     Messes.Remove(selectedMess);
-
+                    _userSession.CurrentUser.CurrentMessId = null;
                     await Application.Current.MainPage.DisplayAlert(
                         "Deleted",
                         "Mess deleted successfully.",
