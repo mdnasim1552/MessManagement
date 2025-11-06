@@ -169,10 +169,10 @@ H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\staticwebassets.build
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\staticwebassets.build.json.cache
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\staticwebassets.development.json
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\staticwebassets.build.endpoints.json
-H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\MessApi.csproj.Up2Date
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\MessApi.dll
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\refint\MessApi.dll
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\MessApi.pdb
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\MessApi.genruntimeconfig.cache
 H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\ref\MessApi.dll
+H:\Mess management\MessManagement\MessApi\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

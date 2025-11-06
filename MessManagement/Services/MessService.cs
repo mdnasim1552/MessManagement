@@ -17,17 +17,17 @@ namespace MessManagement.Services
             _httpClient = httpClient;
         }
 
-        public async Task<ApiResponse<string>> CreateMessAsync(MessDto messDto)
+        public async Task<ApiResponse<int>> CreateMessAsync(MessDto messDto)
         {
             var token = await SecureStorage.GetAsync("auth_token");
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             var response = await _httpClient.PostAsJsonAsync("api/mess/create-mess", messDto);
             if (!response.IsSuccessStatusCode)
             {
-                var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<String>>();
-                return errorResponse ?? ApiResponse<string>.FailureResponse("Unknown error");
+                var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<int>>();
+                return errorResponse ?? ApiResponse<int>.FailureResponse("Unknown error");
             }
-            return await response.Content.ReadFromJsonAsync<ApiResponse<string>>();
+            return await response.Content.ReadFromJsonAsync<ApiResponse<int>>();
         }
         public async Task<ApiResponse<List<MessDto>>> GetUserMessesAsync()
         {

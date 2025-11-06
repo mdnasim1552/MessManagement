@@ -1,11 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "uZ8J3t+lgBI=",
+  "dgSpecHash": "z2IuLRjFe54=",
   "success": true,
   "projectFilePath": "H:\\Mess management\\MessManagement\\MessManagement\\MessManagement.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\User\\.nuget\\packages\\communitytoolkit.maui\\12.2.0\\communitytoolkit.maui.12.2.0.nupkg.sha512",
-    "C:\\Users\\User\\.nuget\\packages\\communitytoolkit.maui.core\\12.2.0\\communitytoolkit.maui.core.12.2.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\communitytoolkit.maui\\12.3.0\\communitytoolkit.maui.12.3.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\communitytoolkit.maui.core\\12.3.0\\communitytoolkit.maui.core.12.3.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\communitytoolkit.mvvm\\8.4.0\\communitytoolkit.mvvm.8.4.0.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\googlegson\\2.13.0.1\\googlegson.2.13.0.1.nupkg.sha512",
     "C:\\Users\\User\\.nuget\\packages\\inputkit.maui\\4.5.1\\inputkit.maui.4.5.1.nupkg.sha512",

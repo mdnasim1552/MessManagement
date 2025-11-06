@@ -5,7 +5,8 @@
         public int MessId { get; set; }
         public string MessName { get; set; }
         public string? Description { get; set; }
-        public DateTime Month { get; set; }
+        public DateTime FromDate { get; set; }
+        public DateTime ToDate { get; set; }
         public int CreatedBy { get; set; }
         public DateTime? CreatedAt { get; set; }
         public bool CurrentMess { get; set; }

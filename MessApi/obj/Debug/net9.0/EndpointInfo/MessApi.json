@@ -678,6 +678,9 @@
           },
           "selectedUnit": {
             "$ref": "#/components/schemas/UnitDto"
+          },
+          "canEdit": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -712,6 +715,9 @@
           "dinner": {
             "type": "number",
             "format": "double"
+          },
+          "canEdit": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -731,7 +737,11 @@
             "type": "string",
             "nullable": true
           },
-          "month": {
+          "fromDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "toDate": {
             "type": "string",
             "format": "date-time"
           },
@@ -814,6 +824,9 @@
           "rent": {
             "type": "number",
             "format": "double"
+          },
+          "canEdit": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false

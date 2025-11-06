@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace MessApi.Models;
 
 [Table("Mess")]
-[Index("Month", Name = "UQ__Mess__FF7C6BA029C450D6", IsUnique = true)]
+[Index("FromDate", Name = "UQ__Mess__FF7C6BA029C450D6", IsUnique = true)]
 public partial class Mess
 {
     [Key]
@@ -20,7 +20,10 @@ public partial class Mess
     public string? Description { get; set; }
 
     [Column(TypeName = "datetime")]
-    public DateTime Month { get; set; }
+    public DateTime FromDate { get; set; }
+
+    [Column(TypeName = "datetime")]
+    public DateTime ToDate { get; set; }
 
     public int CreatedBy { get; set; }
 

@@ -4,6 +4,7 @@ using MessManagement.Shared.DTOs;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Security.Claims;
 
 namespace MessApi.Controllers
 {
@@ -22,7 +23,23 @@ namespace MessApi.Controllers
         {
             try
             {
-                var messmembers = await _unitOfWork.MessMember.FindAsync(m => m.MessId == messId);
+                var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                var userEmailClaim = User.FindFirst(ClaimTypes.Email)?.Value;
+
+                if (string.IsNullOrEmpty(userIdClaim) || string.IsNullOrEmpty(userEmailClaim))
+                    return Unauthorized(ApiResponse<List<MessMemberDto>>.FailureResponse("Invalid token."));
+
+                var userId = int.Parse(userIdClaim);
+                var userEmail = userEmailClaim;
+                //var messmembers = await _unitOfWork.MessMember.FindAsync(m => m.MessId == messId);
+                var messmembers = await _unitOfWork.MessMember.GetAllIncluding(m => m.Mess);
+                messmembers = messmembers.Where(m => m.MessId == messId);
+                var loggedinMessMember = messmembers.FirstOrDefault(m => m.Email == userEmail);
+                bool loggedinMessMemberCanEdit = false;
+                if (loggedinMessMember != null)
+                {
+                    loggedinMessMemberCanEdit = loggedinMessMember.Role == "Manager" ? true : false;
+                }
                 var messMembersDto = messmembers.Select(m => new MessMemberDto
                 {
                     MessMemberId = m.MessMemberId,
@@ -30,7 +47,8 @@ namespace MessApi.Controllers
                     Name = m.Name,
                     Email = m.Email,
                     Role = m.Role,
-                    JoinedAt = m.JoinedAt
+                    JoinedAt = m.JoinedAt,
+                    CanEdit= (m.Mess.CreatedBy == userId) || (m.Email == userEmail) || loggedinMessMemberCanEdit
                 }).ToList();
                 return Ok(ApiResponse<List<MessMemberDto>>.SuccessResponse(messMembersDto));
             }
@@ -47,7 +65,25 @@ namespace MessApi.Controllers
         {
             try
             {
-                var meals = await _unitOfWork.Meal.FindAsync(m => m.MessId == messId);
+                var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                var userEmailClaim = User.FindFirst(ClaimTypes.Email)?.Value;
+
+                if (string.IsNullOrEmpty(userIdClaim) || string.IsNullOrEmpty(userEmailClaim))
+                    return Unauthorized(ApiResponse<List<MealDto>>.FailureResponse("Invalid token."));
+
+                var userId = int.Parse(userIdClaim);
+                var userEmail = userEmailClaim;
+                //var mess = await _unitOfWork.Mess.FirstOrDefaultAsync(m => m.MessId == messId);
+                //var meals = await _unitOfWork.Meal.FindAsync(m => m.MessId == messId);
+                var meals = await _unitOfWork.Meal.GetAllIncluding(m=>m.Mess,m=>m.MessMember);
+                meals = meals.Where(m => m.MessId == messId);
+
+                var loggedinMessMember = meals.FirstOrDefault(m => m.MessMember.Email == userEmail);
+                bool loggedinMessMemberCanEdit = false;
+                if (loggedinMessMember != null)
+                {
+                    loggedinMessMemberCanEdit = loggedinMessMember.MessMember.Role == "Manager" ? true : false;
+                }
                 var mealsDto = meals.Select(m => new MealDto
                 {
                     MealId = m.MealId,
@@ -56,7 +92,8 @@ namespace MessApi.Controllers
                     MealDate = m.MealDate,
                     Breakfast = m.Breakfast,
                     Lunch = m.Lunch,
-                    Dinner = m.Dinner
+                    Dinner = m.Dinner,
+                    CanEdit= (m.Mess.CreatedBy == userId) || (m.MessMember.Email == userEmail) || loggedinMessMemberCanEdit
                 }).ToList();
                 return Ok(ApiResponse<List<MealDto>>.SuccessResponse(mealsDto));
             }
@@ -101,7 +138,9 @@ namespace MessApi.Controllers
         {
             try
             {
-                var messSummary = await _unitOfWork.MessMember.GetMessMemberSummaryAsync(messId);
+                var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                var userId = int.Parse(userIdClaim);
+                var messSummary = await _unitOfWork.MessMember.GetMessMemberSummaryAsync(messId, userId);
                 return Ok(ApiResponse<List<MessMemberSummaryDto>>.SuccessResponse(messSummary));
             }
             catch (Exception ex)

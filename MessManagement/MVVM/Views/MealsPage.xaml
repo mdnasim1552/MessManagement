@@ -86,9 +86,9 @@
                                         </DataTrigger>
                                     </Grid.Triggers>
                                     <Label Text="{Binding MealDate, StringFormat='{0:dd-MMM-yyyy}'}" HorizontalOptions="Start" VerticalOptions="Center" />
-                                    <Entry HorizontalTextAlignment="Center" Text="{Binding Breakfast, Mode=TwoWay,Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
-                                    <Entry HorizontalTextAlignment="Center" Text="{Binding Lunch, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
-                                    <Entry HorizontalTextAlignment="Center" Text="{Binding Dinner, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
+                                    <Entry HorizontalTextAlignment="Center" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Text="{Binding Breakfast, Mode=TwoWay,Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
+                                    <Entry HorizontalTextAlignment="Center" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Text="{Binding Lunch, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
+                                    <Entry HorizontalTextAlignment="Center" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Text="{Binding Dinner, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
                                 </Grid>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>

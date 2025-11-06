@@ -14,10 +14,10 @@ namespace MessApi.Repositories
         {
             _db = db;
         }
-        public async Task<List<MessMemberSummaryDto>> GetMessMemberSummaryAsync(int messId)
+        public async Task<List<MessMemberSummaryDto>> GetMessMemberSummaryAsync(int messId,int userId)
         {
             return await _db.MessMemberSummaryResults
-                .FromSqlRaw("EXEC GetMessMemberSummary @MessId = {0}", messId)
+                .FromSqlRaw("EXEC GetMessMemberSummary @MessId = {0},@UserId = {1}", messId, userId)
                 .ToListAsync();
         }
 

@@ -63,15 +63,23 @@
                             <!--<Label Text="Month:" FontAttributes="Bold" TextColor="{AppThemeBinding Light='#4A5568',Dark={StaticResource White}}"/>
                                 <DatePicker Date="{Binding Month}" TextColor="{AppThemeBinding Light='#4A5568',Dark={StaticResource White}}" Margin="0,0,0,8"/>-->
 
-                            <material:DatePickerField AllowClear="True" Format="MMMM yyyy"
-                                                          Date="{Binding Month, Mode=TwoWay}"                          
-                                                          Title="Pick a Date" 
+                            <material:DatePickerField AllowClear="False" Format="dd-MMM-yyyy"
+                                                          Date="{Binding FromDate, Mode=TwoWay}"                          
+                                                          Title="From" 
                                                           Icon="{FontImageSource FontFamily=MaterialSharpFilled, Glyph={x:Static m:MaterialSharp.Calendar_month}}"                           
                                                           InputBackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource WhiteDark}}">
 
                                 <validation:RequiredValidation />
                             </material:DatePickerField>
+                            
+                            <material:DatePickerField AllowClear="False" Format="dd-MMM-yyyy"
+                              Date="{Binding ToDate, Mode=TwoWay}"                          
+                              Title="To" 
+                              Icon="{FontImageSource FontFamily=MaterialSharpFilled, Glyph={x:Static m:MaterialSharp.Calendar_month}}"                           
+                              InputBackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource WhiteDark}}">
 
+                                <validation:RequiredValidation />
+                            </material:DatePickerField>
                         </VerticalStackLayout>
                     </input:FormView>
                 </Border>

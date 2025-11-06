@@ -129,6 +129,9 @@
         <member name="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.IsListEmpty">
             <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MarketCostsViewModel.isListEmpty"/>
         </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.CanEdit">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MarketCostsViewModel.canEdit"/>
+        </member>
         <member name="F:MessManagement.MVVM.ViewModels.MarketCostsViewModel.loadUnitsCommand">
             <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.LoadUnitsCommand"/>.</summary>
         </member>
@@ -271,8 +274,11 @@
         <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.Description">
             <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.description"/>
         </member>
-        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.Month">
-            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.month"/>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.FromDate">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.fromDate"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.ToDate">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.toDate"/>
         </member>
         <member name="M:MessManagement.MVVM.ViewModels.MessWizardViewModel.OnCurrentStepChanged(System.Int32)">
             <summary>Executes the logic for when <see cref="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.CurrentStep"/> just changed.</summary>
@@ -505,6 +511,9 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedMember">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedMember" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CanEdit">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CanEdit" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Member">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Member" generated properties.</summary>
         </member>
@@ -517,8 +526,11 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Description">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Description" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Month">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Month" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FromDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FromDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ToDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ToDate" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Fullname">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Fullname" generated properties.</summary>
@@ -559,6 +571,9 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedMember">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedMember" generated properties.</summary>
         </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CanEdit">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CanEdit" generated properties.</summary>
+        </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Member">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Member" generated properties.</summary>
         </member>
@@ -571,8 +586,11 @@
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Description">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Description" generated properties.</summary>
         </member>
-        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Month">
-            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Month" generated properties.</summary>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FromDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FromDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ToDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ToDate" generated properties.</summary>
         </member>
         <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Fullname">
             <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Fullname" generated properties.</summary>

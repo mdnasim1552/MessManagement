@@ -6,6 +6,6 @@ namespace MessApi.IRepositories
 {
     public interface IMessMemberRepository:IRepository<MessMember>
     {
-        Task<List<MessMemberSummaryDto>> GetMessMemberSummaryAsync(int messId);
+        Task<List<MessMemberSummaryDto>> GetMessMemberSummaryAsync(int messId, int userId);
     }
 }
