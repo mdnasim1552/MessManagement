@@ -287,10 +287,8 @@ H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulat
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\mauisplash.inputs
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\sp\MauiInfo.plist
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\sp\MauiSplash.storyboard
-H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449.png
-H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449@2x.png
-H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\sp\splash_58C11A0A2CDF3C43117FC29EECA319E6FBFEFE150B9123BB20E86A467F499449@3x.png
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\mauisplash.stamp
+H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Resources\google.png
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appiconItunesArtwork.png
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon83.5x83.5@2x.png
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon76x76@2x.png
@@ -303,7 +301,6 @@ H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulat
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@3x.png
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\appicon20x20@2x.png
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Assets.xcassets\appicon.appiconset\Contents.json
-H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\Resources\google.png
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot@3x.png
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot@2x.png
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\r\dotnet_bot.png
@@ -338,3 +335,6 @@ H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulat
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\MessManagement.pdb
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\MessManagement.genruntimeconfig.cache
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\ref\MessManagement.dll
+H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\sp\splash_5AD2AECCEF056826A9F11E7A790E1EB2D6FDF2C58C35EF4E0FD4BFB46A4B8FA8.png
+H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\sp\splash_5AD2AECCEF056826A9F11E7A790E1EB2D6FDF2C58C35EF4E0FD4BFB46A4B8FA8@2x.png
+H:\Mess management\MessManagement\MessManagement\obj\Debug\net9.0-ios\iossimulator-x64\resizetizer\sp\splash_5AD2AECCEF056826A9F11E7A790E1EB2D6FDF2C58C35EF4E0FD4BFB46A4B8FA8@3x.png

@@ -50,7 +50,7 @@ namespace MessApi.Controllers
         {
             var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
             if (string.IsNullOrEmpty(userIdClaim))
-                return Unauthorized("User ID not found in token.");
+                return Unauthorized(ApiResponse<int>.FailureResponse("User ID not found in token."));
 
             var userId = int.Parse(userIdClaim);
 
@@ -58,7 +58,8 @@ namespace MessApi.Controllers
             {
                 MessName = messDto.MessName,
                 Description = messDto.Description,
-                Month = messDto.Month,
+                FromDate = messDto.FromDate,
+                ToDate = messDto.ToDate,
                 CreatedBy = userId,
                 CreatedAt = DateTime.Now,
 
@@ -77,8 +78,8 @@ namespace MessApi.Controllers
                 }).ToList()
             };
             var meals = new List<Meal>();
-            var firstDay = new DateOnly(messDto.Month.Year, messDto.Month.Month, 1);
-            var lastDay = firstDay.AddMonths(1).AddDays(-1);
+            var firstDay = new DateOnly(messDto.FromDate.Year, messDto.FromDate.Month, messDto.FromDate.Day);
+            var lastDay = new DateOnly(messDto.ToDate.Year, messDto.ToDate.Month, messDto.ToDate.Day);
             var users = await _unitOfWork.User.GetAllAsync();
             foreach (var member in mess.MessMembers)
             {
@@ -106,7 +107,7 @@ namespace MessApi.Controllers
             //return Ok(new { message = "Mess created successfully.", result = true });
 
             if (!saveResult)
-                return BadRequest(ApiResponse<string>.FailureResponse("Mess creation failed."));
+                return BadRequest(ApiResponse<int>.FailureResponse("Mess creation failed."));
             // Now mess.MessId is available
             foreach (var u in users)
             {
@@ -118,7 +119,7 @@ namespace MessApi.Controllers
 
             await _unitOfWork.SaveAsync(); // Save the CurrentMessId updates
 
-            return Ok(ApiResponse<string>.SuccessResponse("Mess created successfully."));
+            return Ok(ApiResponse<int>.SuccessResponse(mess.MessId, "Mess created successfully."));
         }
 
         [Authorize]
@@ -298,8 +299,24 @@ namespace MessApi.Controllers
         {
             try
             {
+                var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+                var userEmailClaim = User.FindFirst(ClaimTypes.Email)?.Value;
 
-                var marketCosts = await _unitOfWork.MarketCost.FindAsync(m => m.MessId == messId);
+                if (string.IsNullOrEmpty(userIdClaim) || string.IsNullOrEmpty(userEmailClaim))
+                    return Unauthorized(ApiResponse<List<MarketCostDto>>.FailureResponse("Invalid token."));
+
+                var userId = int.Parse(userIdClaim);
+                var userEmail = userEmailClaim;
+                //var marketCosts = await _unitOfWork.MarketCost.FindAsync(m => m.MessId == messId);
+                var marketCosts = await _unitOfWork.MarketCost.GetAllIncluding(m => m.Mess, m => m.MessMember);
+                marketCosts = marketCosts.Where(m => m.MessId == messId);
+
+                var loggedinMessMember = marketCosts.FirstOrDefault(m => m.MessMember.Email == userEmail);
+                bool loggedinMessMemberCanEdit = false;
+                if (loggedinMessMember != null)
+                {
+                    loggedinMessMemberCanEdit = loggedinMessMember.MessMember.Role == "Manager" ? true : false;
+                }
                 var marketCostsDto = marketCosts.Select(m => new MarketCostDto
                 {
                     CostId= m.CostId,
@@ -309,7 +326,8 @@ namespace MessApi.Controllers
                     ProductName = m.ProductName,
                     Quantity = m.Quantity,
                     Unit = m.Unit,
-                    Cost=m.Cost
+                    Cost=m.Cost,
+                    CanEdit = (m.Mess.CreatedBy == userId) || (m.MessMember.Email == userEmail) || loggedinMessMemberCanEdit
                 }).ToList();
                 return Ok(ApiResponse<List<MarketCostDto>>.SuccessResponse(marketCostsDto));
             }

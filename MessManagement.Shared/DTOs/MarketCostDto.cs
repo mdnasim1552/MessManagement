@@ -19,6 +19,7 @@ namespace MessManagement.Shared.DTOs
         public int? Unit { get; set; }
         public decimal Cost { get; set; }
         public UnitDto? SelectedUnit { get; set; }
+        public bool CanEdit { get; set; }
 
     }
 }

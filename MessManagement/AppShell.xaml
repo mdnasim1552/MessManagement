@@ -10,7 +10,22 @@
     Shell.FlyoutBehavior="Flyout"
     Shell.TitleColor="{AppThemeBinding Light=Black,Dark=white}"
     Shell.ForegroundColor="{AppThemeBinding Light=Black,Dark=white}"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     Title="MessManagement">
+    <Shell.Resources>
+        <ResourceDictionary>
+            <!-- Apply StatusBarBehavior to all ContentPages -->
+            <Style TargetType="ContentPage">
+                <Setter Property="Behaviors">
+                    <Setter.Value>
+                        <toolkit:StatusBarBehavior
+                            StatusBarColor="{AppThemeBinding Light={StaticResource Primary}, Dark={StaticResource PrimaryDark}}"
+                            StatusBarStyle="{AppThemeBinding Light=LightContent, Dark=LightContent}" />
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </Shell.Resources>
     <!-- 🔹 Custom Header -->
     <Shell.FlyoutHeader>
         <Grid HeightRequest="200">

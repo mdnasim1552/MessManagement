@@ -9,6 +9,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace MessManagement.MVVM.ViewModels
@@ -40,21 +41,24 @@ namespace MessManagement.MVVM.ViewModels
 
         [ObservableProperty] private string messName;
         [ObservableProperty] private string description;
-        [ObservableProperty] private DateTime? month;
+        [ObservableProperty] private DateTime fromDate;
+        [ObservableProperty] private DateTime toDate;
         public event Action<MessMemberModel>? MemberAdded;
         public event Action<CommonBillModel>? CommonBillAdded;
         public MessWizardViewModel(MessService messService, UserSessionService userSession)
         {
             _messService = messService;
             _userSession = userSession;
-            Month = DateTime.Now;
+            FromDate = DateTime.Now;
+            ToDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month,
+                      DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month));
         }       
         [RelayCommand]
         private async Task NextButtonAsync()
         {
             if (CurrentStep == 1)
             {
-                if (string.IsNullOrWhiteSpace(MessName) || string.IsNullOrWhiteSpace(Description) || Month==null)
+                if (string.IsNullOrWhiteSpace(MessName) || string.IsNullOrWhiteSpace(Description) || FromDate == null || ToDate==null)
                 {
                     await Application.Current.MainPage.DisplayAlert("Validation Error", "Mess name, Description and Date are required.", "OK");
                     return;
@@ -161,7 +165,8 @@ namespace MessManagement.MVVM.ViewModels
                 {
                     MessName = MessName,
                     Description = Description,
-                    Month = Month??DateTime.Now,
+                    FromDate = FromDate,
+                    ToDate = ToDate,
                     MessMembers = Members.Select(m => new MessMemberDto
                     {
                         Name = m.Name,
@@ -177,14 +182,17 @@ namespace MessManagement.MVVM.ViewModels
                 };
                 var result = await _messService.CreateMessAsync(messDto);
                 if (result != null && result.Success) {
-                    await Application.Current.MainPage.DisplayAlert("Success", result.Data, "OK");
+                    await Application.Current.MainPage.DisplayAlert("Success", result.Message, "OK");
+                    _userSession.CurrentUser.CurrentMessId = result.Data;
+                    Preferences.Set("current_user", JsonSerializer.Serialize(_userSession.CurrentUser));
+                    await Shell.Current.GoToAsync($"//MessDetailsTabBar/MessMembersPage?messId={_userSession.CurrentUser.CurrentMessId}");
                 }
                 else
                 {
                     var errorMessage = result?.Message ?? $"Mess '{MessName}' is not created!";
                     await Application.Current.MainPage.DisplayAlert("Failed", errorMessage, "OK");
                 }
-                await Shell.Current.GoToAsync($"//{nameof(MainPage)}");
+                //await Shell.Current.GoToAsync($"//{nameof(MainPage)}");
             }
             catch (Exception ex)
             {

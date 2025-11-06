@@ -31,7 +31,7 @@
                                                VerticalOptions="Center"
                                                FontSize="20"
                                                FontAttributes="Bold" />
-                                                <ImageButton HorizontalOptions="Center"  VerticalOptions="Center"
+                                                <ImageButton HorizontalOptions="Center"  VerticalOptions="Center" IsVisible="{Binding IsCreatedByCurrentUser}"
                                                WidthRequest="20"
                                                HeightRequest="20"                                           
                                                Aspect="Center"

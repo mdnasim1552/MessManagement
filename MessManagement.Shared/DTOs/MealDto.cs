@@ -15,5 +15,6 @@ namespace MessManagement.Shared.DTOs
         public decimal Breakfast { get; set; }
         public decimal Lunch { get; set; }
         public decimal Dinner { get; set; }
+        public bool CanEdit { get; set; }
     }
 }

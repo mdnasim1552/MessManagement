@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace MessManagement.MVVM.ViewModels
@@ -54,7 +55,8 @@ namespace MessManagement.MVVM.ViewModels
                             MessId= mess.MessId,
                             MessName= mess.MessName,
                             Description= mess.Description,
-                            Month= mess.Month,
+                            FromDate= mess.FromDate,
+                            ToDate= mess.ToDate,
                             CreatedBy= mess.CreatedBy,
                             CreatedAt= mess.CreatedAt,
                             CurrentMess= mess.CurrentMess,
@@ -93,7 +95,8 @@ namespace MessManagement.MVVM.ViewModels
                     MessId = mess.MessId,
                     MessName = mess.MessName,
                     Description = mess.Description,
-                    Month = mess.Month,
+                    FromDate = mess.FromDate,
+                    ToDate = mess.ToDate,
                     CreatedBy = mess.CreatedBy,
                     CreatedAt = mess.CreatedAt,
                     CurrentMess = mess.CurrentMess,
@@ -111,6 +114,7 @@ namespace MessManagement.MVVM.ViewModels
                     //    m.CurrentMess = m.MessId == mess.MessId;
                     //}
                     _userSession.CurrentUser.CurrentMessId = mess.MessId;
+                    Preferences.Set("current_user", JsonSerializer.Serialize(_userSession.CurrentUser));
                     var toast = Toast.Make("Current mess is set successfully.", ToastDuration.Short, 12);
                     await toast.Show();
                 }
@@ -159,7 +163,13 @@ namespace MessManagement.MVVM.ViewModels
                 {
                     // Remove from local list to update UI
                     Messes.Remove(selectedMess);
-                    _userSession.CurrentUser.CurrentMessId = null;
+                    if(_userSession.CurrentUser.CurrentMessId== selectedMess.MessId)
+                    {
+                        _userSession.CurrentUser.CurrentMessId = null;
+                        Preferences.Remove("MessDetailsTabBarUrl");
+                        Preferences.Remove("CurrentMessId");
+                        Preferences.Set("current_user", JsonSerializer.Serialize(_userSession.CurrentUser));
+                    }            
                     await Application.Current.MainPage.DisplayAlert(
                         "Deleted",
                         "Mess deleted successfully.",

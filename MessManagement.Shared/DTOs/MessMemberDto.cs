@@ -9,5 +9,6 @@
         public string? Role { get; set; }
         public DateTime? JoinedAt { get; set; }
         public decimal Rent { get; set; }
+        public bool CanEdit { get; set; }
     }
 }

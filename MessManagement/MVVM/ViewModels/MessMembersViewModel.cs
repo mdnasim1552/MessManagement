@@ -74,7 +74,7 @@ namespace MessManagement.MVVM.ViewModels
 
             await Shell.Current.CurrentPage.ShowPopupAsync(popuppage, new PopupOptions
             {
-                //PageOverlayColor = Colors.Transparent
+                PageOverlayColor = Colors.Transparent
             });
         }
     }

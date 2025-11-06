@@ -18,5 +18,6 @@ namespace MessManagement.Shared.DTOs
         public decimal TotalHaveToPay { get; set; }
         public string Email { get; set; }
         public string? Role { get; set; }
+        public bool IsCreatedByCurrentUser { get; set; }
     }
 }

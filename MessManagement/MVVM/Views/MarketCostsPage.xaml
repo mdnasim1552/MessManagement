@@ -85,16 +85,16 @@
                                  Padding="10">
                                     <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" >
                                     <Label Text="Date" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
-                                    <DatePicker Date="{Binding ExpenseDate, Mode=TwoWay}" Format="dd-MMM-yyyy" Grid.Row="0" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" DateSelected="DatePicker_DateSelected" />
+                                        <DatePicker Date="{Binding ExpenseDate, Mode=TwoWay}" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Format="dd-MMM-yyyy" Grid.Row="0" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" DateSelected="DatePicker_DateSelected" />
 
                                     <Label Text="Product" VerticalOptions="Center" FontAttributes="Bold" Grid.Row="1" Grid.Column="0"  />
-                                    <Entry Text="{Binding ProductName, Mode=TwoWay}" Keyboard="Text" HorizontalOptions="Fill" VerticalOptions="Center" Grid.Row="1" Grid.Column="1" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="name" />
+                                        <Entry Text="{Binding ProductName, Mode=TwoWay}" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Keyboard="Text" HorizontalOptions="Fill" VerticalOptions="Center" Grid.Row="1" Grid.Column="1" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="name" />
 
                                     <Label Text="Qty" FontAttributes="Bold" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" />
-                                    <Entry Text="{Binding Quantity, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" HorizontalOptions="Fill" VerticalOptions="Center" Grid.Row="2" Grid.Column="1"  Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
+                                        <Entry Text="{Binding Quantity, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Keyboard="Numeric" HorizontalOptions="Fill" VerticalOptions="Center" Grid.Row="2" Grid.Column="1"  Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
 
                                     <Label Text="Unit" FontAttributes="Bold"  Grid.Row="3" Grid.Column="0" VerticalOptions="Center" />
-                                    <Picker Unfocused="Entry_Unfocused"  Grid.Row="3" Grid.Column="1"
+                                        <Picker Unfocused="Entry_Unfocused" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Grid.Row="3" Grid.Column="1"
                                     ItemsSource="{Binding BindingContext.Units, Source={x:Reference MarketCostsCollectionView}}"
                                     ItemDisplayBinding="{Binding ShortName}"
                                     SelectedItem="{Binding SelectedUnit, Mode=TwoWay}"
@@ -102,13 +102,13 @@
                                     VerticalOptions="Center" HorizontalOptions="Fill" />
 
                                     <Label Text="Cost" FontAttributes="Bold" Grid.Row="4" Grid.Column="0" VerticalOptions="Center" />
-                                    <Entry Text="{Binding Cost, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Row="4" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
+                                        <Entry Text="{Binding Cost, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Keyboard="Numeric" Grid.Row="4" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
 
                                     <StackLayout Grid.Row="5" Grid.Column="1" VerticalOptions="Center"
                                      Orientation="Horizontal"
                                      Spacing="4"
                                      HorizontalOptions="End">
-                                        <Button
+                                       <Button IsVisible="{Binding CanEdit, Mode=TwoWay}"
                                         FontAttributes="Bold"
                                         Command="{Binding BindingContext.AddMarketCostsCommand, Source={x:Reference MarketCostsCollectionView}}"
                                         CommandParameter="{Binding .}"
@@ -124,7 +124,7 @@
 
                                         </Button>
 
-                                        <Button
+                                         <Button IsVisible="{Binding CanEdit, Mode=TwoWay}"
                                          FontAttributes="Bold"
                                          Command="{Binding BindingContext.RemoveMarketCostsCommand, Source={x:Reference MarketCostsCollectionView}}"
                                          CommandParameter="{Binding .}"

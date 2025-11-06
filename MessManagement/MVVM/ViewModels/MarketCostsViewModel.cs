@@ -28,7 +28,8 @@ namespace MessManagement.MVVM.ViewModels
         private bool isBusy;
         [ObservableProperty]
         private bool isListEmpty;
-
+        [ObservableProperty]
+        private bool canEdit;
         public MarketCostsViewModel(MessMemberService messMemberService, MessService messService, UserSessionService userSession)
         {
             _messMemberService = messMemberService;
@@ -37,7 +38,7 @@ namespace MessManagement.MVVM.ViewModels
         }
         private void CheckIfEmpty()
         {
-            IsListEmpty = MarketCosts.Count == 0;
+            IsListEmpty = CanEdit && MarketCosts.Count == 0;
         }
         [RelayCommand]
         private async Task LoadUnitsAsync()
@@ -122,6 +123,7 @@ namespace MessManagement.MVVM.ViewModels
                     }
                     MarketCosts.Add(m);
                 }
+                CanEdit = SelectedMember.CanEdit;
                 CheckIfEmpty();
                 await Task.Delay(2000);
             }
@@ -148,7 +150,8 @@ namespace MessManagement.MVVM.ViewModels
                             ExpenseDate = DateTime.Now,
                             ProductName = string.Empty,
                             Quantity = 0.00M,
-                            Cost = 0.00M
+                            Cost = 0.00M,
+                            CanEdit=true
                         });
                     }
                     else
@@ -160,7 +163,8 @@ namespace MessManagement.MVVM.ViewModels
                             ExpenseDate = DateTime.Now,
                             ProductName = string.Empty,
                             Quantity = 0.00M,
-                            Cost = 0.00M
+                            Cost = 0.00M,
+                            CanEdit = true
                         });
                     }
                 }
@@ -174,7 +178,8 @@ namespace MessManagement.MVVM.ViewModels
                         ExpenseDate = DateTime.Now,
                         ProductName = string.Empty,
                         Quantity = 0.00M,
-                        Cost = 0.00M
+                        Cost = 0.00M,
+                        CanEdit = true
                     });
                 }
                 CheckIfEmpty();
