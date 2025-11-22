@@ -4,7 +4,17 @@
 <dict>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>UIDeviceFamily</key>
+  <key>CFBundleURLTypes</key>
+  <array>
+    <dict>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>messmanagement</string>
+        <!-- your custom scheme -->
+      </array>
+    </dict>
+  </array>
+  <key>UIDeviceFamily</key>
 	<array>
 		<integer>1</integer>
 		<integer>2</integer>

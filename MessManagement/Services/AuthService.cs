@@ -21,10 +21,18 @@ namespace MessManagement.Services
         {
             var response = await _httpClient.PostAsJsonAsync("api/Auth/login", request);
             if (!response.IsSuccessStatusCode) return null;
-
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<AuthResponseDto>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<AuthResponseDto>>();
         }
-
+        public async Task<ApiResponse<AuthResponseDto>?> GoogleLoginAsync(string idToken)
+        {
+            var response = await _httpClient.PostAsJsonAsync("api/Auth/oauth2callback", idToken);
+            if (!response.IsSuccessStatusCode) return null;
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<AuthResponseDto>.FailureResponse("Server returned no data");
+            return await response.Content.ReadFromJsonAsync<ApiResponse<AuthResponseDto>>();
+        }
         public async Task<ApiResponse<string>> RegisterAsync(RegisterUserDto request)
         {
             var response = await _httpClient.PostAsJsonAsync("api/auth/register", request);
@@ -33,6 +41,8 @@ namespace MessManagement.Services
                 var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<String>>();
                 return errorResponse ?? ApiResponse<string>.FailureResponse("Unknown error");
             }
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<string>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<string>>();
         }
         public async Task<ApiResponse<AuthResponseDto>?> RefreshTokenAsync(string refreshToken)
@@ -61,6 +71,8 @@ namespace MessManagement.Services
                 var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<string>>();
                 return errorResponse ?? ApiResponse<string>.FailureResponse("Unknown error");
             }
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<string>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<string>>();
         }
     }

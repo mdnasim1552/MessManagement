@@ -27,6 +27,8 @@ namespace MessManagement.Services
                 var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<int>>();
                 return errorResponse ?? ApiResponse<int>.FailureResponse("Unknown error");
             }
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<int>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<int>>();
         }
         public async Task<ApiResponse<List<MessDto>>> GetUserMessesAsync()
@@ -39,6 +41,8 @@ namespace MessManagement.Services
                 var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<List<MessDto>>>();
                 return errorResponse ?? ApiResponse<List<MessDto>>.FailureResponse("Unknown error");
             }
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<List<MessDto>>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<List<MessDto>>>();
         }
         public async Task<ApiResponse<bool>> DeleteMessAsync(int messId)
@@ -51,6 +55,8 @@ namespace MessManagement.Services
                 var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
                 return errorResponse ?? ApiResponse<bool>.FailureResponse("Unknown error");
             }
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<bool>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
         }
 
@@ -64,6 +70,8 @@ namespace MessManagement.Services
                 var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<List<CommonBillDto>>>();
                 return errorResponse ?? ApiResponse<List<CommonBillDto>>.FailureResponse("Unknown error");
             }
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<List<CommonBillDto>>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<List<CommonBillDto>>>();
         }
 
@@ -77,6 +85,8 @@ namespace MessManagement.Services
                 var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
                 return errorResponse ?? ApiResponse<bool>.FailureResponse("Unknown error");
             }
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<bool>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
         }
         public async Task<ApiResponse<CommonBillDto>> UpdateAndSaveCommonBillAsync(CommonBillDto commonBillDto)
@@ -89,6 +99,8 @@ namespace MessManagement.Services
                 var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<CommonBillDto>>();
                 return errorResponse ?? ApiResponse<CommonBillDto>.FailureResponse("Unknown error");
             }
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<CommonBillDto>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<CommonBillDto>>();
         }
 
@@ -102,6 +114,8 @@ namespace MessManagement.Services
                 var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<List<UnitDto>>>();
                 return errorResponse ?? ApiResponse<List<UnitDto>>.FailureResponse("Unknown error");
             }
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<List<UnitDto>>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<List<UnitDto>>>();
         }
         public async Task<ApiResponse<MarketCostDto>> UpdateAndSaveMarketCostsAsync(MarketCostDto marketCostDto)
@@ -114,6 +128,8 @@ namespace MessManagement.Services
                 var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<MarketCostDto>>();
                 return errorResponse ?? ApiResponse<MarketCostDto>.FailureResponse("Unknown error");
             }
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<MarketCostDto>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<MarketCostDto>>();
         }
         public async Task<ApiResponse<bool>> UpdateCurrentMessAsync(MessDto messDto)
@@ -126,6 +142,8 @@ namespace MessManagement.Services
                 var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
                 return errorResponse ?? ApiResponse<bool>.FailureResponse("Unknown error");
             }
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<bool>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
         }
     }

@@ -9,7 +9,9 @@ namespace MessManagement.Shared.DTOs
     public class MessMemberSummaryDto
     {
         public int MessMemberId { get; set; }
+        public int MessId { get; set; }
         public string Name { get; set; } = string.Empty;
+        public decimal MealRate { get; set; }
         public decimal TotalMeal { get; set; }
         public decimal TotalMealCost { get; set; }
         public decimal MarketCost { get; set; }

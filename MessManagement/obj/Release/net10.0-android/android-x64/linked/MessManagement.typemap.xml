@@ -1,0 +1,9 @@
+<api type="release" assembly-name="MessManagement" mvid="83850a84dbb54f8c8169e8c1330cd7ec">
+  <module assembly-name="MessManagement" mvid="83850a84dbb54f8c8169e8c1330cd7ec" mvid-bytes="hAqFg7XbjE+BaejBMwzX7A==">
+    <types-scratch>
+      <entry key="crc64ab0f1799ca18a3a2/MainActivity" java-name="crc64ab0f1799ca18a3a2/MainActivity" managed-type-name="MessManagement.MainActivity" token="33554511" />
+      <entry key="crc64ab0f1799ca18a3a2/MainApplication" java-name="crc64ab0f1799ca18a3a2/MainApplication" managed-type-name="MessManagement.MainApplication" token="33554512" />
+      <entry key="crc64ab373a1750a3af7f/WebAuthenticationCallbackActivity" java-name="crc64ab373a1750a3af7f/WebAuthenticationCallbackActivity" managed-type-name="MessManagement.Platforms.Android.WebAuthenticationCallbackActivity" token="33554544" />
+    </types-scratch>
+  </module>
+</api>

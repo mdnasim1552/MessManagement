@@ -7,7 +7,6 @@ using Microsoft.EntityFrameworkCore;
 namespace MessApi.Models;
 
 [Table("Mess")]
-[Index("FromDate", Name = "UQ__Mess__FF7C6BA029C450D6", IsUnique = true)]
 public partial class Mess
 {
     [Key]

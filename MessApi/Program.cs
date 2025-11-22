@@ -3,6 +3,8 @@ using MessApi.Data;
 using MessApi.Data.Seeders;
 using MessApi.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
+using Microsoft.OpenApi;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,29 +29,18 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new() { Title = "My API", Version = "v1" });
 
     // Add JWT Authentication
-    c.AddSecurityDefinition("Bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
-        Type = Microsoft.OpenApi.Models.SecuritySchemeType.ApiKey,
+        Type = SecuritySchemeType.ApiKey,
         Scheme = "Bearer",
         BearerFormat = "JWT",
-        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
+        In = ParameterLocation.Header,
         Description = "Enter 'Bearer' [space] and then your valid token in the text input below.\n\nExample: Bearer eyJhbGciOiJIUzI1NiIs..."
     });
-
-    c.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement
+    c.AddSecurityRequirement(document => new OpenApiSecurityRequirement
     {
-        {
-            new Microsoft.OpenApi.Models.OpenApiSecurityScheme
-            {
-                Reference = new Microsoft.OpenApi.Models.OpenApiReference
-                {
-                    Type = Microsoft.OpenApi.Models.ReferenceType.SecurityScheme,
-                    Id = "Bearer"
-                }
-            },
-            new string[] {}
-        }
+        [new OpenApiSecuritySchemeReference("Bearer", document)] = []
     });
 });
 
@@ -63,7 +54,7 @@ using (var scope = app.Services.CreateScope())
 app.UseStaticFiles();
 app.UseCors("AllowAll");
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseSwagger();
     app.UseSwaggerUI();

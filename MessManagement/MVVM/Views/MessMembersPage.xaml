@@ -5,6 +5,18 @@
              xmlns:m="clr-namespace:UraniumUI.Icons.MaterialSymbols;assembly=UraniumUI.Icons.MaterialSymbols"
              Title="Mess Members"
              BackgroundColor="{AppThemeBinding Light='#EDEEEE',Dark={StaticResource Black}}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding ShowMemberEditorCommand}"
+                 Order="Primary"
+                 Priority="0">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Glyph="{x:Static m:MaterialSharp.Add}" 
+                                 FontFamily="MaterialSharpFilled"
+                                 Color="Black"
+                                 Size="24"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <Grid>
         <Grid Padding="10">
             <ScrollView>
@@ -25,26 +37,42 @@
                                 Margin="0,5">
 
                                         <VerticalStackLayout Spacing="8">
-                                            <HorizontalStackLayout VerticalOptions="Center"
-                                        HorizontalOptions="Center">
-                                                <Label Text="{Binding Name}" HorizontalOptions="Center" 
-                                               VerticalOptions="Center"
-                                               FontSize="20"
-                                               FontAttributes="Bold" />
-                                                <ImageButton HorizontalOptions="Center"  VerticalOptions="Center" IsVisible="{Binding IsCreatedByCurrentUser}"
-                                               WidthRequest="20"
-                                               HeightRequest="20"                                           
-                                               Aspect="Center"
-                                               Command="{Binding BindingContext.ShowMemberEditorCommand, Source={x:Reference MemberCollection}}"
-                                               CommandParameter="{Binding .}" >
+                                            <Grid ColumnDefinitions="*,3*,*">
+                                                <HorizontalStackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
+                                                    <Label Text="{Binding Name}" HorizontalOptions="Center" 
+                                                           VerticalOptions="Center"
+                                                           FontSize="20"
+                                                           FontAttributes="Bold" />
+                                                    <ImageButton HorizontalOptions="Center"  VerticalOptions="Center" IsVisible="{Binding IsCreatedByCurrentUser}"
+                                                                 WidthRequest="20"
+                                                                 HeightRequest="20"                                           
+                                                                 Aspect="Center"
+                                                                 Command="{Binding BindingContext.ShowMemberEditorCommand, Source={x:Reference MemberCollection}}"
+                                                                 CommandParameter="{Binding .}" >
+                                                        <ImageButton.Source>
+                                                            <FontImageSource Glyph="{x:Static m:MaterialSharp.Edit}" 
+                                                                             FontFamily="MaterialSharpFilled"
+                                                                             Color="Black"
+                                                                             Size="24"/>
+                                                        </ImageButton.Source>
+                                                    </ImageButton>
+                                                </HorizontalStackLayout>
+                                                
+                                                <ImageButton Grid.Column="2" HorizontalOptions="End" VerticalOptions="Center" IsVisible="{Binding IsCreatedByCurrentUser}"
+                                                             WidthRequest="20"
+                                                             HeightRequest="20"                                           
+                                                             Aspect="Center"
+                                                             Command="{Binding BindingContext.DeleteMemberCommand, Source={x:Reference MemberCollection}}"
+                                                             CommandParameter="{Binding .}" >
                                                     <ImageButton.Source>
-                                                        <FontImageSource Glyph="{x:Static m:MaterialSharp.Edit}" 
-                                                    FontFamily="MaterialSharpFilled"
-                                                    Color="Black"
-                                                    Size="24"/>
+                                                        <FontImageSource Glyph="{x:Static m:MaterialSharp.Delete}" 
+                                                                         FontFamily="MaterialSharpFilled"
+                                                                         Color="Red"
+                                                                         Size="24"/>
                                                     </ImageButton.Source>
                                                 </ImageButton>
-                                            </HorizontalStackLayout>
+                                            </Grid>
+                                            
                                             <!-- Member Name -->
 
 
@@ -54,39 +82,45 @@
 
                                             <!-- Member Info -->
                                             <Grid ColumnDefinitions="*,*"
-                                          RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto"
+                                          RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto"
                                           RowSpacing="6">
-                                                <Label Text="Total meal:" 
+                                                <Label Text="Meal rate:" 
                                                FontAttributes="Bold" 
                                                Grid.Row="0" Grid.Column="0"/>
-                                                <Label Text="{Binding TotalMeal, StringFormat='{0:F2}'}" 
+                                                <Label Text="{Binding MealRate, StringFormat='{0:F2}'}" 
                                                Grid.Row="0" Grid.Column="1"/>
+
+                                                <Label Text="Total meal:" 
+                                               FontAttributes="Bold" 
+                                               Grid.Row="1" Grid.Column="0"/>
+                                                <Label Text="{Binding TotalMeal, StringFormat='{0:F2}'}" 
+                                               Grid.Row="1" Grid.Column="1"/>
 
                                                 <Label Text="Total meal cost:" 
                                                FontAttributes="Bold" 
-                                               Grid.Row="1" Grid.Column="0"/>
+                                               Grid.Row="2" Grid.Column="0"/>
                                                 <Label Text="{Binding TotalMealCost, StringFormat='{0:F2} Tk'}" 
-                                               Grid.Row="1" Grid.Column="1"/>
+                                               Grid.Row="2" Grid.Column="1"/>
 
                                                 <Label Text="Market cost:" 
                                                FontAttributes="Bold" 
-                                               Grid.Row="2" Grid.Column="0"/>
+                                               Grid.Row="3" Grid.Column="0"/>
                                                 <Label Text="{Binding MarketCost, StringFormat='{0:F2} Tk'}" 
-                                               Grid.Row="2" Grid.Column="1"/>
+                                               Grid.Row="3" Grid.Column="1"/>
 
                                                 <Label Text="Get/Pay:" 
                                                FontAttributes="Bold" 
-                                               Grid.Row="3" Grid.Column="0"/>
+                                               Grid.Row="4" Grid.Column="0"/>
                                                 <Label Text="{Binding GetOrPayFromMeal, StringFormat='{0:F2} Tk'}" 
-                                               Grid.Row="3" Grid.Column="1"/>
+                                               Grid.Row="4" Grid.Column="1"/>
 
                                                 <Label Text="Rent:" 
                                                 FontAttributes="Bold" 
-                                                Grid.Row="4" Grid.Column="0"/>
+                                                Grid.Row="5" Grid.Column="0"/>
                                                 <Label Text="{Binding Rent, StringFormat='{0:F2} Tk'}" 
-                                                Grid.Row="4" Grid.Column="1"/>
+                                                Grid.Row="5" Grid.Column="1"/>
 
-                                                <Border Grid.Row="5" Grid.ColumnSpan="2"
+                                                <Border Grid.Row="6" Grid.ColumnSpan="2"
                                                 BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource WhiteDark}}"
                                                 Padding="5">
                                                     <Grid ColumnDefinitions="*,*">

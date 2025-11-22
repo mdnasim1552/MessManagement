@@ -1,0 +1,24 @@
+<api>
+  <jcw-types>
+    <type name="MenuItemOnMenuItemClickListener" package="crc64498ef367153c30d3" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="java.lang.Object" partial_assembly_qualified_name="UraniumUI.Platforms.Android.MenuItemOnMenuItemClickListener, UraniumUI">
+      <implemented_interfaces>
+        <interface name="android.view.MenuItem.OnMenuItemClickListener" />
+      </implemented_interfaces>
+      <constructors>
+        <constructor name="MenuItemOnMenuItemClickListener" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+      </constructors>
+      <methods>
+        <method name="onMenuItemClick" method="n_onMenuItemClick:(Landroid/view/MenuItem;)Z:GetOnMenuItemClick_Landroid_view_MenuItem_Handler:Android.Views.IMenuItemOnMenuItemClickListenerInvoker, Mono.Android, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" jni_signature="(Landroid/view/MenuItem;)Z" params="android.view.MenuItem p0" retval="boolean" super_call="p0" activate_call="p0" />
+      </methods>
+    </type>
+    <type name="BoxArrayAdapter" package="crc642ad154684404f6e1" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="android.widget.ArrayAdapter" partial_assembly_qualified_name="UraniumUI.Handlers.BoxArrayAdapter, UraniumUI">
+      <constructors>
+        <constructor name="BoxArrayAdapter" method="n_.ctor:(Landroid/content/Context;ILjava/util/List;)V:" jni_signature="(Landroid/content/Context;ILjava/util/List;)V" managed_parameters="Android.Content.Context, Mono.Android:System.Int32, System.Private.CoreLib:System.Collections.IList, System.Private.CoreLib" params="android.content.Context p0, int p1, java.util.List p2" retval="void" is_dynamically_registered="True" super_call="p0, p1, p2" activate_call="p0, p1, p2" />
+      </constructors>
+    </type>
+  </jcw-types>
+  <acw-types partial-assembly-name="UraniumUI" module-name="UraniumUI.dll">
+    <type assembly-qualified-name="UraniumUI.Platforms.Android.MenuItemOnMenuItemClickListener, UraniumUI, Version=2.13.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="uraniumui.platforms.android.MenuItemOnMenuItemClickListener" java-key="crc64498ef367153c30d3.MenuItemOnMenuItemClickListener" managed-key="UraniumUI.Platforms.Android.MenuItemOnMenuItemClickListener" partial-assembly-qualified-name="UraniumUI.Platforms.Android.MenuItemOnMenuItemClickListener, UraniumUI" />
+    <type assembly-qualified-name="UraniumUI.Handlers.BoxArrayAdapter, UraniumUI, Version=2.13.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="uraniumui.handlers.BoxArrayAdapter" java-key="crc642ad154684404f6e1.BoxArrayAdapter" managed-key="UraniumUI.Handlers.BoxArrayAdapter" partial-assembly-qualified-name="UraniumUI.Handlers.BoxArrayAdapter, UraniumUI" />
+  </acw-types>
+</api>

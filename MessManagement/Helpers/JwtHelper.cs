@@ -15,10 +15,13 @@ namespace MessManagement.Helpers
     {
         private readonly AuthService _authService;
         private readonly UserSessionService _userSession;
-        public JwtHelper(AuthService authService, UserSessionService userSession)
+        private readonly IGoogleAuthService _googleAuthService;
+
+        public JwtHelper(AuthService authService, UserSessionService userSession, IGoogleAuthService googleAuthService)
         {
             _authService = authService;
             _userSession = userSession;
+            _googleAuthService = googleAuthService;
         }
         public async Task<bool> IsTokenExpired(string token)
         {
@@ -95,6 +98,7 @@ namespace MessManagement.Helpers
         }
         public void ClearCurrentUser()
         {
+            _googleAuthService.SignOutAsync();
             _userSession.ClearUser();
             Preferences.Remove("MessDetailsTabBarUrl");
             Preferences.Remove("CurrentMessId");

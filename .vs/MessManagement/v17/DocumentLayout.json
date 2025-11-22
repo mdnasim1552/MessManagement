@@ -3,168 +3,116 @@
   "WorkspaceRootPath": "H:\\Mess management\\MessManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\viewmodels\\messlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\viewmodels\\messlistviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\messmanagement.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\messmanagement.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\views\\messmemberspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\views\\messmemberspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\messmanagement.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\messmanagement.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|h:\\mess management\\messmanagement\\messapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|solutionrelative:messapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\viewmodels\\messwizardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\viewmodels\\messwizardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\views\\messwizardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\views\\messwizardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\views\\messmemberspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\views\\messmemberspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\models\\messmembermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\models\\messmembermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\viewmodels\\messmembersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\viewmodels\\messmembersviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|h:\\mess management\\messmanagement\\messapi\\messapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|solutionrelative:messapi\\messapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\helpers\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\helpers\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\services\\usersessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\services\\usersessionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\viewmodels\\messmembereditorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\viewmodels\\messmembereditorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\views\\messlistpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\views\\messlistpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\views\\messlistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\views\\messlistpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\views\\messmembereditorpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\views\\messmembereditorpopup.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\views\\messmembereditorpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\views\\messmembereditorpopup.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\views\\mealspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\views\\mealspage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|h:\\mess management\\messmanagement\\messapi\\controllers\\messcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|solutionrelative:messapi\\controllers\\messcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|h:\\mess management\\messmanagement\\messapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|solutionrelative:messapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\views\\messwizardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\views\\messwizardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\services\\messservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\services\\messservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\viewmodels\\messwizardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\viewmodels\\messwizardviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\models\\messmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\models\\messmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D4B6F78B-7B08-4245-8F42-FA468F1A62FD}|MessManagement.Shared\\MessManagement.Shared.csproj|h:\\mess management\\messmanagement\\messmanagement.shared\\dtos\\messdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4B6F78B-7B08-4245-8F42-FA468F1A62FD}|MessManagement.Shared\\MessManagement.Shared.csproj|solutionrelative:messmanagement.shared\\dtos\\messdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\resources\\styles\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\resources\\styles\\styles.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|h:\\mess management\\messmanagement\\messapi\\models\\mess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|solutionrelative:messapi\\models\\mess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\resources\\styles\\colors.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D4B6F78B-7B08-4245-8F42-FA468F1A62FD}|MessManagement.Shared\\MessManagement.Shared.csproj|h:\\mess management\\messmanagement\\messmanagement.shared\\dtos\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4B6F78B-7B08-4245-8F42-FA468F1A62FD}|MessManagement.Shared\\MessManagement.Shared.csproj|solutionrelative:messmanagement.shared\\dtos\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mauiprogram.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|h:\\mess management\\messmanagement\\messapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|solutionrelative:messapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\platforms\\android\\webauthenticationcallbackactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\platforms\\android\\webauthenticationcallbackactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\views\\windowsgoogleloginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\views\\windowsgoogleloginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\views\\windowsgoogleloginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\views\\windowsgoogleloginpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\helpers\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\helpers\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\platforms\\android\\googleauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\platforms\\android\\googleauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\appshell.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D4B6F78B-7B08-4245-8F42-FA468F1A62FD}|MessManagement.Shared\\MessManagement.Shared.csproj|h:\\mess management\\messmanagement\\messmanagement.shared\\dtos\\igoogleauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D4B6F78B-7B08-4245-8F42-FA468F1A62FD}|MessManagement.Shared\\MessManagement.Shared.csproj|solutionrelative:messmanagement.shared\\dtos\\igoogleauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|h:\\mess management\\messmanagement\\messapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|solutionrelative:messapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|h:\\mess management\\messmanagement\\messapi\\controllers\\messmembercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|solutionrelative:messapi\\controllers\\messmembercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\viewmodels\\marketcostsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\viewmodels\\marketcostsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|h:\\mess management\\messmanagement\\messapi\\controllers\\messcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|solutionrelative:messapi\\controllers\\messcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\views\\marketcostspage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\views\\marketcostspage.xaml.cs||{8B382828-6202-11D1-8870-0000F87579D2}|"
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\services\\messmemberservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\services\\messmemberservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|h:\\mess management\\messmanagement\\messapi\\models\\marketcost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|solutionrelative:messapi\\models\\marketcost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\views\\marketcostspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\views\\marketcostspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|h:\\mess management\\messmanagement\\messapi\\models\\messmember.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|solutionrelative:messapi\\models\\messmember.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\views\\mealspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\views\\mealspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4B6F78B-7B08-4245-8F42-FA468F1A62FD}|MessManagement.Shared\\MessManagement.Shared.csproj|h:\\mess management\\messmanagement\\messmanagement.shared\\dtos\\marketcostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4B6F78B-7B08-4245-8F42-FA468F1A62FD}|MessManagement.Shared\\MessManagement.Shared.csproj|solutionrelative:messmanagement.shared\\dtos\\marketcostdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4B6F78B-7B08-4245-8F42-FA468F1A62FD}|MessManagement.Shared\\MessManagement.Shared.csproj|h:\\mess management\\messmanagement\\messmanagement.shared\\dtos\\mealdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4B6F78B-7B08-4245-8F42-FA468F1A62FD}|MessManagement.Shared\\MessManagement.Shared.csproj|solutionrelative:messmanagement.shared\\dtos\\mealdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4B6F78B-7B08-4245-8F42-FA468F1A62FD}|MessManagement.Shared\\MessManagement.Shared.csproj|h:\\mess management\\messmanagement\\messmanagement.shared\\dtos\\commonbilldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4B6F78B-7B08-4245-8F42-FA468F1A62FD}|MessManagement.Shared\\MessManagement.Shared.csproj|solutionrelative:messmanagement.shared\\dtos\\commonbilldto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D4B6F78B-7B08-4245-8F42-FA468F1A62FD}|MessManagement.Shared\\MessManagement.Shared.csproj|h:\\mess management\\messmanagement\\messmanagement.shared\\dtos\\messmembersummarydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D4B6F78B-7B08-4245-8F42-FA468F1A62FD}|MessManagement.Shared\\MessManagement.Shared.csproj|solutionrelative:messmanagement.shared\\dtos\\messmembersummarydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|h:\\mess management\\messmanagement\\messapi\\models\\meal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|solutionrelative:messapi\\models\\meal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|h:\\mess management\\messmanagement\\messapi\\unitofwork\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4893FDE1-FA3C-44E7-99F8-EF10CA1D29F6}|MessApi\\MessApi.csproj|solutionrelative:messapi\\unitofwork\\repository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\mvvm\\viewmodels\\mealsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\mvvm\\viewmodels\\mealsviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|h:\\mess management\\messmanagement\\messmanagement\\platforms\\android\\mainactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{093FB93D-DAEC-4A42-8C13-F9F4570063D4}|MessManagement\\MessManagement.csproj|solutionrelative:messmanagement\\platforms\\android\\mainactivity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -174,543 +122,373 @@
       "DocumentGroups": [
         {
           "DockedWidth": 209,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "LoginViewModel.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\LoginViewModel.cs",
-              "RelativeDocumentMoniker": "MessManagement\\MVVM\\ViewModels\\LoginViewModel.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\LoginViewModel.cs",
-              "RelativeToolTip": "MessManagement\\MVVM\\ViewModels\\LoginViewModel.cs",
-              "ViewState": "AgIAAEcAAAAAAAAAAAAwwFcAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T22:25:36.683Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "JwtHelper.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\Helpers\\JwtHelper.cs",
-              "RelativeDocumentMoniker": "MessManagement\\Helpers\\JwtHelper.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\Helpers\\JwtHelper.cs",
-              "RelativeToolTip": "MessManagement\\Helpers\\JwtHelper.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAuwFsAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T16:00:31.292Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MessListViewModel.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\MessListViewModel.cs",
-              "RelativeDocumentMoniker": "MessManagement\\MVVM\\ViewModels\\MessListViewModel.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\MessListViewModel.cs",
-              "RelativeToolTip": "MessManagement\\MVVM\\ViewModels\\MessListViewModel.cs",
-              "ViewState": "AgIAAJoAAAAAAAAAAAAcwKcAAAAYAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T19:12:35.283Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UserSessionService.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\Services\\UserSessionService.cs",
-              "RelativeDocumentMoniker": "MessManagement\\Services\\UserSessionService.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\Services\\UserSessionService.cs",
-              "RelativeToolTip": "MessManagement\\Services\\UserSessionService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T21:52:31.264Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MessWizardPage.xaml.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MessWizardPage.xaml.cs",
-              "RelativeDocumentMoniker": "MessManagement\\MVVM\\Views\\MessWizardPage.xaml.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MessWizardPage.xaml.cs",
-              "RelativeToolTip": "MessManagement\\MVVM\\Views\\MessWizardPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T22:42:32.19Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AppShell.xaml.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\AppShell.xaml.cs",
-              "RelativeDocumentMoniker": "MessManagement\\AppShell.xaml.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\AppShell.xaml.cs",
-              "RelativeToolTip": "MessManagement\\AppShell.xaml.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAgwCoAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T21:57:35.513Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "MealsPage.xaml.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MealsPage.xaml.cs",
-              "RelativeDocumentMoniker": "MessManagement\\MVVM\\Views\\MealsPage.xaml.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MealsPage.xaml.cs",
-              "RelativeToolTip": "MessManagement\\MVVM\\Views\\MealsPage.xaml.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T21:22:56.603Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "MessListPage.xaml.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MessListPage.xaml.cs",
-              "RelativeDocumentMoniker": "MessManagement\\MVVM\\Views\\MessListPage.xaml.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MessListPage.xaml.cs",
-              "RelativeToolTip": "MessManagement\\MVVM\\Views\\MessListPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T21:22:48.216Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "MessMemberEditorPopup.xaml.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MessMemberEditorPopup.xaml.cs",
-              "RelativeDocumentMoniker": "MessManagement\\MVVM\\Views\\MessMemberEditorPopup.xaml.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MessMemberEditorPopup.xaml.cs",
-              "RelativeToolTip": "MessManagement\\MVVM\\Views\\MessMemberEditorPopup.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T21:07:13.382Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "MessMemberEditorPopup.xaml",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MessMemberEditorPopup.xaml",
-              "RelativeDocumentMoniker": "MessManagement\\MVVM\\Views\\MessMemberEditorPopup.xaml",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MessMemberEditorPopup.xaml",
-              "RelativeToolTip": "MessManagement\\MVVM\\Views\\MessMemberEditorPopup.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-06T21:07:04.223Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\App.xaml.cs",
-              "RelativeDocumentMoniker": "MessManagement\\App.xaml.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\App.xaml.cs",
-              "RelativeToolTip": "MessManagement\\App.xaml.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAgwCkAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T20:56:04.408Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "MauiProgram.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MauiProgram.cs",
-              "RelativeDocumentMoniker": "MessManagement\\MauiProgram.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MauiProgram.cs",
-              "RelativeToolTip": "MessManagement\\MauiProgram.cs",
-              "ViewState": "AgIAAEgAAAAAAAAAAAAgwGIAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T20:27:18.284Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "MainPage.xaml",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MainPage.xaml",
-              "RelativeDocumentMoniker": "MessManagement\\MainPage.xaml",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MainPage.xaml",
-              "RelativeToolTip": "MessManagement\\MainPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-06T20:27:17.326Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "MessMemberEditorViewModel.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\MessMemberEditorViewModel.cs",
-              "RelativeDocumentMoniker": "MessManagement\\MVVM\\ViewModels\\MessMemberEditorViewModel.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\MessMemberEditorViewModel.cs",
-              "RelativeToolTip": "MessManagement\\MVVM\\ViewModels\\MessMemberEditorViewModel.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAowDkAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T20:21:18.735Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "MessMembersViewModel.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\MessMembersViewModel.cs",
-              "RelativeDocumentMoniker": "MessManagement\\MVVM\\ViewModels\\MessMembersViewModel.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\MessMembersViewModel.cs",
-              "RelativeToolTip": "MessManagement\\MVVM\\ViewModels\\MessMembersViewModel.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAowEQAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T17:50:19.51Z",
+              "Title": "MessManagement",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MessManagement.csproj",
+              "RelativeDocumentMoniker": "MessManagement\\MessManagement.csproj",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MessManagement.csproj",
+              "RelativeToolTip": "MessManagement\\MessManagement.csproj",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-22T17:45:11.918Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "MessMembersPage.xaml.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MessMembersPage.xaml.cs",
-              "RelativeDocumentMoniker": "MessManagement\\MVVM\\Views\\MessMembersPage.xaml.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MessMembersPage.xaml.cs",
-              "RelativeToolTip": "MessManagement\\MVVM\\Views\\MessMembersPage.xaml.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAApwC0AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T19:46:14.625Z",
+              "Title": "MessManagement",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MessManagement.csproj",
+              "RelativeDocumentMoniker": "MessManagement\\MessManagement.csproj",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MessManagement.csproj",
+              "RelativeToolTip": "MessManagement\\MessManagement.csproj",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAB0AAAA8AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-22T17:42:55.597Z",
               "EditorCaption": ""
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "MessListPage.xaml",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MessListPage.xaml",
-              "RelativeDocumentMoniker": "MessManagement\\MVVM\\Views\\MessListPage.xaml",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MessListPage.xaml",
-              "RelativeToolTip": "MessManagement\\MVVM\\Views\\MessListPage.xaml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-06T19:40:19.212Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "MessModel.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Models\\MessModel.cs",
-              "RelativeDocumentMoniker": "MessManagement\\MVVM\\Models\\MessModel.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Models\\MessModel.cs",
-              "RelativeToolTip": "MessManagement\\MVVM\\Models\\MessModel.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBUAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T19:31:17.388Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{f96a0d64-71fd-316f-b663-924c78154f2a}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "MessMemberModel.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Models\\MessMemberModel.cs",
-              "RelativeDocumentMoniker": "MessManagement\\MVVM\\Models\\MessMemberModel.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Models\\MessMemberModel.cs",
-              "RelativeToolTip": "MessManagement\\MVVM\\Models\\MessMemberModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessApi\\Program.cs",
+              "RelativeDocumentMoniker": "MessApi\\Program.cs",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessApi\\Program.cs",
+              "RelativeToolTip": "MessApi\\Program.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T19:31:15.018Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "Mess.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessApi\\Models\\Mess.cs",
-              "RelativeDocumentMoniker": "MessApi\\Models\\Mess.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessApi\\Models\\Mess.cs",
-              "RelativeToolTip": "MessApi\\Models\\Mess.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAQwBgAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T19:19:19.185Z",
+              "WhenOpened": "2025-11-22T16:21:04.18Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "MessApi",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessApi\\MessApi.csproj",
+              "RelativeDocumentMoniker": "MessApi\\MessApi.csproj",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessApi\\MessApi.csproj",
+              "RelativeToolTip": "MessApi\\MessApi.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-11-22T16:14:47.151Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "App.xaml",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\App.xaml",
+              "RelativeDocumentMoniker": "MessManagement\\App.xaml",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\App.xaml",
+              "RelativeToolTip": "MessManagement\\App.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-22T15:47:02.863Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Colors.xaml",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\Resources\\Styles\\Colors.xaml",
+              "RelativeDocumentMoniker": "MessManagement\\Resources\\Styles\\Colors.xaml",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\Resources\\Styles\\Colors.xaml",
+              "RelativeToolTip": "MessManagement\\Resources\\Styles\\Colors.xaml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-22T15:46:52.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Styles.xaml",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\Resources\\Styles\\Styles.xaml",
+              "RelativeDocumentMoniker": "MessManagement\\Resources\\Styles\\Styles.xaml",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\Resources\\Styles\\Styles.xaml",
+              "RelativeToolTip": "MessManagement\\Resources\\Styles\\Styles.xaml",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-22T15:46:48.239Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "MessWizardViewModel.cs",
               "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\MessWizardViewModel.cs",
               "RelativeDocumentMoniker": "MessManagement\\MVVM\\ViewModels\\MessWizardViewModel.cs",
               "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\MessWizardViewModel.cs",
               "RelativeToolTip": "MessManagement\\MVVM\\ViewModels\\MessWizardViewModel.cs",
-              "ViewState": "AgIAAKsAAAAAAAAAAAAwwMIAAABJAAAAAAAAAA==",
+              "ViewState": "AgIAAOoAAAAAAAAAAAAmwMwAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T18:46:54.689Z",
+              "WhenOpened": "2025-11-22T06:01:18.496Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 7,
               "Title": "MessWizardPage.xaml",
               "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MessWizardPage.xaml",
               "RelativeDocumentMoniker": "MessManagement\\MVVM\\Views\\MessWizardPage.xaml",
               "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MessWizardPage.xaml",
               "RelativeToolTip": "MessManagement\\MVVM\\Views\\MessWizardPage.xaml",
-              "ViewState": "AgIAADUAAAAAAAAAAAAgwEcAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAArwA4AAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-06T18:47:35.235Z",
+              "WhenOpened": "2025-11-22T14:55:23.277Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "ApiResponse.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement.Shared\\DTOs\\ApiResponse.cs",
-              "RelativeDocumentMoniker": "MessManagement.Shared\\DTOs\\ApiResponse.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement.Shared\\DTOs\\ApiResponse.cs",
-              "RelativeToolTip": "MessManagement.Shared\\DTOs\\ApiResponse.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T19:08:36.265Z",
+              "DocumentIndex": 12,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\appsettings.json",
+              "RelativeDocumentMoniker": "MessManagement\\appsettings.json",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\appsettings.json",
+              "RelativeToolTip": "MessManagement\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-22T14:45:03.952Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MessMembersPage.xaml",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MessMembersPage.xaml",
-              "RelativeDocumentMoniker": "MessManagement\\MVVM\\Views\\MessMembersPage.xaml",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MessMembersPage.xaml",
-              "RelativeToolTip": "MessManagement\\MVVM\\Views\\MessMembersPage.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-06T17:49:07.287Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "CommonBillDto.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement.Shared\\DTOs\\CommonBillDto.cs",
-              "RelativeDocumentMoniker": "MessManagement.Shared\\DTOs\\CommonBillDto.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement.Shared\\DTOs\\CommonBillDto.cs",
-              "RelativeToolTip": "MessManagement.Shared\\DTOs\\CommonBillDto.cs",
+              "DocumentIndex": 13,
+              "Title": "MauiProgram.cs",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MauiProgram.cs",
+              "RelativeDocumentMoniker": "MessManagement\\MauiProgram.cs",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MauiProgram.cs",
+              "RelativeToolTip": "MessManagement\\MauiProgram.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T16:16:10.465Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "MarketCostDto.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement.Shared\\DTOs\\MarketCostDto.cs",
-              "RelativeDocumentMoniker": "MessManagement.Shared\\DTOs\\MarketCostDto.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement.Shared\\DTOs\\MarketCostDto.cs",
-              "RelativeToolTip": "MessManagement.Shared\\DTOs\\MarketCostDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAApAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T16:15:58.864Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "MessDto.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement.Shared\\DTOs\\MessDto.cs",
-              "RelativeDocumentMoniker": "MessManagement.Shared\\DTOs\\MessDto.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement.Shared\\DTOs\\MessDto.cs",
-              "RelativeToolTip": "MessManagement.Shared\\DTOs\\MessDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAuAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T16:24:42.572Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "MarketCost.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessApi\\Models\\MarketCost.cs",
-              "RelativeDocumentMoniker": "MessApi\\Models\\MarketCost.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessApi\\Models\\MarketCost.cs",
-              "RelativeToolTip": "MessApi\\Models\\MarketCost.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T16:12:25.078Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "MarketCostsPage.xaml.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MarketCostsPage.xaml.cs",
-              "RelativeDocumentMoniker": "MessManagement\\MVVM\\Views\\MarketCostsPage.xaml.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MarketCostsPage.xaml.cs",
-              "RelativeToolTip": "MessManagement\\MVVM\\Views\\MarketCostsPage.xaml.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAAwwDkAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T17:27:16.443Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "MarketCostsViewModel.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\MarketCostsViewModel.cs",
-              "RelativeDocumentMoniker": "MessManagement\\MVVM\\ViewModels\\MarketCostsViewModel.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\MarketCostsViewModel.cs",
-              "RelativeToolTip": "MessManagement\\MVVM\\ViewModels\\MarketCostsViewModel.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAiwCgAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T16:03:25.241Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "MarketCostsPage.xaml",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MarketCostsPage.xaml",
-              "RelativeDocumentMoniker": "MessManagement\\MVVM\\Views\\MarketCostsPage.xaml",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MarketCostsPage.xaml",
-              "RelativeToolTip": "MessManagement\\MVVM\\Views\\MarketCostsPage.xaml",
-              "ViewState": "AgIAAIcAAAAAAAAAAAAAAI0AAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-06T16:03:10.702Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "Repository.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessApi\\UnitOfWork\\Repository.cs",
-              "RelativeDocumentMoniker": "MessApi\\UnitOfWork\\Repository.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessApi\\UnitOfWork\\Repository.cs",
-              "RelativeToolTip": "MessApi\\UnitOfWork\\Repository.cs",
-              "ViewState": "AgIAAEkAAAAAAAAAAAAIwFoAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T17:03:32.268Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "Meal.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessApi\\Models\\Meal.cs",
-              "RelativeDocumentMoniker": "MessApi\\Models\\Meal.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessApi\\Models\\Meal.cs",
-              "RelativeToolTip": "MessApi\\Models\\Meal.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAwwCMAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T16:59:38.631Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "MessMember.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessApi\\Models\\MessMember.cs",
-              "RelativeDocumentMoniker": "MessApi\\Models\\MessMember.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessApi\\Models\\MessMember.cs",
-              "RelativeToolTip": "MessApi\\Models\\MessMember.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAwwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T16:55:04.347Z",
+              "WhenOpened": "2025-11-22T14:45:00.801Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 20,
-              "Title": "MessController.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessApi\\Controllers\\MessController.cs",
-              "RelativeDocumentMoniker": "MessApi\\Controllers\\MessController.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessApi\\Controllers\\MessController.cs",
-              "RelativeToolTip": "MessApi\\Controllers\\MessController.cs",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAswFIAAAAMAAAAAAAAAA==",
+              "Title": "AppShell.xaml.cs",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\AppShell.xaml.cs",
+              "RelativeDocumentMoniker": "MessManagement\\AppShell.xaml.cs",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\AppShell.xaml.cs",
+              "RelativeToolTip": "MessManagement\\AppShell.xaml.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowEIAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T16:31:31.995Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "MessMemberController.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessApi\\Controllers\\MessMemberController.cs",
-              "RelativeDocumentMoniker": "MessApi\\Controllers\\MessMemberController.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessApi\\Controllers\\MessMemberController.cs",
-              "RelativeToolTip": "MessApi\\Controllers\\MessMemberController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAArwDIAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T16:30:02.768Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "MessMemberSummaryDto.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement.Shared\\DTOs\\MessMemberSummaryDto.cs",
-              "RelativeDocumentMoniker": "MessManagement.Shared\\DTOs\\MessMemberSummaryDto.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement.Shared\\DTOs\\MessMemberSummaryDto.cs",
-              "RelativeToolTip": "MessManagement.Shared\\DTOs\\MessMemberSummaryDto.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T16:28:49.649Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "MealDto.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement.Shared\\DTOs\\MealDto.cs",
-              "RelativeDocumentMoniker": "MessManagement.Shared\\DTOs\\MealDto.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement.Shared\\DTOs\\MealDto.cs",
-              "RelativeToolTip": "MessManagement.Shared\\DTOs\\MealDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T16:24:49.989Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "MealsViewModel.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\MealsViewModel.cs",
-              "RelativeDocumentMoniker": "MessManagement\\MVVM\\ViewModels\\MealsViewModel.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\MealsViewModel.cs",
-              "RelativeToolTip": "MessManagement\\MVVM\\ViewModels\\MealsViewModel.cs",
-              "ViewState": "AgIAAE4AAAAAAAAAAAAlwFoAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-05T16:20:55.026Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "MealsPage.xaml",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MealsPage.xaml",
-              "RelativeDocumentMoniker": "MessManagement\\MVVM\\Views\\MealsPage.xaml",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\MealsPage.xaml",
-              "RelativeToolTip": "MessManagement\\MVVM\\Views\\MealsPage.xaml",
-              "ViewState": "AgIAAEUAAAAAAAAAAAAAAE4AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-05T16:19:11.43Z",
+              "WhenOpened": "2025-11-22T08:42:19.906Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 22,
-              "Title": "MessService.cs",
-              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\Services\\MessService.cs",
-              "RelativeDocumentMoniker": "MessManagement\\Services\\MessService.cs",
-              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\Services\\MessService.cs",
-              "RelativeToolTip": "MessManagement\\Services\\MessService.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAUwBEAAAAJAAAAAAAAAA==",
+              "Title": "IGoogleAuthService.cs",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement.Shared\\DTOs\\IGoogleAuthService.cs",
+              "RelativeDocumentMoniker": "MessManagement.Shared\\DTOs\\IGoogleAuthService.cs",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement.Shared\\DTOs\\IGoogleAuthService.cs",
+              "RelativeToolTip": "MessManagement.Shared\\DTOs\\IGoogleAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-06T16:00:31.355Z",
+              "WhenOpened": "2025-11-22T08:32:53.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessApi\\appsettings.json",
+              "RelativeDocumentMoniker": "MessApi\\appsettings.json",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessApi\\appsettings.json",
+              "RelativeToolTip": "MessApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-22T08:23:21.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessApi\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "MessApi\\Properties\\launchSettings.json",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessApi\\Properties\\launchSettings.json",
+              "RelativeToolTip": "MessApi\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-22T08:20:19.394Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "MessManagement\\appsettings.Development.json",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\appsettings.Development.json",
+              "RelativeToolTip": "MessManagement\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-11-22T08:11:53.669Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "MessMemberController.cs",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessApi\\Controllers\\MessMemberController.cs",
+              "RelativeDocumentMoniker": "MessApi\\Controllers\\MessMemberController.cs",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessApi\\Controllers\\MessMemberController.cs",
+              "RelativeToolTip": "MessApi\\Controllers\\MessMemberController.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAowD4AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T07:11:14.536Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "MessController.cs",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessApi\\Controllers\\MessController.cs",
+              "RelativeDocumentMoniker": "MessApi\\Controllers\\MessController.cs",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessApi\\Controllers\\MessController.cs",
+              "RelativeToolTip": "MessApi\\Controllers\\MessController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T07:11:13.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "MessMemberService.cs",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\Services\\MessMemberService.cs",
+              "RelativeDocumentMoniker": "MessManagement\\Services\\MessMemberService.cs",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\Services\\MessMemberService.cs",
+              "RelativeToolTip": "MessManagement\\Services\\MessMemberService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T07:10:55.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "MessManagement\\Services\\AuthService.cs",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\Services\\AuthService.cs",
+              "RelativeToolTip": "MessManagement\\Services\\AuthService.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAkwB0AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T07:06:51.367Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "JwtHelper.cs",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\Helpers\\JwtHelper.cs",
+              "RelativeDocumentMoniker": "MessManagement\\Helpers\\JwtHelper.cs",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\Helpers\\JwtHelper.cs",
+              "RelativeToolTip": "MessManagement\\Helpers\\JwtHelper.cs",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAwwGIAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T06:01:18.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "MessManagement\\MVVM\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "MessManagement\\MVVM\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAIwHwAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T20:36:03.773Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "GoogleAuthService.cs",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\Platforms\\Android\\GoogleAuthService.cs",
+              "RelativeDocumentMoniker": "MessManagement\\Platforms\\Android\\GoogleAuthService.cs",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\Platforms\\Android\\GoogleAuthService.cs",
+              "RelativeToolTip": "MessManagement\\Platforms\\Android\\GoogleAuthService.cs",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAswA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T05:41:57.486Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "MainActivity.cs",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\Platforms\\Android\\MainActivity.cs",
+              "RelativeDocumentMoniker": "MessManagement\\Platforms\\Android\\MainActivity.cs",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\Platforms\\Android\\MainActivity.cs",
+              "RelativeToolTip": "MessManagement\\Platforms\\Android\\MainActivity.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAQwAwAAABWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-22T05:47:08.689Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessApi\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "MessApi\\Controllers\\AuthController.cs",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessApi\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "MessApi\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAANcAAAAAAAAAAIAwwN0AAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T20:28:54.511Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "WindowsGoogleLoginPage.xaml.cs",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\WindowsGoogleLoginPage.xaml.cs",
+              "RelativeDocumentMoniker": "MessManagement\\MVVM\\Views\\WindowsGoogleLoginPage.xaml.cs",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\WindowsGoogleLoginPage.xaml.cs",
+              "RelativeToolTip": "MessManagement\\MVVM\\Views\\WindowsGoogleLoginPage.xaml.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwAoAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T20:40:19.264Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "WindowsGoogleLoginPage.xaml",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\WindowsGoogleLoginPage.xaml",
+              "RelativeDocumentMoniker": "MessManagement\\MVVM\\Views\\WindowsGoogleLoginPage.xaml",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\MVVM\\Views\\WindowsGoogleLoginPage.xaml",
+              "RelativeToolTip": "MessManagement\\MVVM\\Views\\WindowsGoogleLoginPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-11-21T20:43:23.564Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "WebAuthenticationCallbackActivity.cs",
+              "DocumentMoniker": "H:\\Mess management\\MessManagement\\MessManagement\\Platforms\\Android\\WebAuthenticationCallbackActivity.cs",
+              "RelativeDocumentMoniker": "MessManagement\\Platforms\\Android\\WebAuthenticationCallbackActivity.cs",
+              "ToolTip": "H:\\Mess management\\MessManagement\\MessManagement\\Platforms\\Android\\WebAuthenticationCallbackActivity.cs",
+              "RelativeToolTip": "MessManagement\\Platforms\\Android\\WebAuthenticationCallbackActivity.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAmwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-21T20:42:19.969Z",
               "EditorCaption": ""
             }
           ]

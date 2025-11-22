@@ -3,6 +3,7 @@ using MessManagement.Helpers;
 using MessManagement.MVVM.ViewModels;
 using MessManagement.MVVM.Views;
 using MessManagement.Services;
+using MessManagement.Shared.DTOs;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using UraniumUI;
@@ -99,9 +100,10 @@ namespace MessManagement
             builder.Services.AddSingleton<JwtHelper>();
             builder.Services.AddSingleton<UserSessionService>();
             builder.Services.AddSingleton<MessMemberService>();
-            
-
-
+#if ANDROID
+            builder.Services.AddSingleton<IGoogleAuthService>(new Platforms.Android.GoogleAuthService("966817363123-5itk3nqocncp3e9323vv6boasbnjcnmg.apps.googleusercontent.com"));
+            //builder.Services.AddSingleton<IGoogleAuthService, Platforms.Android.GoogleAuthService>();
+#endif
             builder.Services.AddHttpClient<AuthService>(c => c.BaseAddress = new Uri(apiBaseUrl));
             builder.Services.AddHttpClient<MessService>(c => c.BaseAddress = new Uri(apiBaseUrl));
             builder.Services.AddHttpClient<MessMemberService>(c => c.BaseAddress = new Uri(apiBaseUrl));

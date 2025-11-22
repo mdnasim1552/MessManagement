@@ -21,7 +21,14 @@ namespace EcommerceWebAPI.Controllers
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly IConfiguration _configuration;
         private readonly JwtService _jwtService;
+        private const string ClientId = "966817363123-5itk3nqocncp3e9323vv6boasbnjcnmg.apps.googleusercontent.com";
 
+        private const string RedirectUri = "https://guileless-launa-unrealizable.ngrok-free.dev/api/Auth/oauth2callback";
+        const string WindowsRedirectUrl = "https://guileless-launa-unrealizable.ngrok-free.dev/api/Auth/windows-return";
+
+        //private const string RedirectUri = "https://mdnasim.bsite.net/api/Auth/oauth2callback";
+        //const string WindowsRedirectUrl = "https://mdnasim.bsite.net/api/Auth/windows-return";
+        private const string ClientSecret = "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";
         public AuthController(IUnitOfWork unitOfWork, IWebHostEnvironment webHostEnvironment, IConfiguration configuration, JwtService jwtService)
         {
             _unitOfWork = unitOfWork;
@@ -293,7 +300,173 @@ namespace EcommerceWebAPI.Controllers
             [FromForm(Name = "userId")]
             public int UserId { get; set; }
         }
+        [HttpGet("start-google-login-windows")]
+        public IActionResult StartGoogleLoginByWindows()
+        {
+            var url = $"https://accounts.google.com/o/oauth2/v2/auth" +
+                      $"?client_id={ClientId}" +
+                      $"&redirect_uri={WindowsRedirectUrl}" +
+                      $"&response_type=code" +
+                      $"&scope=openid%20email%20profile" +
+                      $"&access_type=offline" +
+                      $"&prompt=select_account";
 
+            return Redirect(url);
+        }
+        [HttpGet("start-google-login")]
+        public IActionResult StartGoogleLogin()
+        {
+            var url = $"https://accounts.google.com/o/oauth2/v2/auth" +
+                      $"?client_id={ClientId}" +
+                      $"&redirect_uri={RedirectUri}" +
+                      $"&response_type=code" +
+                      $"&scope=openid%20email%20profile" +
+                      $"&access_type=offline" +
+                      $"&prompt=select_account";
 
+            return Redirect(url);
+        }
+
+        [HttpPost("oauth2callback")]
+        public async Task<IActionResult> OAuth2Callback([FromBody] string idToken)
+        {
+            if (string.IsNullOrEmpty(idToken))
+                return BadRequest(ApiResponse<string>.FailureResponse("No code received"));
+
+            var payload = await GoogleJsonWebSignature.ValidateAsync(idToken);
+            var user = await _unitOfWork.User.SingleOrDefaultAsync(u => u.Email == payload.Email);
+            if (user==null)
+            {
+                using var httpClient = new HttpClient();
+                var imageBytes = await httpClient.GetByteArrayAsync(payload.Picture);
+
+                var allMembers = await _unitOfWork.MessMember.FindAsync(u => u.Email == payload.Email);
+                var memberMessIds = allMembers.Select(m => m.MessId).Distinct().ToList();
+                var createdMesses = await _unitOfWork.Mess.GetAllAsync();
+                var memberMesses = createdMesses
+                    .Where(m => memberMessIds.Contains(m.MessId))
+                    .OrderByDescending(m => m.CreatedAt)
+                    .FirstOrDefault();
+
+                user = new User
+                {
+                    Email = payload.Email,
+                    FullName = payload.Name,
+                    CreatedAt = DateTime.UtcNow,
+                    CurrentMessId = memberMesses?.MessId,
+                    ProfilePicture = imageBytes,
+                    GoogleId = payload.Subject
+                };
+                _unitOfWork.User.Add(user);
+                await _unitOfWork.SaveAsync();
+            }
+            var token = await _jwtService.GenerateToken(user);
+            var refreshToken = await _jwtService.GenerateRefreshToken();
+            var refreshTokenEntity = new RefreshToken
+            {
+                UserId = user.Id,
+                Token = refreshToken,
+                ExpiresAt = DateTime.UtcNow.AddDays(7), // example: 7 days
+                CreatedAt = DateTime.UtcNow,
+                IsRevoked = false
+            };
+            await _unitOfWork.RefreshTokens.AddAsync(refreshTokenEntity);
+            await _unitOfWork.SaveAsync();
+            var userDto = new UserDto()
+            {
+                Id = user.Id,
+                FullName = user.FullName,
+                Email = user.Email,
+                GoogleId = user.GoogleId,
+                ProfilePicture = user.ProfilePicture,
+                CreatedAt = user.CreatedAt,
+                UpdatedAt = user.UpdatedAt,
+                CurrentMessId = user.CurrentMessId,
+            };
+            var authResponse = new AuthResponseDto
+            {
+                Token = token,
+                RefreshToken = refreshToken,
+                User = userDto
+            };
+            return Ok(ApiResponse<AuthResponseDto>.SuccessResponse(authResponse, "Login successful."));
+        }
+        [HttpGet("windows-return")]
+        public async Task<IActionResult> OAuthWindowsReturn([FromQuery] string code)
+        {
+            if (string.IsNullOrEmpty(code))
+                return BadRequest("No code received");
+
+            using var client = new HttpClient();
+
+            var tokenRequest = new Dictionary<string, string>
+            {
+                {"code", code},
+                {"client_id", ClientId},
+                {"client_secret", ClientSecret},
+                {"redirect_uri", WindowsRedirectUrl},
+                {"grant_type", "authorization_code"}
+            };
+
+            var response = await client.PostAsync("https://oauth2.googleapis.com/token", new FormUrlEncodedContent(tokenRequest));
+            var json = await response.Content.ReadAsStringAsync();
+
+            var tokenInfo = System.Text.Json.JsonSerializer.Deserialize<System.Text.Json.JsonElement>(json);
+            var idToken = tokenInfo.GetProperty("id_token").GetString();
+
+            var payload = await GoogleJsonWebSignature.ValidateAsync(idToken);
+            var user = await _unitOfWork.User.SingleOrDefaultAsync(u => u.Email == payload.Email);
+            if (user == null)
+            {
+                using var httpClient = new HttpClient();
+                var imageBytes = await httpClient.GetByteArrayAsync(payload.Picture);
+
+                var allMembers = await _unitOfWork.MessMember.FindAsync(u => u.Email == payload.Email);
+                var memberMessIds = allMembers.Select(m => m.MessId).Distinct().ToList();
+                var createdMesses = await _unitOfWork.Mess.GetAllAsync();
+                var memberMesses = createdMesses
+                    .Where(m => memberMessIds.Contains(m.MessId))
+                    .OrderByDescending(m => m.CreatedAt)
+                    .FirstOrDefault();
+
+                user = new User
+                {
+                    Email = payload.Email,
+                    FullName = payload.Name,
+                    CreatedAt = DateTime.UtcNow,
+                    CurrentMessId = memberMesses?.MessId,
+                    ProfilePicture = imageBytes,
+                    GoogleId = payload.Subject
+                };
+                _unitOfWork.User.Add(user);
+                await _unitOfWork.SaveAsync();
+            }
+            var token = await _jwtService.GenerateToken(user);
+            var refreshToken = await _jwtService.GenerateRefreshToken();
+            var refreshTokenEntity = new RefreshToken
+            {
+                UserId = user.Id,
+                Token = refreshToken,
+                ExpiresAt = DateTime.UtcNow.AddDays(7), // example: 7 days
+                CreatedAt = DateTime.UtcNow,
+                IsRevoked = false
+            };
+            await _unitOfWork.RefreshTokens.AddAsync(refreshTokenEntity);
+            await _unitOfWork.SaveAsync();
+
+            var redirectToApp = $"{WindowsRedirectUrl}" +
+                    $"?token={Uri.EscapeDataString(token)}" +
+                    $"&refreshToken={Uri.EscapeDataString(refreshToken)}" +
+                    $"&id={user.Id}" +
+                    $"&fullName={Uri.EscapeDataString(user.FullName)}" +
+                    $"&email={Uri.EscapeDataString(user.Email)}" +
+                    $"&googleId={Uri.EscapeDataString(user.GoogleId ?? "")}" +
+                    $"&createdAt={Uri.EscapeDataString(user.CreatedAt?.ToString("o") ?? "")}" +
+                    $"&updatedAt={Uri.EscapeDataString(user.UpdatedAt?.ToString("o") ?? "")}" +
+                    $"&currentMessId={user.CurrentMessId}" +
+                    $"&profilePicture={Uri.EscapeDataString(user.ProfilePicture != null ? Convert.ToBase64String(user.ProfilePicture) : "")}";
+
+            return Redirect(redirectToApp);
+        }
     }
 }

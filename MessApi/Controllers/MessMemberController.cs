@@ -156,23 +156,83 @@ namespace MessApi.Controllers
             {
                 return BadRequest(ApiResponse<bool>.FailureResponse("Member is not updated."));
             }
-            var member = await _unitOfWork.MessMember.GetAsync(messMemberDto.MessMemberId);
+            MessMember member;
+            if (messMemberDto.MessMemberId > 0)
+            {
+                member = await _unitOfWork.MessMember.GetAsync(messMemberDto.MessMemberId);
 
-            if (member == null)
-                return NotFound(ApiResponse<bool>.FailureResponse("Member not found."));
+                if (member == null)
+                    return NotFound(ApiResponse<bool>.FailureResponse("Member not found."));
 
-            if (!string.IsNullOrEmpty(messMemberDto.Name))
                 member.Name = messMemberDto.Name;
-
-            if (!string.IsNullOrEmpty(messMemberDto.Email))
                 member.Email = messMemberDto.Email;
+                member.Role = messMemberDto.Role?? "Member";
+                member.Rent = messMemberDto.Rent;
+            }
+            else
+            {
+                var mess = await _unitOfWork.Mess.FirstOrDefaultAsync(m => m.MessId == messMemberDto.MessId);
+                member = new MessMember
+                {
+                    MessId=messMemberDto.MessId,
+                    Name = messMemberDto.Name,
+                    Email = messMemberDto.Email,
+                    Role = messMemberDto.Role ?? "Member",
+                    Rent = messMemberDto.Rent,
+                    JoinedAt = DateTime.Now
+                };
+                await _unitOfWork.MessMember.AddAsync(member);
 
-            if (!string.IsNullOrEmpty(messMemberDto.Role))
-                member.Role = messMemberDto.Role;
-            member.Rent = messMemberDto.Rent;
+                var meals = new List<Meal>();
+                var firstDay = new DateOnly(mess.FromDate.Year, mess.FromDate.Month, mess.FromDate.Day);
+                var lastDay = new DateOnly(mess.ToDate.Year, mess.ToDate.Month, mess.ToDate.Day);
+                for (var date = firstDay; date <= lastDay; date = date.AddDays(1))
+                {
+                    meals.Add(new Meal
+                    {
+                        MessId= messMemberDto.MessId,
+                        MessMember = member,
+                        MealDate = date,
+                        Breakfast = 0,
+                        Lunch = 0,
+                        Dinner = 0
+                    });
+                }
+                _unitOfWork.Meal.AddRange(meals);
+            }
 
             await _unitOfWork.SaveAsync();
             return Ok(ApiResponse<bool>.SuccessResponse(true, "Member updated successfully!"));
+        }
+        [Authorize]
+        [HttpPost("delete-mess-member")]
+        public async Task<IActionResult> DeleteMessMember([FromBody] MessMemberDto member)
+        {
+            try 
+            {
+                if (member == null)
+                {
+                    return BadRequest(ApiResponse<bool>.FailureResponse("Member is not deleted."));
+                }
+                var messMember = await _unitOfWork.MessMember.GetAsync(member.MessMemberId);
+                if (messMember == null)
+                {
+                    return NotFound(ApiResponse<bool>.FailureResponse("Member not found."));
+                }
+                _unitOfWork.MessMember.Remove(messMember);
+                var meals = await _unitOfWork.Meal.FindAsync(m => m.MessMemberId == member.MessMemberId && m.MessId==member.MessId);
+                if (meals?.Any() == true)
+                    _unitOfWork.Meal.RemoveRange(meals);
+                var costs = await _unitOfWork.MarketCost.FindAsync(c => c.MessMemberId == member.MessMemberId && c.MessId==member.MessId);
+                if (costs?.Any() == true)
+                    _unitOfWork.MarketCost.RemoveRange(costs);
+                await _unitOfWork.SaveAsync();
+                return Ok(ApiResponse<bool>.SuccessResponse(true, "Member deleted successfully!"));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ApiResponse<bool>.FailureResponse(ex.Message));
+            }
         }
     }
 }

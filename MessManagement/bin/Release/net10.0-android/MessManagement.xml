@@ -1,0 +1,629 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MessManagement</name>
+    </assembly>
+    <members>
+        <member name="T:MessManagement.MVVM.Models.CommonBillModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:MessManagement.MVVM.Models.CommonBillModel.Heading">
+            <inheritdoc cref="F:MessManagement.MVVM.Models.CommonBillModel.heading"/>
+        </member>
+        <member name="P:MessManagement.MVVM.Models.CommonBillModel.Index">
+            <inheritdoc cref="F:MessManagement.MVVM.Models.CommonBillModel.index"/>
+        </member>
+        <member name="T:MessManagement.MVVM.Models.MessModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:MessManagement.MVVM.Models.MessModel.CurrentMess">
+            <inheritdoc cref="F:MessManagement.MVVM.Models.MessModel.currentMess"/>
+        </member>
+        <member name="M:MessManagement.MVVM.Models.MessModel.OnCurrentMessChanged(System.Boolean)">
+            <summary>Executes the logic for when <see cref="P:MessManagement.MVVM.Models.MessModel.CurrentMess"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:MessManagement.MVVM.Models.MessModel.CurrentMess"/> is changed.</remarks>
+        </member>
+        <member name="T:MessManagement.MVVM.ViewModels.MessMemberModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessMemberModel.Heading">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessMemberModel.heading"/>
+        </member>
+        <member name="T:MessManagement.MVVM.ViewModels.AppShellViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.AppShellViewModel.ProfileImage">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.AppShellViewModel.profileImage"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.AppShellViewModel.FullName">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.AppShellViewModel.fullName"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.AppShellViewModel.IsBusy">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.AppShellViewModel.isBusy"/>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.AppShellViewModel.uploadProfilePictureCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.AppShellViewModel.UploadProfilePictureCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.AppShellViewModel.UploadProfilePictureCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.AppShellViewModel.UploadProfilePictureAsync"/>.</summary>
+        </member>
+        <member name="T:MessManagement.MVVM.ViewModels.CommonBillViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.CommonBillViewModel.IsListEmpty">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.CommonBillViewModel.isListEmpty"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.CommonBillViewModel.IsBusy">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.CommonBillViewModel.isBusy"/>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.CommonBillViewModel.loadCommonBillCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.CommonBillViewModel.LoadCommonBillCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.CommonBillViewModel.LoadCommonBillCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.CommonBillViewModel.LoadCommonBillAsync(System.Int32)"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.CommonBillViewModel.addCommonbillCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.CommonBillViewModel.AddCommonbillCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.CommonBillViewModel.AddCommonbillCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.CommonBillViewModel.AddCommonbillAsync(MessManagement.MVVM.Models.CommonBillModel)"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.CommonBillViewModel.removeCommonbillCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.CommonBillViewModel.RemoveCommonbillCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.CommonBillViewModel.RemoveCommonbillCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.CommonBillViewModel.RemoveCommonbillAsync(MessManagement.MVVM.Models.CommonBillModel)"/>.</summary>
+        </member>
+        <member name="T:MessManagement.MVVM.ViewModels.LoginViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.LoginViewModel.Email">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.LoginViewModel.email"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.LoginViewModel.Password">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.LoginViewModel.password"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.LoginViewModel.IsBusy">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.LoginViewModel.isBusy"/>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.LoginViewModel.registerCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.LoginViewModel.RegisterCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.LoginViewModel.RegisterCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.LoginViewModel.RegisterAsync"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.LoginViewModel.loginCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.LoginViewModel.LoginCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.LoginViewModel.LoginCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.LoginViewModel.LoginAsync"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.LoginViewModel.googleLoginCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.LoginViewModel.GoogleLoginCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.LoginViewModel.GoogleLoginCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.LoginViewModel.GoogleLoginAsync"/>.</summary>
+        </member>
+        <member name="T:MessManagement.MVVM.ViewModels.MarketCostsViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.SelectedMember">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MarketCostsViewModel.selectedMember"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.IsBusy">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MarketCostsViewModel.isBusy"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.IsListEmpty">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MarketCostsViewModel.isListEmpty"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.CanEdit">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MarketCostsViewModel.canEdit"/>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MarketCostsViewModel.refreshMarketCostsCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.RefreshMarketCostsCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.RefreshMarketCostsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MarketCostsViewModel.RefreshMarketCostsAsync"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MarketCostsViewModel.loadUnitsCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.LoadUnitsCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.LoadUnitsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MarketCostsViewModel.LoadUnitsAsync"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MarketCostsViewModel.loadMarketCostsCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.LoadMarketCostsCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.LoadMarketCostsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MarketCostsViewModel.LoadMarketCostsAsync(System.Int32)"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MarketCostsViewModel.selectMemberCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.SelectMemberCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.SelectMemberCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MarketCostsViewModel.SelectMemberAsync(MessManagement.Shared.DTOs.MessMemberDto)"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MarketCostsViewModel.addMarketCostsCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.AddMarketCostsCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.AddMarketCostsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MarketCostsViewModel.AddMarketCostsAsync(MessManagement.Shared.DTOs.MarketCostDto)"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MarketCostsViewModel.removeMarketCostsCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.RemoveMarketCostsCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.RemoveMarketCostsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MarketCostsViewModel.RemoveMarketCostsAsync(MessManagement.Shared.DTOs.MarketCostDto)"/>.</summary>
+        </member>
+        <member name="T:MessManagement.MVVM.ViewModels.MealsViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MealsViewModel.IsBusy">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MealsViewModel.isBusy"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MealsViewModel.SelectedMember">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MealsViewModel.selectedMember"/>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MealsViewModel.refreshMealCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MealsViewModel.RefreshMealCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MealsViewModel.RefreshMealCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MealsViewModel.RefreshMealAsync"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MealsViewModel.loadMealsCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MealsViewModel.LoadMealsCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MealsViewModel.LoadMealsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MealsViewModel.LoadMealsAsync(System.Int32)"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MealsViewModel.selectMemberCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MealsViewModel.SelectMemberCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MealsViewModel.SelectMemberCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MealsViewModel.SelectMemberAsync(MessManagement.Shared.DTOs.MessMemberDto)"/>.</summary>
+        </member>
+        <member name="T:MessManagement.MVVM.ViewModels.MessListViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessListViewModel.IsListEmpty">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessListViewModel.isListEmpty"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessListViewModel.IsBusy">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessListViewModel.isBusy"/>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MessListViewModel.addNewMessCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MessListViewModel.AddNewMessCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessListViewModel.AddNewMessCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessListViewModel.AddNewMessAsync"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MessListViewModel.viewMessCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MessListViewModel.ViewMessCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessListViewModel.ViewMessCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessListViewModel.ViewMessAsync(MessManagement.MVVM.Models.MessModel)"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MessListViewModel.removeMessCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MessListViewModel.RemoveMessCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessListViewModel.RemoveMessCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessListViewModel.RemoveMessAsync(MessManagement.MVVM.Models.MessModel)"/>.</summary>
+        </member>
+        <member name="T:MessManagement.MVVM.ViewModels.MessMemberEditorViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessMemberEditorViewModel.Member">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessMemberEditorViewModel.member"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessMemberEditorViewModel.HeaderText">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessMemberEditorViewModel.headerText"/>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MessMemberEditorViewModel.saveMemberCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MessMemberEditorViewModel.SaveMemberCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessMemberEditorViewModel.SaveMemberCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessMemberEditorViewModel.SaveMemberAsync"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MessMemberEditorViewModel.cancelMemberCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MessMemberEditorViewModel.CancelMemberCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessMemberEditorViewModel.CancelMemberCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessMemberEditorViewModel.CancelMemberAsync"/>.</summary>
+        </member>
+        <member name="T:MessManagement.MVVM.ViewModels.MessMembersViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessMembersViewModel.IsBusy">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessMembersViewModel.isBusy"/>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MessMembersViewModel.loadMessMemberSummaryCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MessMembersViewModel.LoadMessMemberSummaryCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessMembersViewModel.LoadMessMemberSummaryCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessMembersViewModel.LoadMessMemberSummaryAsync(System.Int32)"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MessMembersViewModel.deleteMemberCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MessMembersViewModel.DeleteMemberCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessMembersViewModel.DeleteMemberCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessMembersViewModel.DeleteMemberAsync(MessManagement.Shared.DTOs.MessMemberSummaryDto)"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MessMembersViewModel.showMemberEditorCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MessMembersViewModel.ShowMemberEditorCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessMembersViewModel.ShowMemberEditorCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessMembersViewModel.ShowMemberEditorAsync(MessManagement.Shared.DTOs.MessMemberSummaryDto)"/>.</summary>
+        </member>
+        <member name="T:MessManagement.MVVM.ViewModels.MessWizardViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.CurrentStep">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.currentStep"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.MessName">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.messName"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.Description">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.description"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.FromDate">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.fromDate"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.ToDate">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.toDate"/>
+        </member>
+        <member name="M:MessManagement.MVVM.ViewModels.MessWizardViewModel.OnCurrentStepChanged(System.Int32)">
+            <summary>Executes the logic for when <see cref="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.CurrentStep"/> just changed.</summary>
+            <param name="value">The new property value that was set.</param>
+            <remarks>This method is invoked right after the value of <see cref="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.CurrentStep"/> is changed.</remarks>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.nextButtonCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.NextButtonCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.NextButtonCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessWizardViewModel.NextButtonAsync"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.addMemberButtonCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.AddMemberButtonCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.AddMemberButtonCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessWizardViewModel.AddMemberButtonAsync"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.addCommonBillButtonCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.AddCommonBillButtonCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.AddCommonBillButtonCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessWizardViewModel.AddCommonBillButtonAsync"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.backButtonCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.BackButtonCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.BackButtonCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessWizardViewModel.BackButtonAsync"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.finishButtonCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.FinishButtonCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.FinishButtonCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessWizardViewModel.FinishButtonAsync"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.removeMemberCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.RemoveMemberCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.RemoveMemberCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessWizardViewModel.RemoveMemberAsync(MessManagement.MVVM.ViewModels.MessMemberModel)"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.removeCommonBillCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.RemoveCommonBillCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.RemoveCommonBillCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessWizardViewModel.RemoveCommonBillAsync(MessManagement.MVVM.Models.CommonBillModel)"/>.</summary>
+        </member>
+        <member name="T:MessManagement.MVVM.ViewModels.RegisterViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.RegisterViewModel.Fullname">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.RegisterViewModel.fullname"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.RegisterViewModel.Email">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.RegisterViewModel.email"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.RegisterViewModel.Password">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.RegisterViewModel.password"/>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.RegisterViewModel.IsBusy">
+            <inheritdoc cref="F:MessManagement.MVVM.ViewModels.RegisterViewModel.isBusy"/>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.RegisterViewModel.registerCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.RegisterViewModel.RegisterCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.RegisterViewModel.RegisterCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.RegisterViewModel.RegisterAsync"/>.</summary>
+        </member>
+        <member name="T:MessManagement.Resource">
+            <summary>
+            Android Resource Designer class.
+            Exposes the Android Resource designer assembly into the project Namespace.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_DatePicker.TextColorTo(Microsoft.Maui.Controls.DatePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Editor.TextColorTo(Microsoft.Maui.Controls.Editor,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Entry.TextColorTo(Microsoft.Maui.Controls.Entry,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_InputView.TextColorTo(Microsoft.Maui.Controls.InputView,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Label.TextColorTo(Microsoft.Maui.Controls.Label,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Picker.TextColorTo(Microsoft.Maui.Controls.Picker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_RadioButton.TextColorTo(Microsoft.Maui.Controls.RadioButton,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_SearchBar.TextColorTo(Microsoft.Maui.Controls.SearchBar,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_TimePicker.TextColorTo(Microsoft.Maui.Controls.TimePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Heading">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Heading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Index">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Index" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CurrentMess">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CurrentMess" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ProfileImage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ProfileImage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FullName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FullName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsListEmpty">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsListEmpty" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Email">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Email" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Password">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedMember">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedMember" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CanEdit">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CanEdit" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Member">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Member" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.HeaderText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "HeaderText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CurrentStep">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CurrentStep" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.MessName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "MessName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Description">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Description" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FromDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FromDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.ToDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "ToDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Fullname">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Fullname" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Heading">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Heading" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Index">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Index" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CurrentMess">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CurrentMess" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ProfileImage">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ProfileImage" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FullName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FullName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsListEmpty">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsListEmpty" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Email">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Email" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Password">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Password" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedMember">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedMember" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CanEdit">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CanEdit" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Member">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Member" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.HeaderText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "HeaderText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CurrentStep">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CurrentStep" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.MessName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "MessName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Description">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Description" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FromDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FromDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.ToDate">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "ToDate" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Fullname">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Fullname" generated properties.</summary>
+        </member>
+    </members>
+</doc>

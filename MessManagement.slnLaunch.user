@@ -10,7 +10,7 @@
       {
         "Path": "MessManagement\\MessManagement.csproj",
         "Action": "Start",
-        "DebugTarget": "Pixel 7 - API 35 (Android 15.0 - API 35)"
+        "DebugTarget": "Xiaomi 2201117TG (Android 13.0 - API 33)"
       }
     ]
   }

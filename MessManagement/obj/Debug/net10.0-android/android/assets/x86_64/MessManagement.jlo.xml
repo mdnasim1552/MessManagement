@@ -1,0 +1,24 @@
+<api>
+  <jcw-types>
+    <type name="MainActivity" package="crc64ab0f1799ca18a3a2" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="crc6488302ad6e9e4df1a.MauiAppCompatActivity" partial_assembly_qualified_name="MessManagement.MainActivity, MessManagement">
+      <constructors>
+        <constructor name="MainActivity" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+        <constructor name="MainActivity" method="n_.ctor:(I)V:" jni_signature="(I)V" managed_parameters="System.Int32, System.Private.CoreLib" params="int p0" retval="void" is_dynamically_registered="True" super_call="p0" activate_call="p0" />
+      </constructors>
+      <methods>
+        <method name="onActivityResult" method="n_onActivityResult:(IILandroid/content/Intent;)V:GetOnActivityResult_IILandroid_content_Intent_Handler" jni_signature="(IILandroid/content/Intent;)V" params="int p0, int p1, android.content.Intent p2" retval="void" is_dynamically_registered="True" super_call="p0, p1, p2" activate_call="p0, p1, p2" />
+      </methods>
+    </type>
+    <type name="MainApplication" package="crc64ab0f1799ca18a3a2" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="crc6488302ad6e9e4df1a.MauiApplication" is_application="True" partial_assembly_qualified_name="MessManagement.MainApplication, MessManagement" application_constructor="MainApplication" />
+    <type name="WebAuthenticationCallbackActivity" package="crc64ab373a1750a3af7f" application_java_class="android.app.Application" mono_runtime_initialization="mono.MonoPackageManager.LoadApplication (context);" extends_type="crc6468b6408a11370c2f.WebAuthenticatorCallbackActivity" partial_assembly_qualified_name="MessManagement.Platforms.Android.WebAuthenticationCallbackActivity, MessManagement">
+      <constructors>
+        <constructor name="WebAuthenticationCallbackActivity" method="n_.ctor:()V:" jni_signature="()V" managed_parameters="" retval="void" is_dynamically_registered="True" />
+      </constructors>
+    </type>
+  </jcw-types>
+  <acw-types partial-assembly-name="MessManagement" module-name="MessManagement.dll">
+    <type assembly-qualified-name="MessManagement.MainActivity, MessManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="messmanagement.MainActivity" java-key="crc64ab0f1799ca18a3a2.MainActivity" managed-key="MessManagement.MainActivity" partial-assembly-qualified-name="MessManagement.MainActivity, MessManagement" />
+    <type assembly-qualified-name="MessManagement.MainApplication, MessManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="messmanagement.MainApplication" java-key="crc64ab0f1799ca18a3a2.MainApplication" managed-key="MessManagement.MainApplication" partial-assembly-qualified-name="MessManagement.MainApplication, MessManagement" />
+    <type assembly-qualified-name="MessManagement.Platforms.Android.WebAuthenticationCallbackActivity, MessManagement, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" compat-jni-name="messmanagement.platforms.android.WebAuthenticationCallbackActivity" java-key="crc64ab373a1750a3af7f.WebAuthenticationCallbackActivity" managed-key="MessManagement.Platforms.Android.WebAuthenticationCallbackActivity" partial-assembly-qualified-name="MessManagement.Platforms.Android.WebAuthenticationCallbackActivity, MessManagement" />
+  </acw-types>
+</api>

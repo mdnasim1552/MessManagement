@@ -1,4 +1,6 @@
 ﻿using CommunityToolkit.Maui;
+using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Maui.Extensions;
 using CommunityToolkit.Maui.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
@@ -52,8 +54,45 @@ namespace MessManagement.MVVM.ViewModels
             }            
         }
         [RelayCommand]
+        private async Task DeleteMemberAsync(MessMemberSummaryDto member)
+        {
+            bool confirm = await Application.Current.MainPage.DisplayAlert(
+                "Confirm Delete",
+                $"Are you sure you want to delete '{member.Name}'?",
+                "Yes", "Cancel");
+
+            if (!confirm)
+                return;
+            var memberDto = new MessMemberDto
+            {
+                MessMemberId = member.MessMemberId,
+                MessId = member.MessId,
+                Name = member.Name,
+                Email = member.Email,
+                Role = member.Role,
+                Rent = member.Rent
+            };
+            var result = await _messMemberService.DeleteMessMemberAsync(memberDto);
+            if (result.Success)
+            {
+                MemberSummary.Remove(member);
+                var toast = Toast.Make("Member deleted successfully.", ToastDuration.Short, 12);
+                await toast.Show();
+            }
+            else
+            {
+                var toast = Toast.Make(result.Message ?? "Failed to delete member.", ToastDuration.Short, 12);
+                await toast.Show();
+            }
+
+        }
+        [RelayCommand]
         private async Task ShowMemberEditorAsync(MessMemberSummaryDto member)
         {
+            int messId = Preferences.Get("CurrentMessId", 0);
+            var lastUrl = Preferences.Get("MessDetailsTabBarUrl", string.Empty);
+            if (member == null)
+                member = new MessMemberSummaryDto() { MessId= messId };
             var popuppage = new MessMemberEditorPopup(member);
 
             // Show the popup via Shell
@@ -66,7 +105,6 @@ namespace MessManagement.MVVM.ViewModels
                 // Set refresh callback
                 vm.OnMemberSaved = async () =>
                 {
-                    int messId = _userSession.CurrentUser.CurrentMessId ?? 0;
                     if (messId > 0)
                         await LoadMessMemberSummaryCommand.ExecuteAsync(messId);
                 };
