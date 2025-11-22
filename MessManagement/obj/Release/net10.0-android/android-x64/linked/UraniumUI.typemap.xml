@@ -1,0 +1,8 @@
+<api type="release" assembly-name="UraniumUI" mvid="8894a27ef31742c7bbef8fd4db7bb5b5">
+  <module assembly-name="UraniumUI" mvid="8894a27ef31742c7bbef8fd4db7bb5b5" mvid-bytes="fqKUiBfzx0K774/U23u1tQ==">
+    <types-scratch>
+      <entry key="crc64498ef367153c30d3/MenuItemOnMenuItemClickListener" java-name="crc64498ef367153c30d3/MenuItemOnMenuItemClickListener" managed-type-name="UraniumUI.Platforms.Android.MenuItemOnMenuItemClickListener" token="33554452" />
+      <entry key="crc642ad154684404f6e1/BoxArrayAdapter" java-name="crc642ad154684404f6e1/BoxArrayAdapter" managed-type-name="UraniumUI.Handlers.BoxArrayAdapter" token="33554463" />
+    </types-scratch>
+  </module>
+</api>

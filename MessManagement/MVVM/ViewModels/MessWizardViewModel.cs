@@ -41,17 +41,16 @@ namespace MessManagement.MVVM.ViewModels
 
         [ObservableProperty] private string messName;
         [ObservableProperty] private string description;
-        [ObservableProperty] private DateTime fromDate;
-        [ObservableProperty] private DateTime toDate;
+        [ObservableProperty] private DateTime? fromDate;
+        [ObservableProperty] private DateTime? toDate;
         public event Action<MessMemberModel>? MemberAdded;
         public event Action<CommonBillModel>? CommonBillAdded;
         public MessWizardViewModel(MessService messService, UserSessionService userSession)
         {
             _messService = messService;
             _userSession = userSession;
-            FromDate = DateTime.Now;
-            ToDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month,
-                      DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month));
+            FromDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month,1);
+            ToDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month,DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month));
         }       
         [RelayCommand]
         private async Task NextButtonAsync()
@@ -60,7 +59,12 @@ namespace MessManagement.MVVM.ViewModels
             {
                 if (string.IsNullOrWhiteSpace(MessName) || string.IsNullOrWhiteSpace(Description) || FromDate == null || ToDate==null)
                 {
-                    await Application.Current.MainPage.DisplayAlert("Validation Error", "Mess name, Description and Date are required.", "OK");
+                    await Application.Current.MainPage.DisplayAlertAsync("Validation Error", "Mess name, Description and Date are required.", "OK");
+                    return;
+                }
+                if (FromDate> ToDate)
+                {
+                    await Application.Current.MainPage.DisplayAlertAsync("Validation Error", "From date should less than to date.", "OK");
                     return;
                 }
                 //IsStep1Visible = false;
@@ -84,7 +88,7 @@ namespace MessManagement.MVVM.ViewModels
             {
                 if (Members.Count == 0)
                 {
-                    await Application.Current.MainPage.DisplayAlert(
+                    await Application.Current.MainPage.DisplayAlertAsync(
                         "Validation Error",
                         $"Members are required.",
                         "OK");
@@ -94,7 +98,7 @@ namespace MessManagement.MVVM.ViewModels
                 if (invalidMember != null)
                 {
                     int index = Members.IndexOf(invalidMember);
-                    await Application.Current.MainPage.DisplayAlert(
+                    await Application.Current.MainPage.DisplayAlertAsync(
                         "Validation Error",
                         $"Member #{index + 1}: Name and Email are required.",
                         "OK");
@@ -150,7 +154,7 @@ namespace MessManagement.MVVM.ViewModels
                 if (invalidCommonBill != null)
                 {
                     int index = CommonBills.IndexOf(invalidCommonBill);
-                    await Application.Current.MainPage.DisplayAlert(
+                    await Application.Current.MainPage.DisplayAlertAsync(
                         "Validation Error",
                         $"Common bill #{index + 1}: BillType and Amount are required.",
                         "OK");
@@ -165,8 +169,8 @@ namespace MessManagement.MVVM.ViewModels
                 {
                     MessName = MessName,
                     Description = Description,
-                    FromDate = FromDate,
-                    ToDate = ToDate,
+                    FromDate = FromDate?? new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1),
+                    ToDate = ToDate?? new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.DaysInMonth(DateTime.Now.Year, DateTime.Now.Month)),
                     MessMembers = Members.Select(m => new MessMemberDto
                     {
                         Name = m.Name,
@@ -182,7 +186,7 @@ namespace MessManagement.MVVM.ViewModels
                 };
                 var result = await _messService.CreateMessAsync(messDto);
                 if (result != null && result.Success) {
-                    await Application.Current.MainPage.DisplayAlert("Success", result.Message, "OK");
+                    await Application.Current.MainPage.DisplayAlertAsync("Success", result.Message, "OK");
                     _userSession.CurrentUser.CurrentMessId = result.Data;
                     Preferences.Set("current_user", JsonSerializer.Serialize(_userSession.CurrentUser));
                     await Shell.Current.GoToAsync($"//MessDetailsTabBar/MessMembersPage?messId={_userSession.CurrentUser.CurrentMessId}");
@@ -190,13 +194,13 @@ namespace MessManagement.MVVM.ViewModels
                 else
                 {
                     var errorMessage = result?.Message ?? $"Mess '{MessName}' is not created!";
-                    await Application.Current.MainPage.DisplayAlert("Failed", errorMessage, "OK");
+                    await Application.Current.MainPage.DisplayAlertAsync("Failed", errorMessage, "OK");
                 }
                 //await Shell.Current.GoToAsync($"//{nameof(MainPage)}");
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
+                await Application.Current.MainPage.DisplayAlertAsync("Error", ex.Message, "OK");
                 // Handle exceptions
             }
         }

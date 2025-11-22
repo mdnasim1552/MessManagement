@@ -54,6 +54,7 @@ namespace MessManagement.MVVM.ViewModels
                         {
                             MessId= mess.MessId,
                             MessName= mess.MessName,
+                            MemberNames= mess.MemberNames,
                             Description= mess.Description,
                             FromDate= mess.FromDate,
                             ToDate= mess.ToDate,
@@ -94,6 +95,7 @@ namespace MessManagement.MVVM.ViewModels
                 {
                     MessId = mess.MessId,
                     MessName = mess.MessName,
+                    MemberNames = mess.MemberNames,
                     Description = mess.Description,
                     FromDate = mess.FromDate,
                     ToDate = mess.ToDate,

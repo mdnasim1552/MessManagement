@@ -33,6 +33,12 @@ namespace MessManagement.MVVM.ViewModels
             _messMemberService = messMemberService;
             _userSession = userSession;
         }
+        [RelayCommand]
+        private async Task RefreshMealAsync()
+        {
+            int messId = Preferences.Get("CurrentMessId", 0);
+            await LoadMealsAsync(messId);
+        }
 
         [RelayCommand]
         private async Task LoadMealsAsync(int messId)

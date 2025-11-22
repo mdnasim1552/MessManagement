@@ -18,6 +18,7 @@ namespace MessManagement.MVVM.Models
         }
         public int MessId { get; set; }
         public string MessName { get; set; }
+        public string MemberNames { get; set; }
         public string? Description { get; set; }
         public DateTime FromDate { get; set; }
         public DateTime ToDate { get; set; }

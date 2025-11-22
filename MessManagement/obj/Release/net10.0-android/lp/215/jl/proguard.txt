@@ -1,0 +1,17 @@
+# We keep all fields for every generated proto file as the runtime uses
+# reflection over them that ProGuard cannot detect. Without this keep
+# rule, fields may be removed that would cause runtime failures.
+-keepclassmembers class * extends com.google.android.gms.internal.auth.zzaay {
+  <fields>;
+}
+
+# Checkdiscard flags for the auth frp client. Add these flags to ensure
+# no accidental API leakage.
+# This file is only applied when making the SDK, and is not forwarded to end developers.
+-checkdiscard class com.google.android.gms.auth.frp.FrpClient {
+  public *** FrpClient;
+  public *** isChallengeSupported();
+  public *** isChallengeRequired();
+}
+
+-dontwarn dalvik.system.VMStack

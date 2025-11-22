@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Text.Json;
 
+
 namespace MessManagement
 {
     public partial class App : Application
@@ -17,6 +18,7 @@ namespace MessManagement
             _serviceProvider = serviceProvider;
             _jwtHelper = jwtHelper;
             InitializeComponent();
+            //GoogleClientManager.Initialize("YOUR_WEB_CLIENT_ID.apps.googleusercontent.com");
             MainPage = new ContentPage
             {
                 Content = new ActivityIndicator

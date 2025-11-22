@@ -1,0 +1,8 @@
+<api type="release" assembly-name="Xamarin.GooglePlayServices.Auth" mvid="b2e523498d82421ebbff4958ecd21f02">
+  <module assembly-name="Xamarin.GooglePlayServices.Auth" mvid="b2e523498d82421ebbff4958ecd21f02" mvid-bytes="SSPlsoKNHkK7/0lY7NIfAg==">
+    <types-scratch>
+      <entry key="com/google/android/gms/auth/api/signin/GoogleSignIn" java-name="com/google/android/gms/auth/api/signin/GoogleSignIn" managed-type-name="Android.Gms.Auth.Api.SignIn.GoogleSignIn" token="33554435" />
+      <entry key="com/google/android/gms/auth/api/signin/GoogleSignInClient" java-name="com/google/android/gms/auth/api/signin/GoogleSignInClient" managed-type-name="Android.Gms.Auth.Api.SignIn.GoogleSignInClient" token="33554436" />
+    </types-scratch>
+  </module>
+</api>

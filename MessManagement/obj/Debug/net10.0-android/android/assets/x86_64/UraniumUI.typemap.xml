@@ -1,0 +1,10 @@
+<api type="debug" assembly-name="UraniumUI" mvid="8894a27ef31742c7bbef8fd4db7bb5b5">
+  <java-to-managed>
+    <entry java-name="crc64498ef367153c30d3/MenuItemOnMenuItemClickListener" managed-name="UraniumUI.Platforms.Android.MenuItemOnMenuItemClickListener, UraniumUI" managed-type-token-id="33554452" />
+    <entry java-name="crc642ad154684404f6e1/BoxArrayAdapter" managed-name="UraniumUI.Handlers.BoxArrayAdapter, UraniumUI" managed-type-token-id="33554463" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc64498ef367153c30d3/MenuItemOnMenuItemClickListener" managed-name="UraniumUI.Platforms.Android.MenuItemOnMenuItemClickListener, UraniumUI" managed-type-token-id="33554452" />
+    <entry java-name="crc642ad154684404f6e1/BoxArrayAdapter" managed-name="UraniumUI.Handlers.BoxArrayAdapter, UraniumUI" managed-type-token-id="33554463" />
+  </managed-to-java>
+</api>

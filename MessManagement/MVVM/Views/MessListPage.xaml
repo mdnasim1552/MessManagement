@@ -50,16 +50,28 @@
                                            Grid.Row="3" Grid.Column="0"/>
                                          <Label Text="{Binding CommonBillPerMember, StringFormat='{0:F2} Tk'}" 
                                            Grid.Row="3" Grid.Column="1"/>
+                                                <Border Grid.Row="4" Grid.ColumnSpan="2" Margin="0,0,0,10"
+                                        BackgroundColor="{AppThemeBinding Light={StaticResource Gray100}, Dark={StaticResource WhiteDark}}"
+                                        Padding="5">
+                                            <Grid ColumnDefinitions="*,3*">
+                                                <Label Text="Members:" VerticalOptions="Center" 
+                                               FontAttributes="Bold"
+                                               Grid.Column="0"/>
+                                                        <Label Text="{Binding MemberNames}" VerticalOptions="Center"
+                                               FontAttributes="Bold"
+                                               Grid.Column="1"/>
                                             </Grid>
+                                        </Border>
+                                     </Grid>
                                     <HorizontalStackLayout HorizontalOptions="Center" Spacing="8">
-                                                <Button Text="Modify"
+                                                <Button Text="View"
                                                 StyleClass="FilledTonalButton"
                                                 Style="{StaticResource SecondaryButton}"
                                                 Command="{Binding BindingContext.ViewMessCommand, Source={x:Reference MessCollection}}"
                                                 CommandParameter="{Binding .}"
                                                 WidthRequest="130">
                                                     <Button.ImageSource>
-                                                        <FontImageSource Glyph="{x:Static m:MaterialSharp.Edit}" 
+                                                        <FontImageSource Glyph="{x:Static m:MaterialSharp.View_agenda}" 
                                                                              Color="{AppThemeBinding Light={StaticResource SecondaryButtonText}, Dark={StaticResource SecondaryButtonTextDark}}"
                                                                              FontFamily="MaterialSharpFilled" Size="24"/>
                                                     </Button.ImageSource>

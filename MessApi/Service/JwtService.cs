@@ -14,20 +14,36 @@ namespace MessApi.Service
     public class JwtService
     {
         private readonly string _secret;
-        private readonly string _issuer;
+        private readonly string[] _issuers;
         private readonly string _audience;
         private readonly int _expiryMinutes;
         private readonly IUnitOfWork _unitOfWork;
-        public JwtService(IConfiguration config,IUnitOfWork unitOfWork)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public JwtService(IConfiguration config,IUnitOfWork unitOfWork, IHttpContextAccessor httpContextAccessor)
         {
             _secret = config["JwtSettings:Secret"];
-            _issuer = config["JwtSettings:Issuer"];
+            _issuers = config.GetSection("JwtSettings:Issuers").Get<string[]>();
             _audience = config["JwtSettings:Audience"];
             _expiryMinutes = int.Parse(config["JwtSettings:ExpiryMinutes"]);
             _unitOfWork = unitOfWork;
+            _httpContextAccessor = httpContextAccessor;
         }
+        private string GetIssuer()
+        {
+            var request = _httpContextAccessor.HttpContext?.Request;
+            if (request == null)
+                return _issuers.First();
 
-        public async Task<string> GenerateToken(User user)
+            // Get the scheme + host from the request
+            var requestOrigin = $"{request.Scheme}://{request.Host}";
+
+            var matched = _issuers.FirstOrDefault(i =>
+                requestOrigin.StartsWith(i, StringComparison.OrdinalIgnoreCase));
+
+            return matched ?? _issuers.First();
+        }
+        public async Task<string> GenerateToken(User user, string issuer = null)
         {
             var claims = new List<Claim>
             {
@@ -51,7 +67,7 @@ namespace MessApi.Service
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(
-                _issuer,
+                issuer: GetIssuer(),
                 _audience,
                 claims,
                 expires: DateTime.UtcNow.AddMinutes(_expiryMinutes),

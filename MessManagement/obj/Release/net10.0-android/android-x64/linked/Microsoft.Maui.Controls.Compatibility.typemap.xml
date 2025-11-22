@@ -1,0 +1,13 @@
+<api type="release" assembly-name="Microsoft.Maui.Controls.Compatibility" mvid="761ca1c0462c40d1b9430c2d32e74505">
+  <module assembly-name="Microsoft.Maui.Controls.Compatibility" mvid="761ca1c0462c40d1b9430c2d32e74505" mvid-bytes="wKEcdixG0UC5QwwtMudFBQ==">
+    <types-scratch>
+      <entry key="crc6477f0d89a9cfd64b1/Platform_DefaultRenderer" java-name="crc6477f0d89a9cfd64b1/Platform_DefaultRenderer" managed-type-name="Microsoft.Maui.Controls.Compatibility.Platform.Android.Platform/DefaultRenderer" token="33554441" />
+      <entry key="crc6477f0d89a9cfd64b1/NativeViewWrapperRenderer" java-name="crc6477f0d89a9cfd64b1/NativeViewWrapperRenderer" managed-type-name="Microsoft.Maui.Controls.Compatibility.Platform.Android.NativeViewWrapperRenderer" token="33554458" />
+      <entry key="crc6477f0d89a9cfd64b1/PlatformRenderer" java-name="crc6477f0d89a9cfd64b1/PlatformRenderer" managed-type-name="Microsoft.Maui.Controls.Compatibility.Platform.Android.PlatformRenderer" token="33554461" />
+      <entry key="crc6477f0d89a9cfd64b1/ViewRenderer" java-name="crc6477f0d89a9cfd64b1/ViewRenderer" managed-type-name="Microsoft.Maui.Controls.Compatibility.Platform.Android.ViewRenderer" token="33554468" />
+      <entry key="crc6477f0d89a9cfd64b1/ViewRenderer_2" java-name="crc6477f0d89a9cfd64b1/ViewRenderer_2" managed-type-name="Microsoft.Maui.Controls.Compatibility.Platform.Android.ViewRenderer`2" token="33554469" skip-in-java-to-managed="True" />
+      <entry key="crc6477f0d89a9cfd64b1/VisualElementRenderer_1" java-name="crc6477f0d89a9cfd64b1/VisualElementRenderer_1" managed-type-name="Microsoft.Maui.Controls.Compatibility.Platform.Android.VisualElementRenderer`1" token="33554471" skip-in-java-to-managed="True" />
+      <entry key="crc6477f0d89a9cfd64b1/VisualElementTracker_AttachTracker" java-name="crc6477f0d89a9cfd64b1/VisualElementTracker_AttachTracker" managed-type-name="Microsoft.Maui.Controls.Compatibility.Platform.Android.VisualElementTracker/AttachTracker" token="33554474" />
+    </types-scratch>
+  </module>
+</api>

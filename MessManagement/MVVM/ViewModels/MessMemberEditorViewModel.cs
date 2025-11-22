@@ -24,6 +24,8 @@ namespace MessManagement.MVVM.ViewModels
         public Action? OnMemberSaved { get; set; }
 
         public Popup Popup { get; set; }
+        [ObservableProperty]
+        private string headerText;
         public MessMemberEditorViewModel(MessMemberService messMemberService)
         {
             _messMemberService = messMemberService;
@@ -36,6 +38,7 @@ namespace MessManagement.MVVM.ViewModels
                 var memberDto = new MessMemberDto
                 {
                     MessMemberId = Member.MessMemberId,
+                    MessId = Member.MessId,
                     Name = Member.Name,
                     Email = Member.Email,
                     Role = Member.Role,
@@ -83,6 +86,7 @@ namespace MessManagement.MVVM.ViewModels
         public void Initialize(MessMemberSummaryDto member)
         {
             Member = member;
+            HeaderText = member.MessMemberId == 0? "Add Member":"Edit Member Details";
         }
     }
 }

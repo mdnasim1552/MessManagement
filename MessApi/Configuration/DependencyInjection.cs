@@ -10,6 +10,7 @@ namespace MessApi.Configuration
         public static IServiceCollection AddAllRepository(this IServiceCollection services)
         {
             //services.AddScoped<IUserRepository,UserRepositoy>();
+            services.AddHttpContextAccessor();
             services.AddScoped<JwtService>();
             return services;
         }
@@ -17,6 +18,7 @@ namespace MessApi.Configuration
         {
             var jwtSettings = configuration.GetSection("JwtSettings");
             var secretKey = Encoding.UTF8.GetBytes(jwtSettings["Secret"]);
+            var issuers = jwtSettings.GetSection("Issuers").Get<string[]>();
 
             services.AddAuthentication(options =>
             {
@@ -32,7 +34,7 @@ namespace MessApi.Configuration
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(secretKey),
                     ValidateIssuer = true,
-                    ValidIssuer = jwtSettings["Issuer"],
+                    ValidIssuers = issuers,
                     ValidateAudience = true,
                     ValidAudience = jwtSettings["Audience"],
                     ValidateLifetime = true,

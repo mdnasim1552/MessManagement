@@ -26,6 +26,8 @@ namespace MessManagement.Services
                 var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<List<MessMemberDto>>>();
                 return errorResponse ?? ApiResponse<List<MessMemberDto>>.FailureResponse("Unknown error");
             }
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<List<MessMemberDto>>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<List<MessMemberDto>>>();
         }
         public async Task<ApiResponse<List<MealDto>>> GetMealsAsync(int messId)
@@ -38,6 +40,8 @@ namespace MessManagement.Services
                 var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<List<MealDto>>>();
                 return errorResponse ?? ApiResponse<List<MealDto>>.FailureResponse("Unknown error");
             }
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<List<MealDto>>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<List<MealDto>>>();
         }
         public async Task<ApiResponse<MealDto>> UpdateMealAsync(MealDto meal)
@@ -50,6 +54,8 @@ namespace MessManagement.Services
                 var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<MealDto>>();
                 return errorResponse ?? ApiResponse<MealDto>.FailureResponse("Unknown error");
             }
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<MealDto>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<MealDto>>();
         }
         public async Task<ApiResponse<List<MarketCostDto>>> GetMarketCostsAsync(int messId)
@@ -62,6 +68,8 @@ namespace MessManagement.Services
                 var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<List<MarketCostDto>>>();
                 return errorResponse ?? ApiResponse<List<MarketCostDto>>.FailureResponse("Unknown error");
             }
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<List<MarketCostDto>>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<List<MarketCostDto>>>();
         }
         public async Task<ApiResponse<bool>> DeleteMarketCostsAsync(int costId)
@@ -74,6 +82,8 @@ namespace MessManagement.Services
                 var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
                 return errorResponse ?? ApiResponse<bool>.FailureResponse("Unknown error");
             }
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<bool>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
         }
         public async Task<ApiResponse<List<MessMemberSummaryDto>>> GetMessMemberSummaryAsync(int messId)
@@ -86,6 +96,8 @@ namespace MessManagement.Services
                 var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<List<MessMemberSummaryDto>>>();
                 return errorResponse ?? ApiResponse<List<MessMemberSummaryDto>>.FailureResponse("Unknown error");
             }
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<List<MessMemberSummaryDto>>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<List<MessMemberSummaryDto>>>();
         }
         public async Task<ApiResponse<bool>> UpdateMessMemberInfoAsync(MessMemberDto messMemberDto)
@@ -98,6 +110,22 @@ namespace MessManagement.Services
                 var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
                 return errorResponse ?? ApiResponse<bool>.FailureResponse("Unknown error");
             }
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<bool>.FailureResponse("Server returned no data");
+            return await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
+        }
+        public async Task<ApiResponse<bool>> DeleteMessMemberAsync(MessMemberDto messMemberDto)
+        {
+            var token = await SecureStorage.GetAsync("auth_token");
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            var response = await _httpClient.PostAsJsonAsync($"api/messmember/delete-mess-member", messMemberDto);
+            if (!response.IsSuccessStatusCode)
+            {
+                var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
+                return errorResponse ?? ApiResponse<bool>.FailureResponse("Unknown error");
+            }
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<bool>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
         }
     }

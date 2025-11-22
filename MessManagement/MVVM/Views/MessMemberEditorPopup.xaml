@@ -13,7 +13,7 @@
     <input:FormView SubmitCommand="{Binding SaveMemberCommand}">
         <VerticalStackLayout Spacing="15" MinimumHeightRequest="300" MinimumWidthRequest="250">
         <!-- Header -->
-        <Label Text="Edit Member Details"
+            <Label Text="{Binding HeaderText}"
                    FontAttributes="Bold"
                    FontSize="20"
                    HorizontalOptions="Center" />
@@ -53,9 +53,9 @@
                     Title="Rent" 
                     Keyboard="Numeric" 
                     Icon="{FontImageSource FontFamily=MaterialSharpFilled, Glyph={x:Static m:MaterialSharp.Money}}"
-                    AllowClear="True">
+                    AllowClear="False">
             <material:TextField.Validations>
-                    <validation:MinValueValidation MinValue="1"/>
+                    <validation:MinValueValidation MinValue="0"/>
                 </material:TextField.Validations>
         </material:TextField>
         <!-- Role -->
@@ -72,7 +72,7 @@
             </Picker>
         </VerticalStackLayout>-->
         <material:PickerField SelectedItem="{Binding Member.Role, Mode=TwoWay}"
-                      AllowClear="True"
+                      AllowClear="False"
                       Title="Role"
                       Icon="{FontImageSource FontFamily=MaterialSharpFilled, Glyph={x:Static m:MaterialSharp.Expand_circle_down}}">
             <material:PickerField.ItemsSource>

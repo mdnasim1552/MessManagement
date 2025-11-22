@@ -41,6 +41,12 @@ namespace MessManagement.MVVM.ViewModels
             IsListEmpty = CanEdit && MarketCosts.Count == 0;
         }
         [RelayCommand]
+        private async Task RefreshMarketCostsAsync()
+        {
+            int messId = Preferences.Get("CurrentMessId", 0);
+            await LoadMarketCostsAsync(messId);
+        }
+        [RelayCommand]
         private async Task LoadUnitsAsync()
         {
             var result = await _messService.GetUnitsAsync(); // <-- create this endpoint if not exists
