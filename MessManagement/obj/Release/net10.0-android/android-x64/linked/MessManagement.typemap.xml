@@ -1,5 +1,5 @@
-<api type="release" assembly-name="MessManagement" mvid="83850a84dbb54f8c8169e8c1330cd7ec">
-  <module assembly-name="MessManagement" mvid="83850a84dbb54f8c8169e8c1330cd7ec" mvid-bytes="hAqFg7XbjE+BaejBMwzX7A==">
+<api type="release" assembly-name="MessManagement" mvid="0164c5a3d01f4ed38c84d45c80dfd47f">
+  <module assembly-name="MessManagement" mvid="0164c5a3d01f4ed38c84d45c80dfd47f" mvid-bytes="o8VkAR/Q006MhNRcgN/Ufw==">
     <types-scratch>
       <entry key="crc64ab0f1799ca18a3a2/MainActivity" java-name="crc64ab0f1799ca18a3a2/MainActivity" managed-type-name="MessManagement.MainActivity" token="33554511" />
       <entry key="crc64ab0f1799ca18a3a2/MainApplication" java-name="crc64ab0f1799ca18a3a2/MainApplication" managed-type-name="MessManagement.MainApplication" token="33554512" />

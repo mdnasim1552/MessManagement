@@ -1,0 +1,8 @@
+<api type="debug" assembly-name="Xamarin.KotlinX.Coroutines.Play.Services" mvid="f7e5d6d4a61548e5a8d874854db8982d">
+  <java-to-managed>
+    <entry java-name="kotlinx/coroutines/tasks/TasksKt" managed-name="Xamarin.KotlinX.Coroutines.Tasks.TasksKt, Xamarin.KotlinX.Coroutines.Play.Services" managed-type-token-id="33554434" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="kotlinx/coroutines/tasks/TasksKt" managed-name="Xamarin.KotlinX.Coroutines.Tasks.TasksKt, Xamarin.KotlinX.Coroutines.Play.Services" managed-type-token-id="33554434" />
+  </managed-to-java>
+</api>

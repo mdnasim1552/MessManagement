@@ -485,17 +485,26 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MarketCostDto"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MarketCostDto"
+                }
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/MarketCostDto"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MarketCostDto"
+                }
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/MarketCostDto"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MarketCostDto"
+                }
               }
             }
           }

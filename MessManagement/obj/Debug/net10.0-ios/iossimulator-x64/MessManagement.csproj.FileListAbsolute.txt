@@ -268,12 +268,16 @@ H:\Mess management\MessManagement\MessManagement\bin\Debug\net10.0-ios\iossimula
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net10.0-ios\iossimulator-x64\libbrotlienc.a
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net10.0-ios\iossimulator-x64\libmono-component-debugger-static.a
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net10.0-ios\iossimulator-x64\libmono-component-debugger-stub-static.a
+H:\Mess management\MessManagement\MessManagement\bin\Debug\net10.0-ios\iossimulator-x64\libmono-component-debugger.dylib
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net10.0-ios\iossimulator-x64\libmono-component-diagnostics_tracing-static.a
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net10.0-ios\iossimulator-x64\libmono-component-diagnostics_tracing-stub-static.a
+H:\Mess management\MessManagement\MessManagement\bin\Debug\net10.0-ios\iossimulator-x64\libmono-component-diagnostics_tracing.dylib
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net10.0-ios\iossimulator-x64\libmono-component-hot_reload-static.a
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net10.0-ios\iossimulator-x64\libmono-component-hot_reload-stub-static.a
+H:\Mess management\MessManagement\MessManagement\bin\Debug\net10.0-ios\iossimulator-x64\libmono-component-hot_reload.dylib
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net10.0-ios\iossimulator-x64\libmono-component-marshal-ilgen-static.a
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net10.0-ios\iossimulator-x64\libmono-component-marshal-ilgen-stub-static.a
+H:\Mess management\MessManagement\MessManagement\bin\Debug\net10.0-ios\iossimulator-x64\libmono-component-marshal-ilgen.dylib
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net10.0-ios\iossimulator-x64\libmonosgen-2.0.a
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net10.0-ios\iossimulator-x64\libmonosgen-2.0.dylib
 H:\Mess management\MessManagement\MessManagement\bin\Debug\net10.0-ios\iossimulator-x64\Microsoft.iOS.registrar.a
@@ -349,7 +353,3 @@ H:\Mess management\MessManagement\MessManagement\obj\Debug\net10.0-ios\iossimula
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net10.0-ios\iossimulator-x64\MessManagement.pdb
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net10.0-ios\iossimulator-x64\MessManagement.genruntimeconfig.cache
 H:\Mess management\MessManagement\MessManagement\obj\Debug\net10.0-ios\iossimulator-x64\ref\MessManagement.dll
-H:\Mess management\MessManagement\MessManagement\bin\Debug\net10.0-ios\iossimulator-x64\libmono-component-debugger.dylib
-H:\Mess management\MessManagement\MessManagement\bin\Debug\net10.0-ios\iossimulator-x64\libmono-component-diagnostics_tracing.dylib
-H:\Mess management\MessManagement\MessManagement\bin\Debug\net10.0-ios\iossimulator-x64\libmono-component-hot_reload.dylib
-H:\Mess management\MessManagement\MessManagement\bin\Debug\net10.0-ios\iossimulator-x64\libmono-component-marshal-ilgen.dylib

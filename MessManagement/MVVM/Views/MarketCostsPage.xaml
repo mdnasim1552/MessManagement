@@ -26,57 +26,46 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <Grid>
-        <Grid Padding="10" RowSpacing="12" RowDefinitions="Auto,*">
+        <Grid Padding="10" RowSpacing="12" RowDefinitions="Auto,*,Auto">
             <!-- 🧭 Members Horizontal List -->
             <CollectionView ItemsSource="{Binding Members}" Grid.Row="0"
             SelectionMode="Single"
             SelectedItem="{Binding SelectedMember, Mode=TwoWay}"
             SelectionChanged="CollectionView_SelectionChanged"
             ItemsLayout="HorizontalList">
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <Border
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Border
                     StrokeThickness="2"
                     BackgroundColor="{AppThemeBinding Light='#F1F5F9',Dark={StaticResource Gray400}}"
                     StrokeShape="RoundRectangle 8"
                     Padding="10,5"
                     Margin="5,0">
-                        <Label Text="{Binding Name}" x:Name="MemberName"
+                            <Label Text="{Binding Name}" x:Name="MemberName"
                            FontAttributes="Bold" 
                            HorizontalOptions="Center"
                            VerticalOptions="Center" />
-                        <VisualStateManager.VisualStateGroups>
-                            <VisualStateGroup>
-                                <VisualState Name="Selected">
-                                    <VisualState.Setters>
-                                        <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Primary},Dark={StaticResource Secondary}}"/>
-                                        <Setter TargetName="MemberName" Property="Label.TextColor" Value="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"/>
-                                    </VisualState.Setters>
-                                </VisualState>
-                                <VisualState Name="Normal">
-                                    <VisualState.Setters>
-                                        <Setter Property="BackgroundColor" Value="{StaticResource White}"/>
-                                        <Setter TargetName="MemberName" Property="Label.TextColor" Value="{StaticResource Black}"/>
-                                    </VisualState.Setters>
-                                </VisualState>
-                            </VisualStateGroup>
-                        </VisualStateManager.VisualStateGroups>
-                    </Border>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup>
+                                    <VisualState Name="Selected">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="{AppThemeBinding Light={StaticResource Primary},Dark={StaticResource Secondary}}"/>
+                                            <Setter TargetName="MemberName" Property="Label.TextColor" Value="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Black}}"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState Name="Normal">
+                                        <VisualState.Setters>
+                                            <Setter Property="BackgroundColor" Value="{StaticResource White}"/>
+                                            <Setter TargetName="MemberName" Property="Label.TextColor" Value="{StaticResource Black}"/>
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                        </Border>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
 
-        
-
-            <!-- Fixed header row -->
-            <!--<Grid Grid.Row="0" ColumnDefinitions="*,*,*,*,*,1.5*" Padding="0,6">
-                <Label Text="Date" FontAttributes="Bold" HorizontalOptions="Center" />
-                <Label Text="Product" FontAttributes="Bold" Grid.Column="1" HorizontalOptions="Center" />
-                <Label Text="Qty" FontAttributes="Bold" Grid.Column="2" HorizontalOptions="Center" />
-                <Label Text="Unit" FontAttributes="Bold" Grid.Column="3" HorizontalOptions="Center" />
-                <Label Text="Cost" FontAttributes="Bold" Grid.Column="4" HorizontalOptions="Center" />
-                <Label Text="Action" FontAttributes="Bold" Grid.Column="5" HorizontalOptions="Center" />
-            </Grid>-->
             <Border Stroke="#CBD5E1" StrokeThickness="1" Grid.Row="1" Padding="10"
                 BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Gray400}}"
                 StrokeShape="RoundRectangle 8">
@@ -97,16 +86,16 @@
                                  Padding="10">
                                     <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" >
                                     <Label Text="Date" FontAttributes="Bold" Grid.Row="0" Grid.Column="0" VerticalOptions="Center" />
-                                        <DatePicker Date="{Binding ExpenseDate, Mode=TwoWay}" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Format="dd-MMM-yyyy" Grid.Row="0" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" DateSelected="DatePicker_DateSelected" />
+                                        <DatePicker Date="{Binding ExpenseDate, Mode=TwoWay}" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Format="dd-MMM-yyyy" Grid.Row="0" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" />
 
                                     <Label Text="Product" VerticalOptions="Center" FontAttributes="Bold" Grid.Row="1" Grid.Column="0"  />
-                                        <Entry Text="{Binding ProductName, Mode=TwoWay}" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Keyboard="Text" HorizontalOptions="Fill" VerticalOptions="Center" Grid.Row="1" Grid.Column="1" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="name" />
+                                        <Entry Text="{Binding ProductName, Mode=TwoWay}" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Keyboard="Text" HorizontalOptions="Fill" VerticalOptions="Center" Grid.Row="1" Grid.Column="1" Placeholder="name" />
 
                                     <Label Text="Qty" FontAttributes="Bold" Grid.Row="2" Grid.Column="0" VerticalOptions="Center" />
-                                        <Entry Text="{Binding Quantity, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Keyboard="Numeric" HorizontalOptions="Fill" VerticalOptions="Center" Grid.Row="2" Grid.Column="1"  Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
+                                        <Entry Text="{Binding Quantity, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Keyboard="Numeric" HorizontalOptions="Fill" VerticalOptions="Center" Grid.Row="2" Grid.Column="1" Placeholder="0.00" />
 
                                     <Label Text="Unit" FontAttributes="Bold"  Grid.Row="3" Grid.Column="0" VerticalOptions="Center" />
-                                        <Picker Unfocused="Entry_Unfocused" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Grid.Row="3" Grid.Column="1"
+                                        <Picker SelectedIndexChanged="Picker_SelectedIndexChanged" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Grid.Row="3" Grid.Column="1"
                                     ItemsSource="{Binding BindingContext.Units, Source={x:Reference MarketCostsCollectionView}}"
                                     ItemDisplayBinding="{Binding ShortName}"
                                     SelectedItem="{Binding SelectedUnit, Mode=TwoWay}"
@@ -114,7 +103,7 @@
                                     VerticalOptions="Center" HorizontalOptions="Fill" />
 
                                     <Label Text="Cost" FontAttributes="Bold" Grid.Row="4" Grid.Column="0" VerticalOptions="Center" />
-                                        <Entry Text="{Binding Cost, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Keyboard="Numeric" Grid.Row="4" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
+                                        <Entry Text="{Binding Cost, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Keyboard="Numeric" Grid.Row="4" Grid.Column="1" HorizontalOptions="Fill" VerticalOptions="Center" Placeholder="0.00" />
 
                                     <StackLayout Grid.Row="5" Grid.Column="1" VerticalOptions="Center"
                                      Orientation="Horizontal"
@@ -180,6 +169,9 @@
                     </Button>
                 </Grid>
             </Border>
+            <HorizontalStackLayout HorizontalOptions="End" Spacing="12" Grid.Row="2">
+                <Button Text="Save" Style="{StaticResource PrimaryButton}" Command="{Binding SaveMarketCostCommand}" StyleClass="FilledButton" />
+            </HorizontalStackLayout>
         </Grid>
         <Grid BackgroundColor="#88000000" IsVisible="{Binding IsBusy}">
             <ActivityIndicator IsRunning="{Binding IsBusy}" 
