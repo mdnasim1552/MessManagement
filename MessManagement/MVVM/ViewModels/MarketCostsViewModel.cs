@@ -83,7 +83,12 @@ namespace MessManagement.MVVM.ViewModels
                             _cachedMarketCosts.Add(mCost);
                     }
                     var selectMember = messMembers.Data.FirstOrDefault(m => m.Email == _userSession.CurrentUser.Email);
-                    if (selectMember == null)
+                    if (selectedMember != null)
+                    {
+                        SelectedMember = Members.FirstOrDefault(m => m.MessMemberId== SelectedMember.MessMemberId);
+                        await SelectMemberAsync(selectedMember);
+                    }
+                    else if (selectMember == null)
                     {
                         await SelectMemberAsync(messMembers.Data.First());
                     }
@@ -229,40 +234,23 @@ namespace MessManagement.MVVM.ViewModels
                 Console.WriteLine($"Error removing bill: {ex.Message}");
             }
         }
-        public async Task SaveMarketCostsAsync(MarketCostDto marketCost)
+        public void UpdateUnit(MarketCostDto marketCost)
         {
-            //await _messMemberService.UpdateMealAsync(meal);
             if (marketCost == null) return;
-
-            marketCost.Unit=marketCost.SelectedUnit.Id;
-            
-            if (string.IsNullOrWhiteSpace(marketCost.ProductName) ||
-                   marketCost.Quantity <= 0 ||
-                   marketCost.Cost <= 0)
-            {
-                return; // skip incomplete records
-            }
-
-            var result = await _messService.UpdateAndSaveMarketCostsAsync(marketCost);
+            marketCost.Unit=marketCost.SelectedUnit?.Id; 
+        }
+        [RelayCommand]
+        private async Task SaveMarketCostAsync()
+        {
+            var marketCostDto= MarketCosts.Select(mc=>mc).ToList();
+            var result = await _messService.UpdateAndSaveMarketCostsAsync(marketCostDto);
             if (!result.Success)
             {
-                // Optional: show error toast
-                Console.WriteLine("Failed to save bill in database");
+                await Application.Current.MainPage.DisplayAlertAsync("Error", result.Message, "OK");
             }
             else
             {
-                marketCost.CostId = result.Data.CostId;
-
-                var cachedMarketCost = _cachedMarketCosts.FirstOrDefault(m => m.CostId == result.Data.CostId);
-                if (cachedMarketCost != null)
-                {
-                    var index = _cachedMarketCosts.IndexOf(cachedMarketCost);
-                    _cachedMarketCosts[index] = marketCost;
-                }
-                else
-                {
-                    _cachedMarketCosts.Add(marketCost);
-                }
+                RefreshMarketCostsAsync();
             }
         }
     }

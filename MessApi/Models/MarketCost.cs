@@ -15,7 +15,8 @@ public partial class MarketCost
 
     public int MessMemberId { get; set; }
 
-    public DateOnly ExpenseDate { get; set; }
+    [Column(TypeName = "datetime")]
+    public DateTime ExpenseDate { get; set; }
 
     [StringLength(250)]
     public string ProductName { get; set; } = null!;

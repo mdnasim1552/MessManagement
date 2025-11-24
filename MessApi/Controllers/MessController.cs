@@ -322,7 +322,7 @@ namespace MessApi.Controllers
                     CostId= m.CostId,
                     MessId = m.MessId,
                     MessMemberId = m.MessMemberId,
-                    ExpenseDate = m.ExpenseDate.ToDateTime(TimeOnly.MinValue),
+                    ExpenseDate = m.ExpenseDate,
                     ProductName = m.ProductName,
                     Quantity = m.Quantity,
                     Unit = m.Unit,
@@ -382,61 +382,46 @@ namespace MessApi.Controllers
 
         [Authorize]
         [HttpPost("update-and-save-market-costs")]
-        public async Task<IActionResult> UpdateSaveMarketCosts([FromBody] MarketCostDto marketCostDto)
+        public async Task<IActionResult> UpdateSaveMarketCosts([FromBody] List<MarketCostDto> marketCostDtoList)
         {
-            if (marketCostDto == null)
-                return BadRequest(ApiResponse<MarketCostDto>.FailureResponse("Invalid market cost data."));
-
             try
             {
                 MarketCost marketCost;
-                if (marketCostDto.CostId > 0)
+                foreach (var marketCostDto in marketCostDtoList)
                 {
-                    // Existing bill: fetch from DB
-                    marketCost = await _unitOfWork.MarketCost.FirstOrDefaultAsync(b => b.CostId == marketCostDto.CostId);
-                    if (marketCost == null)
-                        return NotFound(ApiResponse<MarketCostDto>.FailureResponse("market cost data not found."));
-
-                    // Update properties
-                    marketCost.MessId = marketCostDto.MessId;
-                    marketCost.MessMemberId = marketCostDto.MessMemberId;
-                    marketCost.ExpenseDate = DateOnly.FromDateTime(marketCostDto.ExpenseDate);
-                    marketCost.ProductName = marketCostDto.ProductName;
-                    marketCost.Quantity = marketCostDto.Quantity;
-                    marketCost.Unit = marketCostDto.Unit;
-                    marketCost.Cost = marketCostDto.Cost;
-
-                    // Explicitly mark as updated
-                    //_unitOfWork.MarketCost.Update(marketCost);
-                }
-                else
-                {
-                    // New bill: create
                     marketCost = new MarketCost
                     {
                         MessId = marketCostDto.MessId,
                         MessMemberId = marketCostDto.MessMemberId,
-                        ExpenseDate = DateOnly.FromDateTime(marketCostDto.ExpenseDate),
+                        ExpenseDate = marketCostDto.ExpenseDate,
                         ProductName = marketCostDto.ProductName,
                         Quantity = marketCostDto.Quantity,
                         Unit = marketCostDto.Unit,
                         Cost = marketCostDto.Cost
 
                     };
-                    await _unitOfWork.MarketCost.AddAsync(marketCost);
+                    if (marketCostDto.CostId > 0)
+                    {
+                        marketCost.CostId = marketCostDto.CostId;
+                        _unitOfWork.MarketCost.Update(marketCost);
+                    }
+                    else
+                    {
+                        await _unitOfWork.MarketCost.AddAsync(marketCost);
+                    }
                 }
+                
 
                 // Save all changes
                 var saveResult = await _unitOfWork.SaveAsync();
 
                 if (!saveResult)
-                    return BadRequest(ApiResponse<MarketCostDto>.FailureResponse("Failed to save market costs."));
-                marketCostDto.CostId = marketCost.CostId;
-                return Ok(ApiResponse<MarketCostDto>.SuccessResponse(marketCostDto, "Market cost is saved successfully."));
+                    return BadRequest(ApiResponse<bool>.FailureResponse("Failed to save market costs."));
+                return Ok(ApiResponse<bool>.SuccessResponse(true, "Market cost is saved successfully."));
             }
             catch (Exception ex)
             {
-                return BadRequest(ApiResponse<MarketCostDto>.FailureResponse(ex.Message));
+                return BadRequest(ApiResponse<bool>.FailureResponse(ex.Message));
             }
         }
     }

@@ -118,19 +118,19 @@ namespace MessManagement.Services
                 return ApiResponse<List<UnitDto>>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<List<UnitDto>>>();
         }
-        public async Task<ApiResponse<MarketCostDto>> UpdateAndSaveMarketCostsAsync(MarketCostDto marketCostDto)
+        public async Task<ApiResponse<bool>> UpdateAndSaveMarketCostsAsync(List<MarketCostDto> marketCostDtoList)
         {
             var token = await SecureStorage.GetAsync("auth_token");
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            var response = await _httpClient.PostAsJsonAsync($"api/mess/update-and-save-market-costs", marketCostDto);
+            var response = await _httpClient.PostAsJsonAsync($"api/mess/update-and-save-market-costs", marketCostDtoList);
             if (!response.IsSuccessStatusCode)
             {
-                var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<MarketCostDto>>();
-                return errorResponse ?? ApiResponse<MarketCostDto>.FailureResponse("Unknown error");
+                var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
+                return errorResponse ?? ApiResponse<bool>.FailureResponse("Unknown error");
             }
             if (response.Content.Headers.ContentLength == 0)
-                return ApiResponse<MarketCostDto>.FailureResponse("Server returned no data");
-            return await response.Content.ReadFromJsonAsync<ApiResponse<MarketCostDto>>();
+                return ApiResponse<bool>.FailureResponse("Server returned no data");
+            return await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
         }
         public async Task<ApiResponse<bool>> UpdateCurrentMessAsync(MessDto messDto)
         {

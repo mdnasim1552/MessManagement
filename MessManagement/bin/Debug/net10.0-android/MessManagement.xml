@@ -120,6 +120,7 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.SelectedMember">
             <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MarketCostsViewModel.selectedMember"/>
@@ -168,6 +169,12 @@
         </member>
         <member name="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.RemoveMarketCostsCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MarketCostsViewModel.RemoveMarketCostsAsync(MessManagement.Shared.DTOs.MarketCostDto)"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MarketCostsViewModel.saveMarketCostCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.SaveMarketCostCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.SaveMarketCostCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MarketCostsViewModel.SaveMarketCostAsync"/>.</summary>
         </member>
         <member name="T:MessManagement.MVVM.ViewModels.MealsViewModel">
             <inheritdoc/>

@@ -277,8 +277,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "marketCostDto",
-        "Type": "MessManagement.Shared.DTOs.MarketCostDto",
+        "Name": "marketCostDtoList",
+        "Type": "System.Collections.Generic.List\u00601[[MessManagement.Shared.DTOs.MarketCostDto, MessManagement.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],

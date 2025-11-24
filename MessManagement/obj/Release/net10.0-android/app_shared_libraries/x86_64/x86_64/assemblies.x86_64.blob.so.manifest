@@ -116,7 +116,7 @@
 0x4dd9247f1d2c3235 di:161 mi:161 do:11308528 ds:15161 ddo:0 dds:0 cdo:0 cds:0 Xamarin.AndroidX.Loader.dll
 0x4e32f00cb0937401 di:69 mi:69 do:3925484 ds:13580 ddo:0 dds:0 cdo:0 cds:0 Mono.Android.Runtime
 0x4f21ee6ef9eb527e di:72 mi:72 do:4584722 ds:10008 ddo:0 dds:0 cdo:0 cds:0 ca/Microsoft.Maui.Controls.resources
-0x4f98886f1ac8ec9b di:182 mi:182 do:12018167 ds:202307 ddo:0 dds:0 cdo:0 cds:0 MessManagement.dll
+0x4f98886f1ac8ec9b di:182 mi:182 do:12018167 ds:202308 ddo:0 dds:0 cdo:0 cds:0 MessManagement.dll
 0x4ffd65baff757598 di:130 mi:130 do:5439629 ds:15697 ddo:0 dds:0 cdo:0 cds:0 Microsoft.IdentityModel.Tokens
 0x5112ed116d87baf8 di:108 mi:108 do:4977647 ds:10237 ddo:0 dds:0 cdo:0 cds:0 CommunityToolkit.Mvvm
 0x5131bbe80989093f di:159 mi:159 do:11289795 ds:12326 ddo:0 dds:0 cdo:0 cds:0 Xamarin.AndroidX.Lifecycle.ViewModel.Android.dll
@@ -268,7 +268,7 @@
 0xb477491be13109d8 di:71 mi:71 do:4574729 ds:9993 ddo:0 dds:0 cdo:0 cds:0 ar/Microsoft.Maui.Controls.resources
 0xb4bd7015ecee9d86 di:20 mi:20 do:747749 ds:3980 ddo:0 dds:0 cdo:0 cds:0 System.IO.Pipelines
 0xb5c7fcdafbc67ee4 di:124 mi:124 do:5382954 ds:17148 ddo:0 dds:0 cdo:0 cds:0 Microsoft.Extensions.Logging.Abstractions.dll
-0xb6d7f93ce19042b9 di:182 mi:182 do:12018167 ds:202307 ddo:0 dds:0 cdo:0 cds:0 MessManagement
+0xb6d7f93ce19042b9 di:182 mi:182 do:12018167 ds:202308 ddo:0 dds:0 cdo:0 cds:0 MessManagement
 0xb7212c4683a94afe di:15 mi:15 do:659292 ds:21998 ddo:0 dds:0 cdo:0 cds:0 System.Drawing.Primitives
 0xb7b7753d1f319409 di:97 mi:97 do:4834523 ds:9975 ddo:0 dds:0 cdo:0 cds:0 sv/Microsoft.Maui.Controls.resources
 0xb872c26142d22aa9 di:122 mi:122 do:5343821 ds:26750 ddo:0 dds:0 cdo:0 cds:0 Microsoft.Extensions.Http.dll
