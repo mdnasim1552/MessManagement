@@ -261,8 +261,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "billDto",
-        "Type": "MessManagement.Shared.DTOs.CommonBillDto",
+        "Name": "billDtoList",
+        "Type": "System.Collections.Generic.List\u00601[[MessManagement.Shared.DTOs.CommonBillDto, MessManagement.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],
@@ -389,8 +389,8 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "meal",
-        "Type": "MessManagement.Shared.DTOs.MealDto",
+        "Name": "mealList",
+        "Type": "System.Collections.Generic.List\u00601[[MessManagement.Shared.DTOs.MealDto, MessManagement.Shared, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "IsRequired": true
       }
     ],

@@ -54,12 +54,20 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:MessManagement.MVVM.ViewModels.CommonBillViewModel.IsListEmpty">
             <inheritdoc cref="F:MessManagement.MVVM.ViewModels.CommonBillViewModel.isListEmpty"/>
         </member>
         <member name="P:MessManagement.MVVM.ViewModels.CommonBillViewModel.IsBusy">
             <inheritdoc cref="F:MessManagement.MVVM.ViewModels.CommonBillViewModel.isBusy"/>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.CommonBillViewModel.refreshCommonBillCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.CommonBillViewModel.RefreshCommonBillCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.CommonBillViewModel.RefreshCommonBillCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.CommonBillViewModel.RefreshCommonBillAsync"/>.</summary>
         </member>
         <member name="F:MessManagement.MVVM.ViewModels.CommonBillViewModel.loadCommonBillCommand">
             <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.CommonBillViewModel.LoadCommonBillCommand"/>.</summary>
@@ -78,6 +86,12 @@
         </member>
         <member name="P:MessManagement.MVVM.ViewModels.CommonBillViewModel.RemoveCommonbillCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.CommonBillViewModel.RemoveCommonbillAsync(MessManagement.MVVM.Models.CommonBillModel)"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.CommonBillViewModel.saveBillCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.CommonBillViewModel.SaveBillCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.CommonBillViewModel.SaveBillCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.CommonBillViewModel.SaveBillAsync"/>.</summary>
         </member>
         <member name="T:MessManagement.MVVM.ViewModels.LoginViewModel">
             <inheritdoc/>
@@ -113,6 +127,7 @@
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.LoginViewModel.GoogleLoginAsync"/>.</summary>
         </member>
         <member name="T:MessManagement.MVVM.ViewModels.MarketCostsViewModel">
+            <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
@@ -169,7 +184,14 @@
         <member name="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.RemoveMarketCostsCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MarketCostsViewModel.RemoveMarketCostsAsync(MessManagement.Shared.DTOs.MarketCostDto)"/>.</summary>
         </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MarketCostsViewModel.saveMarketCostCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.SaveMarketCostCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MarketCostsViewModel.SaveMarketCostCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MarketCostsViewModel.SaveMarketCostAsync"/>.</summary>
+        </member>
         <member name="T:MessManagement.MVVM.ViewModels.MealsViewModel">
+            <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
@@ -198,6 +220,12 @@
         </member>
         <member name="P:MessManagement.MVVM.ViewModels.MealsViewModel.SelectMemberCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MealsViewModel.SelectMemberAsync(MessManagement.Shared.DTOs.MessMemberDto)"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MealsViewModel.saveMealCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MealsViewModel.SaveMealCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MealsViewModel.SaveMealCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MealsViewModel.SaveMealAsync"/>.</summary>
         </member>
         <member name="T:MessManagement.MVVM.ViewModels.MessListViewModel">
             <inheritdoc/>

@@ -44,19 +44,19 @@ namespace MessManagement.Services
                 return ApiResponse<List<MealDto>>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<List<MealDto>>>();
         }
-        public async Task<ApiResponse<MealDto>> UpdateMealAsync(MealDto meal)
+        public async Task<ApiResponse<bool>> UpdateMealAsync(List<MealDto> meal)
         {
             var token = await SecureStorage.GetAsync("auth_token");
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             var response = await _httpClient.PostAsJsonAsync($"api/messmember/update-meals",meal);
             if (!response.IsSuccessStatusCode)
             {
-                var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<MealDto>>();
-                return errorResponse ?? ApiResponse<MealDto>.FailureResponse("Unknown error");
+                var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
+                return errorResponse ?? ApiResponse<bool>.FailureResponse("Unknown error");
             }
             if (response.Content.Headers.ContentLength == 0)
-                return ApiResponse<MealDto>.FailureResponse("Server returned no data");
-            return await response.Content.ReadFromJsonAsync<ApiResponse<MealDto>>();
+                return ApiResponse<bool>.FailureResponse("Server returned no data");
+            return await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
         }
         public async Task<ApiResponse<List<MarketCostDto>>> GetMarketCostsAsync(int messId)
         {

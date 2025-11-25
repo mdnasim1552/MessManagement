@@ -41,6 +41,8 @@ public partial class MarketCostsPage : ContentPage
            e.CurrentSelection.FirstOrDefault() is MessMemberDto member)
         {
             vm.IsBusy = true;
+            if (!vm.IsInternalSelectionChange)
+                vm.SaveMarketCostBeforeNaviagateAsync();
             vm.SelectMemberCommand.Execute(member);
         }
     }

@@ -1,4 +1,4 @@
-<api type="debug" assembly-name="MessManagement" mvid="146506fc6e7f4d83bc6c73cb3ed8864d">
+<api type="debug" assembly-name="MessManagement" mvid="588af3eddbc141918eae371635ec19d8">
   <java-to-managed>
     <entry java-name="crc64ab0f1799ca18a3a2/MainActivity" managed-name="MessManagement.MainActivity, MessManagement" managed-type-token-id="33554454" />
     <entry java-name="crc64ab0f1799ca18a3a2/MainApplication" managed-name="MessManagement.MainApplication, MessManagement" managed-type-token-id="33554455" />
