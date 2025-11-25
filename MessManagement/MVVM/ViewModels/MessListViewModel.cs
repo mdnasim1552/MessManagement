@@ -76,7 +76,7 @@ namespace MessManagement.MVVM.ViewModels
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert("Mess load failed", response.Message, "OK");
+                    await Application.Current.MainPage.DisplayAlertAsync("Mess load failed", response.Message, "OK");
                 }
                 CheckIfEmpty();
             }
@@ -147,7 +147,7 @@ namespace MessManagement.MVVM.ViewModels
             if (selectedMess == null)
                 return;
 
-            bool confirm = await Application.Current.MainPage.DisplayAlert(
+            bool confirm = await Application.Current.MainPage.DisplayAlertAsync(
                 "Confirm Delete",
                 $"Are you sure you want to delete '{selectedMess.MessName}'?",
                 "Yes", "Cancel");
@@ -172,14 +172,14 @@ namespace MessManagement.MVVM.ViewModels
                         Preferences.Remove("CurrentMessId");
                         Preferences.Set("current_user", JsonSerializer.Serialize(_userSession.CurrentUser));
                     }            
-                    await Application.Current.MainPage.DisplayAlert(
+                    await Application.Current.MainPage.DisplayAlertAsync(
                         "Deleted",
                         "Mess deleted successfully.",
                         "OK");
                 }
                 else
                 {
-                    await Application.Current.MainPage.DisplayAlert(
+                    await Application.Current.MainPage.DisplayAlertAsync(
                         "Error",
                         result.Message ?? "Failed to delete mess.",
                         "OK");
@@ -188,7 +188,7 @@ namespace MessManagement.MVVM.ViewModels
             }
             catch (Exception ex)
             {
-                await Application.Current.MainPage.DisplayAlert("Error", ex.Message, "OK");
+                await Application.Current.MainPage.DisplayAlertAsync("Error", ex.Message, "OK");
             }
             //finally
             //{

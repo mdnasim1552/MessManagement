@@ -26,7 +26,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <Grid>
-        <Grid Padding="10" RowSpacing="12" RowDefinitions="Auto,*">
+        <Grid Padding="10" RowSpacing="12" RowDefinitions="Auto,*,Auto">
 
             <!-- 🧭 Members Horizontal List -->
             <CollectionView ItemsSource="{Binding Members}" Grid.Row="0"
@@ -99,9 +99,9 @@
                                         </DataTrigger>
                                     </Grid.Triggers>
                                     <Label Text="{Binding MealDate, StringFormat='{0:dd-MMM-yyyy}'}" HorizontalOptions="Start" VerticalOptions="Center" />
-                                    <Entry HorizontalTextAlignment="Center" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Text="{Binding Breakfast, Mode=TwoWay,Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
-                                    <Entry HorizontalTextAlignment="Center" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Text="{Binding Lunch, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
-                                    <Entry HorizontalTextAlignment="Center" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Text="{Binding Dinner, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
+                                    <Entry HorizontalTextAlignment="Center" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Text="{Binding Breakfast, Mode=TwoWay,Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Placeholder="0.00" />
+                                    <Entry HorizontalTextAlignment="Center" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Text="{Binding Lunch, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center" Placeholder="0.00" />
+                                    <Entry HorizontalTextAlignment="Center" IsEnabled="{Binding CanEdit, Mode=TwoWay}" Text="{Binding Dinner, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Column="3" VerticalOptions="Center" HorizontalOptions="Center" Placeholder="0.00" />
                                 </Grid>
                             </DataTemplate>
                         </CollectionView.ItemTemplate>
@@ -109,6 +109,9 @@
 
                 </Grid>
             </Border>
+            <HorizontalStackLayout HorizontalOptions="End" Spacing="12" Grid.Row="2">
+                <Button Text="Save" Style="{StaticResource PrimaryButton}" Command="{Binding SaveMealCommand}" StyleClass="FilledButton" />
+            </HorizontalStackLayout>
         </Grid>
         <Grid BackgroundColor="#88000000" IsVisible="{Binding IsBusy}" RowSpacing="2" Grid.Row="1">
             <ActivityIndicator IsRunning="{Binding IsBusy}" 

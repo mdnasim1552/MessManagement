@@ -396,17 +396,26 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CommonBillDto"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/CommonBillDto"
+                }
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CommonBillDto"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/CommonBillDto"
+                }
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CommonBillDto"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/CommonBillDto"
+                }
               }
             }
           }
@@ -571,17 +580,26 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/MealDto"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MealDto"
+                }
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/MealDto"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MealDto"
+                }
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/MealDto"
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/MealDto"
+                }
               }
             }
           }

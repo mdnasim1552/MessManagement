@@ -106,30 +106,29 @@ namespace MessApi.Controllers
         }
         [Authorize]
         [HttpPost("update-meals")]
-        public async Task<IActionResult> UpdateMeals([FromBody] MealDto meal)
+        public async Task<IActionResult> UpdateMeals([FromBody] List<MealDto> mealList)
         {
-            if (meal == null)
+            foreach(var meal in mealList)
             {
-                return BadRequest(ApiResponse<MealDto>.FailureResponse("Meals is not updated."));
+                var meals = new Meal
+                {
+                    MealId = meal.MealId,
+                    MessId = meal.MessId,
+                    MessMemberId = meal.MessMemberId,
+                    MealDate = meal.MealDate,
+                    Breakfast = meal.Breakfast,
+                    Lunch = meal.Lunch,
+                    Dinner = meal.Dinner
+                };
+                _unitOfWork.Meal.Update(meals);
             }
-            var meals = new Meal()
-            {
-                MealId = meal.MealId,
-                MessId = meal.MessId,
-                MessMemberId = meal.MessMemberId,
-                MealDate = meal.MealDate,
-                Breakfast = meal.Breakfast,
-                Lunch = meal.Lunch,
-                Dinner = meal.Dinner
-            };
-            _unitOfWork.Meal.Update(meals);
+           
             var saveResult = await _unitOfWork.SaveAsync();
             if (!saveResult)
             {
-                return BadRequest(ApiResponse<MealDto>.FailureResponse("Meals update failed."));
+                return BadRequest(ApiResponse<bool>.FailureResponse("Meals update failed."));
             }
-            meal.MealId = meals.MealId;
-            return Ok(ApiResponse<MealDto>.SuccessResponse(meal, "Meals updated successfully."));
+            return Ok(ApiResponse<bool>.SuccessResponse(true, "Meals updated successfully."));
 
         }
         [Authorize]

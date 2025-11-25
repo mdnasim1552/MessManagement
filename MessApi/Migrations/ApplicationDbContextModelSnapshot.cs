@@ -17,7 +17,7 @@ namespace MessApi.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.10")
+                .HasAnnotation("ProductVersion", "10.0.0")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -60,8 +60,8 @@ namespace MessApi.Migrations
                     b.Property<decimal>("Cost")
                         .HasColumnType("decimal(10, 2)");
 
-                    b.Property<DateOnly>("ExpenseDate")
-                        .HasColumnType("date");
+                    b.Property<DateTime>("ExpenseDate")
+                        .HasColumnType("datetime");
 
                     b.Property<int>("MessId")
                         .HasColumnType("int");
@@ -140,7 +140,7 @@ namespace MessApi.Migrations
                     b.Property<DateTime?>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasDefaultValueSql("(getdate())", "DF__Mess__CreatedAt__5812160E");
 
                     b.Property<int>("CreatedBy")
                         .HasColumnType("int");
@@ -184,7 +184,7 @@ namespace MessApi.Migrations
                     b.Property<DateTime?>("JoinedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasDefaultValueSql("(getdate())", "DF__MessMembe__Joine__5EBF139D");
 
                     b.Property<int>("MessId")
                         .HasColumnType("int");
@@ -201,7 +201,7 @@ namespace MessApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasMaxLength(20)
                         .HasColumnType("nvarchar(20)")
-                        .HasDefaultValue("Member");
+                        .HasDefaultValue("Member", "DF__MessMember__Role__5DCAEF64");
 
                     b.HasKey("MessMemberId")
                         .HasName("PK__MessMemb__2F8CE6B8620BB8A1");
@@ -223,7 +223,7 @@ namespace MessApi.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValueSql("(getutcdate())");
+                        .HasDefaultValueSql("(getutcdate())", "DF__RefreshTo__Creat__3F466844");
 
                     b.Property<DateTime>("ExpiresAt")
                         .HasColumnType("datetime");
@@ -310,7 +310,7 @@ namespace MessApi.Migrations
                     b.Property<DateTime?>("CreatedAt")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasDefaultValueSql("(getdate())", "DF__Users__CreatedAt__38996AB5");
 
                     b.Property<int?>("CurrentMessId")
                         .HasColumnType("int");

@@ -20,7 +20,7 @@ namespace MessManagement.MVVM.ViewModels
         public ObservableCollection<MessMemberDto> Members { get; set; } = new ObservableCollection<MessMemberDto>();
         public ObservableCollection<MealDto> Meals { get; set; } = new ObservableCollection<MealDto>();
         private ObservableCollection<MealDto> _cachedMeals { get; set; } = new ObservableCollection<MealDto>();
-
+        public bool IsInternalSelectionChange { get; set; } = false;
         [ObservableProperty]
         private bool isBusy;
         [ObservableProperty]
@@ -61,7 +61,12 @@ namespace MessManagement.MVVM.ViewModels
                             _cachedMeals.Add(meal);
                     }
                     var selectMember = messMembers.Data.FirstOrDefault(m => m.Email == _userSession.CurrentUser.Email);
-                    if (selectMember == null)
+                    if (selectedMember != null)
+                    {
+                        SelectedMember = Members.FirstOrDefault(m => m.MessMemberId == SelectedMember.MessMemberId);
+                        await SelectMemberAsync(selectedMember);
+                    }
+                    else if (selectMember == null)
                     {
                         await SelectMemberAsync(messMembers.Data.First());
                     }
@@ -112,26 +117,31 @@ namespace MessManagement.MVVM.ViewModels
             }
             
         }
-        public async Task SaveMealAsync(MealDto meal)
+        [RelayCommand]
+        public async Task SaveMealAsync()
         {
-            var result = await _messMemberService.UpdateMealAsync(meal);
-            if (!result.Success)
-                return;
-            meal.MealId = result.Data.MealId;
-            // 🟢 Update in cache
-            var cachedMeal = _cachedMeals.FirstOrDefault(m => m.MealId == meal.MealId);
-            if (cachedMeal != null)
+            try
             {
-                var index = _cachedMeals.IndexOf(cachedMeal);
-                _cachedMeals[index] = meal;
-                //_cachedMeals[index].Breakfast = meal.Breakfast;
-                //_cachedMeals[index].Lunch = meal.Lunch;
-                //_cachedMeals[index].Dinner = meal.Dinner;
+                IsBusy = true;
+                var result = await _messMemberService.UpdateMealAsync(Meals.ToList());
+                if (!result.Success)
+                    await Application.Current.MainPage.DisplayAlertAsync("Error", result.Message, "OK");
+                else
+                {
+                    IsInternalSelectionChange = true;
+                    await RefreshMealAsync();
+                }  
             }
-            else
+            finally
             {
-                _cachedMeals.Add(meal);
+                IsBusy = false;
+                IsInternalSelectionChange = false;
             }
+
+        }
+        public async Task SaveMealBeforeNaviagteAsync() 
+        {
+            var result = await _messMemberService.UpdateMealAsync(Meals.ToList());
         }
 
     }

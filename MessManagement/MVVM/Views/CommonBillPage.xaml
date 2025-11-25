@@ -7,12 +7,24 @@
              xmlns:m="clr-namespace:UraniumUI.Icons.MaterialSymbols;assembly=UraniumUI.Icons.MaterialSymbols"
              HideSoftInputOnTapped="True"
              BackgroundColor="{AppThemeBinding Light='#EDEEEE',Dark={StaticResource Black}}">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Command="{Binding RefreshCommonBillCommand}"
+         Order="Primary"
+         Priority="0">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Glyph="{x:Static m:MaterialSharp.Refresh}" 
+                         FontFamily="MaterialSharpFilled"
+                         Color="Black"
+                         Size="24"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Resources>
         <ResourceDictionary>
             <Converters:ZeroToEmptyConverter x:Key="ZeroToEmptyConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
-    <Grid BackgroundColor="{AppThemeBinding Light='#EDEEEE',Dark={StaticResource Gray400}}" Padding="10" x:Name="MainGrid">
+    <Grid BackgroundColor="{AppThemeBinding Light='#EDEEEE',Dark={StaticResource Gray400}}" Padding="10" x:Name="MainGrid" RowDefinitions="*,Auto" RowSpacing="12">
         <Border Stroke="#CBD5E1" StrokeThickness="1" Grid.Row="0" StrokeShape="RoundRectangle 8"
             BackgroundColor="{AppThemeBinding Light='#EDEEEE',Dark={StaticResource Gray400}}">
             <Grid RowDefinitions="Auto,*" BackgroundColor="{AppThemeBinding Light='#EDEEEE',Dark={StaticResource Gray400}}">
@@ -28,86 +40,89 @@
                 </Border>
                 <Grid Grid.Row="1">
                     <Grid RowDefinitions="Auto,*" BackgroundColor="{AppThemeBinding Light={StaticResource White},Dark={StaticResource Gray400}}">
-                    <!-- Scrollable CollectionView for meals -->
-                    <CollectionView Grid.Row="0" x:Name="CommonbillCollectionView"
-                               ItemsSource="{Binding CommonBills}"
-                               VerticalOptions="Fill"
-                               ItemsLayout="VerticalList"
-                               Margin="0,6,0,0">
-                        <CollectionView.ItemTemplate>
-                            <DataTemplate>
-                                    <Grid ColumnDefinitions="*,3*,3*,3*" Padding="20,0,10,6">
-                                        <Label Grid.Column="0"
-                                               VerticalOptions="Center"
-                                               HorizontalOptions="Start"
-                                               Text="{Binding Index}" />
-                                        <Entry HorizontalTextAlignment="Center" Text="{Binding BillType, Mode=TwoWay}" Keyboard="Text" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="Bill types" />
-                                        <Entry HorizontalTextAlignment="Center" Text="{Binding Amount, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center" Unfocused="Entry_Unfocused" Completed="Entry_Completed" Placeholder="0.00" />
+                        <!-- Scrollable CollectionView for meals -->
+                        <CollectionView Grid.Row="0" x:Name="CommonbillCollectionView"
+                                   ItemsSource="{Binding CommonBills}"
+                                   VerticalOptions="Fill"
+                                   ItemsLayout="VerticalList"
+                                   Margin="0,6,0,0">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                        <Grid ColumnDefinitions="*,3*,3*,3*" Padding="20,0,10,6">
+                                            <Label Grid.Column="0"
+                                                   VerticalOptions="Center"
+                                                   HorizontalOptions="Start"
+                                                   Text="{Binding Index}" />
+                                            <Entry HorizontalTextAlignment="Center" Text="{Binding BillType, Mode=TwoWay}" Keyboard="Text" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center" Placeholder="Bill types" />
+                                            <Entry HorizontalTextAlignment="Center" Text="{Binding Amount, Mode=TwoWay, Converter={StaticResource ZeroToEmptyConverter}}" Keyboard="Numeric" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center" Placeholder="0.00" />
 
-                                        <StackLayout Grid.Column="3"
-                                             Orientation="Horizontal"
-                                             Spacing="4"
-                                             HorizontalOptions="Center"
-                                             VerticalOptions="Center">
-                                            <Button
-                                                FontAttributes="Bold"
-                                                Command="{Binding BindingContext.AddCommonbillCommand, Source={x:Reference CommonbillCollectionView}}"
-                                                CommandParameter="{Binding .}"
-                                                CornerRadius="6"
-                                                HeightRequest="26"
-                                                WidthRequest="30"
-                                                FontSize="12">
-                                                <Button.ImageSource>
-                                                    <FontImageSource Glyph="{x:Static m:MaterialSharp.Add}" 
-                                                    FontFamily="MaterialSharpFilled"
-                                                 Size="16"/>
-                                                </Button.ImageSource>
+                                            <StackLayout Grid.Column="3"
+                                                 Orientation="Horizontal"
+                                                 Spacing="4"
+                                                 HorizontalOptions="Center"
+                                                 VerticalOptions="Center">
+                                                <Button
+                                                    FontAttributes="Bold"
+                                                    Command="{Binding BindingContext.AddCommonbillCommand, Source={x:Reference CommonbillCollectionView}}"
+                                                    CommandParameter="{Binding .}"
+                                                    CornerRadius="6"
+                                                    HeightRequest="26"
+                                                    WidthRequest="30"
+                                                    FontSize="12">
+                                                    <Button.ImageSource>
+                                                        <FontImageSource Glyph="{x:Static m:MaterialSharp.Add}" 
+                                                        FontFamily="MaterialSharpFilled"
+                                                     Size="16"/>
+                                                    </Button.ImageSource>
 
-                                            </Button>
+                                                </Button>
 
-                                            <Button
-                                                FontAttributes="Bold"
-                                                Command="{Binding BindingContext.RemoveCommonbillCommand, Source={x:Reference CommonbillCollectionView}}"
-                                                CommandParameter="{Binding .}"
-                                                CornerRadius="6"
-                                                HeightRequest="26"
-                                                WidthRequest="30"
-                                                FontSize="12">
-                                                <Button.ImageSource>
-                                                    <FontImageSource Glyph="{x:Static m:MaterialSharp.Remove}" 
-                                                    FontFamily="MaterialSharpFilled" Size="16"/>
-                                                </Button.ImageSource>
-                                            </Button>
-                                    </StackLayout>
+                                                <Button
+                                                    FontAttributes="Bold"
+                                                    Command="{Binding BindingContext.RemoveCommonbillCommand, Source={x:Reference CommonbillCollectionView}}"
+                                                    CommandParameter="{Binding .}"
+                                                    CornerRadius="6"
+                                                    HeightRequest="26"
+                                                    WidthRequest="30"
+                                                    FontSize="12">
+                                                    <Button.ImageSource>
+                                                        <FontImageSource Glyph="{x:Static m:MaterialSharp.Remove}" 
+                                                        FontFamily="MaterialSharpFilled" Size="16"/>
+                                                    </Button.ImageSource>
+                                                </Button>
+                                        </StackLayout>
 
 
 
-                                </Grid>
-                            </DataTemplate>
-                        </CollectionView.ItemTemplate>
-                    </CollectionView>
-                    <!-- Floating Add Button -->
-                    <Button Grid.Row="1"
-                        FontSize="32"
-                        WidthRequest="60"
-                        HeightRequest="60"
-                        CornerRadius="30"
-                        FontAttributes="Bold"
-                        Command="{Binding AddCommonbillCommand}"
-                        IsVisible="{Binding IsListEmpty}"
-                        HorizontalOptions="End"
-                        VerticalOptions="End"
-                        Margin="16">
-                        <Button.ImageSource>
+                                    </Grid>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                        <!-- Floating Add Button -->
+                        <Button Grid.Row="1"
+                            FontSize="32"
+                            WidthRequest="60"
+                            HeightRequest="60"
+                            CornerRadius="30"
+                            FontAttributes="Bold"
+                            Command="{Binding AddCommonbillCommand}"
+                            IsVisible="{Binding IsListEmpty}"
+                            HorizontalOptions="End"
+                            VerticalOptions="End"
+                            Margin="16">
+                            <Button.ImageSource>
                                 <FontImageSource Glyph="{x:Static m:MaterialSharp.Add}" 
-                                FontFamily="MaterialSharpFilled"
-                                Size="24"/>
-                        </Button.ImageSource>
-                    </Button>
-                </Grid>
+                                    FontFamily="MaterialSharpFilled"
+                                    Size="24"/>
+                            </Button.ImageSource>
+                        </Button>
+                    </Grid>
                 </Grid>
             </Grid>
         </Border>
+        <HorizontalStackLayout HorizontalOptions="End" Spacing="12" Grid.Row="1">
+            <Button Text="Save" Style="{StaticResource PrimaryButton}" Command="{Binding SaveBillCommand}" StyleClass="FilledButton" />
+        </HorizontalStackLayout>
         <Grid BackgroundColor="#88000000" IsVisible="{Binding IsBusy}">
             <ActivityIndicator IsRunning="{Binding IsBusy}" 
                        HorizontalOptions="Center" 

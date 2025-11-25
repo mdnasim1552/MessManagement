@@ -244,53 +244,39 @@ namespace MessApi.Controllers
         }
         [Authorize]
         [HttpPost("update-and-save-common-bill")]
-        public async Task<IActionResult> UpdateSaveCommonBill([FromBody] CommonBillDto billDto)
+        public async Task<IActionResult> UpdateSaveCommonBill([FromBody] List<CommonBillDto> billDtoList)
         {
-            if (billDto == null)
-                return BadRequest(ApiResponse<bool>.FailureResponse("Invalid bill data."));
-
             try
             {
                 CommonBill bill;
-
-                if (billDto.BillId > 0)
+                foreach(var billDto in billDtoList)
                 {
-                    // Existing bill: fetch from DB
-                    bill = await _unitOfWork.CommonBill.FirstOrDefaultAsync(b => b.BillId == billDto.BillId);
-                    if (bill == null)
-                        return NotFound(ApiResponse<bool>.FailureResponse("Common bill not found."));
-
-                    // Update properties
-                    bill.MessId = billDto.MessId;
-                    bill.BillType = billDto.BillType;
-                    bill.Amount = billDto.Amount;
-
-                    // Explicitly mark as updated
-                    //_unitOfWork.CommonBill.Update(bill);
-                }
-                else
-                {
-                    // New bill: create
                     bill = new CommonBill
                     {
                         MessId = billDto.MessId,
                         BillType = billDto.BillType,
                         Amount = billDto.Amount
                     };
-                    await _unitOfWork.CommonBill.AddAsync(bill);
+                    if (billDto.BillId > 0)
+                    {
+                        bill.BillId = billDto.BillId;
+                        _unitOfWork.CommonBill.Update(bill);
+                    }
+                    else
+                    {
+                        await _unitOfWork.CommonBill.AddAsync(bill);
+                    }
                 }
-
                 // Save all changes
                 var saveResult = await _unitOfWork.SaveAsync();
                 
                 if (!saveResult)
-                    return BadRequest(ApiResponse<CommonBillDto>.FailureResponse("Failed to save common bill."));
-                billDto.BillId = bill.BillId;
-                return Ok(ApiResponse<CommonBillDto>.SuccessResponse(billDto, "Common bill saved successfully."));
+                    return BadRequest(ApiResponse<bool>.FailureResponse("Failed to save common bill."));
+                return Ok(ApiResponse<bool>.SuccessResponse(true, "Common bill saved successfully."));
             }
             catch (Exception ex)
             {
-                return BadRequest(ApiResponse<CommonBillDto>.FailureResponse(ex.Message));
+                return BadRequest(ApiResponse<bool>.FailureResponse(ex.Message));
             }
         }
         [Authorize]

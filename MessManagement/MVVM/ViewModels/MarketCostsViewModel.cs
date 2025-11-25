@@ -21,6 +21,7 @@ namespace MessManagement.MVVM.ViewModels
         public ObservableCollection<MarketCostDto> _cachedMarketCosts { get; set; } = new ObservableCollection<MarketCostDto>();
 
         public ObservableCollection<UnitDto> Units { get; set; }=new ObservableCollection<UnitDto>();
+        public bool IsInternalSelectionChange { get; set; } = false;
 
         [ObservableProperty]
         private MessMemberDto selectedMember;
@@ -136,7 +137,7 @@ namespace MessManagement.MVVM.ViewModels
                 }
                 CanEdit = SelectedMember.CanEdit;
                 CheckIfEmpty();
-                await Task.Delay(2000);
+                await Task.Delay(1000);
             }
             finally
             {
@@ -242,16 +243,32 @@ namespace MessManagement.MVVM.ViewModels
         [RelayCommand]
         private async Task SaveMarketCostAsync()
         {
-            var marketCostDto= MarketCosts.Select(mc=>mc).ToList();
+            try
+            {
+                IsBusy = true;
+                var marketCostDto = MarketCosts.Select(mc => mc).ToList();
+                var result = await _messService.UpdateAndSaveMarketCostsAsync(marketCostDto);
+                if (!result.Success)
+                {
+                    await Application.Current.MainPage.DisplayAlertAsync("Error", result.Message, "OK");
+                }
+                else
+                {
+                    IsInternalSelectionChange = true;
+                    await RefreshMarketCostsAsync();
+                }
+            }
+            finally
+            {
+                IsBusy = false;
+                IsInternalSelectionChange = false;
+            }
+           
+        }
+        public async Task SaveMarketCostBeforeNaviagateAsync()
+        {
+            var marketCostDto = MarketCosts.Select(mc => mc).ToList();
             var result = await _messService.UpdateAndSaveMarketCostsAsync(marketCostDto);
-            if (!result.Success)
-            {
-                await Application.Current.MainPage.DisplayAlertAsync("Error", result.Message, "OK");
-            }
-            else
-            {
-                RefreshMarketCostsAsync();
-            }
         }
     }
 }

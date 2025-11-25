@@ -89,19 +89,19 @@ namespace MessManagement.Services
                 return ApiResponse<bool>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
         }
-        public async Task<ApiResponse<CommonBillDto>> UpdateAndSaveCommonBillAsync(CommonBillDto commonBillDto)
+        public async Task<ApiResponse<bool>> UpdateAndSaveCommonBillAsync(List<CommonBillDto> commonBillDto)
         {
             var token = await SecureStorage.GetAsync("auth_token");
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             var response = await _httpClient.PostAsJsonAsync($"api/mess/update-and-save-common-bill", commonBillDto);
             if (!response.IsSuccessStatusCode)
             {
-                var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<CommonBillDto>>();
-                return errorResponse ?? ApiResponse<CommonBillDto>.FailureResponse("Unknown error");
+                var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
+                return errorResponse ?? ApiResponse<bool>.FailureResponse("Unknown error");
             }
             if (response.Content.Headers.ContentLength == 0)
-                return ApiResponse<CommonBillDto>.FailureResponse("Server returned no data");
-            return await response.Content.ReadFromJsonAsync<ApiResponse<CommonBillDto>>();
+                return ApiResponse<bool>.FailureResponse("Server returned no data");
+            return await response.Content.ReadFromJsonAsync<ApiResponse<bool>>();
         }
 
         public async Task<ApiResponse<List<UnitDto>>> GetUnitsAsync()
