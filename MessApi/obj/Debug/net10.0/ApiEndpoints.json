@@ -244,6 +244,16 @@
   },
   {
     "ContainingType": "MessApi.Controllers.MessController",
+    "Method": "GetPreviousMessInfo",
+    "RelativePath": "api/Mess/get-previous-mess-info",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "MessApi.Controllers.MessController",
     "Method": "GetUnits",
     "RelativePath": "api/Mess/get-units",
     "HttpMethod": "GET",

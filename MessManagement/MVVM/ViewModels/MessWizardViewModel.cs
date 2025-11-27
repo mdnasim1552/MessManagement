@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using static Google.Apis.Requests.BatchRequest;
 
 namespace MessManagement.MVVM.ViewModels
 {
@@ -245,6 +246,40 @@ namespace MessManagement.MVVM.ViewModels
                     3 => "3rd Common bill",
                     _ => $"{number}th Common bill"
                 };
+            }
+        }
+        [RelayCommand]
+        private async Task ImportPreviousMessInfoAsync()
+        {
+            var response = await _messService.GetPreviousMessInfoAsync();
+            if (response != null && response.Success && response.Data != null)
+            {
+                var messDto = response.Data;
+                MessName = messDto.MessName;
+                Description = messDto.Description??"";
+                FromDate = messDto.FromDate;
+                ToDate = messDto.ToDate;
+                if(messDto.CommonBills!=null && messDto.CommonBills.Any())
+                {
+                    CommonBills.Clear();
+                    foreach (var bill in messDto.CommonBills)
+                    {
+                        CommonBills.Add(new CommonBillModel { BillType=bill.BillType,Amount=bill.Amount});
+                    }
+
+                }
+                
+                if (messDto.MessMembers != null && messDto.MessMembers.Any())
+                {
+                    Members.Clear();
+                    foreach(var member in messDto.MessMembers)
+                    {
+                        Members.Add(new MessMemberModel { Name = member.Name, Email = member.Email, Rent=member.Rent, Role = member.Role });
+                    }
+
+                }
+
+                UpdateHeadings();
             }
         }
     }

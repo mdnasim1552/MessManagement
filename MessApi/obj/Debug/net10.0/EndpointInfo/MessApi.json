@@ -525,6 +525,18 @@
         }
       }
     },
+    "/api/Mess/get-previous-mess-info": {
+      "get": {
+        "tags": [
+          "Mess"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/MessMember/get-mess-member/{messId}": {
       "get": {
         "tags": [

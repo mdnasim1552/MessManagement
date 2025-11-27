@@ -1,4 +1,5 @@
-﻿using MessApi.Models;
+﻿using Azure.Core;
+using MessApi.Models;
 using MessApi.UnitOfWork;
 using MessManagement.Shared.DTOs;
 using Microsoft.AspNetCore.Authorization;
@@ -409,6 +410,74 @@ namespace MessApi.Controllers
             {
                 return BadRequest(ApiResponse<bool>.FailureResponse(ex.Message));
             }
+        }
+        [Authorize]
+        [HttpGet("get-previous-mess-info")]
+        public async Task<IActionResult> GetPreviousMessInfo()
+        {
+            var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+            var userEmailClaim = User.FindFirst(ClaimTypes.Email)?.Value;
+
+            if (string.IsNullOrEmpty(userIdClaim) || string.IsNullOrEmpty(userEmailClaim))
+                return Unauthorized(ApiResponse<List<MarketCostDto>>.FailureResponse("Invalid token."));
+            var messDto = new MessDto();
+            var userId = int.Parse(userIdClaim);
+            var userEmail = userEmailClaim;
+            var user = await _unitOfWork.User.SingleOrDefaultAsync(u => u.Email == userEmail);
+            Mess? messInfo;
+            if (user.CurrentMessId != null)
+            {
+                messInfo = await _unitOfWork.Mess.SingleOrDefaultAsync(m => m.MessId == user.CurrentMessId);
+            }
+            else
+            {
+                var allMembers = await _unitOfWork.MessMember.FindAsync(u => u.Email == userEmail);
+                var memberMessIds = allMembers.Select(m => m.MessId).Distinct().ToList();
+                var createdMesses = await _unitOfWork.Mess.GetAllAsync();
+                messInfo = createdMesses
+                    .Where(m => memberMessIds.Contains(m.MessId))
+                    .OrderByDescending(m => m.CreatedAt)
+                    .FirstOrDefault();
+            }           
+            if (messInfo != null)
+            {
+                var messMembers = await _unitOfWork.MessMember.FindAsync(m => m.MessId == messInfo.MessId);
+                var commonBills = await _unitOfWork.CommonBill.FindAsync(m => m.MessId == messInfo.MessId);
+                messDto.MessId = messInfo.MessId;
+                messDto.MessName= messInfo.MessName;
+                messDto.Description= messInfo.Description;
+                messDto.FromDate= messInfo.FromDate;
+                messDto.ToDate= messInfo.ToDate;
+                if(messMembers!=null && messMembers.Count()>0)
+                {
+                    messDto.MessMembers = messMembers.Select(m => new MessMemberDto
+                    {
+                        MessMemberId = m.MessMemberId,
+                        MessId = m.MessId,
+                        Name = m.Name,
+                        Email = m.Email,
+                        Role = m.Role,
+                        Rent = m.Rent,
+                        JoinedAt = m.JoinedAt
+                    }).ToList();
+                }
+               if(commonBills!=null && commonBills.Count() > 0)
+                {
+                    messDto.CommonBills = commonBills.Select(m => new CommonBillDto
+                    {
+                        BillId = m.BillId,
+                        MessId = m.MessId,
+                        BillType = m.BillType,
+                        Amount = m.Amount
+                    }).ToList();
+                }
+            }
+            else
+            {
+                return BadRequest(ApiResponse<MessDto>.FailureResponse("No previous mess info found."));
+            }
+
+            return Ok(ApiResponse<MessDto>.SuccessResponse(messDto));
         }
     }
 }
