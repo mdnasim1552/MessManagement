@@ -17,6 +17,18 @@
             
         </ResourceDictionary>
     </uranium:UraniumContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Import" Command="{Binding ImportPreviousMessInfoCommand}"
+          Order="Primary"
+          Priority="0">
+            <ToolbarItem.IconImageSource>
+                <FontImageSource Glyph="{x:Static m:MaterialSharp.Content_copy}" 
+                          FontFamily="MaterialSharpFilled"
+                          Color="Black"
+                          Size="24"/>
+            </ToolbarItem.IconImageSource>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
     <Grid Padding="10" RowSpacing="12">
         <!--<Grid.RowDefinitions>
             <RowDefinition Height="Auto" />

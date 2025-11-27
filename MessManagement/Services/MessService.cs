@@ -31,6 +31,20 @@ namespace MessManagement.Services
                 return ApiResponse<int>.FailureResponse("Server returned no data");
             return await response.Content.ReadFromJsonAsync<ApiResponse<int>>();
         }
+        public async Task<ApiResponse<MessDto>> GetPreviousMessInfoAsync()
+        {
+            var token = await SecureStorage.GetAsync("auth_token");
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            var response = await _httpClient.GetAsync("api/mess/get-previous-mess-info");
+            if (!response.IsSuccessStatusCode)
+            {
+                var errorResponse = await response.Content.ReadFromJsonAsync<ApiResponse<MessDto>>();
+                return errorResponse ?? ApiResponse<MessDto>.FailureResponse("Unknown error");
+            }
+            if (response.Content.Headers.ContentLength == 0)
+                return ApiResponse<MessDto>.FailureResponse("Server returned no data");
+            return await response.Content.ReadFromJsonAsync<ApiResponse<MessDto>>();
+        }
         public async Task<ApiResponse<List<MessDto>>> GetUserMessesAsync()
         {
             var token = await SecureStorage.GetAsync("auth_token");

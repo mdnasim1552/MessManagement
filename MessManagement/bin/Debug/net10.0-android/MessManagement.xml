@@ -316,6 +316,7 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.CurrentStep">
             <inheritdoc cref="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.currentStep"/>
@@ -378,6 +379,12 @@
         </member>
         <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.RemoveCommonBillCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessWizardViewModel.RemoveCommonBillAsync(MessManagement.MVVM.Models.CommonBillModel)"/>.</summary>
+        </member>
+        <member name="F:MessManagement.MVVM.ViewModels.MessWizardViewModel.importPreviousMessInfoCommand">
+            <summary>The backing field for <see cref="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.ImportPreviousMessInfoCommand"/>.</summary>
+        </member>
+        <member name="P:MessManagement.MVVM.ViewModels.MessWizardViewModel.ImportPreviousMessInfoCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:MessManagement.MVVM.ViewModels.MessWizardViewModel.ImportPreviousMessInfoAsync"/>.</summary>
         </member>
         <member name="T:MessManagement.MVVM.ViewModels.RegisterViewModel">
             <inheritdoc/>
