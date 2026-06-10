@@ -25,13 +25,13 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = MessManagement
-build_property.ProjectDir = H:\Mess management\MessManagement\MessManagement\
+build_property.ProjectDir = D:\MessManagement\MessManagement\MessManagement\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[H:/Mess management/MessManagement/MessManagement/App.xaml]
+[D:/MessManagement/MessManagement/MessManagement/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
@@ -41,7 +41,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[H:/Mess management/MessManagement/MessManagement/AppShell.xaml]
+[D:/MessManagement/MessManagement/MessManagement/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
@@ -51,7 +51,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[H:/Mess management/MessManagement/MessManagement/MVVM/Views/CommonBillPage.xaml]
+[D:/MessManagement/MessManagement/MessManagement/MVVM/Views/CommonBillPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.MVVM.Views.CommonBillPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MVVM\Views\CommonBillPage.xaml
@@ -61,7 +61,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[H:/Mess management/MessManagement/MessManagement/MVVM/Views/LoginPage.xaml]
+[D:/MessManagement/MessManagement/MessManagement/MVVM/Views/LoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.MVVM.Views.LoginPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MVVM\Views\LoginPage.xaml
@@ -71,7 +71,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[H:/Mess management/MessManagement/MessManagement/MVVM/Views/LRAppShell.xaml]
+[D:/MessManagement/MessManagement/MessManagement/MVVM/Views/LRAppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.MVVM.Views.LRAppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = MVVM\Views\LRAppShell.xaml
@@ -81,7 +81,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[H:/Mess management/MessManagement/MessManagement/MVVM/Views/MarketCostsPage.xaml]
+[D:/MessManagement/MessManagement/MessManagement/MVVM/Views/MarketCostsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.MVVM.Views.MarketCostsPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MVVM\Views\MarketCostsPage.xaml
@@ -91,7 +91,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[H:/Mess management/MessManagement/MessManagement/MVVM/Views/MealsPage.xaml]
+[D:/MessManagement/MessManagement/MessManagement/MVVM/Views/MealsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.MVVM.Views.MealsPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MVVM\Views\MealsPage.xaml
@@ -101,7 +101,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[H:/Mess management/MessManagement/MessManagement/MVVM/Views/MessListPage.xaml]
+[D:/MessManagement/MessManagement/MessManagement/MVVM/Views/MessListPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.MVVM.Views.MessListPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MVVM\Views\MessListPage.xaml
@@ -111,7 +111,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[H:/Mess management/MessManagement/MessManagement/MVVM/Views/MessMemberEditorPopup.xaml]
+[D:/MessManagement/MessManagement/MessManagement/MVVM/Views/MessMemberEditorPopup.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.MVVM.Views.MessMemberEditorPopup.xaml
 build_metadata.AdditionalFiles.TargetPath = MVVM\Views\MessMemberEditorPopup.xaml
@@ -121,7 +121,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[H:/Mess management/MessManagement/MessManagement/MVVM/Views/MessMembersPage.xaml]
+[D:/MessManagement/MessManagement/MessManagement/MVVM/Views/MessMembersPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.MVVM.Views.MessMembersPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MVVM\Views\MessMembersPage.xaml
@@ -131,7 +131,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[H:/Mess management/MessManagement/MessManagement/MVVM/Views/MessWizardPage.xaml]
+[D:/MessManagement/MessManagement/MessManagement/MVVM/Views/MessWizardPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.MVVM.Views.MessWizardPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MVVM\Views\MessWizardPage.xaml
@@ -141,7 +141,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[H:/Mess management/MessManagement/MessManagement/MVVM/Views/RegisterPage.xaml]
+[D:/MessManagement/MessManagement/MessManagement/MVVM/Views/RegisterPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.MVVM.Views.RegisterPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MVVM\Views\RegisterPage.xaml
@@ -151,7 +151,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[H:/Mess management/MessManagement/MessManagement/MVVM/Views/WindowsGoogleLoginPage.xaml]
+[D:/MessManagement/MessManagement/MessManagement/MVVM/Views/WindowsGoogleLoginPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.MVVM.Views.WindowsGoogleLoginPage.xaml
 build_metadata.AdditionalFiles.TargetPath = MVVM\Views\WindowsGoogleLoginPage.xaml
@@ -161,7 +161,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[H:/Mess management/MessManagement/MessManagement/Resources/Styles/Colors.xaml]
+[D:/MessManagement/MessManagement/MessManagement/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
@@ -171,7 +171,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[H:/Mess management/MessManagement/MessManagement/Resources/Styles/MessManagementDictionary.xaml]
+[D:/MessManagement/MessManagement/MessManagement/Resources/Styles/MessManagementDictionary.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.Resources.Styles.MessManagementDictionary.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\MessManagementDictionary.xaml
@@ -181,7 +181,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[H:/Mess management/MessManagement/MessManagement/Resources/Styles/Styles.xaml]
+[D:/MessManagement/MessManagement/MessManagement/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = MessManagement.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml

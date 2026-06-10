@@ -10,3 +10,15 @@ H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net10.0\MessMa
 H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net10.0\refint\MessManagement.Shared.dll
 H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net10.0\MessManagement.Shared.pdb
 H:\Mess management\MessManagement\MessManagement.Shared\obj\Debug\net10.0\ref\MessManagement.Shared.dll
+D:\MessManagement\MessManagement\MessManagement.Shared\bin\Debug\net10.0\MessManagement.Shared.deps.json
+D:\MessManagement\MessManagement\MessManagement.Shared\bin\Debug\net10.0\MessManagement.Shared.dll
+D:\MessManagement\MessManagement\MessManagement.Shared\bin\Debug\net10.0\MessManagement.Shared.pdb
+D:\MessManagement\MessManagement\MessManagement.Shared\obj\Debug\net10.0\MessManagement.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\MessManagement\MessManagement\MessManagement.Shared\obj\Debug\net10.0\MessManagement.Shared.AssemblyInfoInputs.cache
+D:\MessManagement\MessManagement\MessManagement.Shared\obj\Debug\net10.0\MessManagement.Shared.AssemblyInfo.cs
+D:\MessManagement\MessManagement\MessManagement.Shared\obj\Debug\net10.0\MessManagement.Shared.csproj.CoreCompileInputs.cache
+D:\MessManagement\MessManagement\MessManagement.Shared\obj\Debug\net10.0\MessManagement.Shared.sourcelink.json
+D:\MessManagement\MessManagement\MessManagement.Shared\obj\Debug\net10.0\MessManagement.Shared.dll
+D:\MessManagement\MessManagement\MessManagement.Shared\obj\Debug\net10.0\refint\MessManagement.Shared.dll
+D:\MessManagement\MessManagement\MessManagement.Shared\obj\Debug\net10.0\MessManagement.Shared.pdb
+D:\MessManagement\MessManagement\MessManagement.Shared\obj\Debug\net10.0\ref\MessManagement.Shared.dll

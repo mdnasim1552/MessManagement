@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "H:\\Mess management\\MessManagement\\MessManagement\\MessManagement.csproj": {}
+    "D:\\MessManagement\\MessManagement\\MessManagement\\MessManagement.csproj": {}
   },
   "projects": {
-    "H:\\Mess management\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj": {
+    "D:\\MessManagement\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Mess management\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj",
+        "projectUniqueName": "D:\\MessManagement\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj",
         "projectName": "MessManagement.Shared",
-        "projectPath": "H:\\Mess management\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj",
+        "projectPath": "D:\\MessManagement\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "H:\\Mess management\\MessManagement\\MessManagement.Shared\\obj\\",
+        "outputPath": "D:\\MessManagement\\MessManagement\\MessManagement.Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -70,14 +70,14 @@
         }
       }
     },
-    "H:\\Mess management\\MessManagement\\MessManagement\\MessManagement.csproj": {
+    "D:\\MessManagement\\MessManagement\\MessManagement\\MessManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "H:\\Mess management\\MessManagement\\MessManagement\\MessManagement.csproj",
+        "projectUniqueName": "D:\\MessManagement\\MessManagement\\MessManagement\\MessManagement.csproj",
         "projectName": "MessManagement",
-        "projectPath": "H:\\Mess management\\MessManagement\\MessManagement\\MessManagement.csproj",
+        "projectPath": "D:\\MessManagement\\MessManagement\\MessManagement\\MessManagement.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "H:\\Mess management\\MessManagement\\MessManagement\\obj\\",
+        "outputPath": "D:\\MessManagement\\MessManagement\\MessManagement\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
@@ -103,32 +103,32 @@
           "net10.0-android36.0": {
             "targetAlias": "net10.0-android",
             "projectReferences": {
-              "H:\\Mess management\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj": {
-                "projectPath": "H:\\Mess management\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj"
+              "D:\\MessManagement\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj": {
+                "projectPath": "D:\\MessManagement\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj"
               }
             }
           },
-          "net10.0-ios26.1": {
+          "net10.0-ios26.2": {
             "targetAlias": "net10.0-ios",
             "projectReferences": {
-              "H:\\Mess management\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj": {
-                "projectPath": "H:\\Mess management\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj"
+              "D:\\MessManagement\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj": {
+                "projectPath": "D:\\MessManagement\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj"
               }
             }
           },
-          "net10.0-maccatalyst26.1": {
+          "net10.0-maccatalyst26.2": {
             "targetAlias": "net10.0-maccatalyst",
             "projectReferences": {
-              "H:\\Mess management\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj": {
-                "projectPath": "H:\\Mess management\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj"
+              "D:\\MessManagement\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj": {
+                "projectPath": "D:\\MessManagement\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj"
               }
             }
           },
           "net10.0-windows10.0.19041": {
             "targetAlias": "net10.0-windows10.0.19041.0",
             "projectReferences": {
-              "H:\\Mess management\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj": {
-                "projectPath": "H:\\Mess management\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj"
+              "D:\\MessManagement\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj": {
+                "projectPath": "D:\\MessManagement\\MessManagement\\MessManagement.Shared\\MessManagement.Shared.csproj"
               }
             }
           }
@@ -232,7 +232,7 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
         },
-        "net10.0-ios26.1": {
+        "net10.0-ios26.2": {
           "targetAlias": "net10.0-ios",
           "dependencies": {
             "CommunityToolkit.Maui": {
@@ -314,7 +314,7 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100/PortableRuntimeIdentifierGraph.json"
         },
-        "net10.0-maccatalyst26.1": {
+        "net10.0-maccatalyst26.2": {
           "targetAlias": "net10.0-maccatalyst",
           "dependencies": {
             "CommunityToolkit.Maui": {
